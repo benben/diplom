@@ -1,0 +1,52 @@
+\documentclass[a4paper, 12pt, headsepline]{scrreprt}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{setspace}
+\onehalfspacing
+
+\usepackage[ngerman]{babel}
+\usepackage{natbib}
+\usepackage{url} %correct url display in cites
+
+\pagestyle{headings}
+
+\typearea[current]{calc}
+
+%add hyphenation later
+
+\begin{document}
+\title{Non-Standard-Datenvisualisierer mit openFrameworks}
+\author{Benjamin Knofe}
+\subject{Diplomarbeit}
+\publishers{Hochschule für Technik, Wirtschaft und Kultur Leipzig}
+\dedication{viele nette Leute}
+\maketitle
+
+\tableofcontents
+
+\chapter{Einleitung}
+\section{Ein Abschnitt}
+\label{sec:testi}
+
+In diesem Abschnitt steht viel toller Text.
+Aber er hat einen coolen Verweis, siehe \cite[S.\,35--38]{Visualisierung}.
+Mal sehen wie das in einer Fußnote\footnote{\cite{Visualisierung}} aussieht.
+
+\section{Noch ein Abschnitt}
+Mit viel anderem Text
+
+\chapter{Viz}
+
+\section{Viz und so}
+
+Text über viz mit einer Fußnote\footnote{Streng genommen eine ziemlich sinnfreie.}
+
+\section{Querverweise}
+
+Um Querverweise nutzen zu können muss man z.B. auf Abschnitt~\ref{sec:testi} verweisen.
+
+\bibliographystyle{dinat}
+\bibliography{diplom}
+\end{document}
+
