@@ -1,4 +1,4 @@
-\documentclass[a4paper, 12pt, headsepline]{scrreprt}
+\documentclass[a4paper, 12pt, onepage, pdftex, headsepline, footsepline]{scrreprt}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -22,31 +22,125 @@
 \publishers{Hochschule für Technik, Wirtschaft und Kultur Leipzig}
 \dedication{viele nette Leute}
 \maketitle
-
 \tableofcontents
-
 \chapter{Einleitung}
-\section{Ein Abschnitt}
+%\section{Ein Abschnitt}
 \label{sec:testi}
 
-In diesem Abschnitt steht viel toller Text.
-Aber er hat einen coolen Verweis, siehe \cite[S.\,35--38]{Visualisierung}.
-Mal sehen wie das in einer Fußnote\footnote{\cite{Visualisierung}} aussieht.
+1. Motivation / Relevanz des Themas
+immer mehr daten, nur custom tools von profis nutzbar, weniger zeit für die einarbeitung
+2. problemstellung / ziel der arbeit
+einen software prototypen zu entwickeln, der auf basis einer der grundprinzipien der visualisierung beruht: variablen von daten auf variablen der grafik anzuwenden
+3. methodisches vorgehen und aufbau
+klärung der begriffe/probleme/einordnung in den workflow, festlegen der besten tools und patterns die software zu entwickeln, software beispielhaft implementieren Text.
 
-\section{Noch ein Abschnitt}
-Mit viel anderem Text
+\chapter{Grundlagen}
+\section{Arbeitsfeld Visualisierung}
+visualisierung im allgemeinen, warum wieso und für was
+Abgrenzung zu anderen Bereichen (vielleicht eigener gliederungspunkt) -> data mining.....
+Abgrenzung nach innen (ben fry)
+\section{Daten und Informationen}
+\section{(Daten-)Visualisierung als Problemlösungsansatz}
+Welches Problem gibt es?
+Warum?
+Andere Lösungsansätze?
+\section{(Daten-)Visualisierung als Arbeitsprozess}
+warum braucht man das? welche probleme werden damit gelöst?
+welche anforderungen? (in welchen bereichen des täglichen lebens, der wirtschaft)
+\subsection{Abgrenzung (nach Ben Fry)}
+einordnung an der einteilung von ben fry
+\section{Grundprinzipien der Datenvisualisierung}
+entwicklung einer kleinen "theorie"
+wie können die grundprinzipien der viz auf eine software überrtragen werden?
+welche vorteile/nachteile hat das?
+welche probleme werden damit gelöst? (keine festlegung mehr auf balken.....)
+welche neuen erkenntnisse können damit entstehen? (neue sichtweisen auf daten werden entdeckt, was wiederrum neue sichtweisen des eigentlichen problems aufzeigt)
+\subsection{Konzept einer geeigneten Softwarelösung}
+beispielhafte implementierung “datasynth”
+anforderung an so eine software (beispiel1: journalist, beispiel2: privat/künstler)
+-> datasynth als Erkundungstool für daten, als datenleser (ist das nicht auch eine kompetenz die man entwickeln sollte: daten lesen und verstehen zu können, also heisst es nicht auch heutzutage und in zukunft immer mehr: daten verstehen heißt die welt verstehen)
 
-\chapter{Viz}
+Warum visuelle Programmierung?
 
-\section{Viz und so}
+statt custom tools etc und immer wieder neu programmieren.....jetzt ein tool
+
+komplexität hinter einem einfachen interface verstecken (klavier aus memo’s talk in london)
+
+\chapter{Methodik}
+\section{Anforderungen}
+1. konkretisierung der eigenen problemstellung
+software erstellen, was muss sie können, wofür soll sie da sein
+also warum z.b. visuelles programmieren usw.
+2. entwicklung von hypothesen (oder definition von anforderungen)
+was muss die software leisten können?
+3. ausführliche beschreibung Untersuchungsmethodik und Vorgehensweise
+????
+
+auflistung:
+\subsection{visuelle programmierung}
+rapid prototyping / keine programmierkenntnisse erforderlich, ein durchschnittliches mathematisches verständnis reicht
+\subsection{cross-platformness}
+\subsection{freie Lizenz}
+rails als beispiel für MIT Lizenz
+
+\section{Analyse bestehender Lösungsansätze}
+diskussion bisheriger lösungsansätze
+vorstellen aller software die es bis jetzt gibt, siehe oben
+evtl. (SWOT-)Analyse und damit aufzeigen der schwächen der anderen software
+\subsection{vvvv}
+\subsection{pd - Pure Data}
+\subsection{prefuse}
+\subsection{graphviz}
+\subsection{...}
+\section{Definition eines Anforderungskatalogs}
+\chapter{Durchführung}
+1. dokumentation der untersuchungsdurchführung (des Entwicklungsvorganges)
+welche tools wurden wie angewendet, c++, of, git, boost, etc etc
+2. darstellung der ergebnisse (verdeutlichung durch beispiele, erläuterung des erkenntnisfortschritts)
+präsentation von viz mit der software?!
+\section{Technologien}
+\subsection{C++}
+\subsection{openFrameworks}
+\subsection{boost}
+\section{wichtige Kernfunktionen}
+auszüge aus quelltext mit erklärung
+\section{Probleme bei der Entwicklung}
+\chapter{Auswertung}
+bewertung der ergebnisse vor dem hintergrund der hypothesen/problemstellung (Test des konstrukts und vergleich mit den Anforderungen
+was kann die software liefern? wofür bildet sie nur die grundlage? was kann sie nicht?
+
+2. ableiten von schlußfolgerungen
+????
+so eine software macht sinn, macht keinen sinn?
+\section{Vorteile}
+\section{Nachteile}
+
+\chapter{Zusammenfassung}
+1. zusammenfassung der ergebnisse, lesson learned
+???
+2. optional: persönliche bemerkungen, hinweis auf weiteren forschungsbedarf, ausblick in dei zukunft
+was kannnoch alles an der Software getan werden?
+\section{Ausblick}
+\subsection{weitere Features}
+erweiterung auf andere bereiche des visualisierungsprozesses
+
+
+\section*{Viz und so}
 
 Text über viz mit einer Fußnote\footnote{Streng genommen eine ziemlich sinnfreie.}
 
-\section{Querverweise}
+\section*{Querverweise}
+
+Aber er hat einen coolen Verweis, siehe \cite[S.\,35--38]{Visualisierung}.
+Mal sehen wie das in einer Fußnote\footnote{\cite{Visualisierung}} aussieht.
 
 Um Querverweise nutzen zu können muss man z.B. auf Abschnitt~\ref{sec:testi} verweisen.
 
 \bibliographystyle{dinat}
 \bibliography{diplom}
+\listoftables
+\listoffigures
+%\printnomenclature
+\chapter{Anhang}
 \end{document}
 

@@ -3,6 +3,8 @@
 *.aux
 *.ilg
 *.log
+*.lof
+*.lot
 *.nlo
 *.nls 
 *.toc
