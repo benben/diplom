@@ -1,4 +1,4 @@
-all: bib diplom
+all: diplom bib diplom diplom
 
 diplom:
 	pdflatex diplom.tex
