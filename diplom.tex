@@ -43,11 +43,17 @@ um dieses problem zu lösen wird auf einen grundlegenderen und abstrakteren ansa
 \section{Umfeld der Arbeit}
 etwas zu mir?
 \section{Problemstellung}
+hier muss genau das problem geklärt werden, was zur zeit besteht.
+es gibt kein tool, dass spezialisiert auf das grundprinzip der viz ist.
+es werden viele programme verwendet die aus teilbereichen stammen (oder customlösungen), dadurch erhört sich arbeitsaufwand, schlechtere qualität des ergebnisses, zu viel vorkenntnisse notwendig.
 \section{Aufbau der Arbeit}
 
 \chapter{Grundlagen}
 \section{Daten und Informationen}
 was für daten können verwendet werden? wetterdaten? pachube, sämtliche (Web)-Apis
+Unterschied zwischen DAten und Information in Bezug auf VIZ!
+\section{Begriffe}
+Diagramm, Beobachtungsraum, -punkt, -fall, Merkmale, Ausprägung (vielleicht erst später? ), Metadaten
 \section{Arbeitsfeld Visualisierung}
 visualisierung im allgemeinen, warum wieso und für was
 Abgrenzung zu anderen Bereichen (vielleicht eigener gliederungspunkt) -> data mining.....
@@ -58,11 +64,14 @@ Welches Problem gibt es?
 Warum?
 Andere Lösungsansätze?
 begrifflichkeit klären und sagen man verwendet ab jetzt nur noch viz stellvertretend für info/data-/sci-viz
+\section{Was macht eine gute Viz aus?
 \section{(Daten-)Visualisierung als Arbeitsprozess}
 warum braucht man das? welche probleme werden damit gelöst?
 welche anforderungen? (in welchen bereichen des täglichen lebens, der wirtschaft)
 \subsection{Abgrenzung (nach Ben Fry)}
 einordnung an der einteilung von ben fry
+\subsection{Anwendungsgebiete von Viz}
+wissenschaftlich, technisch, ....
 \section{Grundprinzipien der Datenvisualisierung}
 entwicklung einer kleinen "theorie"
 wie können die grundprinzipien der viz auf eine software überrtragen werden?
@@ -71,12 +80,18 @@ welche probleme werden damit gelöst? (keine festlegung mehr auf balken.....)
 welche neuen erkenntnisse können damit entstehen? (neue sichtweisen auf daten werden entdeckt, was wiederrum neue sichtweisen des eigentlichen problems aufzeigt)
 zugriff und einfluß und übersicht auf alle parameter der geometrie und deren attribute....
 dadurch: direkter einfluß aber auch direktes verständis der einzelnen elemente
+
+Auflsitung und kurze Beschreibungen aller möglichen Abbildungen (siehe Schumann S. 126)
+\subsection{graphische Semiologie}
+\subsection{Mapping}
+
 \subsection{Konzept einer geeigneten Softwarelösung}
 beispielhafte implementierung “datasynth”
 anforderung an so eine software (beispiel1: journalist, beispiel2: privat/künstler)
 -> datasynth als Erkundungstool für daten, als datenleser (ist das nicht auch eine kompetenz die man entwickeln sollte: daten lesen und verstehen zu können, also heisst es nicht auch heutzutage und in zukunft immer mehr: daten verstehen heißt die welt verstehen)
 
-Warum visuelle Programmierung?
+Warum visuelle Programmierung? DEFINITION! und nochmal WARUM?
+weil es dem zugrundeliegenden prinzip des MAPPING der viz entspricht
 
 statt custom tools etc und immer wieder neu programmieren.....jetzt ein tool
 
@@ -94,7 +109,9 @@ was muss die software leisten können?
 3. ausführliche beschreibung Untersuchungsmethodik und Vorgehensweise
 ????
 
-auflistung:
+weil mit dem Grundprinzip der Abbildung gearbeitet wird, müssen alle Möglichkeiten dieser in der Software zur Verfügung stehen
+
+möglichst viel Parametrisiert um Wertebereiche direkt anpassen zu können
 \subsection{visuelle programmierung}
 rapid prototyping / keine programmierkenntnisse erforderlich, ein durchschnittliches mathematisches verständnis reicht
 \subsection{cross-platformness}
@@ -111,6 +128,8 @@ evtl. (SWOT-)Analyse und damit aufzeigen der schwächen der anderen software
 \subsection{graphviz}
 \subsection{...}
 \section{Definition eines Anforderungskatalogs}
+möglichkeit alle datentypen abbilden bzw verarbeiten zu können
+bearbeitungsziele sollen schnell und unkompliziert erfüllt werden können
 \chapter{Durchführung}
 1. dokumentation der untersuchungsdurchführung (des Entwicklungsvorganges)
 welche tools wurden wie angewendet, c++, of, git, boost, etc etc
@@ -131,7 +150,9 @@ was kann die software liefern? wofür bildet sie nur die grundlage? was kann sie
 ????
 so eine software macht sinn, macht keinen sinn?
 \section{Vorteile}
+durhc parameter kann der benutzer die Wertebereiche der Abbildungen direkt verändern und kann somit auch ohne komplette kenntnis der daten live die beste "einstellung der parameter" herauszufinden, anstatt vorher Metadaten kennen bzw studieren bzw anlegen zu müssen (min,max, ...)
 \section{Nachteile}
+benutzer hat alle freiheiten aber muss dadurch auch die grundregeln der viz beherrschen und verstehen ( z.b. kreis radius/fläche, was eignet sich für was am besten)
 
 \chapter{Zusammenfassung}
 1. zusammenfassung der ergebnisse, lesson learned
@@ -140,8 +161,10 @@ so eine software macht sinn, macht keinen sinn?
 was kannnoch alles an der Software getan werden?
 \section{Ausblick}
 \subsection{weitere Features}
+ruby
 erweiterung auf andere bereiche des visualisierungsprozesses
-
+erweiterung und kapselung von verschiedenen viz templates als nodes (Isofläche Node oder Flow Ribbons)
+v4p laden und speichern möglich! crazy!
 
 \section*{Viz und so}
 
