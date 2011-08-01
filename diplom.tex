@@ -99,6 +99,20 @@ komplexität hinter einem einfachen interface verstecken (klavier aus memo’s t
 
 einordnung der software mit vergleichen zu anderen apps (grundlage sind funktionalität, also was kommt dabei raus) ist so ein ding zwischen statistiktool spss, 
 
+\chapter{Grenzen der Software}
+\section{technische Grenzen}
+pixel (bildschirm)
+farbe (rgb)
+\section{theoretische Grenzen}
+viz von mehr als 3 dimensionen -> projektion
+\scetion{biologische Grenzen}
+wahrnehmungs- und auflösungsfähigkeit des menschen
+verständnis (wieviel kann ein mensch mit einmal überblicken)
+\section{Grenzen durch Implementation}
+künstliche Grenzen weil ja nur Prototyp entwickelt wird.
+statisch, 2D vollständigkeit wird durch dateninput festgelegt (vgl. schumann 6.2.1, s. 175)
+
+
 \chapter{Methodik}
 \section{Anforderungen}
 1. konkretisierung der eigenen problemstellung
@@ -122,6 +136,10 @@ rails als beispiel für MIT Lizenz
 diskussion bisheriger lösungsansätze
 vorstellen aller software die es bis jetzt gibt, siehe oben
 evtl. (SWOT-)Analyse und damit aufzeigen der schwächen der anderen software
+
+es gibt eine vielzahl unterschiedlichster programme und programmbibliotheken die genutzt werden können um daten zu visualisieren.
+aus den verschiedenen bereichen: statistik, grafik, ...
+es wird hier nur auf eine auswahl eingegangen, die elemente enthalten, die in datasynth sein sollten
 \subsection{vvvv}
 \subsection{pd - Pure Data}
 \subsection{prefuse}
@@ -142,6 +160,10 @@ präsentation von viz mit der software?!
 \section{wichtige Kernfunktionen}
 auszüge aus quelltext mit erklärung
 \section{Probleme bei der Entwicklung}
+reflection/introspection von c++
+universelle datentypen (schwierig in c++)
+geeignete daten finden
+mulit-window ausgabe (gelöst mit ofxFenster, da glut das nicht hergibt)
 \chapter{Auswertung}
 bewertung der ergebnisse vor dem hintergrund der hypothesen/problemstellung (Test des konstrukts und vergleich mit den Anforderungen
 was kann die software liefern? wofür bildet sie nur die grundlage? was kann sie nicht?
@@ -163,8 +185,21 @@ was kannnoch alles an der Software getan werden?
 \subsection{weitere Features}
 ruby
 erweiterung auf andere bereiche des visualisierungsprozesses
-erweiterung und kapselung von verschiedenen viz templates als nodes (Isofläche Node oder Flow Ribbons)
+kapselung von patches
+  vielfältige möglichkeiten wie
+    erweiterung und kapselung von verschiedenen viz templates als nodes (Isofläche Node oder Flow Ribbons)
+    eigene erstellung von ikonen /vgl. schumann s. 197)
+    (dazu erfüllt datasynth alle genannten anforderungen von sich aus (editor, binder, viewer)
+
 v4p laden und speichern möglich! crazy!
+
+erweiterung der ausgabemöglichkeiten (statt ausgabe auf bildschirm, ausgabe als postscript, ausgabe als interaktive 3D HTML5 Anwendung (dazu wären navigations und interaktionsmöglichkeiten notwendig (vgl. schumann s. 175), ...)
+
+eng verbunden damit sind die möglichkeit allgemeine interaktionsmöglichkeiten einzubauen um parameter für beispielsweise selektionsbedingungen auch von end-anwendern der viz benutzbar zu machen
+
+evaluationsmöglichkeit (wie kann ich schon in datasynth testen ob die ausgabe geeignet ist) (muss erforscht werden)
+
+automatische generierung von legenden/skalen(+einteilungen), muss erforscht werden inwieweit das überhaupt machbar ist bei einem so universellen ansatz oder ob es nicht doch besser ist, diese dinge der nachbearbeitung zu überlassen (weil datasynth ja nur die massen-arbeit machen soll und nicht einzelne details am ende)
 
 \section*{Viz und so}
 
@@ -183,5 +218,7 @@ Um Querverweise nutzen zu können muss man z.B. auf Abschnitt~\ref{sec:testi} ve
 \listoffigures
 %\printnomenclature
 \chapter{Anhang}
+\section{Beispiel: Bevölkerungsdaten Stadt Leipzig}
+viz mit streckenzügen (sternförmig, parallel), kreisen (matrix),
 \end{document}
 
