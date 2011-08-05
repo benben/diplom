@@ -46,6 +46,10 @@ etwas zu mir?
 hier muss genau das problem geklärt werden, was zur zeit besteht.
 es gibt kein tool, dass spezialisiert auf das grundprinzip der viz ist.
 es werden viele programme verwendet die aus teilbereichen stammen (oder customlösungen), dadurch erhört sich arbeitsaufwand, schlechtere qualität des ergebnisses, zu viel vorkenntnisse notwendig.
+
+unterhaltungswert des graphen und ästhetik spielen eine rolle, denn man muss was gerne anschauen wollen damit man sich überhuapt damit auseinandersetzt
+
+
 \section{Aufbau der Arbeit}
 
 \chapter{Grundlagen}
@@ -87,6 +91,13 @@ sehr spezifische und stark anwendungs und erkenntnis gewinn abhängige anforderu
 es ist schwer allgemeingültige aussagen zu treffen wie eine Information am besten visualisiert werden kann und somit muss eine Anwendung einen möglichst generischen ansatz bieten damit der benutzer ohne einschränkung seine spezielle aufgabe die er mit der viz lösen will lösen kann.
 
 erkenntnisgewinn und aufgabe die ich lösen möchte. also eine viz hat ja immer ein konkretes problem was der uafgabe zugrunde liegt und mit viz gelöst werden soll. (das nochmal genau klassifizieren)
+
+welche viz eignet sich am besten für meine konkrete aufgabe?
+gibt es mischformen von bis jetzt gefundenen viz mit denen ich meine aufgabe noch besser lösen kann?
+gibt es neue ansätze für viz die bis jetzt noch nicht beschrieben sind. (unterstützung der forschung nach neuen formen der viz)
+
+Was ist das Interaktionsziel? (Begriff klären)
+
 \section{Was macht eine gute Viz aus?}
 \section{(Daten-)Visualisierung als Arbeitsprozess}
 warum braucht man das? welche probleme werden damit gelöst?
@@ -130,6 +141,9 @@ einordnung der software mit vergleichen zu anderen apps (grundlage sind funktion
 
 um den vielseitigen anforderungen an eine visualisierung gerecht zu werden, soll daher eine softwar entwickelt werden, die auf einem Level ansetzt den jeder Visualisierungsprozess durchlaufen muss: das Mapping bzw graphische Semiologie. Somit kann der gesamte Bereich der Visualisierungsmöglichkeiten theoretisch abgedeckt werden.
 
+man kann jede visualisierung in ihre grundlegenden graphischen elemente zerlegen.
+was sind die grundlegenden graphischen elemente? (herausfinden! vielleicht in bertin!)
+
 \section{visuelle programmierung als möglichkeit des UI}
 rapid prototyping / keine programmierkenntnisse erforderlich, ein durchschnittliches mathematisches verständnis reicht
 theoretische konzeption
@@ -164,6 +178,8 @@ was muss die software leisten können?
 ????
 
 weil mit dem Grundprinzip der Abbildung gearbeitet wird, müssen alle Möglichkeiten dieser in der Software zur Verfügung stehen
+
+keine vorgabe eines bestimmten system sondern die möglichkeit direkt mit grapischen primitiven und ihren attributen wie farb, etc. arbeiten zu können
 
 möglichst viel Parametrisiert um Wertebereiche direkt anpassen zu können
 
@@ -217,12 +233,18 @@ mehrere viz können statisch in einer präsentation kombiniert werden. so kann o
 
 \section{Nachteile}
 benutzer hat alle freiheiten aber muss dadurch auch die grundregeln der viz beherrschen und verstehen ( z.b. kreis radius/fläche, was eignet sich für was am besten)
+gestaltungsregeln müssen vom nutzer angwendet werden um viz zu verstärken
 
 erweiterbarkeit:
 wenn eine gewisse funktionalität noch nicht als node vorliegt, kann diese hinzuprogrammiert werden. verweis dabei auf die angedachten features zur erleichterung von nutzer entwicklungen mit beispielsweise ruby
 
 das statische:
 fehlende nutzerinteraktion und dadurch fehlende interaktive kombination von viz techniken (klick auf glyphe erzeugt eine genaue viz der werte dieses datenobjektes)
+
+low-level-ansatz:
+führt dazu, dass man immer vom urschleim anfangen muss um komplexe objekte zu erzeugen. deshalb wichtiges feature: kapselbarkeit von mehreren nodes zu einer komplexen high-level-node
+so könnte man z.b. eine Sunburst node kreiiren die dann zwar 10 anstöpselmöglichkeiten hat aber sonst nix weiter
+
 
 \chapter{Zusammenfassung}
 1. zusammenfassung der ergebnisse, lesson learned
