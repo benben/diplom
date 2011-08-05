@@ -82,6 +82,11 @@ Welches Problem gibt es?
 Warum?
 Andere Lösungsansätze?
 begrifflichkeit klären und sagen man verwendet ab jetzt nur noch viz stellvertretend für info/data-/sci-viz
+
+sehr spezifische und stark anwendungs und erkenntnis gewinn abhängige anforderungen an visualisierung. 
+es ist schwer allgemeingültige aussagen zu treffen wie eine Information am besten visualisiert werden kann und somit muss eine Anwendung einen möglichst generischen ansatz bieten damit der benutzer ohne einschränkung seine spezielle aufgabe die er mit der viz lösen will lösen kann.
+
+erkenntnisgewinn und aufgabe die ich lösen möchte. also eine viz hat ja immer ein konkretes problem was der uafgabe zugrunde liegt und mit viz gelöst werden soll. (das nochmal genau klassifizieren)
 \section{Was macht eine gute Viz aus?}
 \section{(Daten-)Visualisierung als Arbeitsprozess}
 warum braucht man das? welche probleme werden damit gelöst?
@@ -103,7 +108,13 @@ Auflsitung und kurze Beschreibungen aller möglichen Abbildungen (siehe Schumann
 \subsection{graphische Semiologie}
 \subsection{Mapping}
 
-\subsection{Konzept einer geeigneten Softwarelösung}
+\subsection{verschiedene Darstellungsformen}
+sind alle stark anwendungsabhängig und es muss für jede anforderung festgelegt werden (siehe das kapitel wo steht welche probleme man lösen kann (siehe schumann mit den 3 dingen einer viz, das letzte war kommunikation))
+Preim/Dachselt ergänzen zu den von schumann genannten noch die viz von relationen als eigenständige klassifizierung von daten
+
+hier die "datentypen" aufzählen
+
+\section{Konzept einer geeigneten Softwarelösung}
 beispielhafte implementierung “datasynth”
 anforderung an so eine software (beispiel1: journalist, beispiel2: privat/künstler)
 -> datasynth als Erkundungstool für daten, als datenleser (ist das nicht auch eine kompetenz die man entwickeln sollte: daten lesen und verstehen zu können, also heisst es nicht auch heutzutage und in zukunft immer mehr: daten verstehen heißt die welt verstehen)
@@ -116,6 +127,17 @@ statt custom tools etc und immer wieder neu programmieren.....jetzt ein tool
 komplexität hinter einem einfachen interface verstecken (klavier aus memo’s talk in london)
 
 einordnung der software mit vergleichen zu anderen apps (grundlage sind funktionalität, also was kommt dabei raus) ist so ein ding zwischen statistiktool spss, 
+
+um den vielseitigen anforderungen an eine visualisierung gerecht zu werden, soll daher eine softwar entwickelt werden, die auf einem Level ansetzt den jeder Visualisierungsprozess durchlaufen muss: das Mapping bzw graphische Semiologie. Somit kann der gesamte Bereich der Visualisierungsmöglichkeiten theoretisch abgedeckt werden.
+
+\section{visuelle programmierung als möglichkeit des UI}
+rapid prototyping / keine programmierkenntnisse erforderlich, ein durchschnittliches mathematisches verständnis reicht
+theoretische konzeption
+erklärung der einzelnen teile wie nodes etc doch erst bei implementierung?
+\subection{Spread}
+\subsection{Node}
+\subsection{Pin}
+\subsection{Connection}
 
 \chapter{Grenzen der Software}
 \section{technische Grenzen}
@@ -144,8 +166,7 @@ was muss die software leisten können?
 weil mit dem Grundprinzip der Abbildung gearbeitet wird, müssen alle Möglichkeiten dieser in der Software zur Verfügung stehen
 
 möglichst viel Parametrisiert um Wertebereiche direkt anpassen zu können
-\subsection{visuelle programmierung}
-rapid prototyping / keine programmierkenntnisse erforderlich, ein durchschnittliches mathematisches verständnis reicht
+
 \subsection{cross-platformness}
 \subsection{freie Lizenz}
 rails als beispiel für MIT Lizenz
@@ -191,8 +212,17 @@ was kann die software liefern? wofür bildet sie nur die grundlage? was kann sie
 so eine software macht sinn, macht keinen sinn?
 \section{Vorteile}
 durhc parameter kann der benutzer die Wertebereiche der Abbildungen direkt verändern und kann somit auch ohne komplette kenntnis der daten live die beste "einstellung der parameter" herauszufinden, anstatt vorher Metadaten kennen bzw studieren bzw anlegen zu müssen (min,max, ...)
+
+mehrere viz können statisch in einer präsentation kombiniert werden. so kann ohne benutzerinteraktion mehrere blickwinkel auf den datensatz ermöglicht werden
+
 \section{Nachteile}
 benutzer hat alle freiheiten aber muss dadurch auch die grundregeln der viz beherrschen und verstehen ( z.b. kreis radius/fläche, was eignet sich für was am besten)
+
+erweiterbarkeit:
+wenn eine gewisse funktionalität noch nicht als node vorliegt, kann diese hinzuprogrammiert werden. verweis dabei auf die angedachten features zur erleichterung von nutzer entwicklungen mit beispielsweise ruby
+
+das statische:
+fehlende nutzerinteraktion und dadurch fehlende interaktive kombination von viz techniken (klick auf glyphe erzeugt eine genaue viz der werte dieses datenobjektes)
 
 \chapter{Zusammenfassung}
 1. zusammenfassung der ergebnisse, lesson learned
