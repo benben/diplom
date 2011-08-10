@@ -40,14 +40,30 @@ das problem sollte hier geklärt werden:
 immer komplexere datenstrukturen können nicht mehr mit klassischen mitteln wie excel einfach dargstellt werden. man braucht einen neuen ansatz (und die dazugehörige software)
 
 um dieses problem zu lösen wird auf einen grundlegenderen und abstrakteren ansatz eingegangen und darauf ein tool entwickelt
+
+bestandteil von UI (siehe PREIM/DACHSELT 506)
+
+auch wenn jede viz konkrete ziele hat, mit denen sehr spezielle probleme gelöst werden, addressieren diese nicht mehr nur Experten und Wissenschaftler. Auch alltägliche Anwendungen wie Viz all meiner Freunde in einem sozialen Netzwerk, beim Einkaufen und suchen von Informationen in der Bib können mit Viz unterstüzt werden und müssen somit auch für ungeübte Anwender verständlich und benutzbar sein. Dabei sollte die Viuz ansprechend sein damit lust auf benutzung besteht aber gleichzeitig auch intuitiv um ohne vorkenntnisse nutzen aus dieser ziehen zu können.
+Auch kann die tägliche Arbeit unterstützt werden, damit es Gelegenheitsanwendern leicht gemacht wird, Informationen und Wissen noch besser mit anderen teilen zu können ( VIZ in der Präsi, ...)
+
+Häufig sind die Grenzen der einzelnen Arbeitsbereiche nicht klar voneinander getrennt. Verwandte Arbeitsfelder sind (Visual) Data Mining, ....
+Weiterhin ist die Visualisierung im allgemeinen ein Teil anderer Arbeitsbereiche. Zum Beispiel spielt die Vizualisierung im Interface Design eine ebenso wichtige Rolle wie im Data Mining. 
+
+Wichtig: Viz findet im Kopf des Betrachters statt, nicht in der Maschine (grün weißes buch aus campus bib)
+
+
 \section{Umfeld der Arbeit}
 etwas zu mir?
 \section{Problemstellung}
 hier muss genau das problem geklärt werden, was zur zeit besteht.
 es gibt kein tool, dass spezialisiert auf das grundprinzip der viz ist.
 es werden viele programme verwendet die aus teilbereichen stammen (oder customlösungen), dadurch erhört sich arbeitsaufwand, schlechtere qualität des ergebnisses, zu viel vorkenntnisse notwendig.
-\section{Aufbau der Arbeit}
 
+unterhaltungswert des graphen und ästhetik spielen eine rolle, denn man muss was gerne anschauen wollen damit man sich überhuapt damit auseinandersetzt
+
+
+\section{Aufbau der Arbeit}
+Im Kapitel Daten und Informationen soll versucht werden eine Klassifikation dieser beiden Begriffe in Hinblick auf die folgenden Vizualisierungsmethoden genommen werden.
 \chapter{Grundlagen}
 \section{Daten und Informationen}
 was für daten können verwendet werden? wetterdaten? pachube, sämtliche (Web)-Apis
@@ -63,6 +79,10 @@ abstrakte daten haben alle anforderungen die auch normale daten haben und desweg
 infoviz als arbetisfeld mit noch spezifischeren anforderungen
 
 da informationen eine spezielle form von daten sind, schließen diese nicht nur die Anforderungen an datenviz ein sondern verlangen noch zusätzliche Gedanken
+
+\subsection{Informationsbegriff nach Bertin???}
+
+klassifizierung von informationen in bezug auf viz
 
 \subsection{multivariate Daten}
 \subsection{mehrdimensionale Daten}
@@ -89,6 +109,20 @@ Welches Problem gibt es?
 Warum?
 Andere Lösungsansätze?
 begrifflichkeit klären und sagen man verwendet ab jetzt nur noch viz stellvertretend für info/data-/sci-viz
+
+sehr spezifische und stark anwendungs und erkenntnis gewinn abhängige anforderungen an visualisierung. 
+es ist schwer allgemeingültige aussagen zu treffen wie eine Information am besten visualisiert werden kann und somit muss eine Anwendung einen möglichst generischen ansatz bieten damit der benutzer ohne einschränkung seine spezielle aufgabe die er mit der viz lösen will lösen kann.
+
+erkenntnisgewinn und aufgabe die ich lösen möchte. also eine viz hat ja immer ein konkretes problem was der uafgabe zugrunde liegt und mit viz gelöst werden soll. (das nochmal genau klassifizieren)
+
+welche viz eignet sich am besten für meine konkrete aufgabe?
+gibt es mischformen von bis jetzt gefundenen viz mit denen ich meine aufgabe noch besser lösen kann?
+gibt es neue ansätze für viz die bis jetzt noch nicht beschrieben sind. (unterstützung der forschung nach neuen formen der viz)
+
+Was ist das Interaktionsziel? (Begriff klären)
+
+diese arbeit bezieht sich auf informationsvisualisierung als sonderfall der datenvisualisietrung. damit werden alle dinge der datavz beachtet und zusätzlich alle sonderfälle der infoviz beachtet
+
 \section{Was macht eine gute Viz aus?}
 \section{(Daten-)Visualisierung als Arbeitsprozess}
 warum braucht man das? welche probleme werden damit gelöst?
@@ -106,11 +140,26 @@ welche neuen erkenntnisse können damit entstehen? (neue sichtweisen auf daten w
 zugriff und einfluß und übersicht auf alle parameter der geometrie und deren attribute....
 dadurch: direkter einfluß aber auch direktes verständis der einzelnen elemente
 
+grafische Transkription (BERTIN)
+
 Auflsitung und kurze Beschreibungen aller möglichen Abbildungen (siehe Schumann S. 126)
 \subsection{graphische Semiologie}
+BERTIN spricht von grapischer Semiologie, also von einem genau festgelegten und endlichen Zeichensystem für die graphische Repräsentation von Information.
+Information bedeutet dabei siehe BERtin 13 Somit fasst Bertin den Informationsbegriff etwas allgemeiner und fasst damit Daten ein. (stimmt das?)
 \subsection{Mapping}
 
-\subsection{Konzept einer geeigneten Softwarelösung}
+Verbindung von Variablen der Information mit Variablen der Grafik.
+dabei müssen die besonderheiten und merkmale der Komponenten der INFO (siehe bertin) klar sein und müssen auf adäquate visuelle Variablen angewendet werden.
+trotz einer nahezu unendlichen auswahl an möglichkeiten zur konstruktion einer grafik sollten ein paar regeln beachtet werden (qualitative klassen nicht auf quantitative variablen usw.)
+
+
+\subsection{verschiedene Darstellungsformen}
+sind alle stark anwendungsabhängig und es muss für jede anforderung festgelegt werden (siehe das kapitel wo steht welche probleme man lösen kann (siehe schumann mit den 3 dingen einer viz, das letzte war kommunikation))
+Preim/Dachselt ergänzen zu den von schumann genannten noch die viz von relationen als eigenständige klassifizierung von daten
+
+hier die "datentypen" aufzählen
+
+\section{Konzept einer geeigneten Softwarelösung}
 beispielhafte implementierung “datasynth”
 anforderung an so eine software (beispiel1: journalist, beispiel2: privat/künstler)
 -> datasynth als Erkundungstool für daten, als datenleser (ist das nicht auch eine kompetenz die man entwickeln sollte: daten lesen und verstehen zu können, also heisst es nicht auch heutzutage und in zukunft immer mehr: daten verstehen heißt die welt verstehen)
@@ -125,6 +174,20 @@ komplexität hinter einem einfachen interface verstecken (klavier aus memo’s t
 einordnung der software mit vergleichen zu anderen apps (grundlage sind funktionalität, also was kommt dabei raus) ist so ein ding zwischen statistiktool spss, 
 
 iterativer prozess der exploration wird unterstützt (vgl. mantra visueller informationssuche) (vgl. preim/dachselt, s 443 ganz unten)
+
+um den vielseitigen anforderungen an eine visualisierung gerecht zu werden, soll daher eine softwar entwickelt werden, die auf einem Level ansetzt den jeder Visualisierungsprozess durchlaufen muss: das Mapping bzw graphische Semiologie. Somit kann der gesamte Bereich der Visualisierungsmöglichkeiten theoretisch abgedeckt werden.
+
+man kann jede visualisierung in ihre grundlegenden graphischen elemente zerlegen.
+was sind die grundlegenden graphischen elemente? (herausfinden! vielleicht in bertin!)
+
+\section{visuelle programmierung als möglichkeit des UI}
+rapid prototyping / keine programmierkenntnisse erforderlich, ein durchschnittliches mathematisches verständnis reicht
+theoretische konzeption
+erklärung der einzelnen teile wie nodes etc doch erst bei implementierung?
+\subection{Spread}
+\subsection{Node}
+\subsection{Pin}
+\subsection{Connection}
 
 \chapter{Grenzen der Software}
 \section{technische Grenzen}
@@ -152,9 +215,10 @@ was muss die software leisten können?
 
 weil mit dem Grundprinzip der Abbildung gearbeitet wird, müssen alle Möglichkeiten dieser in der Software zur Verfügung stehen
 
+keine vorgabe eines bestimmten system sondern die möglichkeit direkt mit grapischen primitiven und ihren attributen wie farb, etc. arbeiten zu können
+
 möglichst viel Parametrisiert um Wertebereiche direkt anpassen zu können
-\subsection{visuelle programmierung}
-rapid prototyping / keine programmierkenntnisse erforderlich, ein durchschnittliches mathematisches verständnis reicht
+
 \subsection{cross-platformness}
 \subsection{freie Lizenz}
 rails als beispiel für MIT Lizenz
@@ -200,8 +264,23 @@ was kann die software liefern? wofür bildet sie nur die grundlage? was kann sie
 so eine software macht sinn, macht keinen sinn?
 \section{Vorteile}
 durhc parameter kann der benutzer die Wertebereiche der Abbildungen direkt verändern und kann somit auch ohne komplette kenntnis der daten live die beste "einstellung der parameter" herauszufinden, anstatt vorher Metadaten kennen bzw studieren bzw anlegen zu müssen (min,max, ...)
+
+mehrere viz können statisch in einer präsentation kombiniert werden. so kann ohne benutzerinteraktion mehrere blickwinkel auf den datensatz ermöglicht werden
+
 \section{Nachteile}
 benutzer hat alle freiheiten aber muss dadurch auch die grundregeln der viz beherrschen und verstehen ( z.b. kreis radius/fläche, was eignet sich für was am besten)
+gestaltungsregeln müssen vom nutzer angwendet werden um viz zu verstärken
+
+erweiterbarkeit:
+wenn eine gewisse funktionalität noch nicht als node vorliegt, kann diese hinzuprogrammiert werden. verweis dabei auf die angedachten features zur erleichterung von nutzer entwicklungen mit beispielsweise ruby
+
+das statische:
+fehlende nutzerinteraktion und dadurch fehlende interaktive kombination von viz techniken (klick auf glyphe erzeugt eine genaue viz der werte dieses datenobjektes)
+
+low-level-ansatz:
+führt dazu, dass man immer vom urschleim anfangen muss um komplexe objekte zu erzeugen. deshalb wichtiges feature: kapselbarkeit von mehreren nodes zu einer komplexen high-level-node
+so könnte man z.b. eine Sunburst node kreiiren die dann zwar 10 anstöpselmöglichkeiten hat aber sonst nix weiter
+
 
 \chapter{Zusammenfassung}
 1. zusammenfassung der ergebnisse, lesson learned
