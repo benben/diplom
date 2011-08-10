@@ -137,6 +137,10 @@ einordnung an der einteilung von ben fry
 \subsection{Anwendungsgebiete von Viz}
 wissenschaftlich, technisch, ....
 \section{Grundprinzipien der Datenvisualisierung}
+
+dieser schritt wird in der literatur als selbstverständlich angesehen. dagegen bedeuten die regeln wie man unterschiedliceh datentypen und in welcher form darstellt um das beste ergebnis auf eine bestimmte frage zu erhalten sind viel komplexer.
+deshalb soll eine software entwickelt werden, die diese triviale aber für einen menschen sehr arbeitsintensive arbeit übernimmt, ohne dabei irgendwelchen einschränkugen zu unterliegen.
+
 entwicklung einer kleinen "theorie"
 wie können die grundprinzipien der viz auf eine software überrtragen werden?
 welche vorteile/nachteile hat das?
@@ -187,22 +191,13 @@ um den vielseitigen anforderungen an eine visualisierung gerecht zu werden, soll
 man kann jede visualisierung in ihre grundlegenden graphischen elemente zerlegen.
 was sind die grundlegenden graphischen elemente? (herausfinden! vielleicht in bertin!)
 
-\section{visuelle programmierung als möglichkeit des UI}
-rapid prototyping / keine programmierkenntnisse erforderlich, ein durchschnittliches mathematisches verständnis reicht
-theoretische konzeption
-erklärung der einzelnen teile wie nodes etc doch erst bei implementierung?
-\subection{Spread}
-\subsection{Node}
-\subsection{Pin}
-\subsection{Connection}
-
 \chapter{Grenzen der Software}
 \section{technische Grenzen}
 pixel (bildschirm)
 farbe (rgb)
 \section{theoretische Grenzen}
 viz von mehr als 3 dimensionen -> projektion
-\scetion{biologische Grenzen}
+\section{biologische Grenzen}
 wahrnehmungs- und auflösungsfähigkeit des menschen
 verständnis (wieviel kann ein mensch mit einmal überblicken)
 \section{Grenzen durch Implementation}
@@ -257,6 +252,16 @@ präsentation von viz mit der software?!
 \subsection{C++}
 \subsection{openFrameworks}
 \subsection{boost}
+\section{visuelle programmierung als möglichkeit des UI}
+rapid prototyping / keine programmierkenntnisse erforderlich, ein durchschnittliches mathematisches verständnis reicht
+theoretische konzeption
+erklärung der einzelnen teile wie nodes etc doch erst bei implementierung?
+
+soll unterstützend sein bei der arbeit mit dem eigentlichen thema und das wesen der problemlösung verdeutlichen
+\subsection{Spread}
+\subsection{Node}
+\subsection{Pin}
+\subsection{Connection}
 \section{wichtige Kernfunktionen}
 auszüge aus quelltext mit erklärung
 \section{Probleme bei der Entwicklung}
@@ -299,6 +304,8 @@ man benutzt grafische primitive und manche komplexe viz hat sehr viele primitive
 was kannnoch alles an der Software getan werden?
 \section{Ausblick}
 \subsection{weitere Features}
+Da die software lediglich einen Prototypen darstellt ergeben sich mannigfalitge Erweiterungsmöglichkeiten. Hier sollen einige weniger, dafür aber sehr wichtige mögliche Erweiterungen genannt werden.
+
 ruby
 erweiterung auf andere bereiche des visualisierungsprozesses
 kapselung von patches
