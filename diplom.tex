@@ -27,6 +27,9 @@
 %\section{Ein Abschnitt}
 \label{sec:testi}
 
+digital gespeicherte daten nehmen zu.
+ob moores law, 20 monate verdoppelung der daten oder selbst werbung großer unternehmen (IBM im Spiegel) beweisen das.
+
 1. Motivation / Relevanz des Themas
 immer mehr daten, nur custom tools von profis nutzbar, weniger zeit für die einarbeitung
 2. problemstellung / ziel der arbeit
@@ -79,6 +82,8 @@ abstrakte daten haben alle anforderungen die auch normale daten haben und desweg
 infoviz als arbetisfeld mit noch spezifischeren anforderungen
 
 da informationen eine spezielle form von daten sind, schließen diese nicht nur die Anforderungen an datenviz ein sondern verlangen noch zusätzliche Gedanken
+
+bertin benutzt ausschließlich den Begriff der Information
 
 \subsection{Informationsbegriff nach Bertin???}
 
@@ -143,6 +148,8 @@ dadurch: direkter einfluß aber auch direktes verständis der einzelnen elemente
 grafische Transkription (BERTIN)
 
 Auflsitung und kurze Beschreibungen aller möglichen Abbildungen (siehe Schumann S. 126)
+
+als universellen in jeder viz theorie vorkommenden schritt
 \subsection{graphische Semiologie}
 BERTIN spricht von grapischer Semiologie, also von einem genau festgelegten und endlichen Zeichensystem für die graphische Repräsentation von Information.
 Information bedeutet dabei siehe BERtin 13 Somit fasst Bertin den Informationsbegriff etwas allgemeiner und fasst damit Daten ein. (stimmt das?)
@@ -205,6 +212,8 @@ statisch, 2D vollständigkeit wird durch dateninput festgelegt (vgl. schumann 6.
 
 \chapter{Methodik}
 \section{Anforderungen}
+möglichkeit alle informationstypen zu viz0
+
 1. konkretisierung der eigenen problemstellung
 software erstellen, was muss sie können, wofür soll sie da sein
 also warum z.b. visuelles programmieren usw.
@@ -270,6 +279,7 @@ mehrere viz können statisch in einer präsentation kombiniert werden. so kann o
 \section{Nachteile}
 benutzer hat alle freiheiten aber muss dadurch auch die grundregeln der viz beherrschen und verstehen ( z.b. kreis radius/fläche, was eignet sich für was am besten)
 gestaltungsregeln müssen vom nutzer angwendet werden um viz zu verstärken
+Klärung der möglichen Fragen, use nach BERTIN (Theorie des graphischen Bildes)
 
 erweiterbarkeit:
 wenn eine gewisse funktionalität noch nicht als node vorliegt, kann diese hinzuprogrammiert werden. verweis dabei auf die angedachten features zur erleichterung von nutzer entwicklungen mit beispielsweise ruby
@@ -280,7 +290,7 @@ fehlende nutzerinteraktion und dadurch fehlende interaktive kombination von viz 
 low-level-ansatz:
 führt dazu, dass man immer vom urschleim anfangen muss um komplexe objekte zu erzeugen. deshalb wichtiges feature: kapselbarkeit von mehreren nodes zu einer komplexen high-level-node
 so könnte man z.b. eine Sunburst node kreiiren die dann zwar 10 anstöpselmöglichkeiten hat aber sonst nix weiter
-
+man benutzt grafische primitive und manche komplexe viz hat sehr viele primitive in komplexen abhängigkeiten, also kapseln
 
 \chapter{Zusammenfassung}
 1. zusammenfassung der ergebnisse, lesson learned
