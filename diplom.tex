@@ -54,6 +54,8 @@ Weiterhin ist die Visualisierung im allgemeinen ein Teil anderer Arbeitsbereiche
 
 Wichtig: Viz findet im Kopf des Betrachters statt, nicht in der Maschine (grün weißes buch aus campus bib)
 
+es geht immer um die suche nach mustern und wiederholungen und variationen (TUFTE 23) und beziehungen die daraus resultieren.
+
 
 \section{Umfeld der Arbeit}
 etwas zu mir?
@@ -171,6 +173,7 @@ Preim/Dachselt ergänzen zu den von schumann genannten noch die viz von relation
 hier die "datentypen" aufzählen
 
 \section{Konzept einer geeigneten Softwarelösung}
+um einen mgölcihst großen bereich aller öglichen viz formen abdecken zu können, wird daher ein ansatz gewählt, der dem benutzer erlaubt die atomaren elemente einer grafik automatisiert designen zu können. somit werden große mengen an datenpunkten in kürzester zeit darstellbar und weiterverarbeitbar.
 beispielhafte implementierung “datasynth”
 anforderung an so eine software (beispiel1: journalist, beispiel2: privat/künstler)
 -> datasynth als Erkundungstool für daten, als datenleser (ist das nicht auch eine kompetenz die man entwickeln sollte: daten lesen und verstehen zu können, also heisst es nicht auch heutzutage und in zukunft immer mehr: daten verstehen heißt die welt verstehen)
@@ -258,6 +261,11 @@ theoretische konzeption
 erklärung der einzelnen teile wie nodes etc doch erst bei implementierung?
 
 soll unterstützend sein bei der arbeit mit dem eigentlichen thema und das wesen der problemlösung verdeutlichen
+
+context switches vermeiden (siehe tufte 50) und die gleiche visuelle representation für das problem zeigen.
+dadurch das (bei ausreichendem displayplatz) alle elemente des UI und die aktuelle Ausgabe angezeigt werden können, ist der nutzer nicht durch "context switches" abgelenkt und kann sich auf die data viz konzentrieren.
+das gilt auch für das verändern von parametern, da im selben augenblick, wie parameter vom nutzer geändert werden, ändern sich auch die ausgabe.
+damit kann der nutzer einerseits sofort erkennen was der parameter eigentlich macht und augenblicklich vergleichen und anpassen für seine präferierte lösung
 \subsection{Spread}
 \subsection{Node}
 \subsection{Pin}
@@ -329,6 +337,8 @@ eventbasierte steuerung
 threaded nodes
 
 reiner export als abstrakte werte (koordinaten, höhe, breite, typ) in gängige 3D-Austausch-Formate
+
+export von einzelnen teilbereichen (ebenen) zur graphischen weiterverarbeitung mit anderer software
 
 \section*{Viz und so}
 
