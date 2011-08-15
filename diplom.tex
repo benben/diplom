@@ -147,19 +147,32 @@ was macht eine grafik eigentlich aus.....?
 
 Diagramm?
 
-\section{Arbeitsfeld Visualisierung}
-visualisierung im allgemeinen, warum wieso und für was
-Abgrenzung zu anderen Bereichen (vielleicht eigener gliederungspunkt) -> data mining.....
-Abgrenzung nach innen (ben fry)
+graphische Semiologie
+BERTIN spricht von grapischer Semiologie, also von einem genau festgelegten und endlichen Zeichensystem für die graphische Repräsentation von Information.
+Information bedeutet dabei siehe BERtin 13 Somit fasst Bertin den Informationsbegriff etwas allgemeiner und fasst damit Daten ein. (stimmt das?)
 
-unterhaltungswert des graphen und ästhetik spielen eine rolle, denn man muss was gerne anschauen wollen damit man sich überhuapt damit auseinandersetzt
-\section{verwandte Arbeitsfelder}
+\chapter{Forschungsfeld Informationsvisualisierung}
+
+\section{Definition}
+visualisierung im allgemeinen, warum wieso und für was
+\section{Abgrenzung}
+einordnung an der einteilung von ben fry
+
+verwandte Arbeitsfelder
+
 viz ist auch ein teil des UI da visuelle repräsentation die primäre quelle der informationsübertragung ist, ob in text, bild oder grafiken.
 
 Häufig sind die Grenzen der einzelnen Arbeitsbereiche nicht klar voneinander getrennt. Verwandte Arbeitsfelder sind (Visual) Data Mining, ....
-Weiterhin ist die Visualisierung im allgemeinen ein Teil anderer Arbeitsbereiche. Zum Beispiel spielt die Vizualisierung im Interface Design eine ebenso wichtige Rolle wie im Data Mining. 
+Weiterhin ist die Visualisierung im allgemeinen ein Teil anderer Arbeitsbereiche. Zum Beispiel spielt die Vizualisierung im Interface Design eine ebenso wichtige Rolle wie im Data Mining.
 
-\section{(Daten-)Visualisierung als Problemlösungsansatz}
+Abgrenzung zu anderen Bereichen (vielleicht eigener gliederungspunkt) -> data mining.....
+Abgrenzung nach innen (ben fry)
+
+\section{Ziele}
+unterhaltungswert des graphen und ästhetik spielen eine rolle, denn man muss was gerne anschauen wollen damit man sich überhuapt damit auseinandersetzt
+warum braucht man das? welche probleme werden damit gelöst?
+welche anforderungen? (in welchen bereichen des täglichen lebens, der wirtschaft)
+
 Welches Problem gibt es?
 Warum?
 Andere Lösungsansätze?
@@ -178,16 +191,9 @@ Was ist das Interaktionsziel? (Begriff klären)
 
 diese arbeit bezieht sich auf informationsvisualisierung als sonderfall der datenvisualisietrung. damit werden alle dinge der datavz beachtet und zusätzlich alle sonderfälle der infoviz beachtet
 
-\section{Was macht eine gute Viz aus?}
-\section{(Daten-)Visualisierung als Arbeitsprozess}
-warum braucht man das? welche probleme werden damit gelöst?
-welche anforderungen? (in welchen bereichen des täglichen lebens, der wirtschaft)
-\subsection{Abgrenzung (nach Ben Fry)}
-einordnung an der einteilung von ben fry
-\subsection{Anwendungsgebiete von Viz}
-wissenschaftlich, technisch, ....
-\section{Grundprinzipien der Datenvisualisierung}
-
+wissenschaftlich, technisch, .... anwendungsgebiete?!
+\section{Visualisierungspipeline}
+\section{Grundprinzip}
 dieser schritt wird in der literatur als selbstverständlich angesehen. dagegen bedeuten die regeln wie man unterschiedliceh datentypen und in welcher form darstellt um das beste ergebnis auf eine bestimmte frage zu erhalten sind viel komplexer.
 deshalb soll eine software entwickelt werden, die diese triviale aber für einen menschen sehr arbeitsintensive arbeit übernimmt, ohne dabei irgendwelchen einschränkugen zu unterliegen.
 
@@ -204,23 +210,21 @@ grafische Transkription (BERTIN)
 Auflsitung und kurze Beschreibungen aller möglichen Abbildungen (siehe Schumann S. 126)
 
 als universellen in jeder viz theorie vorkommenden schritt
-\subsection{graphische Semiologie}
-BERTIN spricht von grapischer Semiologie, also von einem genau festgelegten und endlichen Zeichensystem für die graphische Repräsentation von Information.
-Information bedeutet dabei siehe BERtin 13 Somit fasst Bertin den Informationsbegriff etwas allgemeiner und fasst damit Daten ein. (stimmt das?)
-\subsection{Mapping}
+
+MAPPING
 
 Verbindung von Variablen der Information mit Variablen der Grafik.
 dabei müssen die besonderheiten und merkmale der Komponenten der INFO (siehe bertin) klar sein und müssen auf adäquate visuelle Variablen angewendet werden.
 trotz einer nahezu unendlichen auswahl an möglichkeiten zur konstruktion einer grafik sollten ein paar regeln beachtet werden (qualitative klassen nicht auf quantitative variablen usw.)
 
 
-\subsection{verschiedene Darstellungsformen}
+verschiedene Darstellungsformen
 sind alle stark anwendungsabhängig und es muss für jede anforderung festgelegt werden (siehe das kapitel wo steht welche probleme man lösen kann (siehe schumann mit den 3 dingen einer viz, das letzte war kommunikation))
 Preim/Dachselt ergänzen zu den von schumann genannten noch die viz von relationen als eigenständige klassifizierung von daten
 
 hier die "datentypen" aufzählen
 
-\section{Konzept einer geeigneten Softwarelösung}
+\chapter{Konzept einer geeigneten Softwarelösung}
 um einen mgölcihst großen bereich aller öglichen viz formen abdecken zu können, wird daher ein ansatz gewählt, der dem benutzer erlaubt die atomaren elemente einer grafik automatisiert designen zu können. somit werden große mengen an datenpunkten in kürzester zeit darstellbar und weiterverarbeitbar.
 beispielhafte implementierung “datasynth”
 anforderung an so eine software (beispiel1: journalist, beispiel2: privat/künstler)
@@ -241,23 +245,11 @@ um den vielseitigen anforderungen an eine visualisierung gerecht zu werden, soll
 
 man kann jede visualisierung in ihre grundlegenden graphischen elemente zerlegen.
 was sind die grundlegenden graphischen elemente? (herausfinden! vielleicht in bertin!)
-
-\chapter{Grenzen der Software}
-\section{technische Grenzen}
-pixel (bildschirm)
-farbe (rgb)
-\section{theoretische Grenzen}
-viz von mehr als 3 dimensionen -> projektion
-\section{biologische Grenzen}
-wahrnehmungs- und auflösungsfähigkeit des menschen
-verständnis (wieviel kann ein mensch mit einmal überblicken)
-\section{Grenzen durch Implementation}
-künstliche Grenzen weil ja nur Prototyp entwickelt wird.
-statisch, 2D vollständigkeit wird durch dateninput festgelegt (vgl. schumann 6.2.1, s. 175)
-
-
-\chapter{Methodik}
 \section{Anforderungen}
+
+möglichkeit alle datentypen abbilden bzw verarbeiten zu können
+bearbeitungsziele sollen schnell und unkompliziert erfüllt werden können
+
 möglichkeit alle informationstypen zu viz0
 
 1. konkretisierung der eigenen problemstellung
@@ -274,11 +266,26 @@ keine vorgabe eines bestimmten system sondern die möglichkeit direkt mit grapis
 
 möglichst viel Parametrisiert um Wertebereiche direkt anpassen zu können
 
-\subsection{cross-platformness}
-\subsection{freie Lizenz}
+cross-platformness
+
+freie Lizenz
+
 rails als beispiel für MIT Lizenz
 
-\section{Analyse bestehender Lösungsansätze}
+\section{Grenzen der Software}
+\subsection{technische Grenzen}
+pixel (bildschirm)
+farbe (rgb)
+\subsection{theoretische Grenzen}
+viz von mehr als 3 dimensionen -> projektion
+\subsection{biologische Grenzen}
+wahrnehmungs- und auflösungsfähigkeit des menschen
+verständnis (wieviel kann ein mensch mit einmal überblicken)
+\subsection{Grenzen durch Implementation}
+künstliche Grenzen weil ja nur Prototyp entwickelt wird.
+statisch, 2D vollständigkeit wird durch dateninput festgelegt (vgl. schumann 6.2.1, s. 175)
+
+\section{Analyse bestehender Software}
 diskussion bisheriger lösungsansätze
 vorstellen aller software die es bis jetzt gibt, siehe oben
 evtl. (SWOT-)Analyse und damit aufzeigen der schwächen der anderen software
@@ -286,24 +293,21 @@ evtl. (SWOT-)Analyse und damit aufzeigen der schwächen der anderen software
 es gibt eine vielzahl unterschiedlichster programme und programmbibliotheken die genutzt werden können um daten zu visualisieren.
 aus den verschiedenen bereichen: statistik, grafik, ...
 es wird hier nur auf eine auswahl eingegangen, die elemente enthalten, die in datasynth sein sollten
-\subsection{vvvv}
-\subsection{pd - Pure Data}
-\subsection{prefuse}
-\subsection{graphviz}
-\subsection{...}
-\section{Definition eines Anforderungskatalogs}
-möglichkeit alle datentypen abbilden bzw verarbeiten zu können
-bearbeitungsziele sollen schnell und unkompliziert erfüllt werden können
-\chapter{Durchführung}
+vvvv
+pd - Pure Data
+prefuse
+graphviz
+...
+\chapter{Umsetzung eines Prototyps}
 1. dokumentation der untersuchungsdurchführung (des Entwicklungsvorganges)
 welche tools wurden wie angewendet, c++, of, git, boost, etc etc
 2. darstellung der ergebnisse (verdeutlichung durch beispiele, erläuterung des erkenntnisfortschritts)
 präsentation von viz mit der software?!
 \section{Technologien}
-\subsection{C++}
-\subsection{openFrameworks}
-\subsection{boost}
-\section{visuelle programmierung als möglichkeit des UI}
+C++
+openFrameworks
+boost
+\section{visuelle programmierung}
 rapid prototyping / keine programmierkenntnisse erforderlich, ein durchschnittliches mathematisches verständnis reicht
 theoretische konzeption
 erklärung der einzelnen teile wie nodes etc doch erst bei implementierung?
@@ -320,11 +324,6 @@ damit kann der nutzer einerseits sofort erkennen was der parameter eigentlich ma
 \subsection{Connection}
 \section{wichtige Kernfunktionen}
 auszüge aus quelltext mit erklärung
-\section{Probleme bei der Entwicklung}
-reflection/introspection von c++
-universelle datentypen (schwierig in c++)
-geeignete daten finden
-mulit-window ausgabe (gelöst mit ofxFenster, da glut das nicht hergibt)
 \chapter{Auswertung}
 bewertung der ergebnisse vor dem hintergrund der hypothesen/problemstellung (Test des konstrukts und vergleich mit den Anforderungen
 was kann die software liefern? wofür bildet sie nur die grundlage? was kann sie nicht?
@@ -332,6 +331,11 @@ was kann die software liefern? wofür bildet sie nur die grundlage? was kann sie
 2. ableiten von schlußfolgerungen
 ????
 so eine software macht sinn, macht keinen sinn?
+\section{Probleme bei der Entwicklung}
+reflection/introspection von c++
+universelle datentypen (schwierig in c++)
+geeignete daten finden
+mulit-window ausgabe (gelöst mit ofxFenster, da glut das nicht hergibt)
 \section{Vorteile}
 durhc parameter kann der benutzer die Wertebereiche der Abbildungen direkt verändern und kann somit auch ohne komplette kenntnis der daten live die beste "einstellung der parameter" herauszufinden, anstatt vorher Metadaten kennen bzw studieren bzw anlegen zu müssen (min,max, ...)
 
@@ -358,8 +362,8 @@ man benutzt grafische primitive und manche komplexe viz hat sehr viele primitive
 ???
 2. optional: persönliche bemerkungen, hinweis auf weiteren forschungsbedarf, ausblick in dei zukunft
 was kannnoch alles an der Software getan werden?
+\section{Fazit}
 \section{Ausblick}
-\subsection{weitere Features}
 Da die software lediglich einen Prototypen darstellt ergeben sich mannigfalitge Erweiterungsmöglichkeiten. Hier sollen einige weniger, dafür aber sehr wichtige mögliche Erweiterungen genannt werden.
 
 ruby
