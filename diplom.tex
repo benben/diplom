@@ -16,7 +16,7 @@
 %add hyphenation later
 
 \begin{document}
-\title{Non-Standard-Datenvisualisierer mit openFrameworks}
+\title{Non-Standard-Informationsvisualisierer mit openFrameworks}
 \author{Benjamin Knofe}
 \subject{Diplomarbeit}
 \publishers{Hochschule für Technik, Wirtschaft und Kultur Leipzig}
@@ -27,14 +27,61 @@
 %\section{Ein Abschnitt}
 \label{sec:testi}
 
-Die Menge an digital gespeicherten Daten nimmt stetig zu. In nahezu allen Bereichen unseren täglichen Lebens werden Daten erhoben, gemessen und gespeichert. Dazu zählen vor allem die Bereiche der Wissenschaft, Wirtschaft und Kultur. Auch die Politik und Verwaltung unserer Gesellschaft verfolgt eine neue Strategie im Umgang mit Daten. So haben Städte wie beispielsweise Leipzig eine API oder Staaten wie Großbritannien verfolgen ein Konzept für e-Government mit dem Open-Data-Gedanken, um Daten frei verfügbar zu machen. Um diesen Entwicklungen Rechnung zu tragen, müssen neue Strategien entwickelt werden, die diese Daten für die jeweiligen menschlichen Adressaten sinnvoll extrahieren, aufzuarbeiten und darzustellen. Aus diesem Grund haben sich in den letzen 50 Jahren verschiedene Forschungsfelder, wie Statistik, Data Mining, Computergrafik als Teilgebiet der Informatik und Computational Design entwickelt. Ein Forschungsgebiet welches Thema dieser Arbeit sein soll, verbindet all diese Gebiete um den aktuellen Entwicklungen unserer digitalen Welt Rechnung zu tragen: die Visualisierung. In diesem Forschungsgebiet wird die Frage geklärt wie immer abstraktere und komplexer werdende Daten in einem für den Menschen adäquaten Weise aufbereitet und dargestellt werden können, um die gewünschten Informationen in Form von Mustern, Wiederholungen und Anomalien identifizieren zu können. Dabei zeichnet sich eine Entwicklung ab aus einem rein wissenschaftlichen Kontext hin zu einem populären Bereich um alltägliche Probleme lösen zu können.
-Auch wenn jede Fornm der Visualisierung konkrete Ziele hat, mit denen sehr spezielle Probleme gelöst werden, addressieren diese nicht mehr nur Experten und Wissenschaftler. Auch alltägliche Anwendungen wie soziale Netzwerke, der Einkauf Online oder im Supermarkt, die Suche nach Informationen im Internet oder in der Bibliothelk können mit Visualisierung unterstüzt werden und müssen somit auch für ungeübte Anwender verständlich und benutzbar sein. Dabei sollte die Visualisierung ansprechend sein und damit eine angenehme und ästhtisch ansprechende Benutzung gewährlsieten zu können aber gleichzeitig auch intuitiv sein, um ohne Vorkenntnisse nutzen aus dieser Form der Mensch-Maschine-Interkation ziehen zu können. So kann die tägliche Arbeit unterstützt werden, damit es Gelegenheitsanwendern leicht gemacht wird, Informationen und Wissen noch besser mit anderen teilen zu können. Somit liegt es an den Tools, die den menschen unterstützen und die möglichkeit geben, diese daten für ihre jeweiligen zwecke nutzen zu können. dabei gibt es eine vielzahl von unterschiedlichen problemen und fragestellungen die gelöst werden müssen.
+http://germany.emc.com/about/news/press/2011/20110628-01.htm
+http://germany.emc.com/collateral/analyst-reports/idc-extracting-value-from-chaos-ar.pdf
+noch einbauen
+
+Die Menge an digital gespeicherten Daten nimmt stetig zu. In nahezu allen Bereichen unseren
+täglichen Lebens werden Daten erhoben, gemessen und gespeichert. Dazu zählen vor allem die Bereiche
+der Wissenschaft, Wirtschaft und Kultur. Auch die Politik und Verwaltung unserer Gesellschaft
+verfolgt eine neue Strategie im Umgang mit Daten. So haben Städte wie beispielsweise Leipzig eine 
+API oder Staaten wie Großbritannien verfolgen ein Konzept für e-Government mit dem
+Open-Data-Gedanken, um Daten frei verfügbar zu machen. Um diesen Entwicklungen Rechnung zu tragen,
+müssen neue Strategien entwickelt werden, die diese Daten für die jeweiligen menschlichen Adressaten
+sinnvoll extrahieren, aufzuarbeiten und darzustellen. Aus diesem Grund haben sich in den letzen 50
+Jahren verschiedene Forschungsfelder, wie Statistik, Data Mining, Computergrafik als Teilgebiet der
+Informatik und Computational Design entwickelt. Ein Forschungsgebiet welches Thema dieser Arbeit
+sein soll, verbindet all diese Gebiete um den aktuellen Entwicklungen unserer digitalen Welt
+Rechnung zu tragen: die Visualisierung. In diesem Forschungsgebiet wird die Frage geklärt wie immer
+abstraktere und komplexer werdende Daten in einem für den Menschen adäquaten Weise aufbereitet und
+dargestellt werden können, um die gewünschten Informationen in Form von Mustern, Wiederholungen und
+Anomalien identifizieren zu können. Dabei zeichnet sich eine Entwicklung ab aus einem rein
+wissenschaftlichen Kontext hin zu einem populären Bereich um alltägliche Probleme lösen zu können.
+Auch wenn jede Fornm der Visualisierung konkrete Ziele hat, mit denen sehr spezielle Probleme gelöst
+werden, addressieren diese nicht mehr nur Experten und Wissenschaftler. Auch alltägliche Anwendungen
+wie soziale Netzwerke, der Einkauf Online oder im Supermarkt, die Suche nach Informationen im
+Internet oder in der Bibliothelk können mit Visualisierung unterstüzt werden und müssen somit auch
+für ungeübte Anwender verständlich und benutzbar sein. Dabei sollte die Visualisierung ansprechend
+sein und damit eine angenehme und ästhtisch ansprechende Benutzung gewährlsieten zu können aber
+gleichzeitig auch intuitiv sein, um ohne Vorkenntnisse nutzen aus dieser Form der
+Mensch-Maschine-Interaktion ziehen zu können. So kann die tägliche Arbeit unterstützt werden, damit
+es Gelegenheitsanwendern leicht gemacht wird, Informationen und Wissen noch besser mit anderen
+teilen zu können. Somit liegt es an den Tools, die den menschen unterstützen und die möglichkeit
+geben, diese daten für ihre jeweiligen zwecke nutzen zu können. dabei gibt es eine vielzahl von
+unterschiedlichen problemen und fragestellungen die gelöst werden müssen.
 
 \section{Problemstellung}
-Die Visualisierung als Arbeitsfeld ist eine hochkomplexe, hochspezialisierte Wissenschaft bei der mathematische, informationstechnische und gestalterische Grenzen beachtet und in Einklang gebracht werden müssen. Da die Entwicklung unserer Informationsgesellschaft viel schneller voranschreitet als die Entwicklung neuer tools und damit das verständnis der eigentlichen ADressaten (die menschen, für die diese daten erhoben wurden) müssen neue Wege gefunden werden, dieses Problem zu lösen. So können immer komplexere Datenstrukturen nicht mehr mit klassischen Softwarelösungen wie Tabellenkalkulation einfach dargstellt werden. Man braucht einen neuen tiefergehenden Ansatz und die dazugehörige software um das Wesen der Daten wieder begreifbar zu machen.
-Es entstehen Softwarelösungen die auf Teilbereiche wie beispielsweise der Medizin und Biotechnologie oder der GIS spezialisiert sind oder es entwickeln sich vom Benutzer selbsterstellte Workflows um Visualisierung umzusetzen. Diese Anwendungen sind nur von Wissenschaftlern oder spezialisierten Experten verwendbar und erfordern ein hohes Maß an Vorwissen und Zeit. Dabei wird auf Tools zurückgegriffen die aus verwandten Bereichen, wie beisüpielsweise der Grafiksoftware stammen. Dadurcherhöht sich der Arbeitsaufwand und die Qualität leidet.
-Bis heute existiert keine Softwarelösung die eine universelle Möglichkeit bietet alle Formen und Anwendungsbereiche von Visualisierung zu adressieren um eine jeweils für die Anwendung und den Adressatenkreis adäquates Ergebnis zu liefern.
-In dieser Arbeit soll ein Lösungsversuch geliefert werden, der auf einen grundlegenden und abstrakteren Ansatz der Visualisierung abzielt, als es bisherige Softwarelösungen getan haben. ERgänzt wird dieser durch die Implementation eines Prototypen, der den Ansatz beispielhaft implementiert.
+Die Visualisierung als Arbeitsfeld ist eine hochkomplexe, hochspezialisierte Wissenschaft bei der
+mathematische, informationstechnische und gestalterische Grenzen beachtet und in Einklang gebracht
+werden müssen. Da die Entwicklung unserer Informationsgesellschaft viel schneller voranschreitet als
+die Entwicklung neuer tools und damit das verständnis der eigentlichen ADressaten (die menschen, für
+die diese daten erhoben wurden) müssen neue Wege gefunden werden, dieses Problem zu lösen. So können
+immer komplexere Datenstrukturen nicht mehr mit klassischen Softwarelösungen wie Tabellenkalkulation
+einfach dargstellt werden. Man braucht einen neuen tiefergehenden Ansatz und die dazugehörige
+software um das Wesen der Daten wieder begreifbar zu machen.
+Es entstehen Softwarelösungen die auf Teilbereiche wie beispielsweise der Medizin und Biotechnologie
+oder der GIS spezialisiert sind oder es entwickeln sich vom Benutzer selbsterstellte Workflows um
+Visualisierung umzusetzen. Diese Anwendungen sind nur von Wissenschaftlern oder spezialisierten
+Experten verwendbar und erfordern ein hohes Maß an Vorwissen und Zeit. Dabei wird auf Tools
+zurückgegriffen die aus verwandten Bereichen, wie beisüpielsweise der Grafiksoftware stammen.
+Dadurcherhöht sich der Arbeitsaufwand und die Qualität leidet. Bis heute existiert keine
+Softwarelösung die eine universelle Möglichkeit bietet alle Formen und Anwendungsbereiche von
+Visualisierung zu adressieren um eine jeweils für die Anwendung und den Adressatenkreis adäquates
+Ergebnis zu liefern.
+In dieser Arbeit soll ein Lösungsversuch geliefert werden, der auf einen grundlegenden und
+abstrakteren Ansatz der Visualisierung abzielt, als es bisherige Softwarelösungen getan haben.
+Ergänzt wird dieser durch die Implementation eines Prototypen, der den Ansatz beispielhaft
+implementiert.
 
 2. problemstellung / ziel der arbeit
 einen software prototypen zu entwickeln, der auf basis einer der grundprinzipien der visualisierung beruht: variablen von daten auf variablen der grafik anzuwenden
@@ -47,7 +94,24 @@ Im Kapitel X wird eine Klassifikation dieser beiden Begriffe in Hinblick auf die
 klärung der begriffe/probleme/einordnung in den workflow, festlegen der besten tools und patterns die software zu entwickeln, software beispielhaft implementieren Text.
 
 \chapter{Grundlagen}
-\section{Daten und Informationen}
+In diesem Teil der Arbeit wird auf die grundlegenden Begriffe eingegangen die einen Zugang zum Arbeitsfeld der Visualisierung voraussetzen.
+\section{Begriffsdefinition Daten und Information}
+Daten werden im allgemeinen Bereich der Informatik als "zum Zweck der Verarbeitung zusammengefasste Zeichen, die aufgrund bekannter oder unterstellter Abmachungen Informationen (d.h. Angaben über Sachverhalte und Vorgänge) darstellen"[http://wirtschaftslexikon.gabler.de/Archiv/54483/daten-v5.html], beschrieben. Damit ähnelt sich die Definition von Gabler mit der Definition des ISO 2382 Standards. Daten sind also die Träger der Information. So ist der Anwender nicht direkt an den Daten als solceh interessiert sondern an den Informationen, die er mit verschiedenen Techniken aus diesen Daten gewinnen kann. Die Visualisierung ist eine dieser Techniken und ist dadurch auf eine Klassifikation von Daten angewiesen (siehe folgene Kapitel).
+
+daten in der wissenschaft haben immer einen räumlichen bezug. beispiel: messwerte in einem see, ...
+...
+(def information)
+Informationsbegriff nach Bertin???
+...
+
+
+Die Begriffe Daten und Information werden nicht immer eindeutig verwendet und eine genaue beschreibung dieser steht noch aus (informationstheorie). In dieser Arbeit wird von Daten im allgemeinen und von Information als eigentlicher Ausdruck der Daten gesprochen. Deshlab auch Infovis anstatt Datavis
+Somit adressiert die Informationsvisualisierung einen Spezialfall der Datenvisualisierung, der alle Anforderungen an Datenvisualisierung enthält und mit zusätztlichen Anforderungen erweitert.
+
+In dieser Arbeit wird Visualisierung synonym mit der Informationsvisualisierung verwendet um 
+
+Der Begriff der Daten steht in dieser Arbeit synonym zur Information, die diese Daten enthält und dient zur Klassifikation der zugrundeliegenden Daten.
+
 was für daten können verwendet werden? wetterdaten? pachube, sämtliche (Web)-Apis
 Unterschied zwischen DAten und Information in Bezug auf VIZ!
 
@@ -64,7 +128,7 @@ da informationen eine spezielle form von daten sind, schließen diese nicht nur 
 
 bertin benutzt ausschließlich den Begriff der Information
 
-\subsection{Informationsbegriff nach Bertin???}
+\section{Klassifikation von Daten}
 
 klassifizierung von informationen in bezug auf viz
 
