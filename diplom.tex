@@ -16,7 +16,7 @@
 %add hyphenation later
 
 \begin{document}
-\title{Non-Standard-Informationsvisualisierer mit openFrameworks}
+\title{Visuell programmierbarer Non-Standard-Informationsvisualisierer}
 \author{Benjamin Knofe}
 \subject{Diplomarbeit}
 \publishers{Hochschule für Technik, Wirtschaft und Kultur Leipzig}
@@ -50,15 +50,16 @@ wissenschaftlichen Kontext hin zu einem populären Bereich um alltägliche Probl
 Auch wenn jede Fornm der Visualisierung konkrete Ziele hat, mit denen sehr spezielle Probleme gelöst
 werden, addressieren diese nicht mehr nur Experten und Wissenschaftler. Auch alltägliche Anwendungen
 wie soziale Netzwerke, der Einkauf Online oder im Supermarkt, die Suche nach Informationen im
-Internet oder in der Bibliothelk können mit Visualisierung unterstüzt werden und müssen somit auch
-für ungeübte Anwender verständlich und benutzbar sein. Dabei sollte die Visualisierung ansprechend
-sein und damit eine angenehme und ästhtisch ansprechende Benutzung gewährlsieten zu können aber
-gleichzeitig auch intuitiv sein, um ohne Vorkenntnisse nutzen aus dieser Form der
-Mensch-Maschine-Interaktion ziehen zu können. So kann die tägliche Arbeit unterstützt werden, damit
-es Gelegenheitsanwendern leicht gemacht wird, Informationen und Wissen noch besser mit anderen
-teilen zu können. Somit liegt es an den Tools, die den menschen unterstützen und die möglichkeit
-geben, diese daten für ihre jeweiligen zwecke nutzen zu können. dabei gibt es eine vielzahl von
-unterschiedlichen problemen und fragestellungen die gelöst werden müssen.
+Internet oder in der Bibliothelk können mit Visualisierung als Teil des User Interface unterstüzt
+werden und müssen somit auch für ungeübte Anwender verständlich und benutzbar sein. Dabei sollte
+die Visualisierung ansprechend sein und damit eine angenehme und ästhtisch ansprechende Benutzung
+gewährlsieten zu können aber gleichzeitig auch intuitiv sein, um ohne Vorkenntnisse nutzen aus
+dieser Form der Mensch-Maschine-Interaktion ziehen zu können. So kann die tägliche Arbeit
+unterstützt werden, damit es Gelegenheitsanwendern leicht gemacht wird, Informationen und
+Wissen noch besser mit anderen teilen zu können. Somit liegt es an den Tools, die den menschen
+unterstützen und die möglichkeit geben, diese daten für ihre jeweiligen zwecke nutzen zu können.
+dabei gibt es eine vielzahl von unterschiedlichen problemen und fragestellungen die gelöst werden
+müssen.
 
 \section{Problemstellung}
 Die Visualisierung als Arbeitsfeld ist eine hochkomplexe, hochspezialisierte Wissenschaft bei der
@@ -94,50 +95,143 @@ Im Kapitel X wird eine Klassifikation dieser beiden Begriffe in Hinblick auf die
 klärung der begriffe/probleme/einordnung in den workflow, festlegen der besten tools und patterns die software zu entwickeln, software beispielhaft implementieren Text.
 
 \chapter{Grundlagen}
-In diesem Teil der Arbeit wird auf die grundlegenden Begriffe eingegangen die einen Zugang zum Arbeitsfeld der Visualisierung voraussetzen.
+In diesem Teil der Arbeit wird auf die grundlegenden Begriffe eingegangen die einen Zugang
+zum Arbeitsfeld der Visualisierung voraussetzen.
 \section{Begriffsdefinition Daten und Information}
-Daten werden im allgemeinen Bereich der Informatik als "zum Zweck der Verarbeitung zusammengefasste Zeichen, die aufgrund bekannter oder unterstellter Abmachungen Informationen (d.h. Angaben über Sachverhalte und Vorgänge) darstellen"[http://wirtschaftslexikon.gabler.de/Archiv/54483/daten-v5.html], beschrieben. Damit ähnelt sich die Definition von Gabler mit der Definition des ISO 2382 Standards. Daten sind also die Träger der Information. So ist der Anwender nicht direkt an den Daten als solceh interessiert sondern an den Informationen, die er mit verschiedenen Techniken aus diesen Daten gewinnen kann. Die Visualisierung ist eine dieser Techniken und ist dadurch auf eine Klassifikation von Daten angewiesen (siehe folgene Kapitel).
+Daten werden im allgemeinen Bereich der Informatik als "zum Zweck der Verarbeitung
+zusammengefasste Zeichen, die aufgrund bekannter oder unterstellter Abmachungen Informationen
+(d.h. Angaben über Sachverhalte und Vorgänge) darstellen" 
+[http://wirtschaftslexikon.gabler.de/Archiv/54483/daten-v5.html], beschrieben. 
+Damit ähnelt sich die Definition von Gabler mit der Definition des ISO 2382 Standards. 
+Daten sind also die Träger der Information. Somit ist der Anwender nicht direkt an den Daten
+als solche interessiert sondern an den Informationen, die er mit verschiedenen Techniken aus
+diesen Daten gewinnen kann.
 
 daten in der wissenschaft haben immer einen räumlichen bezug. beispiel: messwerte in einem see, ...
-...
-(def information)
+
+Der Begriff der Information ist schwer einzugrenzen und wird in unterschiedlichen Wissenschaften
+in verschiedensten Weisen ausgelegt. Auch in Bezug auf den Begriff der Daten gibt es keine klare Abgrenzung.
+In der Informationstheorie wird die "Information als eine quantitativ
+bestimmbare Wissenzunahme durch die Übermittlung von Zeichen in einem Kommunikationssystem" definiert (HÖHER).
+Dabei spielt es ersteinmal keine Rolle welche Zeichen und welche Übertragungsform gewählt wird.
+BERTIN versucht den Begriff in Bezug auf graphische Darstellungen einzugrenzen. So beschreibt er Information
+als transribierbaren Inhalt eines Gedankens, der "aus einer oder mehrere in Bezug auf den Gedanken
+ursprünglichen Beziehungen zwischen einer endlichen Menge von Variationsbegriffen und einer Invarianten” besteht.
+(Was ist Varianten / Invarianten?)
+BERTIN benutzt dabei ausschließlich den Begriff der Information, die mit einer graphischen Darstellung transkribiert
+und kommuniziert werden soll.
+(Hier noch ein bißchen mehr)
+Der Begriff der Information soll in dieser Arbeit als Wissenzuwachs angenommen werden, der durch die
+Visualisierung erreicht werden soll und aufgrund der reinen Daten, die zwar diese Informationen enthalten,
+aber für den menschlichen Betrachter nicht erfassbar sind, nicht erkennbar wäre. Somit kann man sagen das die
+Visualisierung eine Transformation der Information aus den Daten in ein leicht verständliches und intuitives
+Zeichensystem für den Meschen überführt.
+
 Informationsbegriff nach Bertin???
 ...
 
+\section{Eigenschaften von Daten}
 
-Die Begriffe Daten und Information werden nicht immer eindeutig verwendet und eine genaue beschreibung dieser steht noch aus (informationstheorie). In dieser Arbeit wird von Daten im allgemeinen und von Information als eigentlicher Ausdruck der Daten gesprochen. Deshlab auch Infovis anstatt Datavis
-Somit adressiert die Informationsvisualisierung einen Spezialfall der Datenvisualisierung, der alle Anforderungen an Datenvisualisierung enthält und mit zusätztlichen Anforderungen erweitert.
+In diesem Kapitel wird der Inhalt der Daten und die damit zu extrahierenden Informationen eingegrenzt.
+Damit gelten Daten als Ausgangspunkt für die Konzeption einer Visualisierung. Die speziellen
+Eigenschaften von DAten sind maßgeblich für weitere Schritte der Visualisierung (siehe auch Pipeline).
+Die Kenntnis der Beschaffenheit der Daten ist unabdingbar.
+SCHUMANN beschreibt ein Modell der Eigenschaften von Daten. Somit hat jeder Datensatz (als Menge von
+Daten) folgende Eigenschaften nach denen er klassifiziert werden kann.
 
-In dieser Arbeit wird Visualisierung synonym mit der Informationsvisualisierung verwendet um 
 
-Der Begriff der Daten steht in dieser Arbeit synonym zur Information, die diese Daten enthält und dient zur Klassifikation der zugrundeliegenden Daten.
+Beobachtungsraum
 
-was für daten können verwendet werden? wetterdaten? pachube, sämtliche (Web)-Apis
-Unterschied zwischen DAten und Information in Bezug auf VIZ!
 
-definition und klassifizierung von daten
+Der Beobachtungsraum beschreibt den Raum in dem Daten erhoben werden. Dieser Raum kann ein
+dreidimensionaler Raum sein, kann aber auch abstrakt beschrieben werden und nur eine einzige oder
+mehr als drei Dimensionen enthalten. Alle Dimensionen die den Beobachtunsgraum aufspannen,
+können als unabhängige Variablen(fußnote: kurze erklärung zu running clock / epoch-based) angesehen werden.
 
-Beobachtungsraum, -punkt, -fall, Merkmale, Ausprägung (vielleicht erst später? ), Metadaten
 
-möchte sich diese arbeit mit der spezialform von daten, den abstrakten Daten beschäftigen, die keinen räumlichen und oder zeitlichen bezug haben.
-abstrakte daten haben alle anforderungen die auch normale daten haben und deswegen kann datasynth beides
+Beobachtungspunkt
 
-infoviz als arbetisfeld mit noch spezifischeren anforderungen
 
-da informationen eine spezielle form von daten sind, schließen diese nicht nur die Anforderungen an datenviz ein sondern verlangen noch zusätzliche Gedanken
+Ein Beobachtungspunkt beschreibt Punkte im Beobachtungsraum an denen Daten vorhanden sind. Die Anzahl und Verteilung
+dieser Punkte ist unabhängig von der Beschaffenheit des Beobachtungsraumes. Beobachtunsgpunkte haben einen
+Wirkungskreis, der die "räumliche" Gültigkeit der Werte beschreibt. Dieser kann punktuell, lokal oder global sein.
 
-bertin benutzt ausschließlich den Begriff der Information
 
-\section{Klassifikation von Daten}
+Merkmal
+
+
+Das Merkmal ist eine Größe die an einem Beobachtungspunkt gemessen oder berechnet wurde. Dabei können
+einem Beobachtungspunkt mehrere Merkmale zugeordnet werden. Merkmale gelten dabei als abhängige Variablen.
+
+
+Ausprägung
+
+
+Die Ausprägung beschreibt den Wertebereich und damit alle Werte, die ein Merkmal annehmen kann.
+Dabei sind die Datentypen Skalr, Vektor und Tensor möglich. (fußnote mit kurzer erklärung was das is)
+
+Alle diese Eigenschaften können nun genutzt werden um Daten zu klassifizieren.
+
+
+Metadaten
 
 klassifizierung von informationen in bezug auf viz
 
-\subsection{multivariate Daten}
-\subsection{mehrdimensionale Daten}
-\subsection{raumbezogene Daten}
-\subsection{zeitbezogene Daten}
-statisch, quasistatisch, dynamisch
-\subsection{strukturelle Beziehungen zwischen Datenobjekten}
+was für daten können verwendet werden? wetterdaten? pachube, sämtliche (Web)-Apis
+
+möchte sich diese arbeit mit der spezialform von daten, den abstrakten Daten beschäftigen, die keinen räumlichen
+und oder zeitlichen bezug haben.
+abstrakte daten haben alle anforderungen die auch normale daten haben und deswegen kann datasynth beides
+
+\section{Klassifikation von Daten}
+
+
+multivariate Daten
+
+
+Bei multivariaten Daten existiert kein direkteer Beobachtungsraum oder dieser kann vernachlässigt werden, da er
+keine Rolle für die Weiterverarbeitung der Daten spielt. Sonderformen der multivariaten Daten sind die univariaten,
+bivariaten und trivariaten Daten. (mehr beschreibung?!)
+
+
+mehrdimensionale Daten
+
+
+Bei mehrdimensionalen Daten wird lediglich der Beobachtungsraum beschrieben. Dabei werden die abhängigen Variablen
+vernachlässigt und nur die Anzahl der Dimensionen des Beobachtungsraumes beschreibt die Art der Daten.
+
+
+raumbezogene Daten
+
+
+"Raumbezogene Daten liegen dann vor, wenn der Beobachtungsraum Ortskoordinaten enthält,
+die ein 2- oder 3-dimensionales räumliches Bezugssystem definieren." (SCHUMANN, Seite 219)
+Das bedeutet das mindestens zwei und höchsten drei unabhängige Variablen des Datensatzes beispielsweise
+ein Koordinatensystem beschreiben.
+
+
+zeitbezogene Daten
+
+
+Bie zeitbezogenen Daten kann mindestens eine unabhängige Variable in einen zeitlichen Kontext eingeordnet werden.
+(PREIM / DACHSELT steht da glaub ich mehr) hier nochn beispiel.
+und noch mehr dazu: statisch, quasistatisch, dynamisch
+
+
+abstrakte Daten
+
+
+Bilden eine Sonderform der Daten, da weder ein raum noch ein zeitbezug möglich und sinnvoll ist. Oft dienen diese
+Daten als Grundlage der Informationsviz (siehe das kapitel dazu) und stammen aus dem digitalen umfeld(?)
+
+
+strukturelle Beziehungen zwischen Datenobjekten
+
+
+Diese Daten beschreiben nicht direkte Beobachtungspunkte und Merkmalsausprägungen sondern die Beziehung zwischen
+abhängigen Variablen untereinander, unabhängigen Variablen untereinander oder zwischen abhängigen und unabhängigen
+Variablen.
+(PREIM / DACHSELT) steht dazu was
 
 \section{graphische Grundlagen}
 
@@ -155,6 +249,17 @@ Information bedeutet dabei siehe BERtin 13 Somit fasst Bertin den Informationsbe
 
 \section{Definition}
 visualisierung im allgemeinen, warum wieso und für was
+In dieser Arbeit wird von Daten im allgemeinen und von Information als eigentlicher Ausdruck der Daten gesprochen.
+Deshlab auch Infovis anstatt Datavis
+Somit adressiert die Informationsvisualisierung einen Spezialfall der Datenvisualisierung, der
+alle Anforderungen an Datenvisualisierung enthält und mit zusätztlichen Anforderungen erweitert.
+
+In dieser Arbeit wird Visualisierung synonym mit der Informationsvisualisierung verwendet um 
+
+infoviz als arbetisfeld mit noch spezifischeren anforderungen
+
+da informationen eine spezielle form von daten sind, schließen diese nicht nur die Anforderungen an datenviz ein sondern verlangen noch zusätzliche Gedanken
+
 \section{Abgrenzung}
 einordnung an der einteilung von ben fry
 
@@ -193,9 +298,13 @@ diese arbeit bezieht sich auf informationsvisualisierung als sonderfall der date
 
 wissenschaftlich, technisch, .... anwendungsgebiete?!
 \section{Visualisierungspipeline}
+es gibt mehrere aber ähnlich beschreibungen des ablaufs einer visualisierung.
+ben fry und schumann  und preim
 \section{Grundprinzip}
 dieser schritt wird in der literatur als selbstverständlich angesehen. dagegen bedeuten die regeln wie man unterschiedliceh datentypen und in welcher form darstellt um das beste ergebnis auf eine bestimmte frage zu erhalten sind viel komplexer.
 deshalb soll eine software entwickelt werden, die diese triviale aber für einen menschen sehr arbeitsintensive arbeit übernimmt, ohne dabei irgendwelchen einschränkugen zu unterliegen.
+
+ein schritt in der viz pipeline
 
 entwicklung einer kleinen "theorie"
 wie können die grundprinzipien der viz auf eine software überrtragen werden?
