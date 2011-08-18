@@ -1,4 +1,4 @@
-\documentclass[a4paper, 12pt, onepage, pdftex, headsepline, footsepline]{scrreprt}
+\documentclass[a4paper, 12pt, DIVcalc, onepage, pdftex, headsepline, footsepline]{scrreprt}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -8,6 +8,8 @@
 \usepackage[ngerman]{babel}
 \usepackage{natbib}
 \usepackage{url} %correct url display in cites
+
+\usepackage[locale=DE]{siunitx}
 
 \pagestyle{headings}
 
@@ -20,16 +22,15 @@
 \author{Benjamin Knofe}
 \subject{Diplomarbeit}
 \publishers{Hochschule für Technik, Wirtschaft und Kultur Leipzig}
-\dedication{viele nette Leute}
+\dedication{Dank an \\ Pyry Jahkola, Philip Whitfield}
 \maketitle
 \tableofcontents
-\chapter{Einleitung}
-%\section{Ein Abschnitt}
-\label{sec:Einleitung}
 
-Die Menge an digital gespeicherten Daten nimmt stetig zu. In 2011 werden laut einer neuen Studie\footnote{Vgl. \citep{EMC}}
-voraussichtlich 1,8 Zettabyte\footnote{1 Zettabyte = 1.000.000.000.000 Gigabyte}
-erzeugt und kopiert. In nahezu allen Bereichen unseren
+\chapter{Einleitung}
+\label{cha:Einleitung}
+Die Menge an digital gespeicherten Daten nimmt stetig zu. In 2011 werden laut einer neuen
+Studie\footnote{Vgl. \citep{EMC}} voraussichtlich 1,8 Zettabyte\footnote{1 Zettabyte = \num{1d21}
+Byte = 1.000.000.000.000 Gigabyte} erzeugt und kopiert. In nahezu allen Bereichen unseren
 täglichen Lebens werden Daten erhoben, gemessen und gespeichert. Dazu zählen vor allem die Bereiche
 der Wissenschaft, Wirtschaft und Kultur. Auch die Politik und Verwaltung unserer Gesellschaft
 verfolgt eine neue Strategie im Umgang mit Daten. So haben Städte wie beispielsweise Leipzig eine 
@@ -83,21 +84,60 @@ In dieser Arbeit soll ein Lösungsversuch geliefert werden, der auf einen grundl
 abstrakteren Ansatz der Visualisierung abzielt, als es bisherige Softwarelösungen getan haben.
 Ergänzt wird dieser durch die Implementation eines Prototypen, der den Ansatz beispielhaft
 implementiert.
-
-2. problemstellung / ziel der arbeit
-einen software prototypen zu entwickeln, der auf basis einer der grundprinzipien der visualisierung beruht: variablen von daten auf variablen der grafik anzuwenden
+Diese Software kann mithilfe von visueller Programmierung\footnote{Vgl. Kapitel X} gesteuert werden,
+welches eines möglichst breites Spektrum an Benutzern zulässt. 
 
 \section{Aufbau der Arbeit}
-Um zu einem Läsungsansatz und der Beispielimplemntierung zu kommen wird die Arbeit wie folgt durchgeführt.
-Im Kapitel X wird eine Klassifikation dieser beiden Begriffe in Hinblick auf die folgenden Vizualisierungsmethoden genommen werden.
+Um einen Lösungansatz für das Problem der einfachen und universellen Visualisierung zu finden, wird
+in dieser Arbeit eine Reihenfolge von Schritten durchgeführt die eine Implementation eines
+Prototypen zum Ziel haben.
 
-3. methodisches vorgehen und aufbau
-klärung der begriffe/probleme/einordnung in den workflow, festlegen der besten tools und patterns die software zu entwickeln, software beispielhaft implementieren Text.
+In Kapitel \ref{cha:Grundlagen} im Abschnitt \ref{sec:DatenInfo} werden die Begriffe Daten und Informationen definiert und im Kontext
+der Visualisierung beschrieben. Dabei wird anhand des aktuellen Forschungsstandes gezeigt, dass diese
+zwei Begriffe nicht immer abgrenzbar von einander sind und es in Bezug auf das jeweilige Arbeitsfeld
+unterschiedliche Interpretationen möglich sind. Nun kann im Abschnitt \ref{sec:EigenschaftenDaten} auf die
+unterschiedlichen Eigenschaften von Daten eingegangen werden. Dies gilt als Kriterienkatalog anhand
+dessen die Daten in Abschnitt \ref{sec:KlassifikationDaten} klassifiziert werden können.
+Im folgenden Abschnitt \ref{sec:Datentypen} werden die verschiedenen Datentypen behandelt, die Inhalt
+von Daten sein können.
+Ein System zur Beschreibung von grafischen Variablen als Zeichen in einem Zeichensystem zur Erstellung von
+graphischen Darstellungen wird in Abschnitt \ref{sec:graphischeSemiologie} beschrieben.
+
+Nachdem die Ausgangsbedingungen definiert sind wird in Kapitel \ref{cha:Informationsvisualisierung} die
+Informationsvisualisierung beschrieben. Abschnitt \ref{sec:Definition} definiert den Begriff
+der Informationsvisualisierung und nennt die Besonderheiten dieser im Vergleich zu technisch-wissenschaftlichen
+Datenvisualisierung. Danach folgt im Abschnitt \ref{sec:Abgrenzung} eine Abgrenzung zu teils-verwandten
+Arbeitsfeldern und zu Bereichen, die die Visualisierung als Werkzeug verwenden. Was das Ziel einer guten
+Visualisierung? Wie kann man das messen? Und was macht eine gute Visualisierung aus? Diese Fragen werden
+im Abschnitt \ref{sec:Ziele} geklärt. Im folgenden Abschnitt \ref{sec:Pipeline} wird der eigentliche Arbeitsablauf
+einer Visualisierung anhand verschiedener Einteilungsmöglichkeiten beschrieben um danach in Abschnitt
+\ref{sec:Grundprinzip} gesondert auf den Teil des "Mappings" eingegangen wird. Im nächsten Abschnitt
+\ref{sec:Darstellungen} werden einige Visualisierungsbeispiele gezeigt.
+
+Das Kapitel \ref{cha:Software} beschreibt nun die Konzeption einer Visualisierungssoftware.
+Dabei werden in Abschnitt \ref{sec:Anforderungen} die aus den vorherigen Kapiteln resultierenden Anforderungen
+beschrieben und dann in Abschnitt \ref{sec:Grenzen} mögliche Grenzen beschrieben. Als nächstes
+werden in Abshcnitt \ref{sec:bestehendeSoftware} beispielhaft vorhandene Softwarelösungen auf die Anforderungen geprüft.
+
+Im Kapitel \ref{cha:Umsetzung} wird die Implementation eines Prototyps beschrieben. Dabei wird in Abschnitt
+\ref{sec:Technologien} auf die verwendeten grundlegenden Technologien eingegangen. Danach wird in Abschnitt
+\ref{sec:visPro} das Konzept des benutzten User Interfaces beschrieben und Gründe für diese Entscheidung genannt.
+Als letzter Punkt dieses Kapitels wird in Abschnitt \ref{sec:Kernfunktionen} beispielhaft Kernfunktionen
+der Software mit dazugehörigen Quelltext gezeigt und erläutert.
+
+Das vorletzte Kapitel \ref{cha:Auswertung} nennt in Abschnitt \ref{sec:Probleme} die Probleme, die während
+der Entwicklung aufgetreten sind und wertet die Vorteile (Abschnitt \ref{sec:Vorteile}) und Nachteile
+(Abschnitt \ref{sec:Nachteile}) aus.
+
+Das Kapitel \ref{cha:Zusammenfassung} schließt die Arbeit mit einem Fazit in Abschnitt \ref{sec:Fazit} und
+einem Ausblick in Abschnitt \ref{sec:Ausblick} ab.
 
 \chapter{Grundlagen}
+\label{cha:Grundlagen}
 In diesem Teil der Arbeit wird auf die grundlegenden Begriffe eingegangen die einen Zugang
 zum Arbeitsfeld der Visualisierung voraussetzen.
 \section{Begriffsdefinition Daten und Information}
+\label{sec:DatenInfo}
 Daten werden in \cite{Gabler} für den allgemeinen Bereich der Informatik als "zum Zweck der Verarbeitung
 zusammengefasste Zeichen, die aufgrund bekannter oder unterstellter Abmachungen Informationen
 (d.h. Angaben über Sachverhalte und Vorgänge) darstellen" 
@@ -133,7 +173,7 @@ Informationsbegriff nach Bertin???
 ...
 
 \section{Eigenschaften von Daten}
-
+\label{sec:EigenschaftenDaten}
 In diesem Kapitel wird der Inhalt der Daten und die damit zu extrahierenden Informationen eingegrenzt.
 Damit gelten Daten als Ausgangspunkt für die Konzeption einer Visualisierung. Die speziellen
 Eigenschaften von DAten sind maßgeblich für weitere Schritte der Visualisierung (siehe auch Pipeline).
@@ -171,14 +211,20 @@ und oder zeitlichen bezug haben.
 abstrakte daten haben alle anforderungen die auch normale daten haben und deswegen kann datasynth beides
 
 \section{Klassifikation von Daten}
+\label{sec:KlassifikationDaten}
+Für die Klassifikation von Daten gibt es keine einheitlichen Begriffe. \citep{Schumann} unterteilt die Daten
+in Varianz und Dimensionalität, während \citep{Preim} ausschließlich von Dimensionen spricht.
+In dieser Arbeit werden die Begriffe nach \citep{Schumann} verwendet und mit den Begriffen aus \citep{Preim}
+erweitert.
 \begin{description}
 \item[Multivariate Daten]
-Bei multivariaten Daten existiert kein direkteer Beobachtungsraum oder dieser kann vernachlässigt werden, da er
+Bei multivariaten Daten existiert kein direkter Beobachtungsraum oder dieser kann vernachlässigt werden, da er
 keine Rolle für die Weiterverarbeitung der Daten spielt. Sonderformen der multivariaten Daten sind die univariaten,
 bivariaten und trivariaten Daten. (mehr beschreibung?!)
 \item[Mehrdimensionale Daten]
 Bei mehrdimensionalen Daten wird lediglich der Beobachtungsraum beschrieben. Dabei werden die abhängigen Variablen
 vernachlässigt und nur die Anzahl der Dimensionen des Beobachtungsraumes beschreibt die Art der Daten.
+Multivariate Daten können in multidimensionale Daten überführt werden.
 \item[Raumbezogene Daten]
 "Raumbezogene Daten liegen dann vor, wenn der Beobachtungsraum Ortskoordinaten enthält,
 die ein 2- oder 3-dimensionales räumliches Bezugssystem definieren."\citep[S.\,219]{Schumann}
@@ -200,8 +246,14 @@ Variablen.
 (PREIM / DACHSELT) steht dazu was
 \end{description}
 
-\section{graphische Semiologie}
+\section{Datentypen}
+\label{sec:Datentypen}
+quantitative / kategorische / ...
 
+preim S. 449
+
+\section{graphische Semiologie}
+\label{sec:graphischeSemiologie}
 Die graphische Semiologie ist ein in \cite{Bertin} erstmals beschriebenes System zur Klassifikation von graphischen Zeichen.
 Dabei wird versucht die grapische Darstellung auf ein "Grundalphabet" an graphischen Elementen zu reduzieren, wobei
 jedem einzelnen Zeichen eine bestimmte Bedeutung zugeordnet wird. \citep{Bertin} spricht dabei von einem
@@ -237,19 +289,10 @@ Information bedeutet dabei siehe BERtin 13 Somit fasst Bertin den Informationsbe
 
 8 visuelle Variablen nach Bertin ((eine Anforderung an datasynth: muss alle diese abbilden können)):
 
-\section{graphische Darstellungen}
-
-Die graphische Darstellung besteht aus graphischen Variablen.
-
-hier ein paar wichtige vertreter der viz formen erklären und zeigen
-
-doch wie können nun die unterschiedlichen Klassen von Daten auf die unterschiedlichen graphischen Variablen und damit
-auf die unterschiedlichen graphischen Darstellungen angewendet werden um eine Visualisierung durchzuführen. das sehen
-sehen sie im nächsten kapitel.
-
 \chapter{Informationsvisualisierung}
-
+\label{cha:Informationsvisualisierung}
 \section{Definition}
+\label{sec:Definition}
 Die Visualisierung im allgemeinen ist eine "rechnergestützte, visuelle Präsentation von Daten, Informationen und Wissen
 in einer für den Menschen adäquaten und für die jeweilige Anwendung in diesem Kontext sinnvollen Form
 zu verstehen."\citep[S.\,3]{Schumann}
@@ -295,7 +338,7 @@ und eine genaue Beschreibung dieser noch aussteht. Informationsvisualisierung ka
 auch wissenschaftlich betrieben werden, da sich die Methoden und verfahren stark ähneln.
 
 \section{Abgrenzung}
-
+\label{sec:Abgrenzung}
 Oft berühren Teilgebiete der Informationsvisualiserung verwandte Arbeitsfelder oder werden für die Problemlösung
 in anderen Bereichen verwendet. Dieser Umstand macht für diese Arbeit eine klare Abgrenzung notwendig.
 
@@ -305,6 +348,7 @@ Computergrafik
 Präsentationvisualisierung
 Data Mining
 Interfacedesign
+Computational Design
 
 Zusätzlich zu diesen Bereichen können noch weitere Bereiche mit untergeordneter Bedeutung gefunden werden.
 
@@ -326,7 +370,7 @@ Abgrenzung zu anderen Bereichen (vielleicht eigener gliederungspunkt) -> data mi
 Abgrenzung nach innen (ben fry)
 
 \section{Ziele}
-
+\label{sec:Ziele}
 was muss eine gute viz können?! (effektivität, expressivität, ...)
 
 unterhaltungswert des graphen und ästhetik spielen eine rolle, denn man muss was gerne anschauen wollen damit man sich überhuapt damit auseinandersetzt
@@ -353,9 +397,11 @@ diese arbeit bezieht sich auf informationsvisualisierung als sonderfall der date
 
 wissenschaftlich, technisch, .... anwendungsgebiete?!
 \section{Visualisierungspipeline}
+\label{sec:Pipeline}
 es gibt mehrere aber ähnlich beschreibungen des ablaufs einer visualisierung.
 ben fry und schumann  und preim
 \section{Grundprinzip}
+\label{sec:Grundprinzip}
 dieser schritt wird in der literatur als selbstverständlich angesehen. dagegen bedeuten die regeln wie man unterschiedliceh datentypen und in welcher form darstellt um das beste ergebnis auf eine bestimmte frage zu erhalten sind viel komplexer.
 deshalb soll eine software entwickelt werden, die diese triviale aber für einen menschen sehr arbeitsintensive arbeit übernimmt, ohne dabei irgendwelchen einschränkugen zu unterliegen.
 
@@ -388,7 +434,18 @@ Preim/Dachselt ergänzen zu den von schumann genannten noch die viz von relation
 
 hier die "datentypen" aufzählen
 
+\section{graphische Darstellungen}
+\label{sec:Darstellungen}
+Die graphische Darstellung besteht aus graphischen Variablen.
+
+hier ein paar wichtige vertreter der viz formen erklären und zeigen
+
+doch wie können nun die unterschiedlichen Klassen von Daten auf die unterschiedlichen graphischen Variablen und damit
+auf die unterschiedlichen graphischen Darstellungen angewendet werden um eine Visualisierung durchzuführen. das sehen
+sehen sie im nächsten kapitel.
+
 \chapter{Konzept einer geeigneten Softwarelösung}
+\label{cha:Software}
 um einen mgölcihst großen bereich aller öglichen viz formen abdecken zu können, wird daher ein ansatz gewählt, der dem benutzer erlaubt die atomaren elemente einer grafik automatisiert designen zu können. somit werden große mengen an datenpunkten in kürzester zeit darstellbar und weiterverarbeitbar.
 beispielhafte implementierung “datasynth”
 anforderung an so eine software (beispiel1: journalist, beispiel2: privat/künstler)
@@ -410,7 +467,7 @@ um den vielseitigen anforderungen an eine visualisierung gerecht zu werden, soll
 man kann jede visualisierung in ihre grundlegenden graphischen elemente zerlegen.
 was sind die grundlegenden graphischen elemente? (herausfinden! vielleicht in bertin!)
 \section{Anforderungen}
-
+\label{sec:Anforderungen}
 möglichkeit alle datentypen abbilden bzw verarbeiten zu können
 bearbeitungsziele sollen schnell und unkompliziert erfüllt werden können
 
@@ -437,6 +494,7 @@ freie Lizenz
 rails als beispiel für MIT Lizenz
 
 \section{Grenzen der Software}
+\label{sec:Grenzen}
 \subsection{technische Grenzen}
 pixel (bildschirm)
 farbe (rgb)
@@ -450,6 +508,7 @@ künstliche Grenzen weil ja nur Prototyp entwickelt wird.
 statisch, 2D vollständigkeit wird durch dateninput festgelegt (vgl. schumann 6.2.1, s. 175)
 
 \section{Analyse bestehender Software}
+\label{sec:bestehendeSoftware}
 diskussion bisheriger lösungsansätze
 vorstellen aller software die es bis jetzt gibt, siehe oben
 evtl. (SWOT-)Analyse und damit aufzeigen der schwächen der anderen software
@@ -463,15 +522,18 @@ prefuse
 graphviz
 ...
 \chapter{Umsetzung eines Prototyps}
+\label{cha:Umsetzung}
 1. dokumentation der untersuchungsdurchführung (des Entwicklungsvorganges)
 welche tools wurden wie angewendet, c++, of, git, boost, etc etc
 2. darstellung der ergebnisse (verdeutlichung durch beispiele, erläuterung des erkenntnisfortschritts)
 präsentation von viz mit der software?!
 \section{Technologien}
+\label{sec:Technologien}
 C++
 openFrameworks
 boost
 \section{visuelle programmierung}
+\label{sec:visPro}
 rapid prototyping / keine programmierkenntnisse erforderlich, ein durchschnittliches mathematisches verständnis reicht
 theoretische konzeption
 erklärung der einzelnen teile wie nodes etc doch erst bei implementierung?
@@ -487,8 +549,10 @@ damit kann der nutzer einerseits sofort erkennen was der parameter eigentlich ma
 \subsection{Pin}
 \subsection{Connection}
 \section{wichtige Kernfunktionen}
+\label{sec:Kernfunktionen}
 auszüge aus quelltext mit erklärung
 \chapter{Auswertung}
+\label{cha:Auswertung}
 bewertung der ergebnisse vor dem hintergrund der hypothesen/problemstellung (Test des konstrukts und vergleich mit den Anforderungen
 was kann die software liefern? wofür bildet sie nur die grundlage? was kann sie nicht?
 
@@ -496,16 +560,19 @@ was kann die software liefern? wofür bildet sie nur die grundlage? was kann sie
 ????
 so eine software macht sinn, macht keinen sinn?
 \section{Probleme bei der Entwicklung}
+\label{sec:Probleme}
 reflection/introspection von c++
 universelle datentypen (schwierig in c++)
 geeignete daten finden
 mulit-window ausgabe (gelöst mit ofxFenster, da glut das nicht hergibt)
 \section{Vorteile}
+\label{sec:Vorteile}
 durhc parameter kann der benutzer die Wertebereiche der Abbildungen direkt verändern und kann somit auch ohne komplette kenntnis der daten live die beste "einstellung der parameter" herauszufinden, anstatt vorher Metadaten kennen bzw studieren bzw anlegen zu müssen (min,max, ...)
 
 mehrere viz können statisch in einer präsentation kombiniert werden. so kann ohne benutzerinteraktion mehrere blickwinkel auf den datensatz ermöglicht werden
 
 \section{Nachteile}
+\label{sec:Nachteile}
 benutzer hat alle freiheiten aber muss dadurch auch die grundregeln der viz beherrschen und verstehen ( z.b. kreis radius/fläche, was eignet sich für was am besten)
 gestaltungsregeln müssen vom nutzer angwendet werden um viz zu verstärken
 Klärung der möglichen Fragen, use nach BERTIN (Theorie des graphischen Bildes)
@@ -522,12 +589,16 @@ so könnte man z.b. eine Sunburst node kreiiren die dann zwar 10 anstöpselmögl
 man benutzt grafische primitive und manche komplexe viz hat sehr viele primitive in komplexen abhängigkeiten, also kapseln
 
 \chapter{Zusammenfassung}
+\label{cha:Zusammenfassung}
 1. zusammenfassung der ergebnisse, lesson learned
 ???
 2. optional: persönliche bemerkungen, hinweis auf weiteren forschungsbedarf, ausblick in dei zukunft
 was kannnoch alles an der Software getan werden?
 \section{Fazit}
+\label{sec:Fazit}
+eignet sich die software?! JA NEEIN ?
 \section{Ausblick}
+\label{sec:Ausblick}
 Da die software lediglich einen Prototypen darstellt ergeben sich mannigfalitge Erweiterungsmöglichkeiten. Hier sollen einige weniger, dafür aber sehr wichtige mögliche Erweiterungen genannt werden.
 
 ruby
@@ -555,17 +626,6 @@ threaded nodes
 reiner export als abstrakte werte (koordinaten, höhe, breite, typ) in gängige 3D-Austausch-Formate
 
 export von einzelnen teilbereichen (ebenen) zur graphischen weiterverarbeitung mit anderer software
-
-\section*{Viz und so}
-
-Text über viz mit einer Fußnote\footnote{Streng genommen eine ziemlich sinnfreie.}
-
-\section*{Querverweise}
-
-Aber er hat einen coolen Verweis, siehe .
-Mal sehen wie das in einer Fußnote aussieht.
-
-Um Querverweise nutzen zu können muss man z.B. auf Abschnitt~\ref{sec:testi} verweisen.
 
 \bibliographystyle{natdin}
 \bibliography{diplom}
