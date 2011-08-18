@@ -140,38 +140,23 @@ Eigenschaften von DAten sind maßgeblich für weitere Schritte der Visualisierun
 Die Kenntnis der Beschaffenheit der Daten ist unabdingbar.
 \cite{Schumann} beschreibt ein Modell der Eigenschaften von Daten. Somit hat jeder Datensatz (als Menge von
 Daten) folgende Eigenschaften nach denen er klassifiziert werden kann.
-
-
-Beobachtungsraum
-
-
+\begin{description}
+\item[Beobachtungsraum]
 Der Beobachtungsraum beschreibt den Raum in dem Daten erhoben werden. Dieser Raum kann ein
 dreidimensionaler Raum sein, kann aber auch abstrakt beschrieben werden und nur eine einzige oder
 mehr als drei Dimensionen enthalten. Alle Dimensionen die den Beobachtunsgraum aufspannen,
 können als unabhängige Variablen(fußnote: kurze erklärung zu running clock / epoch-based) angesehen werden.
-
-
-Beobachtungspunkt
-
-
+\item[Beobachtungspunkt]
 Ein Beobachtungspunkt beschreibt Punkte im Beobachtungsraum an denen Daten vorhanden sind. Die Anzahl und Verteilung
 dieser Punkte ist unabhängig von der Beschaffenheit des Beobachtungsraumes. Beobachtunsgpunkte haben einen
 Wirkungskreis, der die "räumliche" Gültigkeit der Werte beschreibt. Dieser kann punktuell, lokal oder global sein.
-
-
-Merkmal
-
-
+\item[Merkmal]
 Das Merkmal ist eine Größe die an einem Beobachtungspunkt gemessen oder berechnet wurde. Dabei können
 einem Beobachtungspunkt mehrere Merkmale zugeordnet werden. Merkmale gelten dabei als abhängige Variablen.
-
-
-Ausprägung
-
-
+\item[Ausprägung]
 Die Ausprägung beschreibt den Wertebereich und damit alle Werte, die ein Merkmal annehmen kann.
-Dabei sind die Datentypen Skalr, Vektor und Tensor möglich. (fußnote mit kurzer erklärung was das is)
-
+Dabei sind die Datentypen Skalar, Vektor und Tensor möglich. (fußnote mit kurzer erklärung was das is)
+\end{description}
 Alle diese Eigenschaften können nun genutzt werden um Daten zu klassifizieren.
 
 
@@ -186,56 +171,34 @@ und oder zeitlichen bezug haben.
 abstrakte daten haben alle anforderungen die auch normale daten haben und deswegen kann datasynth beides
 
 \section{Klassifikation von Daten}
-
-
-multivariate Daten
-
-
+\begin{description}
+\item[Multivariate Daten]
 Bei multivariaten Daten existiert kein direkteer Beobachtungsraum oder dieser kann vernachlässigt werden, da er
 keine Rolle für die Weiterverarbeitung der Daten spielt. Sonderformen der multivariaten Daten sind die univariaten,
 bivariaten und trivariaten Daten. (mehr beschreibung?!)
-
-
-mehrdimensionale Daten
-
-
+\item[Mehrdimensionale Daten]
 Bei mehrdimensionalen Daten wird lediglich der Beobachtungsraum beschrieben. Dabei werden die abhängigen Variablen
 vernachlässigt und nur die Anzahl der Dimensionen des Beobachtungsraumes beschreibt die Art der Daten.
-
-
-raumbezogene Daten
-
-
+\item[Raumbezogene Daten]
 "Raumbezogene Daten liegen dann vor, wenn der Beobachtungsraum Ortskoordinaten enthält,
-die ein 2- oder 3-dimensionales räumliches Bezugssystem definieren." (SCHUMANN, Seite 219)
+die ein 2- oder 3-dimensionales räumliches Bezugssystem definieren."\citep[S.\,219]{Schumann}
 Das bedeutet das mindestens zwei und höchsten drei unabhängige Variablen des Datensatzes beispielsweise
 ein Koordinatensystem beschreiben.
-
-
-zeitbezogene Daten
-
-
+\item[Zeitbezogene Daten]
 Bie zeitbezogenen Daten kann mindestens eine unabhängige Variable in einen zeitlichen Kontext eingeordnet werden.
 (PREIM / DACHSELT steht da glaub ich mehr) hier nochn beispiel.
 und noch mehr dazu: statisch, quasistatisch, dynamisch
-
-
-abstrakte Daten
-
-
+\item[Abstrakte Daten]
 Bilden eine Sonderform der Daten, da weder ein raum noch ein zeitbezug möglich und sinnvoll ist. Oft dienen diese
 Daten als Grundlage der Informationsviz (siehe das kapitel dazu) und stammen aus dem digitalen umfeld(?)
 Als Beispiel können Aktienkurse, Verbindungsstatistiken von Netzwerkbetreibern und Relationen zwischen
 Dokumenten, Medien und Personen genannt werden.\footnote{Vgl. \citep{Preim}}
-
-
-strukturelle Beziehungen zwischen Datenobjekten
-
-
+\item[Strukturelle Beziehungen zwischen Datenobjekten]
 Diese Daten beschreiben nicht direkte Beobachtungspunkte und Merkmalsausprägungen sondern die Beziehung zwischen
 abhängigen Variablen untereinander, unabhängigen Variablen untereinander oder zwischen abhängigen und unabhängigen
 Variablen.
 (PREIM / DACHSELT) steht dazu was
+\end{description}
 
 \section{graphische Semiologie}
 
@@ -334,13 +297,18 @@ auch wissenschaftlich betrieben werden, da sich die Methoden und verfahren stark
 \section{Abgrenzung}
 
 Oft berühren Teilgebiete der Informationsvisualiserung verwandte Arbeitsfelder oder werden für die Problemlösung
-in anderen Bereichen verwendet. Um die 
-einordnung an der einteilung von ben fry
+in anderen Bereichen verwendet. Dieser Umstand macht für diese Arbeit eine klare Abgrenzung notwendig.
+
+
 
 Computergrafik
 Präsentationvisualisierung
 Data Mining
 Interfacedesign
+
+Zusätzlich zu diesen Bereichen können noch weitere Bereiche mit untergeordneter Bedeutung gefunden werden.
+
+einordnung an der einteilung von ben fry
 
 
 Data Mining ist der automatische Versuch, Datenmengen zu ordnen und Erkenntnisse darüber mithilfe von Algorithmen zu finden (DEF? ZIZAT?)
