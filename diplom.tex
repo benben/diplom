@@ -25,13 +25,11 @@
 \tableofcontents
 \chapter{Einleitung}
 %\section{Ein Abschnitt}
-\label{sec:testi}
+\label{sec:Einleitung}
 
-http://germany.emc.com/about/news/press/2011/20110628-01.htm
-http://germany.emc.com/collateral/analyst-reports/idc-extracting-value-from-chaos-ar.pdf
-noch einbauen
-
-Die Menge an digital gespeicherten Daten nimmt stetig zu. In nahezu allen Bereichen unseren
+Die Menge an digital gespeicherten Daten nimmt stetig zu. In 2011 werden laut einer neuen Studie\footnote{Vgl. \citep{EMC}}
+voraussichtlich 1,8 Zettabyte\footnote{1 Zettabyte = 1.000.000.000.000 Gigabyte}
+erzeugt und kopiert. In nahezu allen Bereichen unseren
 täglichen Lebens werden Daten erhoben, gemessen und gespeichert. Dazu zählen vor allem die Bereiche
 der Wissenschaft, Wirtschaft und Kultur. Auch die Politik und Verwaltung unserer Gesellschaft
 verfolgt eine neue Strategie im Umgang mit Daten. So haben Städte wie beispielsweise Leipzig eine 
@@ -100,11 +98,11 @@ klärung der begriffe/probleme/einordnung in den workflow, festlegen der besten 
 In diesem Teil der Arbeit wird auf die grundlegenden Begriffe eingegangen die einen Zugang
 zum Arbeitsfeld der Visualisierung voraussetzen.
 \section{Begriffsdefinition Daten und Information}
-Daten werden im allgemeinen Bereich der Informatik als "zum Zweck der Verarbeitung
+Daten werden in \cite{Gabler} für den allgemeinen Bereich der Informatik als "zum Zweck der Verarbeitung
 zusammengefasste Zeichen, die aufgrund bekannter oder unterstellter Abmachungen Informationen
 (d.h. Angaben über Sachverhalte und Vorgänge) darstellen" 
-[http://wirtschaftslexikon.gabler.de/Archiv/54483/daten-v5.html], beschrieben. 
-Damit ähnelt sich die Definition von Gabler mit der Definition des ISO 2382 Standards. 
+beschrieben.
+Damit ähnelt sich die Definition von \cite{Gabler} mit der Definition des ISO 2382 Standards. 
 Daten sind also die Träger der Information. Somit ist der Anwender nicht direkt an den Daten
 als solche interessiert sondern an den Informationen, die er mit verschiedenen Techniken aus
 diesen Daten gewinnen kann.
@@ -140,7 +138,7 @@ In diesem Kapitel wird der Inhalt der Daten und die damit zu extrahierenden Info
 Damit gelten Daten als Ausgangspunkt für die Konzeption einer Visualisierung. Die speziellen
 Eigenschaften von DAten sind maßgeblich für weitere Schritte der Visualisierung (siehe auch Pipeline).
 Die Kenntnis der Beschaffenheit der Daten ist unabdingbar.
-SCHUMANN beschreibt ein Modell der Eigenschaften von Daten. Somit hat jeder Datensatz (als Menge von
+\cite{Schumann} beschreibt ein Modell der Eigenschaften von Daten. Somit hat jeder Datensatz (als Menge von
 Daten) folgende Eigenschaften nach denen er klassifiziert werden kann.
 
 
@@ -227,6 +225,8 @@ abstrakte Daten
 
 Bilden eine Sonderform der Daten, da weder ein raum noch ein zeitbezug möglich und sinnvoll ist. Oft dienen diese
 Daten als Grundlage der Informationsviz (siehe das kapitel dazu) und stammen aus dem digitalen umfeld(?)
+Als Beispiel können Aktienkurse, Verbindungsstatistiken von Netzwerkbetreibern und Relationen zwischen
+Dokumenten, Medien und Personen genannt werden.\footnote{Vgl. \citep{Preim}}
 
 
 strukturelle Beziehungen zwischen Datenobjekten
@@ -239,10 +239,12 @@ Variablen.
 
 \section{graphische Semiologie}
 
-Die graphische Semiologie ist ein in BERTIN erstmals beschriebenes System zur Klassifikation von graphischen Zeichen.
-Bertin geht dabei von einem monosemiotischen System aus das den rationalen Teil der Bilderwelt, also der Diagramme
-als graphische Darstellung beschreibt.
-Da Menschen bestimmten Zeichen unterschiedliche Bedeutungen zuordnen, muss ein "rationaler Moment" (VGL BERTIN)
+Die graphische Semiologie ist ein in \cite{Bertin} erstmals beschriebenes System zur Klassifikation von graphischen Zeichen.
+Dabei wird versucht die grapische Darstellung auf ein "Grundalphabet" an graphischen Elementen zu reduzieren, wobei
+jedem einzelnen Zeichen eine bestimmte Bedeutung zugeordnet wird. \citep{Bertin} spricht dabei von einem
+monosemiotischen System aus, das den rationalen Teil der Bilderwelt, also der Diagramme
+als graphische Darstellung eindeutig beschreibt.
+Da Menschen aber bestimmten grafischen Zeichen unterschiedliche Bedeutungen zuordnen, muss ein "rationaler Moment" (VGL BERTIN)
 stattfinden, bei dem sich alle an der Kommunikation Beteiligte auf Bedeutungen einigen die bestimmte Zeichen
 haben. ERst dann kann über die Verbindung der Zeichen untereinander dikstutiert werden, was wiederrum der
 Information entspricht.
@@ -285,26 +287,65 @@ sehen sie im nächsten kapitel.
 \chapter{Informationsvisualisierung}
 
 \section{Definition}
+Die Visualisierung im allgemeinen ist eine "rechnergestützte, visuelle Präsentation von Daten, Informationen und Wissen
+in einer für den Menschen adäquaten und für die jeweilige Anwendung in diesem Kontext sinnvollen Form
+zu verstehen."\citep[S.\,3]{Schumann}
+Dabei wird die rein wissenschaftlich-technische Visualisierung beschrieben, die ausschließlich mit Ausgangsdaten arbeitet,
+die einen physikalischen Bezugsrahmen und somit einen konkreten Orts- und Zeitbezug haben. Diese Form der
+Visualiserung wird auch Datenvisualisierung genannt.
+Da die Informationsdefinition bis jetzt nur quantitativ durchgeführt wurde\footnote{Vgl. Shannon}, stellen sich 
+Fragen wie "Wie wichtig ist eine gegebene Information in einem gegegebenen Kontext?"\citep[S.\,341]{Schumann}
+oder "Wie kann Menschen geholfen werden, diese Datenfülle zu überblicken, zu verstehen und Einsichten und Erkenntnisse
+darüber zu gewinnen?"\citep[S.\,435]{Preim}.
+Die Informationsvisualisierung als spezielle Form der Datenvisualisierung versucht Antworten auf solche
+Fragen zu finden, die durch ein größeres Spektrum an unterschiedlichen Daten entstehen.
+In \citep[S.\,434]{Preim} wird Informationsvisualisierung wie folgt definiert:
+\begin{quote}
+Informationsvisualisierung beschäftigt sich mit der Visualisierung vorrangig abstrakter Daten, wie
+Multiparameterdaten(z.B. Medienobjekte mit verschiedenen Attributen), Hierarchien, Netzwerken, Text
+oder Softwaresystemen, die sich alle auch über die Zeit verändern können.
+\end{quote}
+Das Einsatzgebiet ist nicht mehr nur auf wissenschaftliche Bereiche beschränkt,
+sondern wird auch als alternative Suchmethode in Datenbanken\footnote{Vgl. Visual Data Mining KEIM},
+als Wissensvermittlung in kulturellen Bereichen\footnote{Farben von Maccandless} und zur Visualisierung von
+sozialen Netzwerken verwendet.
+Insbesondere die Suche nach Beziehungen zwischen Datenobjekten steht dabei im Vordergrund,
+da Informationsräume größer, komplexer und vernetzter werden und damit im Gegensatz
+zu physikalischen Daten ein "mentales Bild"\footnote{Vgl. ???????????????????} fehlt.
+Somit adressiert das Arbeitsfeld der Informationsvisualisierung, die Thema dieser Arbeit ist,
+einen Spezialfall der Datenvisualisierung, der alle Anforderungen an Datenvisualisierung enthält
+und mit zusätztlichen Anforderungen, wie Zielgruppe, Repräsentation und Medium, erweitert.
+Der Begriff Visualisierung steht damit synonym für Informationsvisualisierung.
+Durch die Verschiebung der Inhalte der Datengrundlage aus dem wissenschaftlichen Kontext
+in die Alltagskultur, ändern sich auch die Zielgruppe der Visualisierung. Durch das Internet
+wird der Personenkreis stark vergrößert, der ein Interesse und Nutzen an Visualisierungen
+haben kann, aber keinen mathematischen, natur- oder ingeneurswissenschaftlichen Hintergrund
+hat. Damit entstehen weitere Anforderungen. So muss die Visualisierung vom Benutzer
+schnell und einfach erfasst und ohne Vorkenntnisse verstanden werden können.
+Außerdem muss sie eine "angemessene und grafische Qualität haben, um über den
+reinen Nutzwert hinaus auch Qualitäten in Bezug auf Nutzungsfreude und Unterhaltungswert besitzen".\citep[S.\,438]{Preim}
+Dafür reichen einfache Datentabellen und Tabellenkalkulationsprogramme wie beispielsweise Microsoft Excel
+nicht mehr aus, um notwendige alternative Darstellungsformen zu finden.
 
-def von schumann.
-dann def von datenviz.
-und  dann def von infoviz aus preim
-
-herleitung über die wissenschaftlich-technische viz, datenviz zur informationsviz als sonderform
-visualisierung im allgemeinen, warum wieso und für was
-In dieser Arbeit wird von Daten im allgemeinen und von Information als eigentlicher Ausdruck der Daten gesprochen.
-Deshlab auch Infovis anstatt Datavis
-Somit adressiert die Informationsvisualisierung einen Spezialfall der Datenvisualisierung, der
-alle Anforderungen an Datenvisualisierung enthält und mit zusätztlichen Anforderungen erweitert.
-
-In dieser Arbeit wird Visualisierung synonym mit der Informationsvisualisierung verwendet um 
-
-infoviz als arbetisfeld mit noch spezifischeren anforderungen
-
-da informationen eine spezielle form von daten sind, schließen diese nicht nur die Anforderungen an datenviz ein sondern verlangen noch zusätzliche Gedanken
+Trotzdem muss erwähnt werden, dass die Grenzen zwischen den einzelnen Disziplinen fließend sind
+und eine genaue Beschreibung dieser noch aussteht. Informationsvisualisierung kann durchaus
+auch wissenschaftlich betrieben werden, da sich die Methoden und verfahren stark ähneln.
 
 \section{Abgrenzung}
+
+Oft berühren Teilgebiete der Informationsvisualiserung verwandte Arbeitsfelder oder werden für die Problemlösung
+in anderen Bereichen verwendet. Um die 
 einordnung an der einteilung von ben fry
+
+Computergrafik
+Präsentationvisualisierung
+Data Mining
+Interfacedesign
+
+
+Data Mining ist der automatische Versuch, Datenmengen zu ordnen und Erkenntnisse darüber mithilfe von Algorithmen zu finden (DEF? ZIZAT?)
+Visualisierung versucht dabei eine geeignete grafische Repräsentation zu finden, die dem Nutzer selbst die Möglichkeit gibt,
+diese Erklenntnisse zu finden.
 
 verwandte Arbeitsfelder
 
@@ -553,12 +594,12 @@ Text über viz mit einer Fußnote\footnote{Streng genommen eine ziemlich sinnfre
 
 \section*{Querverweise}
 
-Aber er hat einen coolen Verweis, siehe \cite[S.\,35--38]{Visualisierung}.
-Mal sehen wie das in einer Fußnote\footnote{\cite{Visualisierung}} aussieht.
+Aber er hat einen coolen Verweis, siehe .
+Mal sehen wie das in einer Fußnote aussieht.
 
 Um Querverweise nutzen zu können muss man z.B. auf Abschnitt~\ref{sec:testi} verweisen.
 
-\bibliographystyle{dinat}
+\bibliographystyle{natdin}
 \bibliography{diplom}
 \listoftables
 \listoffigures
