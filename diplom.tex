@@ -108,7 +108,7 @@ graphischen Darstellungen wird in Abschnitt \ref{sec:graphischeSemiologie} besch
 Nachdem die Ausgangsbedingungen definiert sind wird in Kapitel \ref{cha:Informationsvisualisierung} die
 Informationsvisualisierung beschrieben. Abschnitt \ref{sec:Definition} definiert den Begriff
 der Informationsvisualisierung und nennt die Besonderheiten dieser im Vergleich zu technisch-wissenschaftlichen
-Datenvisualisierung. Danach folgt im Abschnitt \ref{sec:Abgrenzung} eine Abgrenzung zu teils-verwandten
+Datenvisualisierung. Danach folgt im Abschnitt \ref{sec:Arbeitsfelder} eine Beschreibung zu teils verwandten
 Arbeitsfeldern und zu Bereichen, die die Visualisierung als Werkzeug verwenden. Was das Ziel einer guten
 Visualisierung? Wie kann man das messen? Und was macht eine gute Visualisierung aus? Diese Fragen werden
 im Abschnitt \ref{sec:Ziele} geklärt. Im folgenden Abschnitt \ref{sec:Pipeline} wird der eigentliche Arbeitsablauf
@@ -275,19 +275,18 @@ geordneten und quantitativen Komponenten spricht, unterscheiden \citep{Preim} no
 quantitative Datentypen. (Wo ist das bei Schumann?)
 In dieser Arbeit werden die neueren Begriffe aus \citep{Preim} verwendet.
 \begin{description}
-\item{Nominale Datentypen}
+\item[Nominale Datentypen]
 beschreiben meist Namen von Datenobjekten. Ihr Abstand ist äquidistant, da vor einer eingehenden Analyse sich
 keine Ausprägungen besonders nah oder entfernt stehen. Die einzige mögliche Operation ist der Test auf
 Gleichheit beziehungsweise Ungleichheit. Es gibt keine allgemeingültige, eindeutige Reihenfolge
 nach der sortiert werden könnte. Dadurch kann nur eine Reihenfolge nach bestimmten Gesichtpunkten erfolgen,
 das heißt eine Ordnung eingebracht werden, zum Beispiel durch alphabetische Sortierung von Namen.
-\item{Ordinale Datentypen}
+\item[Ordinale Datentypen]
 haben die gleichen Voraussetzungen wie nominale Typen, außer für die Reihenfolge.
 Diese ist bei diesem Typ allgemeingültig festgelegt. Als zusätzlicher Operator kann die Richtung der
 Ausprägung durch die Ordnungsrelation genannt werden.
 beispiel bei bertin glaub ich!
-\item{Quantitative Datentypen}
-besitzen einen Wertebereich und gestatten die Durchfühung von arithmetischen Operationen. Es existiert eine
+\item[Quantitative Datentypen] besitzen einen Wertebereich und gestatten die Durchfühung von arithmetischen Operationen. Es existiert eine
 Maßeinheit mit der die Abstände zwischen einzelnen Ausprägungen angegeben werden können. Durch eine 
 künstliche Einteilung in Intervalle kann dieser Typ in ordinale Datentypen übersetzt werden. Als Beispiel
 dafür können Temperaturwerte beschrieben werden, die in kalt, warm und heiß unterteilt werden.
@@ -295,39 +294,38 @@ dafür können Temperaturwerte beschrieben werden, die in kalt, warm und heiß u
 \section{graphische Semiologie}
 \label{sec:graphischeSemiologie}
 Die graphische Semiologie ist ein in \cite{Bertin} erstmals beschriebenes System zur Klassifikation von graphischen Zeichen.
-Dabei wird versucht die grapische Darstellung auf ein "Grundalphabet" an graphischen Elementen zu reduzieren, wobei
-jedem einzelnen Zeichen eine bestimmte Bedeutung zugeordnet wird. \citep{Bertin} spricht dabei von einem
-monosemiotischen System aus, das den rationalen Teil der Bilderwelt, also der Diagramme
+Es stammt ursprünglich aus der thematischen Kartographie\footnote{"Thematische Karten enthalten vorwiegend
+Erscheinungen oder Vorkommnisse nicht topographischer Art welche jedoch mit der Erdoberfläche in Verbindung
+stehen. Es handelt sich hierbei um Dinge, die georäumliche Lage, Verbreitung oder Bewegung besitzen, sowohl
+um reale Dinge, als auch um Beziehungen, Funktionen, Hypothesen, geistige Vorstellungen, Möglichkeiten und
+Projekte."\citep{Gitta} }. Dies ist ein Teilgebiet der Geographie, das erste Anwedungsgebiet für
+Visualisierung.
+Diese Semiotik zerlegt die grapische Darstellung in ein "Grundalphabet" an graphischen Elementen, wobei
+jedem einzelnen Zeichen eine bestimmte Bedeutung zugeordnet wird. \citep{Bertin} geht dabei von einem
+monosemiotischen\footnote{"Die Betrachtung einer Zeichenverbindung setzt die Kenntnis der Bedeutung jedes
+einzelnen Zeichens voraus."\citep[S.\,3]{Bertin}} System aus, das den rationalen Teil der Bilderwelt, also der Diagramme
 als graphische Darstellung eindeutig beschreibt.
-Da Menschen aber bestimmten grafischen Zeichen unterschiedliche Bedeutungen zuordnen, muss ein "rationaler Moment" (VGL BERTIN)
-stattfinden, bei dem sich alle an der Kommunikation Beteiligte auf Bedeutungen einigen die bestimmte Zeichen
-haben. ERst dann kann über die Verbindung der Zeichen untereinander dikstutiert werden, was wiederrum der
-Information entspricht.
+Da Menschen aber bestimmten grafischen Zeichen unterschiedliche Bedeutungen zuordnen, muss ein "rationaler Moment"\footnote{Vgl.
+\citep{Bertin}} stattfinden, bei dem sich alle an der Kommunikation Beteiligte auf Bedeutungen einigen
+die bestimmte Zeichen haben. Erst dann kann über die Verbindung der Zeichen untereinander dikstutiert
+werden, was wiederrum der Information entspricht.
 Die graphische Semiologie ist also ein Zeichensystem mithilfe dessen Information in das graphische Zeichensystem
 transkribiert werden kann.
-Das graphische System umfasst folgende Zeichen die visuelle Variablen genannt werden.
-
-*Position auf der Ebene (angegeben durch x und y)
-*Größe
-*Helligkeitswert
-*Musterung oder Textur
-*Farbe
-*Richtung oder Orientierung
-*Form des Elements
+Das System umfasst folgende acht Zeichen, die zur Kodierung von Daten in eine graphische Darstellung benutzt
+werden können. Sie werden visuelle Variablen genannt.
+\begin{itemize}
+\item Position auf der Ebene (angegeben durch x und y)
+\item Größe
+\item Helligkeitswert
+\item Musterung oder Textur
+\item Farbe
+\item Richtung oder Orientierung
+\item Form des Elements
+\end{itemize}
 
 (hier das bild von bertin wo alle viz variablen dargestellt werden)
 
-klärung und definition aller graphischen grundlagen
-graphische semiologie?
-was macht eine grafik eigentlich aus.....?
-
-Diagramm?
-
-graphische Semiologie
-BERTIN spricht von grapischer Semiologie, also von einem genau festgelegten und endlichen Zeichensystem für die graphische Repräsentation von Information.
-Information bedeutet dabei siehe BERtin 13 Somit fasst Bertin den Informationsbegriff etwas allgemeiner und fasst damit Daten ein. (stimmt das?)
-
-8 visuelle Variablen nach Bertin ((eine Anforderung an datasynth: muss alle diese abbilden können)):
+Begriff Diagramm?
 
 \chapter{Informationsvisualisierung}
 \label{cha:Informationsvisualisierung}
@@ -378,37 +376,38 @@ Trotzdem muss erwähnt werden, dass die Grenzen zwischen den einzelnen Disziplin
 und eine genaue Beschreibung dieser noch aussteht. Informationsvisualisierung kann durchaus
 auch wissenschaftlich betrieben werden, da sich die Methoden und verfahren stark ähneln.
 
-\section{Abgrenzung}
-\label{sec:Abgrenzung}
+\section{Verwandte Arbeitsfelder}
+\label{sec:Arbeitsfelder}
 Oft berühren Teilgebiete der Informationsvisualiserung verwandte Arbeitsfelder oder werden für die Problemlösung
 in anderen Bereichen verwendet. Dieser Umstand macht für diese Arbeit eine klare Abgrenzung notwendig.
-
-
-
-Computergrafik
-Präsentationvisualisierung
-Data Mining
-Interfacedesign
-Computational Design
-
-Zusätzlich zu diesen Bereichen können noch weitere Bereiche mit untergeordneter Bedeutung gefunden werden.
-
-einordnung an der einteilung von ben fry
-
-
-Data Mining ist der automatische Versuch, Datenmengen zu ordnen und Erkenntnisse darüber mithilfe von Algorithmen zu finden (DEF? ZIZAT?)
-Visualisierung versucht dabei eine geeignete grafische Repräsentation zu finden, die dem Nutzer selbst die Möglichkeit gibt,
-diese Erklenntnisse zu finden.
-
-verwandte Arbeitsfelder
-
-viz ist auch ein teil des UI da visuelle repräsentation die primäre quelle der informationsübertragung ist, ob in text, bild oder grafiken.
-
-Häufig sind die Grenzen der einzelnen Arbeitsbereiche nicht klar voneinander getrennt. Verwandte Arbeitsfelder sind (Visual) Data Mining, ....
-Weiterhin ist die Visualisierung im allgemeinen ein Teil anderer Arbeitsbereiche. Zum Beispiel spielt die Vizualisierung im Interface Design eine ebenso wichtige Rolle wie im Data Mining.
-
-Abgrenzung zu anderen Bereichen (vielleicht eigener gliederungspunkt) -> data mining.....
-Abgrenzung nach innen (ben fry)
+Nachfolgend werden Arbeitsgebiete beschrieben, die häufig mit der Informationsvisualisierung in Verbindung
+gebracht oder sogar verwechselt werden. Häufig sind die Grenzen der einzelnen Arbeitsbereiche nicht klar
+voneinander getrennt und eine genaue Abgrenzung dieser steht noch aus. Die nachfolgende Liste beschreibt nur
+eine Auswahl und erhebt keinen Anspruch auf Vollständigkeit.
+\begin{description}
+\item[Computergrafik]
+Die Computergrafik ist ein Teil der Informatik und beschreibt die Ausgabe von zwei- und dreidimensionalen
+Objekten als Raster oder Vektorgrafik. Informationsvisualisierung benutzt diese Techniken, ist aber kein Teil
+dieses Gebietes.
+\item[Präsentations- und Prozessvisualisierung]
+Häufig werden auch die Präsentationsvisualisierung und Prozessvisualisierung als Visualisierung bezeichnet, sind
+aber eigene Gebiete in denen es auch um die Sichtbarmachung von Informationen geht, diese aber nicht aus
+großen Datenmengen gewonnen wird und daher auch ohne Softwareunterstützung durchgeführt werden kann.
+\item[Data Mining] ist der automatische Versuch, Datenmengen zu ordnen und Erkenntnisse darüber mithilfe
+von Algorithmen zu finden. Im Gegensatz dazu versucht die Visualisierung eine geeignete grafische Repräsentation
+bereitzustellen, die dem Nutzer die Möglichkeit gibt, diese Erklenntnisse selbst zu finden. Für die Datengewinnung
+ist die Visualisierung auf Techniken des Data Minig angewiesen. Es gibt Bestrebungen beide Gebiete zu
+Verbinden um Synergien zu bilden.\footnote{Vgl. Visual Data Mining KEIM}
+\item[Interface- und Interactiondesign]
+Diese Felder beschreiben die Gestaltung von Benutzeroberflächen. Damit arbeiten Sie wie die Visualisierung an
+der Schnittstelle zwischen Mensch und Maschine. Interfacedesign benutzt häufig Techniken der Visualisierung
+in Verbindung mit eigenen Arbeitsweisen um graphische Konzepte zu realisieren. Diese sind auch in diesem
+Bereich primäre Form der Informationsübertragung.
+\item[Computational Design]
+Dieser von \citep{BenFry} eingeführte Begriff beschreibt die Vereinigung vieler Disziplinen zu einem neuen
+interdisziplinären Arbeitsfeld. Die Visualisierung ist ein zentraler Bestandteil des Computational Design,
+welches eine neue Form von ....
+\end{description}
 
 \section{Ziele}
 \label{sec:Ziele}
@@ -509,6 +508,9 @@ man kann jede visualisierung in ihre grundlegenden graphischen elemente zerlegen
 was sind die grundlegenden graphischen elemente? (herausfinden! vielleicht in bertin!)
 \section{Anforderungen}
 \label{sec:Anforderungen}
+
+8 visuelle Variablen nach Bertin ((eine Anforderung an datasynth: muss alle diese abbilden können)):
+
 möglichkeit alle datentypen abbilden bzw verarbeiten zu können
 bearbeitungsziele sollen schnell und unkompliziert erfüllt werden können
 
