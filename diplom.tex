@@ -30,7 +30,7 @@
 \label{cha:Einleitung}
 Die Menge an digital gespeicherten Daten nimmt stetig zu. In 2011 werden laut einer neuen
 Studie\footnote{Vgl. \citep{EMC}} voraussichtlich 1,8 Zettabyte\footnote{1 Zettabyte = \num{1d21}
-Byte = 1.000.000.000.000 Gigabyte} erzeugt und kopiert. In nahezu allen Bereichen unseren
+Byte = 1.000.000.000.000 Gigabyte} an Daten erzeugt und kopiert. In nahezu allen Bereichen unseren
 täglichen Lebens werden Daten erhoben, gemessen und gespeichert. Dazu zählen vor allem die Bereiche
 der Wissenschaft, Wirtschaft und Kultur. Auch die Politik und Verwaltung unserer Gesellschaft
 verfolgt eine neue Strategie im Umgang mit Daten. So haben Städte wie beispielsweise Leipzig eine 
@@ -119,7 +119,7 @@ einer Visualisierung anhand verschiedener Einteilungsmöglichkeiten beschrieben 
 Das Kapitel \ref{cha:Software} beschreibt nun die Konzeption einer Visualisierungssoftware.
 Dabei werden in Abschnitt \ref{sec:Anforderungen} die aus den vorherigen Kapiteln resultierenden Anforderungen
 beschrieben und dann in Abschnitt \ref{sec:Grenzen} mögliche Grenzen beschrieben. Als nächstes
-werden in Abshcnitt \ref{sec:bestehendeSoftware} beispielhaft vorhandene Softwarelösungen auf die Anforderungen geprüft.
+werden in Abschnitt \ref{sec:bestehendeSoftware} beispielhaft vorhandene Softwarelösungen auf die Anforderungen geprüft.
 
 Im Kapitel \ref{cha:Umsetzung} wird die Implementation eines Prototyps beschrieben. Dabei wird in Abschnitt
 \ref{sec:Technologien} auf die verwendeten grundlegenden Technologien eingegangen. Danach wird in Abschnitt
@@ -202,18 +202,7 @@ einem Beobachtungspunkt mehrere Merkmale zugeordnet werden. Merkmale gelten dabe
 Die Ausprägung beschreibt den Wertebereich und damit alle Werte, die ein Merkmal annehmen kann.
 Dabei sind die Datentypen Skalar, Vektor und Tensor möglich. (fußnote mit kurzer erklärung was das is)
 \end{description}
-Alle diese Eigenschaften können nun genutzt werden um Daten zu klassifizieren.
-
-
-Metadaten
-
-klassifizierung von informationen in bezug auf viz
-
-was für daten können verwendet werden? wetterdaten? pachube, sämtliche (Web)-Apis
-
-möchte sich diese arbeit mit der spezialform von daten, den abstrakten Daten beschäftigen, die keinen räumlichen
-und oder zeitlichen bezug haben.
-abstrakte daten haben alle anforderungen die auch normale daten haben und deswegen kann datasynth beides
+Alle diese Eigenschaften können als Metadaten bezeichnet werden und genutzt werden um Daten zu klassifizieren.
 
 \section{Klassifikation von Daten}
 \label{sec:KlassifikationDaten}
@@ -230,35 +219,79 @@ bivariaten und trivariaten Daten. (mehr beschreibung?!)
 Bei mehrdimensionalen Daten wird lediglich der Beobachtungsraum beschrieben. Dabei werden die abhängigen Variablen
 vernachlässigt und nur die Anzahl der Dimensionen des Beobachtungsraumes beschreibt die Art der Daten.
 Multivariate Daten können in multidimensionale Daten überführt werden.
+\item[Multiparameterdaten]
+sind Daten, die mindestens 2 Merkmale (abhängige Variablen) pro Beobachtungspunkt besitzen. Die Dimensionalität
+(größer zwei oder ???), Anordnung und Wirkunsgkreis der Beobachtungspunkte sind beliebig.
+Beispielsweise gilt eine SQL-Tabelle mit einer Spalte mit einer Ordnungsnummer und 3 Spalten bereits
+als mutlivariater und mehrdimensionaler Datensatz.
+Bei der Visualiserung von abhängigen und unabhängigen Variablen in einer Darstellung, sollte darauf geachtet
+werden, dass die Unterscheidbarkeit der beiden Klassen gegeben bleibt.\footnote{Da Multiparameterdaten
+allgemein sehr schwierig zu visualisieren sind schlägt \citep{Schumann} ein dreistufiges Vorgehen vor:
+Focusing zur Auswahl der Daten, Bildgenerierung zur Erzeugung von visueller Repräsentationen, Linking
+zur Verknüpfung von Teilsichten zu einer Gesamtansicht.}
+
+bei schumann nochma direkt ins buch gucken!
+
 \item[Raumbezogene Daten]
 "Raumbezogene Daten liegen dann vor, wenn der Beobachtungsraum Ortskoordinaten enthält,
 die ein 2- oder 3-dimensionales räumliches Bezugssystem definieren."\citep[S.\,219]{Schumann}
 Das bedeutet das mindestens zwei und höchsten drei unabhängige Variablen des Datensatzes beispielsweise
-ein Koordinatensystem beschreiben.
+ein Koordinatensystem beschreiben. Dieser Raumbezug kann direkt und indirekt erfolgen ist für
+den normalen Anwender aber unverzichtbar.\footnote{dazu bitte kapitel XX von schumann lesen s.221}
+Ein eindimensionaler Beobachtungsraum ist möglich. Dabei erfolgt die Abbildung zum Beispiel einer
+Ordnungsnummer auf einer Linie. Außerdem kommt dem Geltungsbereich bei raumbezogenen Daten eine
+besonder Bedeutung zu, da dieser hier auf garkeinen Fall vernachlässigt werden darf,
+um Fehlinterpretationen zu vermeiden.
+Eine spezielle Form der raumbezogenen Daten sind die Volumendaten, bei denen Beobachtunsgpunkte mit
+genau einem skalaren Wert über ein regelmäßiges dreidimensionales Gitter verteilt sind.
 \item[Zeitbezogene Daten]
 Bie zeitbezogenen Daten kann mindestens eine unabhängige Variable in einen zeitlichen Kontext eingeordnet werden.
-(PREIM / DACHSELT steht da glaub ich mehr) hier nochn beispiel.
-und noch mehr dazu: statisch, quasistatisch, dynamisch
+Der Zeitbezug kann dabei statisch (fester Zeitpunkt oder Intervall), quasistatisch (mehrere diskrete Zeitpunkte)
+oder dynamisch (Zeitreihen) sein. Damit kann die Visualisierung als Unterstützung zur
+Zeitreihenanalyse gesehen werden.
+Als klassisches Beispiel gelten Börsen- oder Wetterdaten.
 \item[Abstrakte Daten]
 Bilden eine Sonderform der Daten, da weder ein raum noch ein zeitbezug möglich und sinnvoll ist. Oft dienen diese
 Daten als Grundlage der Informationsviz (siehe das kapitel dazu) und stammen aus dem digitalen umfeld(?)
 Als Beispiel können Aktienkurse, Verbindungsstatistiken von Netzwerkbetreibern und Relationen zwischen
 Dokumenten, Medien und Personen genannt werden.\footnote{Vgl. \citep{Preim}} Als Beispiel für nicht-abstrakte
 Daten gelten beispielsweise Wettermessungen an Wetterstationen oder Daten, die bei physikalischen Experimenten
-gesammelt wurden.
+gesammelt wurden. Abstrakte Dimensionen wie Namen von Städten oder Personen sollten als diese gekennzeichnet
+werden und erkenn- und unterscheidbar sein. Zum Beispiel bietet sich eine Abbildung auf der X-Achse einer
+Darstellung dafür an.
 \item[Strukturelle Beziehungen zwischen Datenobjekten]
 Diese Daten beschreiben nicht direkte Beobachtungspunkte und Merkmalsausprägungen sondern die Beziehung zwischen
 abhängigen Variablen untereinander, unabhängigen Variablen untereinander oder zwischen abhängigen und unabhängigen
 Variablen.
-(PREIM / DACHSELT) steht dazu was
+Unterschieden wird dabei noch zwischen hierarchischen Formen und Netzwerken. 
 \end{description}
 
 \section{Datentypen}
 \label{sec:Datentypen}
-quantitative / kategorische / ...
-
-preim S. 449
-
+Datentypen beschreiben die eigentlichen Ausprägungen eines Merkmals und können zu einer zusätzlichen
+Klassifikation beitragen. Das ist wichtig um erkennen zu können welche Verarbeitungschritte mit den Datenwerten
+möglich sind. Meist erfolgt eine Einteilung in drei Klassen. Während \citep{Bertin} von qualitativen,
+geordneten und quantitativen Komponenten spricht, unterscheiden \citep{Preim} nominale, ordinale und
+quantitative Datentypen. (Wo ist das bei Schumann?)
+In dieser Arbeit werden die neueren Begriffe aus \citep{Preim} verwendet.
+\begin{description}
+\item{Nominale Datentypen}
+beschreiben meist Namen von Datenobjekten. Ihr Abstand ist äquidistant, da vor einer eingehenden Analyse sich
+keine Ausprägungen besonders nah oder entfernt stehen. Die einzige mögliche Operation ist der Test auf
+Gleichheit beziehungsweise Ungleichheit. Es gibt keine allgemeingültige, eindeutige Reihenfolge
+nach der sortiert werden könnte. Dadurch kann nur eine Reihenfolge nach bestimmten Gesichtpunkten erfolgen,
+das heißt eine Ordnung eingebracht werden, zum Beispiel durch alphabetische Sortierung von Namen.
+\item{Ordinale Datentypen}
+haben die gleichen Voraussetzungen wie nominale Typen, außer für die Reihenfolge.
+Diese ist bei diesem Typ allgemeingültig festgelegt. Als zusätzlicher Operator kann die Richtung der
+Ausprägung durch die Ordnungsrelation genannt werden.
+beispiel bei bertin glaub ich!
+\item{Quantitative Datentypen}
+besitzen einen Wertebereich und gestatten die Durchfühung von arithmetischen Operationen. Es existiert eine
+Maßeinheit mit der die Abstände zwischen einzelnen Ausprägungen angegeben werden können. Durch eine 
+künstliche Einteilung in Intervalle kann dieser Typ in ordinale Datentypen übersetzt werden. Als Beispiel
+dafür können Temperaturwerte beschrieben werden, die in kalt, warm und heiß unterteilt werden.
+\end{description}
 \section{graphische Semiologie}
 \label{sec:graphischeSemiologie}
 Die graphische Semiologie ist ein in \cite{Bertin} erstmals beschriebenes System zur Klassifikation von graphischen Zeichen.
@@ -325,6 +358,7 @@ sozialen Netzwerken verwendet.
 Insbesondere die Suche nach Beziehungen zwischen Datenobjekten steht dabei im Vordergrund,
 da Informationsräume größer, komplexer und vernetzter werden und damit im Gegensatz
 zu physikalischen Daten ein "mentales Bild"\footnote{Vgl. ???????????????????} fehlt.
+Es besteht also keine Möglichkeit für räumliche Metaphern um einen Ortsbezug herzustellen.
 Somit adressiert das Arbeitsfeld der Informationsvisualisierung, die Thema dieser Arbeit ist,
 einen Spezialfall der Datenvisualisierung, der alle Anforderungen an Datenvisualisierung enthält
 und mit zusätztlichen Anforderungen, wie Zielgruppe, Repräsentation und Medium, erweitert.
@@ -506,7 +540,14 @@ rails als beispiel für MIT Lizenz
 pixel (bildschirm)
 farbe (rgb)
 \subsection{theoretische Grenzen}
-viz von mehr als 3 dimensionen -> projektion
+Wird eine grafische Darstellung benutzt, in der mehr als 2 Variablen für die Positionierung der Grafikprimitve
+im Raum verwendet werden, muss für die Ausgabe auf dem Monitor oder als Druckerzeugnis eine Projektion
+vorgenommen werden.
+
+interaktions- und navigationstechniken nötig
+Die Implementierung in dieser Arbeit beschränkt sich auf eine statische Ausgabe ohne Interaktionsmöglichkeiten,
+kann aber dahingehend erweitert werden.\footnote{Vgl. Abschnitt \ref{sec:Ausblick}}
+
 \subsection{biologische Grenzen}
 wahrnehmungs- und auflösungsfähigkeit des menschen
 verständnis (wieviel kann ein mensch mit einmal überblicken)
