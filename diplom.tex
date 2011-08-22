@@ -118,7 +118,7 @@ einer Visualisierung anhand verschiedener Einteilungsmöglichkeiten beschrieben 
 
 Das Kapitel \ref{cha:Software} beschreibt nun die Konzeption einer Visualisierungssoftware.
 Dabei werden in Abschnitt \ref{sec:Anforderungen} die aus den vorherigen Kapiteln resultierenden Anforderungen
-beschrieben und dann in Abschnitt \ref{sec:Grenzen} mögliche Grenzen beschrieben. Als nächstes
+beschrieben und dann in Abschnitt \ref{sec:Einschr} mögliche Grenzen beschrieben. Als nächstes
 werden in Abschnitt \ref{sec:bestehendeSoftware} beispielhaft vorhandene Softwarelösungen auf die Anforderungen geprüft.
 
 Im Kapitel \ref{cha:Umsetzung} wird die Implementation eines Prototyps beschrieben. Dabei wird in Abschnitt
@@ -291,7 +291,7 @@ Maßeinheit mit der die Abstände zwischen einzelnen Ausprägungen angegeben wer
 künstliche Einteilung in Intervalle kann dieser Typ in ordinale Datentypen übersetzt werden. Als Beispiel
 dafür können Temperaturwerte beschrieben werden, die in kalt, warm und heiß unterteilt werden.
 \end{description}
-\section{graphische Semiologie}
+\section{Graphische Semiologie}
 \label{sec:graphischeSemiologie}
 Die graphische Semiologie ist ein in \cite{Bertin} erstmals beschriebenes System zur Klassifikation von graphischen Zeichen.
 Es stammt ursprünglich aus der thematischen Kartographie\footnote{"Thematische Karten enthalten vorwiegend
@@ -327,6 +327,11 @@ werden können. Sie werden visuelle Variablen genannt.
 
 Begriff Diagramm?
 
+extra punkt graphische Darstellung??????
+
+begriff definieren als ergebnis einer visualisierung in digitaler oder realer form
+enthält die 
+
 \chapter{Informationsvisualisierung}
 \label{cha:Informationsvisualisierung}
 \section{Definition}
@@ -357,10 +362,6 @@ Insbesondere die Suche nach Beziehungen zwischen Datenobjekten steht dabei im Vo
 da Informationsräume größer, komplexer und vernetzter werden und damit im Gegensatz
 zu physikalischen Daten ein "mentales Bild"\footnote{Vgl. ???????????????????} fehlt.
 Es besteht also keine Möglichkeit für räumliche Metaphern um einen Ortsbezug herzustellen.
-Somit adressiert das Arbeitsfeld der Informationsvisualisierung, die Thema dieser Arbeit ist,
-einen Spezialfall der Datenvisualisierung, der alle Anforderungen an Datenvisualisierung enthält
-und mit zusätztlichen Anforderungen, wie Zielgruppe, Repräsentation und Medium, erweitert.
-Der Begriff Visualisierung steht damit synonym für Informationsvisualisierung.
 Durch die Verschiebung der Inhalte der Datengrundlage aus dem wissenschaftlichen Kontext
 in die Alltagskultur, ändern sich auch die Zielgruppe der Visualisierung. Durch das Internet
 wird der Personenkreis stark vergrößert, der ein Interesse und Nutzen an Visualisierungen
@@ -375,6 +376,12 @@ nicht mehr aus, um notwendige alternative Darstellungsformen zu finden.
 Trotzdem muss erwähnt werden, dass die Grenzen zwischen den einzelnen Disziplinen fließend sind
 und eine genaue Beschreibung dieser noch aussteht. Informationsvisualisierung kann durchaus
 auch wissenschaftlich betrieben werden, da sich die Methoden und verfahren stark ähneln.
+
+Somit adressiert das Arbeitsfeld der Informationsvisualisierung, die Thema dieser Arbeit ist,
+einen Spezialfall der Datenvisualisierung, der alle Anforderungen an Datenvisualisierung enthält
+und mit zusätztlichen Anforderungen, wie Zielgruppe, Repräsentation und Medium, erweitert. Dieses
+Feld benutzt zur Erhebung, Speicherung, Weiterverarbeitung und Ausgabe ausschließlich digitale Techniken.
+Der Begriff Visualisierung steht in dieser Arbeit synonym für Informationsvisualisierung.
 
 \section{Verwandte Arbeitsfelder}
 \label{sec:Arbeitsfelder}
@@ -436,13 +443,19 @@ Was ist das Interaktionsziel? (Begriff klären)
 diese arbeit bezieht sich auf informationsvisualisierung als sonderfall der datenvisualisietrung. damit werden alle dinge der datavz beachtet und zusätzlich alle sonderfälle der infoviz beachtet
 
 wissenschaftlich, technisch, .... anwendungsgebiete?!
+
+anforderungen als extra gliederungspunkt??????????????
+
+wahrnehmungs- und auflösungsfähigkeit des menschen
+verständnis (wieviel kann ein mensch mit einmal überblicken)
+
 \section{Visualisierungspipeline}
 \label{sec:Pipeline}
 es gibt mehrere aber ähnlich beschreibungen des ablaufs einer visualisierung.
 ben fry und schumann  und preim
 \section{Grundprinzip}
 \label{sec:Grundprinzip}
-dieser schritt wird in der literatur als selbstverständlich angesehen. dagegen bedeuten die regeln wie man unterschiedliceh datentypen und in welcher form darstellt um das beste ergebnis auf eine bestimmte frage zu erhalten sind viel komplexer.
+dieser schritt wird in der literatur als selbstverständlich angesehen, ist aber kernpunkt der software. dagegen bedeuten die regeln wie man unterschiedliceh datentypen und in welcher form darstellt um das beste ergebnis auf eine bestimmte frage zu erhalten sind viel komplexer.
 deshalb soll eine software entwickelt werden, die diese triviale aber für einen menschen sehr arbeitsintensive arbeit übernimmt, ohne dabei irgendwelchen einschränkugen zu unterliegen.
 
 ein schritt in der viz pipeline
@@ -474,9 +487,10 @@ Preim/Dachselt ergänzen zu den von schumann genannten noch die viz von relation
 
 hier die "datentypen" aufzählen
 
-\section{graphische Darstellungen}
+\section{Graphische Darstellung}
 \label{sec:Darstellungen}
-Die graphische Darstellung besteht aus graphischen Variablen.
+Die graphische Darstellung ist das Produkt der Visualisierung. Sie besteht 
+aus graphischen Variablen.
 
 hier ein paar wichtige vertreter der viz formen erklären und zeigen
 
@@ -506,9 +520,79 @@ um den vielseitigen anforderungen an eine visualisierung gerecht zu werden, soll
 
 man kann jede visualisierung in ihre grundlegenden graphischen elemente zerlegen.
 was sind die grundlegenden graphischen elemente? (herausfinden! vielleicht in bertin!)
+
+\section{Rahmenbedingungen}
+Für die Arbeit mit der Infomationsvisualisierung, speziell in Bezug auf die digitale
+Transformation von Daten zu Grafiken gelten einige Rahmenbedingungen, die vor der
+Konzeption einer Software der Informationsvisualisierung bedacht werden müssen.
+
+
+Ein Großteil der Ausgabeformate sind zweidimensional\footnote{Es gibt immer wieder
+Ansätze, die die 3D-Technik nutzen um Visualisierungen darzustellen. Diese Entwicklungen
+müssen aber noch weiter erforscht werden um ihre Tauglichkeit zu prüfen.}. Dabei kann
+die Ausgabe digital auf einem Display oder als Druck einer grafischen Darstellung
+erfolgen. Soll eine grafische Darstellung benutzt werden, in der mehr als 2 Variablen
+für die Positionierung der Grafikprimitive im Raum verwendet werden, muss daher für die
+Ausgabe eine Projektion vorgenommen werden. Die Projektion ist die mathematische
+Realisierung des Modells der virtuellen Kamera. In \citep[S.\,26]{Computergrafik} werden die 
+Eigenschaften dieser Kamera wie folgt beschrieben:
+\begin{itemize}
+\item die Position der Kamera ist gegeben durch die Koordinaten eines Punkts;
+\item der Bildausschnitt ist rechtwinklig;
+\item der Schärfebereich der Kamera ist unendlich groß.
+\end{itemize}
+Für diese virtuelle Kamera wird in der Computergrafik die Zentralprojektion verwendet.
+Bei dieser wird jeder Punkt im Raum mit einem Projektionsstrahl (in Form einer Geraden)
+auf eine Ebene abgebildet. Die Ebene kann beispielsweise ein Monitor sein. Alle 
+Projektionsstrahlen schneiden sich in einem Punkt außerhalb dieser Ebene, dem sogenannten
+Projektionszentrum. Abbildung XXX veranschaulicht dieses Prinzip. Die Parallelprojektion
+findet als Sonderfall der Zentralprojektion ebenfalls Anwendung.\footnote{Bei der
+Parallelprojektion liegt das Projektionszentrum unendlich weit entfernt. Somit verlaufen
+die Projektionsstrahlen parallel. Vgl. \citep{wiki_projektion}} Der Nutzen der virtuellen
+Kamera kann durch Nutzerinteraktion erhöht werden. Der Anwender kann somit Parameter der
+virtuellen Kamera, wie beispielsweise Position und Zoom selbst beeinflussen um den Fokus
+auf einzelne Teilbereiche der grafischen Darstellung zu setzen.\footnote{Vgl. Focus und
+.... Techniken in \citep[S.\,1]{Schumann} und \citep[S.\,1]{Preim}}
+
+Durch die Eigenschaften heutiger Ausgabegeräte müssen durch die Visualisierung erzeugte
+Grafiken gerastert werden. Die Technik der Rasterung überführt die kontinuierlichen Werte
+einer Projektion in diskrete Werte des Geräte-Koordinatensystems. Dabei werden Werte
+gerundet und in die zweidimensionale Matrix\footnote{Auflösung der Ausgabe in Pixel oder DPI}
+des Ausgabegerätes übernommen.
+
+Auch mögliche Farbwerte der einzelnen Bildpunkte und damit die Farbräume der Ausgabegeräte
+müssen beachtet werden. Die Ausgabe auf Computermonitoren erfolgt im RGB-Farbraum während
+für Druckerzeugnisse unterschiedliche Farbräume möglich sind.
+
+Die Rahmenbedingungen der Bildsynthese konnten in dieser Arbeit nur grundlegend beschrieben
+werden. Eine tiefgreifendere Beschreibung des Themas erfolgt in \citep{Computergrafik}.
+
+
+Die Daten und deren durch Visualisierung erzeugten visuellen Repräsentationen sind immer
+gebunden an ihr Speicher- und Ausgabeformat.
+Zuersteinmal müssen die Daten gesammelt und gespeichert werden. Dazu müssen adäquate
+Formate gefunden werden, die die Software verarbeiten kann. Es gibt bereits
+etablierte Ansätze große Datenmengen zu speichern und zu übertragen. Dazu müssen
+die Daten maschinenlesbar codiert werden. Dabei kommen etablierte Formate wie
+CSV und XML zum Einsatz. Daneben existieren noch weitere Formate mit spezifischen
+Vor- un Nachteilen. JSON\footnote{JavaScript Object Notation} hat Ähnlichkeit mit XML,
+ist dafür aber besser von Menschen lesbar. Im wissenschaftlichen Bereich findet
+häufig das netCDF\footnote{bissi erklärung hier Vgl. \citep{Schumann}} Format
+Anwendung. Neben diesen sehr bekannten Formaten, existieren noch einige weitere
+Möglichkeiten, Daten zu speichern.
+Zur Speicherung der graphischen Darstellungen einer Visualisierung eignen sich bekannte
+Formate wie JPEG, PNG, BMP, TIFF und viele andere. Dabei müssen formatspezifische
+Eigenschaften wie beispielsweise die Kompression beachtet werden.
+
+
+Für die Mensch-Maschine-Interaktion stehen meist nur Maus und Tastatur zur Verfügung.
+Außerdem gibt es neue Ansätze der Bewegungsteuerung mit Datenhandschuhen und
+Kamera-Tracking zur Bewegungs- und Gestenerkennung. Diese müssen aber noch weiter
+erforscht werden, bevor ein effizienter Einsatz in der Informationsvisualisierung
+erfolgen kann.
+
 \section{Anforderungen}
 \label{sec:Anforderungen}
-
 8 visuelle Variablen nach Bertin ((eine Anforderung an datasynth: muss alle diese abbilden können)):
 
 möglichkeit alle datentypen abbilden bzw verarbeiten zu können
@@ -528,34 +612,19 @@ weil mit dem Grundprinzip der Abbildung gearbeitet wird, müssen alle Möglichke
 
 keine vorgabe eines bestimmten system sondern die möglichkeit direkt mit grapischen primitiven und ihren attributen wie farb, etc. arbeiten zu können
 
-möglichst viel Parametrisiert um Wertebereiche direkt anpassen zu können
-
 cross-platformness
 
-freie Lizenz
+möglichst viel Parametrisiert um Wertebereiche direkt anpassen zu können
+siehe auch abschnitt visuelle Programmierung
 
-rails als beispiel für MIT Lizenz
 
-\section{Grenzen der Software}
-\label{sec:Grenzen}
-\subsection{technische Grenzen}
-pixel (bildschirm)
-farbe (rgb)
-\subsection{theoretische Grenzen}
-Wird eine grafische Darstellung benutzt, in der mehr als 2 Variablen für die Positionierung der Grafikprimitve
-im Raum verwendet werden, muss für die Ausgabe auf dem Monitor oder als Druckerzeugnis eine Projektion
-vorgenommen werden.
 
-interaktions- und navigationstechniken nötig
-Die Implementierung in dieser Arbeit beschränkt sich auf eine statische Ausgabe ohne Interaktionsmöglichkeiten,
-kann aber dahingehend erweitert werden.\footnote{Vgl. Abschnitt \ref{sec:Ausblick}}
 
-\subsection{biologische Grenzen}
-wahrnehmungs- und auflösungsfähigkeit des menschen
-verständnis (wieviel kann ein mensch mit einmal überblicken)
-\subsection{Grenzen durch Implementation}
-künstliche Grenzen weil ja nur Prototyp entwickelt wird.
-statisch, 2D vollständigkeit wird durch dateninput festgelegt (vgl. schumann 6.2.1, s. 175)
+
+
+
+
+
 
 \section{Analyse bestehender Software}
 \label{sec:bestehendeSoftware}
@@ -571,12 +640,30 @@ pd - Pure Data
 prefuse
 graphviz
 ...
+
+Eine Liste aller untersuchten Software findet sich in Anhang XXX.
+
+
+
 \chapter{Umsetzung eines Prototyps}
 \label{cha:Umsetzung}
 1. dokumentation der untersuchungsdurchführung (des Entwicklungsvorganges)
 welche tools wurden wie angewendet, c++, of, git, boost, etc etc
 2. darstellung der ergebnisse (verdeutlichung durch beispiele, erläuterung des erkenntnisfortschritts)
 präsentation von viz mit der software?!
+
+Einschränkungen durch Implementation
+
+um der Bearbeitungszeit dieser Arbeit gerecht zu werden, kann nur eine prototypische Version implementiert werden.
+aus diesem grund wird als freie Lizenz  öffentlich und transparent entwickelt, um die weiterentwicklung mit anderen weiterführen zu können
+
+
+künstliche Grenzen weil ja nur Prototyp entwickelt wird.
+statisch, 2D vollständigkeit wird durch dateninput festgelegt (vgl. schumann 6.2.1, s. 175)
+
+Die Implementierung in dieser Arbeit beschränkt sich auf eine statische Ausgabe ohne Interaktionsmöglichkeiten,
+kann aber dahingehend erweitert werden.\footnote{Vgl. Abschnitt \ref{sec:Ausblick}}
+
 \section{Technologien}
 \label{sec:Technologien}
 C++
@@ -677,13 +764,29 @@ reiner export als abstrakte werte (koordinaten, höhe, breite, typ) in gängige 
 
 export von einzelnen teilbereichen (ebenen) zur graphischen weiterverarbeitung mit anderer software
 
+\chapter{Anhang}
+\section{Liste von bestehender Softwarelösungen}
+todo: alle links zusammensuchen
+
+Die nachfolgende Tabelle gibt eine unvollständige, aber umfassende
+Liste an Softwarelösungen für die Visualisierung. Einige Anwendungen
+sind auf Visualisierung großer Datenmengen spezialisiert, andere
+berühren den Bereich nur mit einigen Funktionen.
+
+\begin{tabular}{l|l}
+\hline
+Name & Webadresse \\
+\hline
+Pure Data & http://www.puredata.info/ \\
+vvvv & http://www.vvvv.org/ \\
+\end{tabular}
+\section{Beispiel: Bevölkerungsdaten Stadt Leipzig}
+viz mit streckenzügen (sternförmig, parallel), kreisen (matrix),
+
 \bibliographystyle{natdin}
 \bibliography{diplom}
 \listoftables
 \listoffigures
 %\printnomenclature
-\chapter{Anhang}
-\section{Beispiel: Bevölkerungsdaten Stadt Leipzig}
-viz mit streckenzügen (sternförmig, parallel), kreisen (matrix),
 \end{document}
 
