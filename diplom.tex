@@ -138,7 +138,7 @@ einem Ausblick in Abschnitt \ref{sec:Ausblick} ab.
 \label{cha:Grundlagen}
 In diesem Teil der Arbeit wird auf die grundlegenden Begriffe eingegangen die einen Zugang
 zum Arbeitsfeld der Visualisierung voraussetzen.
-\section{Begriffsdefinition Daten und Information}
+\section{Daten und Information}
 \label{sec:DatenInfo}
 Daten werden in \cite{Gabler} für den Bereich der Informatik als
 \begin{quote}
@@ -294,18 +294,18 @@ dafür können Temperaturwerte beschrieben werden, die in kalt, warm und heiß u
 \section{Graphische Semiologie}
 \label{sec:graphischeSemiologie}
 Die graphische Semiologie ist ein in \cite{Bertin} erstmals beschriebenes System zur Klassifikation von graphischen Zeichen.
-Es stammt ursprünglich aus der thematischen Kartographie\footnote{"Thematische Karten enthalten vorwiegend
+Es stammt ursprünglich aus der thematischen Kartographie\footnote{"`Thematische Karten enthalten vorwiegend
 Erscheinungen oder Vorkommnisse nicht topographischer Art welche jedoch mit der Erdoberfläche in Verbindung
 stehen. Es handelt sich hierbei um Dinge, die georäumliche Lage, Verbreitung oder Bewegung besitzen, sowohl
 um reale Dinge, als auch um Beziehungen, Funktionen, Hypothesen, geistige Vorstellungen, Möglichkeiten und
-Projekte."\citep{Gitta} }. Dies ist ein Teilgebiet der Geographie, das erste Anwedungsgebiet für
+Projekte."'\citep{Gitta} }. Dies ist ein Teilgebiet der Geographie, das erste Anwedungsgebiet für
 Visualisierung.
-Diese Semiotik zerlegt die grapische Darstellung in ein "Grundalphabet" an graphischen Elementen, wobei
+Diese Semiotik definiert ein "`Grundalphabet"' an graphischen Elementen, wobei
 jedem einzelnen Zeichen eine bestimmte Bedeutung zugeordnet wird. \citep{Bertin} geht dabei von einem
-monosemiotischen\footnote{"Die Betrachtung einer Zeichenverbindung setzt die Kenntnis der Bedeutung jedes
-einzelnen Zeichens voraus."\citep[S.\,3]{Bertin}} System aus, das den rationalen Teil der Bilderwelt, also der Diagramme
+monosemiotischen\footnote{"`Die Betrachtung einer Zeichenverbindung setzt die Kenntnis der Bedeutung jedes
+einzelnen Zeichens voraus."'\citep[S.\,3]{Bertin}} System aus, das den rationalen Teil der Bilderwelt, also der Diagramme
 als graphische Darstellung eindeutig beschreibt.
-Da Menschen aber bestimmten grafischen Zeichen unterschiedliche Bedeutungen zuordnen, muss ein "rationaler Moment"\footnote{Vgl.
+Da Menschen aber bestimmten grafischen Zeichen unterschiedliche Bedeutungen zuordnen, muss ein "`rationaler Moment"'\footnote{Vgl.
 \citep{Bertin}} stattfinden, bei dem sich alle an der Kommunikation Beteiligte auf Bedeutungen einigen
 die bestimmte Zeichen haben. Erst dann kann über die Verbindung der Zeichen untereinander dikstutiert
 werden, was wiederrum der Information entspricht.
@@ -322,15 +322,18 @@ werden können. Sie werden visuelle Variablen genannt.
 \item Richtung oder Orientierung
 \item Form des Elements
 \end{itemize}
+In Abbildung XX werden diese dargestellt.
+Jede dieser Variablen hat spezifische Eigenschaften, die einzelene Variable besser andere schlechter
+für spezielle Aufgaben eignen. \citep{Bertin} spricht dabei von Konstruktionsregeln.
+Mithilfe dieser Regeln lassen sich die visuellen Variablen auswählen, mit denen die
+prägnanteste\footnote{siehe Abschnitt \ref{sec:Ziele}} Darstellung konstruiert werden kann.
 
-(hier das bild von bertin wo alle viz variablen dargestellt werden)
+Kontruktionsregeln erklären mit einer description!
 
-Begriff Diagramm?
-
-extra punkt graphische Darstellung??????
-
-begriff definieren als ergebnis einer visualisierung in digitaler oder realer form
-enthält die 
+Durch die Anwendung der Konstruktionsregeln können nun die visuellen Variablen genutzt werden um
+die graphische Darstellung, als Ziel der Visualisierung, entstehen zu lassen.\footnote{Eine Definition
+des Begriffs "`grapische Darstellung"' erfolgt im Abschnitt \ref{sec:Darstellungen} im Kapitel
+\ref{cha:Informationsvisualisierung}.}
 
 \chapter{Informationsvisualisierung}
 \label{cha:Informationsvisualisierung}
@@ -489,6 +492,19 @@ hier die "datentypen" aufzählen
 
 \section{Graphische Darstellung}
 \label{sec:Darstellungen}
+
+
+
+
+Begriff Diagramm?
+
+Die graphische Darstellung wird in dieser Arbeit definiert, als das Endergebnis einer
+Visualisierung.
+
+begriff definieren als ergebnis einer visualisierung in digitaler oder realer form
+enthält die 
+
+
 Die graphische Darstellung ist das Produkt der Visualisierung. Sie besteht 
 aus graphischen Variablen.
 
@@ -564,9 +580,8 @@ Auch mögliche Farbwerte der einzelnen Bildpunkte und damit die Farbräume der A
 müssen beachtet werden. Die Ausgabe auf Computermonitoren erfolgt im RGB-Farbraum während
 für Druckerzeugnisse unterschiedliche Farbräume möglich sind.
 
-Die Rahmenbedingungen der Bildsynthese konnten in dieser Arbeit nur grundlegend beschrieben
+Die Rahmenbedingungen der Bildsynthese konnten in diesem Abschnitt nur grundlegend beschrieben
 werden. Eine tiefgreifendere Beschreibung des Themas erfolgt in \citep{Computergrafik}.
-
 
 Die Daten und deren durch Visualisierung erzeugten visuellen Repräsentationen sind immer
 gebunden an ihr Speicher- und Ausgabeformat.
@@ -580,10 +595,10 @@ ist dafür aber besser von Menschen lesbar. Im wissenschaftlichen Bereich findet
 häufig das netCDF\footnote{bissi erklärung hier Vgl. \citep{Schumann}} Format
 Anwendung. Neben diesen sehr bekannten Formaten, existieren noch einige weitere
 Möglichkeiten, Daten zu speichern.
+
 Zur Speicherung der graphischen Darstellungen einer Visualisierung eignen sich bekannte
 Formate wie JPEG, PNG, BMP, TIFF und viele andere. Dabei müssen formatspezifische
 Eigenschaften wie beispielsweise die Kompression beachtet werden.
-
 
 Für die Mensch-Maschine-Interaktion stehen meist nur Maus und Tastatur zur Verfügung.
 Außerdem gibt es neue Ansätze der Bewegungsteuerung mit Datenhandschuhen und
