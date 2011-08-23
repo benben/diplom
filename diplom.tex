@@ -486,32 +486,48 @@ sollten ein paar regeln beachtet werden (qualitative klassen nicht auf quantitat
 
 \section{Graphische Darstellung}
 \label{sec:Darstellungen}
+\subsection{Begriff}
 Die grafische Darstellung ist das Produkt einer Visualisierung mit dessen Hilfe
 die Ziele aus Abschnitt \ref{sec:Ziele} erfüllt werden können. Sie besteht
 immer aus den in Abschnitt \ref{sec:graphischeSemiologie} genannten
 visuellen Variablen.
+Als allgemeinste Form der graphischen Darstellung beschreiben \citep{Schumann} das
+Diagramm. Es "`ist eine graphische Repräsentation von Informationen mit Hilfe
+graphischer Elemente"'\citep[S.\,126]{Schumann}. \citep(Bertin) spricht dagegen
+ausschließlich von dem Begriff der "graphischen Darstellung" und grenzt diesen von
+der bildhaften Darstellung\footnote{Beispielsweise Fotos oder künstlerische Bilder}
+ab, die nicht monosemiotisch ist. Weiterhin wird eine Abgrenzung in Diagramme, Netze
+und Karten vorgenommen. \citep{Schumann} weist außerdem auf eine Doppeldeutigkeit
+des deutschen Begriffes hin, denn im englischen gibt es "`diagram"' und "`chart"'.
+Um Missverständnissen in dieser Arbeit vorzubeugen wird ausschließlich der Begriff
+der graphischen Darstellung verwendet und schließt alle Präsentationen der
+Informationsvisualisierung ein.
 
-Bertin unterscheidet nur zwischen Diagramme / Netze / Karten
+\subsection{Darstellungsformen}
+Die graphische Darstellung hat verschiedene Darstellungsformen, die für unterschiedliche
+Anwendungsfälle konzipiert wurden. Sie sind alle stark anwendungsabhängig und es müssen alle
+Anforderungen beachtet werden, um die effizienteste Technik der graphische Darstellung zu
+finden.\footnote{Vgl. Abschnitt \ref{sec:Ziele}}
+Die folgende Auflistung von Darstellungsformen orientiert sich an den Darstellungsformen für
+Multiparameterdaten in \citep[S.\,213]{Schumann},
+wird ergänzt durch \citep{Preim} und eigene Beobachtungen. Sie erhebt keinen Anspruch auf
+Vollständigkeit. Folgende Techniken sind möglich:
+\begin{itemize}
+\item einfach - Scatterplots, Histrogramme, Säulen- und Balkendiagramme, Punktdiagramme, Kreisdiagramme, Igelkurve, Isolinien
+\item multiaxial - Kiviatgraph, parallele Koordinaten, Parahistogramme
+\item ikonenbasiert - Stick-Figure-Ikonen, Farbikonen, Chernoff Ikonen, Data Jacks
+\item pixelbasiert - einfach, raumfüllende Kurven, Zwei-Schritte-Technik, Recursive-Pattern-Technik
+\item hierarchisch - dimensional Stacking, World-within-Worlds, Cone-Trees, Cluster Map, 
+\item netzwerkbasiert - Venn-Diagramm, Tree Maps, Bubble Tree, ArcTree
+\item geschichtet - Icicle Plots, Sunburst
+\item hybrid - Mischtechniken bestehend aus anderen Techniken
+\end{itemize}
+Eine weitere Auflsitung mit Beispielen findet sich in Anhang X, dort sind Beispiele
+von einzelnen Darstellungsformen abgebildet.
 
-Begriff Diagramm?
-
-verschiedene Darstellungsformen
-sind alle stark anwendungsabhängig und es muss für jede anforderung festgelegt werden (siehe das kapitel
-wo steht welche probleme man lösen kann (siehe schumann mit den 3 dingen einer viz, das letzte war kommunikation))
-Preim/Dachselt ergänzen zu den von schumann genannten noch die viz von relationen als eigenständige klassifizierung von daten
-
-hier die "datentypen" aufzählen
-
-Auflsitung und kurze Beschreibungen aller möglichen Abbildungen (siehe Schumann S. 126)
-
-begriff definieren als ergebnis einer visualisierung in digitaler oder realer form
-enthält die 
-
-hier ein paar wichtige vertreter der viz formen erklären und zeigen
-
-doch wie können nun die unterschiedlichen Klassen von Daten auf die unterschiedlichen graphischen Variablen und damit
-auf die unterschiedlichen graphischen Darstellungen angewendet werden um eine Visualisierung durchzuführen. das sehen
-sehen sie im nächsten kapitel.
+Für diese Arbeit sind vor allem die hybriden Techniken interessant, da diese versuchen
+neue Sichtweisen ohne vorgefertigte Klassen zu schaffen. Um diese Darstellungsformen zu
+kreieren wird im nächsten Kapitel ein Softwarekonzept erstellt.
 
 \chapter{Konzept einer geeigneten Softwarelösung}
 \label{cha:Software}
@@ -532,6 +548,8 @@ Rechner alle Änderungen sofort auf die Ausgabe überträgt. Somit kann eine kre
 mit Daten gefunden werden, die neue Visualisierungsformen und damit neue Sichtweisen der Problemlösung
 erschließen kann.
 
+
+Schumann S. 126
 
 Wie Kapitel 1 und 2 zeigen gibt es eine Vielzahl an Daten und grafischen
 Darstellungen. Zusätzlich dazu sind neue formen durch mash ups möglich
