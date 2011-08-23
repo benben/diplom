@@ -430,94 +430,82 @@ interdisziplinären Arbeitsfeld. Die Visualisierung ist ein zentraler Bestandtei
 welches eine neue Form von ....
 \end{description}
 
-\section{Ziele}
+\section{Bearbeitungsziele}
 \label{sec:Ziele}
-was muss eine gute viz können?! (effektivität, expressivität, ...)
+Grundsätzlich ist das Ziel einer Visualisierung die Analyse einer gegebenen Datenmenge zu unterstützen und diese
+Ergebnisse effizient präsentieren zu können und damit einen Erkenntnisgewinn zu schaffen.
+So kann die Visualisierung nach \citep{Schumann} für folgende drei allgemeine Stufen der Analyse eingesetzt werden:
+\begin{description}
+\item[Explorative Analyse]
+beschreibt die Daten selbst als Ausgangspunkt der Forschung. Durch interaktive und ungerichtete Suche in den Daten
+mithilfe der Visualisierung soll eine Hypthese entwickelt werden. Dazu muss eine geeignete weit gefasste und nicht
+beschränkte Darstellung gefunden werden
+\item[Konfirmative Analyse]
+Hier existieren bereits ein oder mehrere Hypothesen die mithilfe der Visualisierung überprüft werden soll.
+\item[Präsentation]
+Ergebnisse aus der Analyse der Daten werden mithilfe der Visualisierung dargestellt um sie für Dritte verständlich
+zu machen und mit Ihnen über den Sachverhalt kommunizieren zu können.
+\end{description}
+Wichtig dabei ist vor allem in der Informationsvisualisierung eine ansprechende und ästhetische Darstellung, denn
+ein guter Eindruck verstärkt den Willen sich mit einer Darstellung auseinanderzusetzen.
 
-unterhaltungswert des graphen und ästhetik spielen eine rolle, denn man muss was gerne anschauen wollen damit man sich überhuapt damit auseinandersetzt
-warum braucht man das? welche probleme werden damit gelöst?
-welche anforderungen? (in welchen bereichen des täglichen lebens, der wirtschaft)
-
-Welches Problem gibt es?
-Warum?
-Andere Lösungsansätze?
-begrifflichkeit klären und sagen man verwendet ab jetzt nur noch viz stellvertretend für info/data-/sci-viz
-
-sehr spezifische und stark anwendungs und erkenntnis gewinn abhängige anforderungen an visualisierung. 
-es ist schwer allgemeingültige aussagen zu treffen wie eine Information am besten visualisiert werden kann und somit muss eine Anwendung einen möglichst generischen ansatz bieten damit der benutzer ohne einschränkung seine spezielle aufgabe die er mit der viz lösen will lösen kann.
-
-erkenntnisgewinn und aufgabe die ich lösen möchte. also eine viz hat ja immer ein konkretes problem was der uafgabe zugrunde liegt und mit viz gelöst werden soll. (das nochmal genau klassifizieren)
-
-welche viz eignet sich am besten für meine konkrete aufgabe?
-gibt es mischformen von bis jetzt gefundenen viz mit denen ich meine aufgabe noch besser lösen kann?
-gibt es neue ansätze für viz die bis jetzt noch nicht beschrieben sind. (unterstützung der forschung nach neuen formen der viz)
-
-Was ist das Interaktionsziel? (Begriff klären)
-
-diese arbeit bezieht sich auf informationsvisualisierung als sonderfall der datenvisualisietrung. damit werden alle dinge der datavz beachtet und zusätzlich alle sonderfälle der infoviz beachtet
-
-wissenschaftlich, technisch, .... anwendungsgebiete?!
-
-anforderungen als extra gliederungspunkt??????????????
-
-wahrnehmungs- und auflösungsfähigkeit des menschen
-verständnis (wieviel kann ein mensch mit einmal überblicken)
+Um adäquate Visualisierungen klassifizieren zu können, nennen \citep{Schumann} drei Eigenschaften die eine
+gelungene Visualisierung beschreiben. Diese sind Effektivität, Expressivität und Angemessenheit.
+\begin{description}
+\item[Expressivität]
+Die Visualisierung soll nur die in den Daten enthaltenen Informationen möglichst unverfälscht wiedergeben.
+\item[Effektivität]
+Die Darstellung muss zu den visuellen Fähigkeiten des Betrachters, den Eigenschaften des Ausgabegerätes
+passen.
+\item[Angemessenheit]
+Ressourcen und Rechenaufwand und damit die Kosten einer Visualisierung sollen den Anforderungen entsprechen.
+\end{description}
+Die Expressivität und Effektivität entspricht der einzigen Klassifikation aus \citep{Bertin}, die als Prägnanz bezeichnet wird.
+\begin{quote}
+Wenn eine Konstruktion zur Beantwortung einer gestellten Frage unter sonst gleichen Voraussetzungen eine
+kürzere Betrachtungszeit erfordert als eine andere Konstruktion, so bezeichne man diese als prägnanter in
+Bezug auf die gestellte Frage.\citep[S.\,17]{Bertin}
+\end{quote}
+Darüber hinaus ist es schwer allgemeingültige Aussagen treffen zu können, wie eine komplexer Sachverhalt und dessen
+Informationen am effizientesten zu visualisieren ist, da die Visualisierung stark anwendungsabhängig ist und
+immer von den Anforderungen Daten, Zielgruppe, Bearbeitungsziel, Repräsentation und Medium abhängig ist. 
 
 \section{Visualisierungspipeline}
 \label{sec:Pipeline}
 es gibt mehrere aber ähnlich beschreibungen des ablaufs einer visualisierung.
 ben fry und schumann  und preim
-\section{Grundprinzip}
-\label{sec:Grundprinzip}
-dieser schritt wird in der literatur als selbstverständlich angesehen, ist aber kernpunkt der software. dagegen bedeuten die regeln wie man unterschiedliceh datentypen und in welcher form darstellt um das beste ergebnis auf eine bestimmte frage zu erhalten sind viel komplexer.
-deshalb soll eine software entwickelt werden, die diese triviale aber für einen menschen sehr arbeitsintensive arbeit übernimmt, ohne dabei irgendwelchen einschränkugen zu unterliegen.
-
-ein schritt in der viz pipeline
-
-entwicklung einer kleinen "theorie"
-wie können die grundprinzipien der viz auf eine software überrtragen werden?
-welche vorteile/nachteile hat das?
-welche probleme werden damit gelöst? (keine festlegung mehr auf balken.....)
-welche neuen erkenntnisse können damit entstehen? (neue sichtweisen auf daten werden entdeckt, was wiederrum neue sichtweisen des eigentlichen problems aufzeigt)
-zugriff und einfluß und übersicht auf alle parameter der geometrie und deren attribute....
-dadurch: direkter einfluß aber auch direktes verständis der einzelnen elemente
-
 grafische Transkription (BERTIN)
-
-Auflsitung und kurze Beschreibungen aller möglichen Abbildungen (siehe Schumann S. 126)
-
-als universellen in jeder viz theorie vorkommenden schritt
 
 MAPPING
 
 Verbindung von Variablen der Information mit Variablen der Grafik.
-dabei müssen die besonderheiten und merkmale der Komponenten der INFO (siehe bertin) klar sein und müssen auf adäquate visuelle Variablen angewendet werden.
-trotz einer nahezu unendlichen auswahl an möglichkeiten zur konstruktion einer grafik sollten ein paar regeln beachtet werden (qualitative klassen nicht auf quantitative variablen usw.)
-
-
-verschiedene Darstellungsformen
-sind alle stark anwendungsabhängig und es muss für jede anforderung festgelegt werden (siehe das kapitel wo steht welche probleme man lösen kann (siehe schumann mit den 3 dingen einer viz, das letzte war kommunikation))
-Preim/Dachselt ergänzen zu den von schumann genannten noch die viz von relationen als eigenständige klassifizierung von daten
-
-hier die "datentypen" aufzählen
+dabei müssen die besonderheiten und merkmale der Komponenten der INFO (siehe bertin) klar sein und
+müssen auf adäquate visuelle Variablen angewendet werden.
+trotz einer nahezu unendlichen auswahl an möglichkeiten zur konstruktion einer grafik
+sollten ein paar regeln beachtet werden (qualitative klassen nicht auf quantitative variablen usw.)
 
 \section{Graphische Darstellung}
 \label{sec:Darstellungen}
-
+Die grafische Darstellung ist das Produkt einer Visualisierung mit dessen Hilfe
+die Ziele aus Abschnitt \ref{sec:Ziele} erfüllt werden können. Sie besteht
+immer aus den in Abschnitt \ref{sec:graphischeSemiologie} genannten
+visuellen Variablen.
 
 Bertin unterscheidet nur zwischen Diagramme / Netze / Karten
 
 Begriff Diagramm?
 
-Die graphische Darstellung wird in dieser Arbeit definiert, als das Endergebnis einer
-Visualisierung.
+verschiedene Darstellungsformen
+sind alle stark anwendungsabhängig und es muss für jede anforderung festgelegt werden (siehe das kapitel
+wo steht welche probleme man lösen kann (siehe schumann mit den 3 dingen einer viz, das letzte war kommunikation))
+Preim/Dachselt ergänzen zu den von schumann genannten noch die viz von relationen als eigenständige klassifizierung von daten
+
+hier die "datentypen" aufzählen
+
+Auflsitung und kurze Beschreibungen aller möglichen Abbildungen (siehe Schumann S. 126)
 
 begriff definieren als ergebnis einer visualisierung in digitaler oder realer form
 enthält die 
-
-
-Die graphische Darstellung ist das Produkt der Visualisierung. Sie besteht 
-aus graphischen Variablen.
 
 hier ein paar wichtige vertreter der viz formen erklären und zeigen
 
@@ -527,11 +515,36 @@ sehen sie im nächsten kapitel.
 
 \chapter{Konzept einer geeigneten Softwarelösung}
 \label{cha:Software}
+\section{Grundprinzip der Informationsvisualisierung}
+\label{sec:Grundprinzip}
+Die Übetragung von symbolischen Informationen auf geometrische Informationen kann als grundlegendes Prinzip der
+Visualisierung bezeichnet werden. Dieser Schritt ist die ausführende Stufe, die als Mapping in der
+Visualisierungspipeline bezeichnet wird. Er wird in der Literatur als selbstverständlich angesehen, da damit
+das Wesen der Visualisierung beschreibt. Bevor es zu diesem Schritt kommen kann, ist es aber umso komplexer
+alle Ausgangsbedingungen zu beachten, die zu einer Visualisierung führen, die alle Bearbeitungsziele aus
+Abschnitt \ref{sec:Ziele} erfüllt. Das bedeutet, dass alle Schritte vor dem Mapping wie zum Beispiel die Auswahl
+aller Parameter die zu einer geigneten Visualisierung führen kann nicht von einer Software erledigt
+werden sollten und stattdessen von einem Menschen in einem durchaus auch kreativen Prozess gefunden werden sollen.
+Nur die arbeitsintensive Aufgabe der Übertragung der einzelnen Datenwerte auf die visuellen Variablen muss
+parametrisiert vom Rechner übernommen werden, ohne das der Nutzer davor in seinem Findungsprozess eingeschränkt
+worden ist. Der Nutzer kann somit völlig frei immer wieder Parameter verändern und die Ausgabe direkt steuern, währen der
+Rechner alle Änderungen sofort auf die Ausgabe überträgt. Somit kann eine kreative Form der Auseinandersetzung
+mit Daten gefunden werden, die neue Visualisierungsformen und damit neue Sichtweisen der Problemlösung
+erschließen kann.
+
+
 Wie Kapitel 1 und 2 zeigen gibt es eine Vielzahl an Daten und grafischen
 Darstellungen. Zusätzlich dazu sind neue formen durch mash ups möglich
 deshalb muss ein Ansatz gewählt werden  wo man nicht nur eine form der viz mit ihren vorteilen und nachteilen auswählen kann.
 stattdessen soll ein tool alle freiheiten lassen, visuelle variablen frei mit den daten verbinden zu lassen
 
+es ist schwer allgemeingültige aussagen zu treffen wie eine Information am besten visualisiert werden kann 
+und somit muss eine Anwendung einen möglichst generischen ansatz bieten damit der benutzer ohne 
+einschränkung seine spezielle aufgabe die er mit der viz lösen will lösen kann.
+
+welche viz eignet sich am besten für meine konkrete aufgabe?
+gibt es mischformen von bis jetzt gefundenen viz mit denen ich meine aufgabe noch besser lösen kann?
+gibt es neue ansätze für viz die bis jetzt noch nicht beschrieben sind. (unterstützung der forschung nach neuen formen der viz)
 
 um einen mgölcihst großen bereich aller öglichen viz formen abdecken zu können, wird daher ein ansatz gewählt, der dem benutzer erlaubt die atomaren elemente einer grafik automatisiert designen zu können. somit werden große mengen an datenpunkten in kürzester zeit darstellbar und weiterverarbeitbar.
 beispielhafte implementierung “datasynth”
@@ -622,6 +635,11 @@ Außerdem gibt es neue Ansätze der Bewegungsteuerung mit Datenhandschuhen und
 Kamera-Tracking zur Bewegungs- und Gestenerkennung. Diese müssen aber noch weiter
 erforscht werden, bevor ein effizienter Einsatz in der Informationsvisualisierung
 erfolgen kann.
+
+Aus Sicht des Anwenders spielt außerdem die Wahrnehmungs- und Auflösungsfähigkeit
+des menschlichen Auges eine Rolle und wieviel davon im Gehirn verarbeitet werden kann.
+Dieser und andere Aspekte wird dem Arbeitsfeld der Kognitionspsychologie und
+Neurowissenschaften zugeordnet und soll deshalb nur genannt bleiben.
 
 \section{Anforderungen}
 \label{sec:Anforderungen}
