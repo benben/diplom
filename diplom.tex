@@ -293,25 +293,25 @@ dafür können Temperaturwerte beschrieben werden, die in kalt, warm und heiß u
 \end{description}
 \section{Graphische Semiologie}
 \label{sec:graphischeSemiologie}
-Die graphische Semiologie ist ein in \cite{Bertin} erstmals beschriebenes System zur Klassifikation von graphischen Zeichen.
+Die graphische Semiologie ist ein in \citep{Bertin} erstmals beschriebenes System zur Klassifikation von graphischen Zeichen.
 Es stammt ursprünglich aus der thematischen Kartographie\footnote{"`Thematische Karten enthalten vorwiegend
 Erscheinungen oder Vorkommnisse nicht topographischer Art welche jedoch mit der Erdoberfläche in Verbindung
 stehen. Es handelt sich hierbei um Dinge, die georäumliche Lage, Verbreitung oder Bewegung besitzen, sowohl
 um reale Dinge, als auch um Beziehungen, Funktionen, Hypothesen, geistige Vorstellungen, Möglichkeiten und
 Projekte."'\citep{Gitta} }. Dies ist ein Teilgebiet der Geographie, das erste Anwedungsgebiet für
 Visualisierung.
-Diese Semiotik definiert ein "`Grundalphabet"' an graphischen Elementen, wobei
+Die Semiotik dieser Theorie definiert ein "`Grundalphabet"' an graphischen Elementen, wobei
 jedem einzelnen Zeichen eine bestimmte Bedeutung zugeordnet wird. \citep{Bertin} geht dabei von einem
 monosemiotischen\footnote{"`Die Betrachtung einer Zeichenverbindung setzt die Kenntnis der Bedeutung jedes
 einzelnen Zeichens voraus."'\citep[S.\,3]{Bertin}} System aus, das den rationalen Teil der Bilderwelt, also der Diagramme
 als graphische Darstellung eindeutig beschreibt.
-Da Menschen aber bestimmten grafischen Zeichen unterschiedliche Bedeutungen zuordnen, muss ein "`rationaler Moment"'\footnote{Vgl.
-\citep{Bertin}} stattfinden, bei dem sich alle an der Kommunikation Beteiligte auf Bedeutungen einigen
+Da Menschen aber bestimmten grafischen Zeichen unterschiedliche Bedeutungen zuordnen, muss ein "`rationaler Moment"'
+stattfinden, bei dem sich alle an der Kommunikation Beteiligte auf Bedeutungen einigen
 die bestimmte Zeichen haben. Erst dann kann über die Verbindung der Zeichen untereinander dikstutiert
-werden, was wiederrum der Information entspricht.
-Die graphische Semiologie ist also ein Zeichensystem mithilfe dessen Information in das graphische Zeichensystem
-transkribiert werden kann.
-Das System umfasst folgende acht Zeichen, die zur Kodierung von Daten in eine graphische Darstellung benutzt
+werden. Diese Verbindungen entsprechen der eigentlichen Information.
+Mit der graphischen Semiologie können also Informationen in ein graphische Zeichensystem
+transkribiert werden.
+Dieses System umfasst folgende acht Zeichen, die zur Kodierung von Daten in eine graphische Darstellung benutzt
 werden können. Sie werden visuelle Variablen genannt.
 \begin{itemize}
 \item Position auf der Ebene (angegeben durch x und y)
@@ -323,8 +323,9 @@ werden können. Sie werden visuelle Variablen genannt.
 \item Form des Elements
 \end{itemize}
 In Abbildung XX werden diese dargestellt.
-Jede dieser Variablen hat spezifische Eigenschaften, die einzelne Variable besser andere schlechter
-für spezielle Aufgaben eignen. \citep{Bertin} spricht dabei von Konstruktionsregeln.
+Jede dieser Variablen hat spezifische Eigenschaften, die einzelne Variable unterschiedlich gut oder schlecht
+für spezielle Aufgaben eignen. Um die Auswahl der geeignetesten Variablen zu vereinfachen, schlägt
+\citep{Bertin} Konstruktionsregeln vor.
 Mithilfe dieser Regeln lassen sich die visuellen Variablen auswählen, mit denen die
 prägnanteste\footnote{siehe Abschnitt \ref{sec:Ziele}} Darstellung konstruiert werden kann.
 Es werden dabei drei allgemeine Konstruktionsregeln definiert:
@@ -334,14 +335,16 @@ als Ganzes mi einem Minimum an Wahrnehmungsaufwand erfasst werden kann
 \item graphische Darstellung vereinfachen, ohne die Zahl der Beziehungen zu verringern
 \item graphische Darstellung durch Reduzierung vereinfachen
 \end{itemize}
-
-Gliederungsstufen der visuellen Variablen?
-Bertin S. 180 - 181 einbauen
-
+Zusätzlich zu diesen Regeln werden spezielle Regeln genannt. Diese sind stark abhängig von der Anzahl
+der vorhandenen unabhängigen und abhängigen Variablen der Ausgangsdaten und der gewählten
+grafischen Darstellung. So sollten beispielsweise für die wichtigsten und am deutlichsten
+geordneten Variablen die zwei Ebenen der Fläche verwendet werden, während Variablen wie
+Farbe und Muster als dritte Möglichkeit genutzt werden können um Informationen zu kodieren.
+Erst wenn zusätzliche Variablen hinzugefügt werden, sollte eine Nebeneinanderstellung oder
+Überlagerung benutzt werden.
 Durch die Anwendung der Konstruktionsregeln können nun die visuellen Variablen genutzt werden um
 die graphische Darstellung, als Ziel der Visualisierung, entstehen zu lassen.\footnote{Eine Definition
-des Begriffs "`grapische Darstellung"' erfolgt im Abschnitt \ref{sec:Darstellungen} im Kapitel
-\ref{cha:Informationsvisualisierung}.}
+des Begriffs "`grapische Darstellung"' erfolgt im Abschnitt \ref{sec:Darstellungen}.}
 
 \chapter{Informationsvisualisierung}
 \label{cha:Informationsvisualisierung}
@@ -502,7 +505,7 @@ hier die "datentypen" aufzählen
 \label{sec:Darstellungen}
 
 
-
+Bertin unterscheidet nur zwischen Diagramme / Netze / Karten
 
 Begriff Diagramm?
 
@@ -524,6 +527,12 @@ sehen sie im nächsten kapitel.
 
 \chapter{Konzept einer geeigneten Softwarelösung}
 \label{cha:Software}
+Wie Kapitel 1 und 2 zeigen gibt es eine Vielzahl an Daten und grafischen
+Darstellungen. Zusätzlich dazu sind neue formen durch mash ups möglich
+deshalb muss ein Ansatz gewählt werden  wo man nicht nur eine form der viz mit ihren vorteilen und nachteilen auswählen kann.
+stattdessen soll ein tool alle freiheiten lassen, visuelle variablen frei mit den daten verbinden zu lassen
+
+
 um einen mgölcihst großen bereich aller öglichen viz formen abdecken zu können, wird daher ein ansatz gewählt, der dem benutzer erlaubt die atomaren elemente einer grafik automatisiert designen zu können. somit werden große mengen an datenpunkten in kürzester zeit darstellbar und weiterverarbeitbar.
 beispielhafte implementierung “datasynth”
 anforderung an so eine software (beispiel1: journalist, beispiel2: privat/künstler)
