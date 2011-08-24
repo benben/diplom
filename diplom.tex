@@ -480,6 +480,8 @@ Darüber hinaus ist es schwer allgemeingültige Aussagen treffen zu können, wie
 Informationen am effizientesten zu visualisieren ist, da die Visualisierung stark anwendungsabhängig ist und
 immer von den Anforderungen Daten, Zielgruppe, Bearbeitungsziel, Repräsentation und Medium abhängig ist. 
 
+iterativer prozess der exploration wird unterstützt (vgl. mantra visueller informationssuche) (vgl. preim/dachselt, s 443 ganz unten)
+
 \section{Visualisierungsprozess}
 \label{sec:Pipeline}
 Der Prozess der Visualisierung wird Visualisierungspipeline genannt. Diese beschreibt den Ablauf, der einzelnen
@@ -634,6 +636,8 @@ Durch die Möglichkeit den Prozess des Mappings sehr stark zu beeinflussen, ents
 Möglichkeit der Anwendung. Bei jeder Interaktion des Benutzers wird automatisch und unmittelbar das
 aktuelle Ergebnis ausgegeben und der Nutzer kann visuell analysieren welche Verbindungen noch nötig sind
 und welche zusätzlichen Parameter einzelne Verbindungen und Verbindungen untereinander haben sollen.
+Somit können alle visuellen Variablen direkt beeinflusst und für das aktuelle Bearbeitungsziel angepasst
+werden.
 \begin{figure}
 \centering
 \includegraphics[width=\linewidth]{benfryprocess_marked.pdf}
@@ -647,25 +651,10 @@ und welche zusätzlichen Parameter einzelne Verbindungen und Verbindungen untere
 \label{fig:schumannprocess_marked}
 \end{figure}
 
-beispielhafte implementierung “datasynth”
-
-
-statt custom tools etc und immer wieder neu programmieren.....jetzt ein tool
-
-komplexität hinter einem einfachen interface verstecken (klavier aus memo’s talk in london)
-
-einordnung der software mit vergleichen zu anderen apps (grundlage sind funktionalität, 
-lso was kommt dabei raus) ist so ein ding zwischen statistiktool spss, 
-
-iterativer prozess der exploration wird unterstützt (vgl. mantra visueller informationssuche) (vgl. preim/dachselt, s 443 ganz unten)
-
-
-
 \section{Rahmenbedingungen}
 Für die Arbeit mit der Infomationsvisualisierung, speziell in Bezug auf die digitale
 Transformation von Daten zu Grafiken gelten einige Rahmenbedingungen, die vor der
 Konzeption einer Software der Informationsvisualisierung bedacht werden müssen.
-
 
 Ein Großteil der Ausgabeformate sind zweidimensional\footnote{Es gibt immer wieder
 Ansätze, die die 3D-Technik nutzen um Visualisierungen darzustellen. Diese Entwicklungen
@@ -781,6 +770,10 @@ siehe auch abschnitt visuelle Programmierung
 
 \section{Analyse bestehender Software}
 \label{sec:bestehendeSoftware}
+
+einordnung der software mit vergleichen zu anderen apps (grundlage sind funktionalität, 
+lso was kommt dabei raus) ist so ein ding zwischen statistiktool spss, 
+
 diskussion bisheriger lösungsansätze
 vorstellen aller software die es bis jetzt gibt, siehe oben
 evtl. (SWOT-)Analyse und damit aufzeigen der schwächen der anderen software
@@ -800,6 +793,9 @@ Eine Liste aller untersuchten Software findet sich in Anhang XXX.
 
 \chapter{Umsetzung eines Prototyps}
 \label{cha:Umsetzung}
+
+beispielhafte implementierung “datasynth”
+
 1. dokumentation der untersuchungsdurchführung (des Entwicklungsvorganges)
 welche tools wurden wie angewendet, c++, of, git, boost, etc etc
 2. darstellung der ergebnisse (verdeutlichung durch beispiele, erläuterung des erkenntnisfortschritts)
@@ -824,6 +820,11 @@ openFrameworks
 boost
 \section{visuelle programmierung}
 \label{sec:visPro}
+statt custom tools etc und immer wieder neu programmieren.....jetzt ein tool
+
+komplexität hinter einem einfachen interface verstecken (klavier aus memo’s talk in london)
+
+
 rapid prototyping / keine programmierkenntnisse erforderlich, ein durchschnittliches mathematisches verständnis reicht
 theoretische konzeption
 erklärung der einzelnen teile wie nodes etc doch erst bei implementierung?
