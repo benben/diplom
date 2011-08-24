@@ -10,6 +10,7 @@
 \usepackage{url} %correct url display in cites
 
 \usepackage[locale=DE]{siunitx}
+\usepackage{graphicx}
 
 \pagestyle{headings}
 
@@ -410,6 +411,13 @@ eine Auswahl und erhebt keinen Anspruch auf Vollständigkeit.
 Die Computergrafik ist ein Teil der Informatik und beschreibt die Ausgabe von zwei- und dreidimensionalen
 Objekten als Raster oder Vektorgrafik. Informationsvisualisierung benutzt diese Techniken, ist aber kein Teil
 dieses Gebietes.
+\item[Statistik]
+Die Statistik ist ein Verfahren für die "`hypothesengeleitete Auswertung von numerischen (quantitativen)
+Daten"'\citep[S.\,23]{Statistik}. Durch die Verwendung quantitativer Daten, wird eine Verbindung zwischen
+Empirie und Theorie geschaffen.  Dabei ist die Visualisierung, neben ist neben der Mathematik, das wichtigste
+Werkzeug der Statistik. So wird der der Visualisierungsprozess aus Abschnitt \ref{sec:Pipeline} besonders in
+dem speziellen Bereich der deskriptiven Statistik benutzt um Erkenntnisse zu gewinnen und darzustellen.
+Aber auch die Visualisierung als eigenständige Disziplin benutzt Techniken der Statistik zur Datenaufbereitung.we
 \item[Präsentations- und Prozessvisualisierung]
 Häufig werden auch die Präsentationsvisualisierung und Prozessvisualisierung als Visualisierung bezeichnet, sind
 aber eigene Gebiete in denen es auch um die Sichtbarmachung von Informationen geht, diese aber nicht aus
@@ -427,7 +435,9 @@ Bereich primäre Form der Informationsübertragung.
 \item[Computational Design]
 Dieser von \citep{BenFry} eingeführte Begriff beschreibt die Vereinigung vieler Disziplinen zu einem neuen
 interdisziplinären Arbeitsfeld. Die Visualisierung ist ein zentraler Bestandteil des Computational Design,
-welches eine neue Form von ....
+welches ein größeres Forschungsfeld beschreibt, dass technische Bereiche wie Informatik mit künstlerischen
+Bereichen des Designs verbindet. Somit wird der Visualisierungsbegriff auf ein größeres Arbeitsfeld
+bezogen.
 \end{description}
 
 \section{Bearbeitungsziele}
@@ -470,19 +480,55 @@ Darüber hinaus ist es schwer allgemeingültige Aussagen treffen zu können, wie
 Informationen am effizientesten zu visualisieren ist, da die Visualisierung stark anwendungsabhängig ist und
 immer von den Anforderungen Daten, Zielgruppe, Bearbeitungsziel, Repräsentation und Medium abhängig ist. 
 
-\section{Visualisierungspipeline}
+\section{Visualisierungsprozess}
 \label{sec:Pipeline}
-es gibt mehrere aber ähnlich beschreibungen des ablaufs einer visualisierung.
-ben fry und schumann  und preim
-grafische Transkription (BERTIN)
+Der Prozess der Visualisierung wird Visualisierungspipeline genannt. Diese beschreibt den Ablauf, der einzelnen
+Schritte, die für eine Visualisierung notwendig sind um aus abstrakten Daten geometrische Daten und damit 
+Bilder zu erzeugen. In der Literatur gibt es keine einheitliche Beschreibung der Visualisierungspipeline aber
+die Darstellungen ähneln sich stark. Im folgenden soll der Ablauf einer Visualisierung an zwei Beispielen
+beschrieben werden.
 
-MAPPING
+Das erste Beispiel stammt aus \citep{BenFry} und beschreibt den kompletten Prozess des Computational Designs,
+dessen Teil die Informationsvisualisierung ist. In Abbildung \ref{fig:benfryprocess} sind die einzelnen Stufen
+dargestellt. Als erstes wird die Beschaffung der Daten aus einer Datei oder einem Netzwerk
+beschrieben (acquire), danach finden erste Analysen statt um die Struktur der Daten zu erkennen (parse).
+Aus diesen Daten werden Bereiche von Interesse herausgetrennt (filter) und Methoden der Datenanalyse angewendet,
+die für die weitere Verarbeitung notwendig sind (mine). Im nächstne Schritt werden dann geeignete
+grafische Repräsentationen\footnote{Vgl. Abschnitt \ref{sec:graphischeSemiologie}} gefunden um die Daten
+darzustellen (represent). Die grafische Darstellung wird durch visuelle Analyse des Nutzers
+verbessert, damit sie einfacher Verständlich und ästhetischeren Ansprüchen gerecht wird (refine). Als letzter
+Schritt steht das Hinzufügen von Interaktion um den Nutzer die Möglichkeit der Kontrolle über die
+Ausgabe aber auch über vorher stattfindende Stufen des Prozesses zu geben (interact).
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth]{benfryprocess.pdf}
+\caption{Der Prozess des Computational Designs nach \citep[S.\,13]{BenFry}, eigene Darstellung}
+\label{fig:benfryprocess}
+\end{figure}
 
-Verbindung von Variablen der Information mit Variablen der Grafik.
-dabei müssen die besonderheiten und merkmale der Komponenten der INFO (siehe bertin) klar sein und
-müssen auf adäquate visuelle Variablen angewendet werden.
-trotz einer nahezu unendlichen auswahl an möglichkeiten zur konstruktion einer grafik
-sollten ein paar regeln beachtet werden (qualitative klassen nicht auf quantitative variablen usw.)
+In \citep{Schumann} wird die Visualisierungspipeline etwas eingegrenzter beschrieben. Abbildung
+\ref{fig:schumannprocess} zeigt die Stufen Daten, Filtering, Mapping, Rendering und Bild.
+Hier liegen die Daten bereits in adäquater Form vor und werden für die Visualisierung
+aufbereitet um wichtige Informationen für den nachfolgenden Schritt zu finden. Das können
+Extremwerte, Wertebereiche und Bereiche speziellen Interesses sein. Der Schritt des Mappings
+ist die Daten-zu-Geometrie-Abbildung\footnote{Vgl. \citep[S.\,16]{Schumann}} bei der
+die abstrakten Daten auf grafische Primitive übertragen werden. Das Rendering überführt
+anschließend diese geometrischen Daten in Ausgabeformate, wie beispielsweise Pixel auf
+einem Monitor oder Farbpunkte eines Druckes.
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth]{schumannprocess.pdf}
+\caption{Der Prozess der Visualisierung nach \citep[S.\,15]{Schumann}, eigene Darstellung}
+\label{fig:schumannprocess}
+\end{figure}
+
+Dieser Ablauf ist in allen Visualisierungsprozessen immanent, muss aber nicht starr
+in der gegebenen Reihenfolge ablaufen. Es gibt unterschiedlichste Möglichkeiten, in die
+Visualisierungspipeline einzugreifen und zwischen einzelnen Stufen hin und her
+zuspringen.\footnote{In \citep{Schumann} Abschnitt 2.2 und 2.3 werden mehrere
+unterschiedliche Verfahren beschrieben.}
+Das Ergebnis all dieser Verfahren ist jedoch immer die graphische Darstellung, die im
+folgenden Kapitel beschrieben wird.
 
 \section{Graphische Darstellung}
 \label{sec:Darstellungen}
@@ -493,8 +539,8 @@ immer aus den in Abschnitt \ref{sec:graphischeSemiologie} genannten
 visuellen Variablen.
 Als allgemeinste Form der graphischen Darstellung beschreiben \citep{Schumann} das
 Diagramm. Es "`ist eine graphische Repräsentation von Informationen mit Hilfe
-graphischer Elemente"'\citep[S.\,126]{Schumann}. \citep(Bertin) spricht dagegen
-ausschließlich von dem Begriff der "graphischen Darstellung" und grenzt diesen von
+graphischer Elemente"'\citep[S.\,126]{Schumann}. \citep{Bertin} spricht dagegen
+ausschließlich von dem Begriff der "`graphischen Darstellung"' und grenzt diesen von
 der bildhaften Darstellung\footnote{Beispielsweise Fotos oder künstlerische Bilder}
 ab, die nicht monosemiotisch ist. Weiterhin wird eine Abgrenzung in Diagramme, Netze
 und Karten vorgenommen. \citep{Schumann} weist außerdem auf eine Doppeldeutigkeit
@@ -522,7 +568,7 @@ Vollständigkeit. Folgende Techniken sind möglich:
 \item geschichtet - Icicle Plots, Sunburst
 \item hybrid - Mischtechniken bestehend aus anderen Techniken
 \end{itemize}
-Eine weitere Auflsitung mit Beispielen findet sich in Anhang X, dort sind Beispiele
+Eine weitere Auflistung mit Beispielen findet sich in Anhang X, dort sind Beispiele
 von einzelnen Darstellungsformen abgebildet.
 
 Für diese Arbeit sind vor allem die hybriden Techniken interessant, da diese versuchen
@@ -533,57 +579,87 @@ kreieren wird im nächsten Kapitel ein Softwarekonzept erstellt.
 \label{cha:Software}
 \section{Grundprinzip der Informationsvisualisierung}
 \label{sec:Grundprinzip}
+\subsection{Allgemeinte Betrachtungen}
 Die Übetragung von symbolischen Informationen auf geometrische Informationen kann als grundlegendes Prinzip der
-Visualisierung bezeichnet werden. Dieser Schritt ist die ausführende Stufe, die als Mapping in der
+Visualisierung bezeichnet werden. Dieser Schritt ist die ausführende Stufe, das Kernstück, die als Mapping in der
 Visualisierungspipeline bezeichnet wird. Er wird in der Literatur als selbstverständlich angesehen, da damit
-das Wesen der Visualisierung beschreibt. Bevor es zu diesem Schritt kommen kann, ist es aber umso komplexer
+das Wesen der Visualisierung beschrieben wird. Bevor es zu diesem Schritt kommen kann, ist es aber umso komplexer
 alle Ausgangsbedingungen zu beachten, die zu einer Visualisierung führen, die alle Bearbeitungsziele aus
 Abschnitt \ref{sec:Ziele} erfüllt. Das bedeutet, dass alle Schritte vor dem Mapping wie zum Beispiel die Auswahl
 aller Parameter die zu einer geigneten Visualisierung führen kann nicht von einer Software erledigt
-werden sollten und stattdessen von einem Menschen in einem durchaus auch kreativen Prozess gefunden werden sollen.
+werden sollten und stattdessen vom Nutzer in einem kreativen Prozess gefunden werden sollen.
 Nur die arbeitsintensive Aufgabe der Übertragung der einzelnen Datenwerte auf die visuellen Variablen muss
 parametrisiert vom Rechner übernommen werden, ohne das der Nutzer davor in seinem Findungsprozess eingeschränkt
-worden ist. Der Nutzer kann somit völlig frei immer wieder Parameter verändern und die Ausgabe direkt steuern, währen der
+wird. Der Nutzer kann somit völlig frei immer wieder Parameter verändern und die Ausgabe direkt steuern, während der
 Rechner alle Änderungen sofort auf die Ausgabe überträgt. Somit kann eine kreative Form der Auseinandersetzung
 mit Daten gefunden werden, die neue Visualisierungsformen und damit neue Sichtweisen der Problemlösung
 erschließen kann.
 
+Wie in Kapitel \ref{cha:Grundlagen} und \ref{cha:Informationsvisualisierung} gezeigt, gibt es eine Vielzahl an
+Daten und grafischen Darstellungen. Zusätzlich dazu sind neue Formen durch Mashups\footnote{"`Mashup (von
+englisch to mash für vermischen) bezeichnet die Erstellung neuer Medieninhalte durch die nahtlose
+(Re-)Kombination bereits bestehender Inhalte."'\citep{wiki_mashup}} möglich. Deshalb muss ein Ansatz gewählt
+werden, bei dem nicht nur festgelegte Datensätze und vorgefertigte Darstellungsformen benutzt werden können.
+Vielmehr muss die Software möglichst generisch sein um flexibel viele unterschiedliche Anwendungsfälle
+bearbeiten zu können.
 
-Schumann S. 126
+Um diesen Ansatz umsetzen zu können sollte deshalb die Software auf einer niedrigeren Ebene funktionieren als
+bisherige Softwarelösungen wie beispielsweise Microsoft Excel. Statt grafische Darstellungen auszuwählen
+auf die Datensätze abgebildet werden, soll dem Benutzer erlaubt werden einzelne Variablen, unabhängig von
+anderen Variablen des gleichen abstrakten Datensatzes, auf die atomaren Elemente einer Grafik zu übertragen,
+den visuellen Variablen. Die Software kann dann automatisch den kompletten Wertebereich auf Elemente der
+graphischen Darstellung abbilden. Somit werden trotz dieses Low-Level-Ansatzes große Mengen an Datenpunkten
+in kürzester Zeit dargestellt. Anders als bei aktuellen Softwarepaketen können damit folgende Fragen
+beantwortet werden:
+\begin{itemize}
+\item Welche Darstellungsform eignet sich am besten für ein konkrete Aufgabe?
+\item Gibt es Mischformen aus vorhandenen Darstellunsgformen mit denen ein Problem noch besser gelöst werden kann?
+\item Gibt es neue unerforschte Ansätze für die Visualisierung?
+\end{itemize}
 
-Wie Kapitel 1 und 2 zeigen gibt es eine Vielzahl an Daten und grafischen
-Darstellungen. Zusätzlich dazu sind neue formen durch mash ups möglich
-deshalb muss ein Ansatz gewählt werden  wo man nicht nur eine form der viz mit ihren vorteilen und nachteilen auswählen kann.
-stattdessen soll ein tool alle freiheiten lassen, visuelle variablen frei mit den daten verbinden zu lassen
+\subsection{Einordnung in den Visualisierungsprozess}
+Die im vorangegangenen Kapitel beschriebene Software soll sich in dieser Arbeit nur auf einen Teilbereich
+des Visualisierungsprozesses konzentrieren um den grundlegenden Ansatz zu demonstrieren. Dabei werden
+einzelne Bereiche des Prozesses nicht beachtet, können aber durch den modularen Aufbau der Software
+noch ergänzt werden.\footnote{Vgl. dazu Abschnitt \ref{sec:visPro} und \ref{sec:Ausblick}} In der
+allgemeineren Einteilung nach \citep{BenFry} befindet sich der Aufgabenbereich der Software in den
+Stufen present und refine. In Abbildung \ref{fig:benfryprocess_marked} wird gezeigt welche Teilbereiche keine
+Beachtung finden.
 
-es ist schwer allgemeingültige aussagen zu treffen wie eine Information am besten visualisiert werden kann 
-und somit muss eine Anwendung einen möglichst generischen ansatz bieten damit der benutzer ohne 
-einschränkung seine spezielle aufgabe die er mit der viz lösen will lösen kann.
+Aus der Einteilung aus \citep{Schumann} ergibt sich die Abbildung \ref{fig:schumannprocess_marked}.
 
-welche viz eignet sich am besten für meine konkrete aufgabe?
-gibt es mischformen von bis jetzt gefundenen viz mit denen ich meine aufgabe noch besser lösen kann?
-gibt es neue ansätze für viz die bis jetzt noch nicht beschrieben sind. (unterstützung der forschung nach neuen formen der viz)
+In beiden Abbildungen kann man erkennen das die Bereiche der Visualisierungspipeline zwar eingeschränkt
+wurden, dafür aber mit einem zusätzlicher Möglichkeit der Bearbeitung versehen wurden.
+Durch die Möglichkeit den Prozess des Mappings sehr stark zu beeinflussen, entsteht eine iterative
+Möglichkeit der Anwendung. Bei jeder Interaktion des Benutzers wird automatisch und unmittelbar das
+aktuelle Ergebnis ausgegeben und der Nutzer kann visuell analysieren welche Verbindungen noch nötig sind
+und welche zusätzlichen Parameter einzelne Verbindungen und Verbindungen untereinander haben sollen.
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth]{benfryprocess_marked.pdf}
+\caption{Einordnung in den Prozess des Computational Designs nach \citep{BenFry}, eigene Darstellung}
+\label{fig:benfryprocess_marked}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth]{schumannprocess_marked.pdf}
+\caption{Einordnung in den Prozess der Visualisierung nach \citep{Schumann}, eigene Darstellung}
+\label{fig:schumannprocess_marked}
+\end{figure}
 
-um einen mgölcihst großen bereich aller öglichen viz formen abdecken zu können, wird daher ein ansatz gewählt, der dem benutzer erlaubt die atomaren elemente einer grafik automatisiert designen zu können. somit werden große mengen an datenpunkten in kürzester zeit darstellbar und weiterverarbeitbar.
 beispielhafte implementierung “datasynth”
-anforderung an so eine software (beispiel1: journalist, beispiel2: privat/künstler)
--> datasynth als Erkundungstool für daten, als datenleser (ist das nicht auch eine kompetenz die man entwickeln sollte: daten lesen und verstehen zu können, also heisst es nicht auch heutzutage und in zukunft immer mehr: daten verstehen heißt die welt verstehen)
 
-Warum visuelle Programmierung? DEFINITION! und nochmal WARUM?
-weil es dem zugrundeliegenden prinzip des MAPPING der viz entspricht
 
 statt custom tools etc und immer wieder neu programmieren.....jetzt ein tool
 
 komplexität hinter einem einfachen interface verstecken (klavier aus memo’s talk in london)
 
-einordnung der software mit vergleichen zu anderen apps (grundlage sind funktionalität, also was kommt dabei raus) ist so ein ding zwischen statistiktool spss, 
+einordnung der software mit vergleichen zu anderen apps (grundlage sind funktionalität, 
+lso was kommt dabei raus) ist so ein ding zwischen statistiktool spss, 
 
 iterativer prozess der exploration wird unterstützt (vgl. mantra visueller informationssuche) (vgl. preim/dachselt, s 443 ganz unten)
 
-um den vielseitigen anforderungen an eine visualisierung gerecht zu werden, soll daher eine softwar entwickelt werden, die auf einem Level ansetzt den jeder Visualisierungsprozess durchlaufen muss: das Mapping bzw graphische Semiologie. Somit kann der gesamte Bereich der Visualisierungsmöglichkeiten theoretisch abgedeckt werden.
 
-man kann jede visualisierung in ihre grundlegenden graphischen elemente zerlegen.
-was sind die grundlegenden graphischen elemente? (herausfinden! vielleicht in bertin!)
 
 \section{Rahmenbedingungen}
 Für die Arbeit mit der Infomationsvisualisierung, speziell in Bezug auf die digitale
@@ -661,6 +737,15 @@ Neurowissenschaften zugeordnet und soll deshalb nur genannt bleiben.
 
 \section{Anforderungen}
 \label{sec:Anforderungen}
+anforderung an so eine software (beispiel1: journalist, beispiel2: privat/künstler)
+-> datasynth als Erkundungstool für daten, als datenleser (ist das nicht auch eine kompetenz
+die man entwickeln sollte: daten lesen und verstehen zu können, also heisst es nicht auch heutzutage
+und in zukunft immer mehr: daten verstehen heißt die welt verstehen)
+
+Warum visuelle Programmierung? DEFINITION! und nochmal WARUM?
+weil es dem zugrundeliegenden prinzip des MAPPING der viz entspricht
+
+
 8 visuelle Variablen nach Bertin ((eine Anforderung an datasynth: muss alle diese abbilden können)):
 
 möglichkeit alle datentypen abbilden bzw verarbeiten zu können
@@ -802,6 +887,9 @@ was kannnoch alles an der Software getan werden?
 \section{Fazit}
 \label{sec:Fazit}
 eignet sich die software?! JA NEEIN ?
+
+gut aber durc hdas wesen der software entstehen neue probleme(siehe nachteile) die beachtet werden müssen, dafür müssen lösungen her
+
 \section{Ausblick}
 \label{sec:Ausblick}
 Da die software lediglich einen Prototypen darstellt ergeben sich mannigfalitge Erweiterungsmöglichkeiten. Hier sollen einige weniger, dafür aber sehr wichtige mögliche Erweiterungen genannt werden.
