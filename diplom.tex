@@ -434,9 +434,9 @@ in Verbindung mit eigenen Arbeitsweisen um graphische Konzepte zu realisieren. D
 Bereich primäre Form der Informationsübertragung.
 \item[Computational Design]
 Dieser von \citep{BenFry} eingeführte Begriff beschreibt die Vereinigung vieler Disziplinen zu einem neuen
-interdisziplinären Arbeitsfeld. Die Visualisierung ist ein zentraler Bestandteil des Computational Design,
-welches ein größeres Forschungsfeld beschreibt, dass technische Bereiche wie Informatik mit künstlerischen
-Bereichen des Designs verbindet. Somit wird der Visualisierungsbegriff auf ein größeres Arbeitsfeld
+interdisziplinären Arbeitsfeld. Der Ansatz des Computational Designs ist es, die Visualisierung in einem größeren
+Kontext zu betrachten und mit technischen Bereichen wie der Informatik und künstlerischen
+Bereichen des Designs zu verbinden. Somit wird der Visualisierungsbegriff auf ein größeres Arbeitsfeld
 bezogen.
 \end{description}
 
@@ -552,6 +552,7 @@ der graphischen Darstellung verwendet und schließt alle Präsentationen der
 Informationsvisualisierung ein.
 
 \subsection{Darstellungsformen}
+\label{sec:Darstellungsformen}
 Die graphische Darstellung hat verschiedene Darstellungsformen, die für unterschiedliche
 Anwendungsfälle konzipiert wurden. Sie sind alle stark anwendungsabhängig und es müssen alle
 Anforderungen beachtet werden, um die effizienteste Technik der graphische Darstellung zu
@@ -581,7 +582,7 @@ kreieren wird im nächsten Kapitel ein Softwarekonzept erstellt.
 \label{cha:Software}
 \section{Grundprinzip der Informationsvisualisierung}
 \label{sec:Grundprinzip}
-\subsection{Allgemeinte Betrachtungen}
+\subsection{Allgemeine Betrachtungen}
 Die Übetragung von symbolischen Informationen auf geometrische Informationen kann als grundlegendes Prinzip der
 Visualisierung bezeichnet werden. Dieser Schritt ist die ausführende Stufe, das Kernstück, die als Mapping in der
 Visualisierungspipeline bezeichnet wird. Er wird in der Literatur als selbstverständlich angesehen, da damit
@@ -726,50 +727,65 @@ Neurowissenschaften zugeordnet und soll deshalb nur genannt bleiben.
 
 \section{Anforderungen}
 \label{sec:Anforderungen}
-anforderung an so eine software (beispiel1: journalist, beispiel2: privat/künstler)
--> datasynth als Erkundungstool für daten, als datenleser (ist das nicht auch eine kompetenz
-die man entwickeln sollte: daten lesen und verstehen zu können, also heisst es nicht auch heutzutage
-und in zukunft immer mehr: daten verstehen heißt die welt verstehen)
-
-Warum visuelle Programmierung? DEFINITION! und nochmal WARUM?
-weil es dem zugrundeliegenden prinzip des MAPPING der viz entspricht
-
-
-8 visuelle Variablen nach Bertin ((eine Anforderung an datasynth: muss alle diese abbilden können)):
-
-möglichkeit alle datentypen abbilden bzw verarbeiten zu können
-bearbeitungsziele sollen schnell und unkompliziert erfüllt werden können
-
-möglichkeit alle informationstypen zu viz0
-
-1. konkretisierung der eigenen problemstellung
-software erstellen, was muss sie können, wofür soll sie da sein
-also warum z.b. visuelles programmieren usw.
-2. entwicklung von hypothesen (oder definition von anforderungen)
-was muss die software leisten können?
-3. ausführliche beschreibung Untersuchungsmethodik und Vorgehensweise
-????
-
-weil mit dem Grundprinzip der Abbildung gearbeitet wird, müssen alle Möglichkeiten dieser in der Software zur Verfügung stehen
-
-keine vorgabe eines bestimmten system sondern die möglichkeit direkt mit grapischen primitiven und ihren attributen wie farb, etc. arbeiten zu können
-
-cross-platformness
-
-möglichst viel Parametrisiert um Wertebereiche direkt anpassen zu können
-siehe auch abschnitt visuelle Programmierung
-
-
-
-
-
-
-
-
-
+Für die zu entwickelnde Software ergeben sich mehrere Anforderungen, die
+im folgenden beschrieben werden. Neben speziellen Anforderungen, die aus
+dem Bereich der Visualisierung stammen, sollen zusätzlich noch
+allgemeine Anforderungen an Bentuzerführung und Performance gestellt werden.
+\begin{description}
+\item[Einfache Benutzerinteraktion]
+Damit auch technisch unerfahrene Nutzer wie Journalisten oder private
+Anwender schnell und einfach Ergebnisse erzielen können, kann die Software
+durch visuelle Programmierung bedient werden. Da das Konzept der visuellen
+Programmierung, das in Abschnitt \ref{sec:visPro} genauer beschrieben wird,
+das Konzept der Software gut veranschaulicht, reicht ein grundlegendes
+mathematisches Verständnis des Nutzers.
+\item[Flexible Visualisierungsmöglichkeiten]
+Um alle möglichen Darstellungsformen abbilden zu können, muss die 
+Möglichkeit bestehen alle visuellen Variablen\footnote{Vgl.
+\ref{sec:graphischeSemiologie}} und damit alle Darstellungsformen\footnote{Vgl.
+\ref{sec:Darstellungsformen}} abbilden zu können. Der Nutzer darf dabei
+in seiner Arbeit nicht durch Vorauswahl vorgefertigter Darstellungen
+eingeschränkt werden.
+\item[Flexible Ein- und Ausgabe]
+Zur automatischen Dateneinspeisung in die Software sollten mehrere Möglichkeiten
+bestehen um in unterschiedliche Workflow-Prozesse eingebunden werden zu können.
+Neben Dateiformaten wie XML, JSON und CSV ist eine Netzwerk- und
+Datenbankanbindung sinnvoll.
+\item[Performanz]
+Der Benutzer kann alle Verbindungen und Parameter zwischen Datenobjekten und ihrer
+visuellen Repräsentation direkt beeinflussen. Um eine direkte visuelle Analyse
+durch den Nutzer zu ermöglichen, muss die Software die Möglichkeit bieten, sofort
+nach Interaktion des Nutzers, die Veränderungen darzustellen. Dafür wird eine
+gewisse Performanz benötigt.
+\item[Erweiterbarkeit]
+Durch unterschiedlichste Anforderungen in den verschiedenen Arbeitsbereichen ist
+es nötig, die Software selbst Erweitern zu können. Dafür soll eine Skriptsprache
+implementiert werden, die es erlaubt, zur Laufzeit neue Funktionen hinzufügen zu
+können. Außerdem besteht die Möglichkeit durch eine Kapselung aller Funktionen
+einfach eigene Module zu programmieren.
+\item[Cross-Platform]
+Damit die Software von möglichst universell einsatzbar ist, wird sie für die
+drei großen Plattformen Linux, Apple OSX und Microsoft Windows entwickelt werden.
+Dies wird durch die zugrundeliegende Bibliothek
+openframeworks\footnote{Vgl. Abschnitt \ref{sec:Technologien}} gewährleistet.
+\item[Frei und Offen]
+Die Software soll unter einer freien Lizenz entwickelt und veröffentlicht werden
+um eigene Erweiterungen von Nutzern zuzulassen. Durch die Wahl der Lizenz kann
+die Entwicklung durch alle Interessenten vorangetrieben werden. Außerdem lässt
+die Lizenz eine kommerzielle Erweiterung und Nutzung zu. Für private Anwender
+ist die Software kostenlos verfügbar.
+\end{description}
 
 \section{Analyse bestehender Software}
 \label{sec:bestehendeSoftware}
+Durch das weite Arbeitsfeld der Informationsvisualisierung, welches meist
+fließend in andere Bereiche über geht, existiert eine große Anzahl an
+Softwarelösungen und Programmierbibliotheken. Hier sollen exemplarisch
+einzelne Anwendungen beschrieben werden, die verschiedene gefordete
+Funktionen enthalten, diese aber nicht in einem Softwarepaket, welches
+speziell auf die Informationsvisualisierung zugeschnitten ist, zusammenfassen.
+Eine Liste aller betrachteten Programme findet sich in Tabelle
+\ref{tab:Softwareliste} im Anhang.
 
 einordnung der software mit vergleichen zu anderen apps (grundlage sind funktionalität, 
 lso was kommt dabei raus) ist so ein ding zwischen statistiktool spss, 
@@ -820,6 +836,10 @@ openFrameworks
 boost
 \section{visuelle programmierung}
 \label{sec:visPro}
+
+Warum visuelle Programmierung? DEFINITION! und nochmal WARUM?
+weil es dem zugrundeliegenden prinzip des MAPPING der viz entspricht
+
 statt custom tools etc und immer wieder neu programmieren.....jetzt ein tool
 
 komplexität hinter einem einfachen interface verstecken (klavier aus memo’s talk in london)
@@ -832,9 +852,11 @@ erklärung der einzelnen teile wie nodes etc doch erst bei implementierung?
 soll unterstützend sein bei der arbeit mit dem eigentlichen thema und das wesen der problemlösung verdeutlichen
 
 context switches vermeiden (siehe tufte 50) und die gleiche visuelle representation für das problem zeigen.
-dadurch das (bei ausreichendem displayplatz) alle elemente des UI und die aktuelle Ausgabe angezeigt werden können, ist der nutzer nicht durch "context switches" abgelenkt und kann sich auf die data viz konzentrieren.
+dadurch das (bei ausreichendem displayplatz) alle elemente des UI und die aktuelle Ausgabe angezeigt werden
+können, ist der nutzer nicht durch "context switches" abgelenkt und kann sich auf die data viz konzentrieren.
 das gilt auch für das verändern von parametern, da im selben augenblick, wie parameter vom nutzer geändert werden, ändern sich auch die ausgabe.
-damit kann der nutzer einerseits sofort erkennen was der parameter eigentlich macht und augenblicklich vergleichen und anpassen für seine präferierte lösung
+damit kann der nutzer einerseits sofort erkennen was der parameter eigentlich macht und augenblicklich
+vergleichen und anpassen für seine präferierte lösung
 \subsection{Spread}
 \subsection{Node}
 \subsection{Pin}
@@ -858,24 +880,32 @@ geeignete daten finden
 mulit-window ausgabe (gelöst mit ofxFenster, da glut das nicht hergibt)
 \section{Vorteile}
 \label{sec:Vorteile}
-durhc parameter kann der benutzer die Wertebereiche der Abbildungen direkt verändern und kann somit auch ohne komplette kenntnis der daten live die beste "einstellung der parameter" herauszufinden, anstatt vorher Metadaten kennen bzw studieren bzw anlegen zu müssen (min,max, ...)
+durhc parameter kann der benutzer die Wertebereiche der Abbildungen direkt verändern
+und kann somit auch ohne komplette kenntnis der daten live die beste "einstellung
+der parameter" herauszufinden, anstatt vorher Metadaten kennen bzw studieren bzw anlegen zu müssen (min,max, ...)
 
-mehrere viz können statisch in einer präsentation kombiniert werden. so kann ohne benutzerinteraktion mehrere blickwinkel auf den datensatz ermöglicht werden
+mehrere viz können statisch in einer präsentation kombiniert werden. so kann ohne
+benutzerinteraktion mehrere blickwinkel auf den datensatz ermöglicht werden
 
 \section{Nachteile}
 \label{sec:Nachteile}
-benutzer hat alle freiheiten aber muss dadurch auch die grundregeln der viz beherrschen und verstehen ( z.b. kreis radius/fläche, was eignet sich für was am besten)
+benutzer hat alle freiheiten aber muss dadurch auch die grundregeln der viz beherrschen
+und verstehen ( z.b. kreis radius/fläche, was eignet sich für was am besten)
 gestaltungsregeln müssen vom nutzer angwendet werden um viz zu verstärken
 Klärung der möglichen Fragen, use nach BERTIN (Theorie des graphischen Bildes)
 
 erweiterbarkeit:
-wenn eine gewisse funktionalität noch nicht als node vorliegt, kann diese hinzuprogrammiert werden. verweis dabei auf die angedachten features zur erleichterung von nutzer entwicklungen mit beispielsweise ruby
+wenn eine gewisse funktionalität noch nicht als node vorliegt, kann diese hinzuprogrammiert
+werden. verweis dabei auf die angedachten features zur erleichterung von nutzer entwicklungen
+mit beispielsweise ruby
 
 das statische:
-fehlende nutzerinteraktion und dadurch fehlende interaktive kombination von viz techniken (klick auf glyphe erzeugt eine genaue viz der werte dieses datenobjektes)
+fehlende nutzerinteraktion und dadurch fehlende interaktive kombination von viz techniken
+(klick auf glyphe erzeugt eine genaue viz der werte dieses datenobjektes)
 
 low-level-ansatz:
-führt dazu, dass man immer vom urschleim anfangen muss um komplexe objekte zu erzeugen. deshalb wichtiges feature: kapselbarkeit von mehreren nodes zu einer komplexen high-level-node
+führt dazu, dass man immer vom urschleim anfangen muss um komplexe objekte zu erzeugen.
+deshalb wichtiges feature: kapselbarkeit von mehreren nodes zu einer komplexen high-level-node
 so könnte man z.b. eine Sunburst node kreiiren die dann zwar 10 anstöpselmöglichkeiten hat aber sonst nix weiter
 man benutzt grafische primitive und manche komplexe viz hat sehr viele primitive in komplexen abhängigkeiten, also kapseln
 
@@ -885,15 +915,23 @@ man benutzt grafische primitive und manche komplexe viz hat sehr viele primitive
 ???
 2. optional: persönliche bemerkungen, hinweis auf weiteren forschungsbedarf, ausblick in dei zukunft
 was kannnoch alles an der Software getan werden?
+
+-> datasynth als Erkundungstool für daten, als datenleser (ist das nicht auch eine kompetenz
+die man entwickeln sollte: daten lesen und verstehen zu können, also heisst es nicht auch heutzutage
+und in zukunft immer mehr: daten verstehen heißt die welt verstehen)
+
 \section{Fazit}
 \label{sec:Fazit}
 eignet sich die software?! JA NEEIN ?
 
-gut aber durc hdas wesen der software entstehen neue probleme(siehe nachteile) die beachtet werden müssen, dafür müssen lösungen her
+gut aber durc hdas wesen der software entstehen neue probleme(siehe nachteile)
+die beachtet werden müssen, dafür müssen lösungen her
 
 \section{Ausblick}
 \label{sec:Ausblick}
-Da die software lediglich einen Prototypen darstellt ergeben sich mannigfalitge Erweiterungsmöglichkeiten. Hier sollen einige weniger, dafür aber sehr wichtige mögliche Erweiterungen genannt werden.
+Da die software lediglich einen Prototypen darstellt ergeben sich mannigfalitge
+Erweiterungsmöglichkeiten. Hier sollen einige weniger, dafür aber sehr wichtige
+mögliche Erweiterungen genannt werden.
 
 ruby
 erweiterung auf andere bereiche des visualisierungsprozesses
@@ -905,13 +943,21 @@ kapselung von patches
 
 v4p laden und speichern möglich! crazy!
 
-erweiterung der ausgabemöglichkeiten (statt ausgabe auf bildschirm, ausgabe als postscript, ausgabe als interaktive 3D HTML5 Anwendung (dazu wären navigations und interaktionsmöglichkeiten notwendig (vgl. schumann s. 175), ...)
+erweiterung der ausgabemöglichkeiten (statt ausgabe auf bildschirm, ausgabe als
+postscript, ausgabe als interaktive 3D HTML5 Anwendung (dazu wären navigations
+und interaktionsmöglichkeiten notwendig (vgl. schumann s. 175), ...)
 
-eng verbunden damit sind die möglichkeit allgemeine interaktionsmöglichkeiten einzubauen um parameter für beispielsweise selektionsbedingungen auch von end-anwendern der viz benutzbar zu machen
+eng verbunden damit sind die möglichkeit allgemeine interaktionsmöglichkeiten
+einzubauen um parameter für beispielsweise selektionsbedingungen auch von
+end-anwendern der viz benutzbar zu machen
 
-evaluationsmöglichkeit (wie kann ich schon in datasynth testen ob die ausgabe geeignet ist) (muss erforscht werden)
+evaluationsmöglichkeit (wie kann ich schon in datasynth testen ob die ausgabe
+geeignet ist) (muss erforscht werden)
 
-automatische generierung von legenden/skalen(+einteilungen), muss erforscht werden inwieweit das überhaupt machbar ist bei einem so universellen ansatz oder ob es nicht doch besser ist, diese dinge der nachbearbeitung zu überlassen (weil datasynth ja nur die massen-arbeit machen soll und nicht einzelne details am ende)
+automatische generierung von legenden/skalen(+einteilungen), muss erforscht
+werden inwieweit das überhaupt machbar ist bei einem so universellen ansatz
+oder ob es nicht doch besser ist, diese dinge der nachbearbeitung zu überlassen
+(weil datasynth ja nur die massen-arbeit machen soll und nicht einzelne details am ende)
 
 eventbasierte steuerung
 
@@ -936,6 +982,7 @@ Name & Webadresse \\
 \hline
 Pure Data & http://www.puredata.info/ \\
 vvvv & http://www.vvvv.org/ \\
+\label{tab:Softwareliste}
 \end{tabular}
 \section{Beispiel: Bevölkerungsdaten Stadt Leipzig}
 viz mit streckenzügen (sternförmig, parallel), kreisen (matrix),
