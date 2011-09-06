@@ -39,27 +39,27 @@ mit Daten. So haben Städte wie beispielsweise Leipzig eine öffentliche Datensc
 Staaten wie Großbritannien verfolgen ein ganzheitliches Konzept des e-Government. Aufgrund dieser
 aktuellen Entwicklung ist es notwendig, neue Strategien zu entwickeln, die diese Daten
 für die jeweiligen Zielgruppen sinnvoll extrahieren, aufarbeiten und darstellen. Aus diesem
-Grund haben sich in den letzen 50 Jahren verschiedene Forschungsfelder, wie Statistik, Data Mining,
-Computergrafik und Informatik entwickelt. Ein Forschungsgebiet verbindet all diese Felder um vor
-allem den aktuellen Entwicklungen unserer digitalen Welt Rechnung zu tragen: die Informationsvisualisierung.
-In diesem Forschungsgebiet wird die Frage geklärt wie immer abstrakter und komplexer werdende Daten
+Grund wurden in verschiedenen Forschungsfeldern, wie beispielsweise Statistik, Data Mining,
+Computergrafik und Informatik spezielle Lösungsansätze entwickelt. Ein Forschungsgebiet verbindet diese
+Ansätze, um den aktuellen Entwicklungen unserer digitalen Welt Rechnung zu tragen: die Informationsvisualisierung.
+In diesem Forschungsgebiet wird die Frage geklärt, wie immer abstrakter und komplexer werdende Daten
 in einer für den Menschen adäquaten Weise aufbereitet und dargestellt werden können, um die gewünschten
 Informationen in Form von Mustern, Wiederholungen und Anomalien identifizieren zu können und damit wichtige
 Rückschlüsse auf den eigentlichen Forschungsgegenstand ziehen zu können. Ursprünglich aus dem rein
-wissenschaftlichen Kontext kommend, zeichnet sich eine Entwicklung hin zu einem populäreren Arbeitsfeld ab
+wissenschaftlichen Kontext kommend, zeichnet sich eine Entwicklung hin zu einem populäreren Arbeitsfeld ab,
 um auch alltägliche Probleme mithilfe der Informationsvisualisierung lösen zu können.
 Auch wenn die Informationsvisualisierung konkrete Ziele hat, mit denen sehr spezielle Probleme gelöst
-werden, addressieren diese nicht mehr nur Experten und Wissenschaftler. Auch tägliche Anwendungen
-im Bereich der sozialen Netzwerke, beim Einkauf Online oder im Supermarkt, bei die Suche nach Informationen
+werden, addressieren diese nicht mehr nur Experten und Wissenschaftler. Auch alltägliche Anwendungen
+im Bereich der sozialen Netzwerke, beim Onlineshopping oder beim Einkauf im Supermarkt, bei der Suche nach Informationen
 im Internet oder in der Bibliothek können mit der Informationsvisualisierung unterstützt
-werden und werden damit auch für ungeübte Anwender verständlich und benutzbar. Dabei sollte
-die Informationsvisualisierung ansprechend sein um eine angenehme und ästhetisch ansprechende Benutzung
+werden. Benutzerschnittstellen werden somit verständlicher und benutzerfreundlicher.
+Die Informationsvisualisierung soll darüberhinaus ansprechend sein, um eine angenehme und ästhetisch ansprechende Benutzung
 gewährleisten zu können, aber gleichzeitig auch intuitiv sein, um ohne Vorkenntnisse Nutzen aus
 dieser Form der Mensch-Maschine-Interaktion ziehen zu können. Die tägliche Arbeit kann
 unterstützt werden, damit es Gelegenheitsanwendern leicht gemacht wird, Informationen und
 Wissen noch besser mit anderen kommunizieren und teilen zu können. Es liegt an den (digitalen) Werkzeugen,
 die den Menschen unterstützen und ihm die Möglichkeit geben, diese Daten für ihre Problemlösung nutzen zu können.
-Dabei ergibt sich eine Vielzahl von Fragestellungen die beachtet und gelöst werden müssen, um die
+Dabei ergibt sich eine Vielzahl von Fragestellungen, die beachtet und gelöst werden müssen, um die
 Informationsvisualisierung erfolgreich einsetzen zu können.
 
 \section{Problemstellung}
@@ -94,9 +94,7 @@ zu finden, werden in dieser Arbeit Schritte durchgeführt, die die Implementatio
 Prototypen zum Ziel haben.
 
 In Kapitel \ref{cha:Grundlagen} im Abschnitt \ref{sec:DatenInfo} werden die Begriffe Daten und
-Informationen definiert und im Kontext der Informationsvisualisierung betrachtet. Dabei wird anhand
-des aktuellen Forschungsstandes gezeigt, dass diese zwei Begriffe nicht immer klar voneinander abgrenzbar
-sind und es in Bezug auf das jeweilige Arbeitsfeld unterschiedliche Interpretationen möglich sind.
+Informationen definiert und im Kontext der Informationsvisualisierung betrachtet.
 Im Abschnitt \ref{sec:EigenschaftenDaten} werden die
 unterschiedlichen Eigenschaften von Daten untersucht. Mit diesem Kriterienkatalog können Daten im
 Abschnitt \ref{sec:KlassifikationDaten} klassifiziert werden.
@@ -122,11 +120,11 @@ Im Abschnitt \ref{sec:Rahmenbedingungen} werden die Rahmenbedingungen der Softwa
 \ref{sec:Anforderungen} Anforderungen definieren zu können. Der Abschnitt \ref{sec:bestehendeSoftware}
 zeigt exemplarisch vorhandene Softwarelösungen.
 
-Im Kapitel \ref{cha:Umsetzung} wird die Implementation des Prototyps vorgenommen. Dabei wird in Abschnitt
+Im Kapitel \ref{cha:Umsetzung} wird die Implementation eines Prototyps dokumentiert. Dabei wird in Abschnitt
 \ref{sec:Technologien} auf die verwendeten Technologien eingegangen. Danach wird in Abschnitt
 \ref{sec:visPro} das Konzept der visuellen Programmierung als wesentliches Merkmal der Benutzerinteraktion
 beschrieben und Gründe für diese Entscheidung genannt.
-Als letzter Punkt dieses Kapitels wird in Abschnitt \ref{sec:Kernfunktionen} beispielhaft Kernfunktionen
+Als letzter Punkt dieses Kapitels werden in Abschnitt \ref{sec:Kernfunktionen} beispielhaft Kernfunktionen
 der Software mit Quelltext gezeigt und erläutert.
 
 Das vorletzte Kapitel \ref{cha:Auswertung} nennt in Abschnitt \ref{sec:Probleme} die Probleme, die während
@@ -152,15 +150,16 @@ Gegenstand dieser Arbeit sollen vor allem digital gespeicherte Daten sein.
 Diese liegen in einer standardisierten Form vor und können für die elektrische Weiterverarbeitung
 und Kommunikation genutzt werden. Diese Daten sind dabei formalisierte Repäsentationen einer
 oder mehrerer Informationen, die übermittelt werden sollen.
-Daten können dabei aus der realen Welt stammen, erhoben durch
-die Messung einer physikalischen Größe oder durch Speicherung digital erzeugter Daten.
+Daten können dabei aus der realen Welt stammen, beispielsweise erhoben durch
+die Messung einer physikalischen Größe, oder sie wurden digital erzeugt, beispielsweise durch
+computergestützte Simulationen oder aus der Nutzung der Telekommunikation.
 Der Anwender dieser Daten ist daher nicht direkt an den Daten als solche interessiert, sondern
 an den Informationen und dem aus ihnen resultierenden Erkenntnisgewinn, die er mit verschiedenen
 Techniken aus diesen Daten gewinnen kann.
 
 Der Begriff der Information ist schwer einzugrenzen und wird in unterschiedlichen Wissenschaften
-in verschiedenen Formen ausgelegt. Im philosophischen Bereich der Erkenntnistheorie wird versucht
-einen allgemeingültigen Informationsbegriff zu definieren. Trotzdessen kann noch nicht von einer
+in verschiedenen Formen ausgelegt. Der philosophische Bereich der Erkenntnistheorie versucht
+einen allgemeingültigen Informationsbegriff zu definieren. Trotzdem kann noch nicht von einer
 einheitlichen Theorie der Information gesprochen werden und es beschäftigen sich viele verschiedene
 Gebiete wie die Informatik, Informationstheorie, Nachrichtentechnik und andere mit diesem
 Begriff.\footnote{Vgl. \citep{wiki_info}} In \citep[S.\,3]{Hoeher} wird die Information wie folgt beschrieben:
@@ -175,13 +174,15 @@ In Bezug auf grafische Darstellungen wird in \citep{Bertin} die Information als 
 Inhalt eines Gedankens definiert, das heißt die Information ist der Teil der Daten, die in einer
 Informationsvisualisierung dargestellt werden kann. Die Informationsvisualisierung als solche hat die
 Aufgabe, diese Information für den Menschen aufzudecken und in verständlicher Form aufzubereiten.
-Es wird eine Transformation durchgeführt, bei der Informationen aus den reinen Daten, die zwar diese Informationen enthalten,
-aber für den menschlichen Betrachter nicht erfassbar sind, in ein leicht verständliches und intuitives
-Zeichensystem überführt werden.
+Die reinen Daten, die zwar diese Informationen enthalten,
+aber für den menschlichen Betrachter nicht erfassbar sind, werden in ein grafisches
+Zeichensystem transformiert. Dieses grafische System erlaubt dem Menschen eine natürliche, visuelle und
+damit effektivere Analyse.
 
 \section{Eigenschaften von Daten}
 \label{sec:EigenschaftenDaten}
-In diesem Kapitel wird der Inhalt der Daten und die damit zu extrahierenden Informationen eingegrenzt.
+In diesem Kapitel werden die Eigenschaften der Daten beschrieben. Sie bestimmen wie die relevanten Informationen
+in den Daten codiert sind.
 Digitale Daten gelten als Ausgangspunkt für die Konzeption einer Informationsvisualisierung. Die speziellen
 Eigenschaften von Daten sind maßgeblich für weitere Schritte der Informationsvisualisierung.\footnote{Vgl. 
 Abschnitt \ref{sec:Pipeline}}
