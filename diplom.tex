@@ -63,35 +63,62 @@ Dabei ergibt sich eine Vielzahl von Fragestellungen, die beachtet und gelöst we
 Informationsvisualisierung erfolgreich einsetzen zu können.
 
 \section{Problemstellung}
-Die Visualisierung als wissenschaftliches Themengebiet ist ein hochkomplexes, hochspezialisiertes Arbeitsfeld bei dem
-mathematische, informationstechnische und gestalterische Anforderungen bedacht und in Einklang gebracht
-werden müssen. Da die Entwicklung unserer Informationsgesellschaft viel schneller voranschreitet als
-die Entwicklung neuer Werkzeuge, müssen neue Wege gefunden werden, um das Verständnis des eigentlichen
-Rezipienten weiterhin gewährleisten zu können. Immer komplexere Datenstrukturen können nicht mehr mit
-aktuell vorhandenen klassischen Softwarelösungen wie beispielsweise Tabellenkalkulationssoftware
-einfach verarbeitet werden. Stattdessen wird ein neuer grundlegender Ansatz um den eigentlichen
-Inhalt der Daten, die Information, wieder begreifbar zu machen.
-Es entstehen Softwarelösungen die auf Teilbereiche der Informationsvisualisierung wie beispielsweise der Medizin,
-Biotechnologie oder der Geoinformationssysteme spezialisiert sind. Diese Anwendungen sind aber nur von
-Wissenschaftlern oder spezialisierten Experten verwendbar und erfordern ein hohes Maß an Vorwissen
-und Einarbeitungszeit. Anwender aus Bereichen der Journalistik und Kunst entwickeln eigene Workflows
-um eine Informationsvisualisierung umzusetzen.
-Dabei wird auf Tools zurückgegriffen die aus verwandten Bereichen stammen, wichtige Aspekte der
-Informationsvisualisierung aber vernachlässigen.
-Dadurch erhöht sich der Arbeitsaufwand und die Qualität sinkt. Bis heute existiert keine
-Softwarelösung die eine universelle Möglichkeit bietet alle Formen und Anwendungsbereiche der
-Informationsvisualisierung bearbeiten zu können um eine jeweils für die Anwendung und den Zielgruppe
-adäquates Ergebnis zu liefern.
-In dieser Arbeit soll ein Lösungsversuch untersucht werden, der auf einen grundlegenden und
-abstrakteren Ansatz der Informationsvisualisierung abzielt, als es bisherige Softwarelösungen getan haben.
-Ergänzend dazu wird ein Prototyp, der die Idee beispielhaft implementiert.
-Diese Software kann mithilfe von visueller Programmierung\footnote{Vgl. Abschnitt \ref{sec:visPro}}
-bedient werden, welches ein breites Spektrum an Nutzergruppen zulässt. 
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth]{Ausgabe.pdf}
+\caption{Beispiele für grafische Darstellungen der Informationsvisualisierung (von oben nach unten: Farben und
+deren Bedeutung in unterschiedlichen Kulturen \citep{mccandless}, Facebook-Freundschaften \citep{facebook},
+Temperaturwerte \citep{temp} und Architekturblabla \citep{architect} }
+\label{fig:beispiele}
+\end{figure}
+vielzahl unterschiedlichster zugrundeliegender daten,
+unterschiedlichste anforderungen und viele verschiedene möglichkeiten der grafischen Darstellung
+fordern ein universelles tool.
+aber um eine passende grafische darstellung zu finden, muss man eine tiefgehende Kenntnis der eigenschaften
+von daten haben, die es erlaubt unterschiedliche möglichkeiten der visualisierung vergleichen und die
+beste finden zu können. 
+meist lassen sich komplexe daten nicht in standardisierte grafische darstellungen bringen
+
+in den abbildungen ist weiterhin zu erkennen, dass die grafischen darstellungen häufig aus 
+unterschiedlichen einfachen formen der grafischen Darstellung bestehen oder mehrere dieser Formen
+kombinieren.\footnote{siehe kapitel der formen}
+
+Als Beispielzeigt abbildung x mehrere ausschnitte aus [Information is beatuiful]. diese wurden von David Maccandles
+per Hand mit dem Vektorgrafikprogramm Adobe Illustrator entworfen und umgesetzt.\footnote{infoisbeautiful.net/book/process}
+Da die Umsetzung in einem kreativen Design-Prozess ohne Grafikvorgaben einer Software stattgefunden hat,
+unterscheiden sich die Darstellungen stark voneinander.
+McCandless schreibt über seine eigene Arbeitsweise:
+\begin{quote}
+"`Hand-creating information designs gives you better connection to the information you're working with. It helps
+you make decisions on the fly while you're drawing. Above all it's meticulous and fun. Like painting with data."'
+\end{quote}
+
+Diese Verbindung muss aufrecht erhalten werden, dem Benutzer dabei aber die Arbeit abzunehmen jeden einzelnen Datenwert
+einer vermutlich großen Menge in einem Datensatz einzeln per Hand zu zeichen.
+Dazu muss die Software Funktionen bieten, die unterschiedlichste Datentypen verarbeiten können und diese auf visuelle Variablen
+abbilden zu können.
+
+Eine Software entwickeln, die möglichst viele komplexe Ausgangsdaten mit möglichst vielen unterschiedlichen
+graphischen Darstellungen umsetzen kann, wobei der Benutzer nicht durch Vorgaben der Anwendung eingeschränkt wird.
+
+anhand der beispiele in den abbildungen kann man erkennen, dass normale programme woe excel und co nicht ausreichend sind,
+da man einen tiefgreifenden einblick in die daten bekommen muss um eine passende graphische Darstellung zu finden.
+aufgrund der abstraktheit der daten kommt dabei häufig ein hybride technik zum einsatz um dem betrachter einfachen
+visuellen zugang zu liefern
+deshalb muss eine software einen grundlegenderen ansatz finden um grafische Darstellungen der Informationsvisualisierung
+produzieren zu können.
+
+der anwender muss neben einem tiefen verständnis der zugrunde liegenden daten auch gestalterische Aspekte berücksichtigen
+um eine adäquate grafische Darstellung zu finden.
+
+Eine software für die Informationsvisualisierung muss also den anwender bei der arbeit mit den ausgangsdaten und bei der 
+grafischen Gestaltung unterstützen. eine auf die verbindung beider aspekte spezialisierte software konnte bei der
+recherche für diese arbeit nicht gefunden werden.
 
 \section{Aufbau der Arbeit}
-Um einen Lösungansatz für das Problem der einfachen aber universellen Informationsvisualisierung
-zu finden, werden in dieser Arbeit Schritte durchgeführt, die die Implementation eines
-Prototypen zum Ziel haben.
+Um einen Lösungansatz für das Problem einer universellen Informationsvisualisierung
+zu finden, werden in dieser Arbeit Schritte durchgeführt, die die Konzeption einer Software zum Ziel haben.
+Diese Software wird prototypisch implementiert.
 
 In Kapitel \ref{cha:Grundlagen} im Abschnitt \ref{sec:DatenInfo} werden die Begriffe Daten und
 Informationen definiert und im Kontext der Informationsvisualisierung betrachtet.
@@ -102,9 +129,9 @@ Im folgenden Abschnitt \ref{sec:Datentypen} werden die verschiedenen Datentypen 
 Datenwerte beschreiben.
 Abschnitt \ref{sec:grafischeSemiologie} beschreibt ein System zur Klassifikation von grafischen Variablen,
 die grundlegenden Elemente einer grafischen Darstellung.
-
-Nachdem die Ausgangsbedingungen definiert sind, wird im Kapitel \ref{cha:Informationsvisualisierung} die
-Informationsvisualisierung beschrieben. Abschnitt \ref{sec:Definition} definiert den Begriff
+Die Information, die in unterschiedlichen Klassen von Daten codiert ist, und das visuelle Zeichensystem bilden
+die "`Rohstoffe"' für die Informationsvisualisierung, die im Kapitel \ref{cha:Informationsvisualisierung}
+beschrieben wird. Abschnitt \ref{sec:Definition} definiert den Begriff
 der Informationsvisualisierung, die als eine Weiterentwicklung der wissenschaftlichen
 Datenvisualisierung beschrieben wird. Danach folgt im Abschnitt \ref{sec:Arbeitsfelder} eine Abgrenzung zu den verwandten
 Arbeitsfeldern, die mit den Techniken Informationsvisualisierung arbeiten oder Teilbereiche der Informationsvisualisierung
@@ -328,7 +355,13 @@ werden können. Sie werden visuelle Variablen genannt.
 \item Richtung oder Orientierung
 \item Form des Elements
 \end{itemize}
-In Abbildung XX werden diese dargestellt.
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth]{visuelleVariablen.pdf}
+\caption{visuelle Variablen nach \citep{Bertin}, Scan aus \citep[S.\,51]{Bertin}  }
+\label{fig:visuelleVariablen}
+\end{figure}
+In Abbildung \ref{fig:visuelleVariablen} werden diese dargestellt.
 Jede dieser Variablen hat spezifische Eigenschaften, die einzelne Variable unterschiedlich gut oder schlecht
 für spezielle Aufgaben eignen. Um die Auswahl der geeignetesten Variablen zu vereinfachen, schlägt
 \citep{Bertin} mehrere Konstruktionsregeln vor.
@@ -598,6 +631,9 @@ alle Ausgangsbedingungen zu beachten, die zu einer Informationsvisualisierung f�
 Abschnitt \ref{sec:Ziele} erfüllt. Das bedeutet, dass alle Schritte vor dem Mapping wie zum Beispiel die Auswahl
 aller Parameter nicht von einer Software erledigt werden können und stattdessen vom Nutzer in einem kreativen
 Prozess gefunden werden müssen.
+
+MERKMALE UND DEREN AUSPRÄGUNGEN AUF VISUELLE VARIABLEN
+
 Nur die arbeitsintensive Aufgabe der Übertragung der einzelnen Datenwerte auf die visuellen Variablen muss
 dann noch vom Rechner übernommen werden, ohne das der Nutzer dabei im kreativen Gestaltungsprozess eingeschränkt
 wird. Parameter können direkt verändert werden um die Ausgabe direkt zu steuern, während der
