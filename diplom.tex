@@ -58,7 +58,7 @@ gewährleisten zu können, aber gleichzeitig auch intuitiv sein, um ohne Vorkenn
 dieser Form der Mensch-Maschine-Interaktion ziehen zu können. Die tägliche Arbeit kann
 unterstützt werden, damit es Gelegenheitsanwendern leicht gemacht wird, Informationen und
 Wissen noch besser mit anderen kommunizieren und teilen zu können. Es liegt an den (digitalen) Werkzeugen,
-die den Menschen unterstützen und ihm die Möglichkeit geben, diese Daten für ihre Problemlösung nutzen zu können.
+die den Benutzer unterstützen und ihm die Möglichkeit geben, diese Daten für seine Problemlösung nutzen zu können.
 Dabei ergibt sich eine Vielzahl von Fragestellungen, die beachtet und gelöst werden müssen, um die
 Informationsvisualisierung erfolgreich einsetzen zu können.
 
@@ -69,37 +69,70 @@ Informationsvisualisierung erfolgreich einsetzen zu können.
 \caption{Beispiele für grafische Darstellungen der Informationsvisualisierung (von oben nach unten: Farben und
 deren Bedeutung in unterschiedlichen Kulturen \citep{mccandless}, Facebook-Freundschaften \citep{facebook},
 Temperaturwerte \citep{temp} und Architekturblabla \citep{architect} }
-\label{fig:beispiele}
+\label{fig:beispiel}
 \end{figure}
+Um mit der Informationsvisualisierung eine effiziente Kommunikationsgrundlage erarbeiten zu können, sind komplexe
+Vorüberlegungen nötig. Diese bilden die Grundlage für das Erstellen einer grafischen Darstellung aus Daten.
+Die drei wichtigsten Voraussetzungen für eine Informationsvisualisierung sind die Kenntnis der
+zugrundliegenden Daten und deren spezifische Eigenschaften, die Betrachtung aller möglichen visuellen Variablen und deren Ausprägungen
+und eine angemessene und sinnvolle Form der Transformation zwischen diesen beiden Zeichensystemen.
+Dafür ist der Einsatz von Software unabdingbar.
+In Abbildung 1 zeigt beispielhaft Ausschnitte aus grafische Darstellungen der Informationsvisualisierung.
+
+
+
+Zusätzlich dazu sind
+sie künstlerisch gestaltet um ein ansprechenden Gesamteindruck zu machen und damit den Betrachter zu
+unterstützen.
+Aktuelle Softwarestandards wie beispielsweise Tabellenkalkulationsprogramme können das nicht leisten
+oder sind auf Spezialgebite beschränkt. Meist kann dabei für die Transformation aus Daten zu einer
+grafischen Darstellung nur aus einer begrenzten Auswahl an Voreinstellungen gewählt werden.
+Die Software sollte aber einen universelleres Konzept zur Umsetzung der Informationsvisualisierung haben, um den Benutzer möglichst große
+Gestaltungsfrieheit zu lassen und um ein breites Spektrum an Bearbeitungsfällen abdecken zu können.
+Bei der Recherche konnte keine Software gefunden werden, die diese Aspekte erfüllen kann.
+
+Ziel dieser Arbeit soll sein, eine Software zu konzipieren, die die Grundlagen der Visualisierung,
+Daten, grafisches System und Transformation in einem iterativen Prozess abbildet.
+
+
+
+
+Aktuelle Softwarestandards wie beispielsweise Tabellenkalkulationsprogramme können diesen Ansprüchen
+nur schwer gerecht werden. In Abbildung \ref{fig:beispiel} werden unterschiedliche teilweise
+sehr komplexe grafische Darstellungen gezeigt. Um solche Darstellungen realisieren zu können, ist
+eine intensive Auseinandersetzung mit den Ausgangsdaten und deren möglichen Darstellungsformen
+notwendig. Deshalb wurden s
+
+
+Eine Software muss deshalb einen universellen Ansatz haben, um ein möglichst breites Spektrum an
+unterschiedlichsten Bearbeitungsfällen abdecken zu können. Dabei muss der arbeitsintensive Vorgang
+der Visualisierung großer Datenmengen automatisch und unmittelbar erfolgen um eine 
+
+
+
+
+
+
+Alle betrachteten
+
+
+
+Die Auseinandersetzung mit der Information gewährleisten zu können, aber dem Benutzer dabei die Arbeit abzunehmen 
+Dazu muss die Software Funktionen bieten, die unterschiedlichste Datentypen verarbeiten können und diese auf visuelle Variablen
+abbilden zu können.
+
+Diese 
 vielzahl unterschiedlichster zugrundeliegender daten,
 unterschiedlichste anforderungen und viele verschiedene möglichkeiten der grafischen Darstellung
 fordern ein universelles tool.
-aber um eine passende grafische darstellung zu finden, muss man eine tiefgehende Kenntnis der eigenschaften
-von daten haben, die es erlaubt unterschiedliche möglichkeiten der visualisierung vergleichen und die
-beste finden zu können. 
+
 meist lassen sich komplexe daten nicht in standardisierte grafische darstellungen bringen
 
 in den abbildungen ist weiterhin zu erkennen, dass die grafischen darstellungen häufig aus 
 unterschiedlichen einfachen formen der grafischen Darstellung bestehen oder mehrere dieser Formen
 kombinieren.\footnote{siehe kapitel der formen}
 
-Als Beispielzeigt abbildung x mehrere ausschnitte aus [Information is beatuiful]. diese wurden von David Maccandles
-per Hand mit dem Vektorgrafikprogramm Adobe Illustrator entworfen und umgesetzt.\footnote{infoisbeautiful.net/book/process}
-Da die Umsetzung in einem kreativen Design-Prozess ohne Grafikvorgaben einer Software stattgefunden hat,
-unterscheiden sich die Darstellungen stark voneinander.
-McCandless schreibt über seine eigene Arbeitsweise:
-\begin{quote}
-"`Hand-creating information designs gives you better connection to the information you're working with. It helps
-you make decisions on the fly while you're drawing. Above all it's meticulous and fun. Like painting with data."'
-\end{quote}
-
-Diese Verbindung muss aufrecht erhalten werden, dem Benutzer dabei aber die Arbeit abzunehmen jeden einzelnen Datenwert
-einer vermutlich großen Menge in einem Datensatz einzeln per Hand zu zeichen.
-Dazu muss die Software Funktionen bieten, die unterschiedlichste Datentypen verarbeiten können und diese auf visuelle Variablen
-abbilden zu können.
-
-Eine Software entwickeln, die möglichst viele komplexe Ausgangsdaten mit möglichst vielen unterschiedlichen
-graphischen Darstellungen umsetzen kann, wobei der Benutzer nicht durch Vorgaben der Anwendung eingeschränkt wird.
+wie kann man : ? statt per custom tools oder von hand?
 
 anhand der beispiele in den abbildungen kann man erkennen, dass normale programme woe excel und co nicht ausreichend sind,
 da man einen tiefgreifenden einblick in die daten bekommen muss um eine passende graphische Darstellung zu finden.
@@ -108,8 +141,6 @@ visuellen zugang zu liefern
 deshalb muss eine software einen grundlegenderen ansatz finden um grafische Darstellungen der Informationsvisualisierung
 produzieren zu können.
 
-der anwender muss neben einem tiefen verständnis der zugrunde liegenden daten auch gestalterische Aspekte berücksichtigen
-um eine adäquate grafische Darstellung zu finden.
 
 Eine software für die Informationsvisualisierung muss also den anwender bei der arbeit mit den ausgangsdaten und bei der 
 grafischen Gestaltung unterstützen. eine auf die verbindung beider aspekte spezialisierte software konnte bei der
@@ -167,12 +198,9 @@ Dieser Teil der Arbeit beschreibt die grundlegenden Begriffe, die einen Zugang
 zum Arbeitsfeld der Informationsvisualisierung ermöglichen.
 \section{Daten und Information}
 \label{sec:DatenInfo}
-Daten werden in \cite{Gabler} als
-\begin{quote}
-zum Zweck der Verarbeitung zusammengefasste Zeichen, die aufgrund bekannter oder unterstellter Abmachungen
-Informationen (d.h. Angaben über Sachverhalte und Vorgänge) darstellen
-\end{quote}
-beschrieben.
+Daten werden in \citep{Gabler} als "`zum Zweck der Verarbeitung zusammengefasste Zeichen,
+die aufgrund bekannter oder unterstellter Abmachungen
+Informationen (d.h. Angaben über Sachverhalte und Vorgänge) darstellen"', beschrieben.
 Gegenstand dieser Arbeit sollen vor allem digital gespeicherte Daten sein.
 Diese liegen in einer standardisierten Form vor und können für die elektrische Weiterverarbeitung
 und Kommunikation genutzt werden. Diese Daten sind dabei formalisierte Repäsentationen einer
@@ -191,8 +219,8 @@ einheitlichen Theorie der Information gesprochen werden und es beschäftigen sic
 Gebiete wie die Informatik, Informationstheorie, Nachrichtentechnik und andere mit diesem
 Begriff.\footnote{Vgl. \citep{wiki_info}} In \citep[S.\,3]{Hoeher} wird die Information wie folgt beschrieben:
 \begin{quote}
-Die Informationstheorie definiert Information als eine quantitativ bestimmbare Wissenzunahme durch
-die Übermittlung von Zeichen in einem Kommunikationssystem.
+"`Die Informationstheorie definiert Information als eine quantitativ bestimmbare Wissenzunahme durch
+die Übermittlung von Zeichen in einem Kommunikationssystem."'
 \end{quote}
 Information ist das Ergebnis der Kommunikation, das beim Empfänger einen Erkenntnisgewinn auslöst,
 sofern dieser den Informationsinhalt entschlüsseln kann. Dafür müssen sich Sender und Empfänger
@@ -208,7 +236,7 @@ damit effektivere Analyse.
 
 \section{Eigenschaften von Daten}
 \label{sec:EigenschaftenDaten}
-In diesem Kapitel werden die Eigenschaften der Daten beschrieben. Sie bestimmen wie die relevanten Informationen
+In diesem Kapitel werden die Eigenschaften von Daten beschrieben. Sie bestimmen wie die eigentlichen Informationen
 in den Daten codiert sind.
 Digitale Daten gelten als Ausgangspunkt für die Konzeption einer Informationsvisualisierung. Die speziellen
 Eigenschaften von Daten sind maßgeblich für weitere Schritte der Informationsvisualisierung.\footnote{Vgl. 
@@ -220,25 +248,34 @@ hat folgende Eigenschaften nach denen er klassifiziert werden kann:
 \item[Beobachtungsraum]
 Der Beobachtungsraum beschreibt den Raum in dem Daten erhoben werden. Dieser Raum kann ein
 dreidimensionaler Raum sein, kann aber auch abstrakt beschrieben werden und nur eine einzige oder
-mehr als drei Dimensionen besitzen. Alle Dimensionen die den Beobachtunsgraum aufspannen,
-können als unabhängige Variablen angesehen werden. Als Beispiel kann die Messung in einem See oder
-der Betrachtung einer bestimmten Bevölkerungsgruppe genannt werden.
+mehr als drei Dimensionen besitzen. Alle Dimensionen des Beobachtungsraumes werden als \textit{unabhängige
+Variablen} bezeichnet, da sie vor der Datenerhebung festgelegt werden und als beschreibende Begriffe für
+den zu visualisierenden Sachverhalt gelten.\footnote{\citep[S.\,24]{Bertin} bezeichnet die unabhängigen
+Variablen als Invariante und definiert: "`Die Invariante ist der vollständige und in bezug auf alle vorgegebenen
+Begriffe invariable Kennzeichnungsbegriff"'} Im Beispiel aus Abbildung \ref{fig:beispiel} sind die
+unabhängigen Variablen die gewählten Kulturkreise und die verschiedenen Begriffe.
 \item[Beobachtungspunkt]
-Ein Beobachtungspunkt beschreibt Punkte im Beobachtungsraum an denen Daten vorhanden sind. Die Anzahl und Verteilung
-dieser Punkte ist unabhängig von der Beschaffenheit des Beobachtungsraumes. Beobachtunsgpunkte haben einen
+Ein Beobachtungspunkt beschreibt eine Position im Beobachtungsraum an dem Daten vorhanden sind. Die Anzahl und Verteilung
+der Beobachtunspunkte ist unabhängig von der Beschaffenheit des Beobachtungsraumes. Beobachtunsgpunkte haben einen
 Wirkungskreis, der die "räumliche" Gültigkeit der Werte beschreibt. Dieser kann punktuell, lokal oder global sein.
-Als Beispiel kann das eine Person einer Bevölkerungsgruppe sein.
+Im Beispiel aus Abbildung \ref{fig:beispiel} sind alle farbigen Rechtecke im Kreis Beobachtungspunkte, denn an
+diesen konnte ein zugehöriger Farbwert recherchiert werden.
 \item[Merkmal]
-Das Merkmal ist eine Größe, die an einem Beobachtungspunkt gemessen oder berechnet wurde. Dabei können
-einem Beobachtungspunkt mehrere Merkmale zugeordnet werden. Merkmale gelten dabei als abhängige Variablen.
-Gemessene Vitalwerte wie Blutdruck oder Blutzucker einer Person können ein Beispiel für Merkmale sein.
+Das Merkmal ist eine Größe, die an einem Beobachtungspunkt gemessen oder berechnet wurde. Dabei kann
+ein Beobachtungspunkt mehrere Merkmale besitzen. Merkmale werden als \textit{abhängige Variablen} bezeichnet, da
+sie abhängig von der Position des Beobachtungspunktes im Beobachtungsraum sind.
+Im Beispiel aus Abbildung \ref{fig:beispiel} ist das der Farbton eines Rechtecks im Kreis.
 \item[Ausprägung]
-Die Ausprägung beschreibt den Wertebereich und damit alle Werte, die ein Merkmal annehmen kann.
-Die Datenwerte können ein Skalar, Vektor oder Tensor sein.\footnote{Erklärung Skalar, Vektor, Tensor}
-Als Beispiel kann hier die Körpertemperaturwerte von einer Person sein, die einen bestimmen Wertebereich
-haben.
+Die Ausprägung beschreibt den eigentlichen Wert, den ein Merkmal annehmen kann. Dieser Wert hat einen
+Wertebereich und kann ein Skalar, Vektor oder Tensor sein.\footnote{In einem dreidimensionalen Beobachtungsraum
+kann der Beobachtungspunkt auch als Vektor angesehen werden. Im Falle einer Ausprägung als Vektor, liegt damit
+an der Position des Beobachtungspunktes im Beobachtungsraum ein weiterer Vektor vor. Ein Tensor ist ein mathematisches
+Objekt, dass als mehrdimensionale Matrix abgebildet werden kann.}
+In Abbildung \ref{fig:beispiel} ist beispielsweise im amerikanischen Kulturkreis (A) für Liebe (53) die Farbe
+Rot ablesbar. Der dazugehörige Wertebereich der Farben wird im oberen linken Bereich dargestellt.
 \end{description}
-Diese Eigenschaften können als Metadaten bezeichnet werden und beschreiben die Daten.
+Die Begriffe Beobachtungsraum, Beobachtungspunkt, Merkmal und Ausprägung dienen zur Klassifikation von Daten
+und werden als Metadaten bezeichnet.
 
 \section{Klassifikation von Daten}
 \label{sec:KlassifikationDaten}
@@ -358,7 +395,7 @@ werden können. Sie werden visuelle Variablen genannt.
 \begin{figure}
 \centering
 \includegraphics[width=\linewidth]{visuelleVariablen.pdf}
-\caption{visuelle Variablen nach \citep{Bertin}, Scan aus \citep[S.\,51]{Bertin}  }
+\caption{visuelle Variablen aus \citep[S.\,51]{Bertin}}
 \label{fig:visuelleVariablen}
 \end{figure}
 In Abbildung \ref{fig:visuelleVariablen} werden diese dargestellt.
@@ -406,9 +443,9 @@ Die Informationsvisualisierung als spezielle Form der Datenvisualisierung versuc
 Fragen zu finden, die durch ein größeres Spektrum an unterschiedlichen abstrakten Daten entstehen.
 \citep[S.\,434]{Preim} definieren Informationsvisualisierung folgendermaßen:
 \begin{quote}
-Informationsvisualisierung beschäftigt sich mit der Visualisierung vorrangig abstrakter Daten, wie
+"`Informationsvisualisierung beschäftigt sich mit der Visualisierung vorrangig abstrakter Daten, wie
 Multiparameterdaten(z.B. Medienobjekte mit verschiedenen Attributen), Hierarchien, Netzwerken, Text
-oder Softwaresystemen, die sich alle auch über die Zeit verändern können.
+oder Softwaresystemen, die sich alle auch über die Zeit verändern können."'
 \end{quote}
 Das Einsatzgebiet der Informationsvisualisierung ist im Gegensatz zur Datenvisualisierung nicht mehr
 auf wissenschaftliche Bereiche beschränkt,
@@ -513,11 +550,11 @@ passen.
 Ressourcen und Rechenaufwand und damit die Kosten einer Visualisierung sollen den Anforderungen entsprechen.
 \end{description}
 Die Expressivität und Effektivität entsprechen der einzigen Klassifikation aus \citep{Bertin}, die als Prägnanz bezeichnet wird.
-Prägnanz wird dabei wie folgt definiert:
+Prägnanz wird von \citep[S.\,17]{Bertin} wie folgt definiert:
 \begin{quote}
-Wenn eine Konstruktion zur Beantwortung einer gestellten Frage unter sonst gleichen Voraussetzungen eine
+"`Wenn eine Konstruktion zur Beantwortung einer gestellten Frage unter sonst gleichen Voraussetzungen eine
 kürzere Betrachtungszeit erfordert als eine andere Konstruktion, so bezeichne man diese als prägnanter in
-Bezug auf die gestellte Frage.\citep[S.\,17]{Bertin}
+Bezug auf die gestellte Frage."'
 \end{quote}
 Darüber hinaus ist es schwer allgemeingültige Aussagen zu treffen, wie ein komplexer Sachverhalt und dessen
 Informationen am effizientesten zu visualisieren sind, da die Informationsvisualisierung stark anwendungsabhängig ist und
