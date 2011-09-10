@@ -77,8 +77,15 @@ Die drei wichtigsten Voraussetzungen für eine Informationsvisualisierung sind d
 zugrundliegenden Daten und deren spezifische Eigenschaften, die Betrachtung aller möglichen visuellen Variablen und deren Ausprägungen
 und eine angemessene und sinnvolle Form der Transformation zwischen diesen beiden Zeichensystemen.
 Dafür ist der Einsatz von Software unabdingbar.
-In Abbildung 1 zeigt beispielhaft Ausschnitte aus grafische Darstellungen der Informationsvisualisierung.
+In Abbildung 1 zeigt beispielhaft Ausschnitte aus grafische Darstellungen\footnote{Eine grafische Darstellung
+ist das Ergebnis der Informationsvisualisierung. Eine genaue Definition
+des Begriffs erfolgt im Abschnitt \ref{sec:Darstellungen}.} der Informationsvisualisierung.
 
+
+(rechtfertigung)
+um ein kzenpt für die software machen zu können ist es notwendig daten zu klassifizieren um festzustellen
+welche art von daten verarbeitet werden sollen. weiterhin ist eine klassifikation der visuellen Variablen nötig
+um der Software ein System zur Verfügung zu stellen, nach der grafische Darstellungen erzeugt werden können.
 
 
 Zusätzlich dazu sind
@@ -107,7 +114,6 @@ notwendig. Deshalb wurden s
 Eine Software muss deshalb einen universellen Ansatz haben, um ein möglichst breites Spektrum an
 unterschiedlichsten Bearbeitungsfällen abdecken zu können. Dabei muss der arbeitsintensive Vorgang
 der Visualisierung großer Datenmengen automatisch und unmittelbar erfolgen um eine 
-
 
 
 
@@ -279,30 +285,72 @@ und werden als Metadaten bezeichnet.
 
 \section{Klassifikation von Daten}
 \label{sec:KlassifikationDaten}
-Für die Klassifikation von Daten gibt es keine einheitlichen Begriffe. \citep{Schumann} unterteilen die Daten
+
+Die Klassifikation von Daten wird sehr unterschiedlich durchgeführt. \citep{Schumann} unterteilen die Daten
 nach Varianz und Dimensionalität, während \citep{Preim} ausschließlich von Dimensionen ausgeht.
+Um eine für diese Arbeit sinnvolle Einteilung in Bezug auf die Informationsvisualisierung zu finden, wird in dieser
+Arbeit eine Einteilung nach Ursprung der Daten und nach Anzahl der 
+
+physically based (card seite 7)
+
+hauptsächlich wird die infoviz genutzt um abstrakte Multiparameterdaten zu visualisieren.
+deshalb sollen diese unter anderem anhand der im abschnitt davor beschriebenen eigenschaften beschrieben
+werden.
+
+physikalisch/abstrakt
+
+physikalisch hat immer einen raumbezug
+
+auch wenn Visualisierungen von abstraktionen des physikalischen Raums möglich sind, so ist die information
+dennoch grundsätzlich geometrischer Natur.\footnote{VGL. Card et Al S. 6}
+
+
+Zeitbezogene Daten werden auch zu den abstrakten Daten zugeordnet. Zwar ist die Zeit eine physikalische
+Größe, kann aber nur sehr schwer dargestellt werden. Somit ist auch ein Börsenkurs bei näherer Betrachtung
+abstrakt, da kein räumlicher Bezug stattfinden kann auch wenn die abbildung in einem diagramm die zeit auf der x-Achse und die Höhe des Börsenwertes nur 
+gelernte visuelle Metaphern sind
+
+einparameter/multiparameter
+
+einparameter
+abhängige und/oder unhabhängige variablen gleich 1
+
+multiparameter
+abhängige größer 1
+
+
+
+Für die Klassifikation von Daten gibt es keine einheitlichen Begriffe. 
 In dieser Arbeit werden die Begriffe nach \citep{Schumann} verwendet und mit den Begriffen aus \citep{Preim}
 erweitert um eine genaue Einteilung vornehmen zu können.
 \begin{description}
-\item[Multivariate Daten]
+\item[Multivariate / Mehrdimensionale Daten]
 Bei multivariaten Daten existiert kein direkter Beobachtungsraum oder dieser kann vernachlässigt werden, da er
 keine Rolle für die Weiterverarbeitung der Daten spielt. Somit findet eine Einteilung ausschließlich nach den
 abhängigen Variablen statt. Sonderformen der multivariaten Daten sind die univariaten,
 bivariaten und trivariaten Daten.
-\item[Mehrdimensionale Daten]
+
 Bei mehrdimensionalen Daten wird lediglich der Beobachtungsraum beschrieben. Dabei werden die abhängigen Variablen
 vernachlässigt und nur die Anzahl und Art der Dimensionen des Beobachtungsraumes beschreibt die Daten.
 Multivariate Daten können in multidimensionale Daten überführt werden.
+
+Das Beispiel in Abbildung \ref{fig:beispiel} ist keine Visualisierung von Multiparameterdaten,
+da nur ein Merkmal, der Farbton, als abhängige Variable dargestellt wird.
+
 \item[Multiparameterdaten]
-sind Daten, die mindestens 2 Merkmale (abhängige Variablen) pro Beobachtungspunkt besitzen. Die Dimensionalität,
+sind Daten, die zwei oder mehr Merkmale (abhängige Variablen) pro Beobachtungspunkt besitzen. Die Dimensionalität,
 Anordnung und Wirkungskreis der Beobachtungspunkte sind beliebig aber nicht vernachlässigbar.
 Beispielsweise gilt eine SQL-Tabelle mit einer Ordnungsnummer und 3 Spalten mit Datenwerten
 als mutlivariater und mehrdimensionaler Datensatz.
 Bei der Visualiserung von abhängigen und unabhängigen Variablen in einer Darstellung, sollte darauf geachtet
-werden, dass die Unterscheidbarkeit der beiden Klassen gegeben bleibt.\footnote{Da Multiparameterdaten
-allgemein sehr schwierig zu visualisieren sind schlägt \citep{Schumann} ein dreistufiges Vorgehen vor:
-Focusing zur Auswahl der Daten, Bildgenerierung zur Erzeugung von visueller Repräsentationen, Linking
-zur Verknüpfung von Teilsichten zu einer Gesamtansicht.}
+werden, dass die Unterscheidbarkeit der beiden Klassen gegeben bleibt.
+Die Daten die der Darstellung aus Abbildung \ref{fig:beispiel} zugrundeliegen, können mit zusätzlichen
+Informationen erweitert werden um eine Multiparameterdatenmenge zu erhalten. Als weiteres Merkmal kann die
+Wichtigkeit der einzelnen Begriffe in den jeweiligen Kulturkreisen festgelegt werden.
+Die Ausprägung dieses neuen Merkmals kann beispielsweise in die Größe der einzelnen Farbflächen transkribiert
+werden. Somit stellen die Farbflächen durch Farbe und Größe zwei abhängige Variablen dar. Als Beispiel
+würde der Begriff "'Religion"' in unterschiedlichen Kulturkreisen verschiedene Farben und Größen haben.
+
 \item[Raumbezogene Daten]
 "Raumbezogene Daten liegen dann vor, wenn der Beobachtungsraum Ortskoordinaten enthält,
 die ein 2- oder 3-dimensionales räumliches Bezugssystem definieren."\citep[S.\,219]{Schumann}
@@ -310,8 +358,7 @@ Das bedeutet das mindestens zwei und höchsten drei unabhängige Variablen des D
 ein Koordinatensystem beschreiben. Dieser Raumbezug kann direkt und indirekt erfolgen und ist für
 den Anwender unverzichtbar.\footnote{dazu bitte kapitel XX von schumann lesen s.221}
 Ein eindimensionaler Beobachtungsraum ist möglich. Dabei erfolgt die Abbildung auf einer Linie.
-Außerdem kommt dem Geltungsbereich eine besondere Bedeutung zu, da dieser hier nicht
-vernachlässigt werden darf, um Fehlinterpretationen zu vermeiden.
+
 Eine spezielle Form der raumbezogenen Daten sind die Volumendaten, bei denen Beobachtunsgpunkte mit
 genau einem skalaren Wert über ein regelmäßiges dreidimensionales Gitter verteilt sind.
 \item[Zeitbezogene Daten]
@@ -321,7 +368,7 @@ oder dynamisch (Zeitreihen) sein. Damit kann die Informationsvisualisierung als 
 Zeitreihenanalyse betrachtet werden.
 Als klassisches Beispiel gelten Börsen- oder Wetterdaten.
 \item[Abstrakte Daten]
-bilden eine Sonderform der Daten, da weder ein Raum noch ein Zeitbezug möglich oder sinnvoll ist. Oft dienen
+bilden eine Sonderform der Daten, kein Raumbezug möglich oder sinnvoll ist. Oft dienen
 ausschließlich solche Daten als Grundlage der Informationsvisualisierung und stammen aus meist aus virtuell
 erzeugten Abläufen.
 Als Beispiel können Aktienkurse, Verbindungsstatistiken von Netzwerkbetreibern und Relationen zwischen
@@ -367,7 +414,7 @@ Es stammt ursprünglich aus der thematischen Kartographie.\footnote{"`Thematisch
 Erscheinungen oder Vorkommnisse nicht topographischer Art welche jedoch mit der Erdoberfläche in Verbindung
 stehen. Es handelt sich hierbei um Dinge, die georäumliche Lage, Verbreitung oder Bewegung besitzen, sowohl
 um reale Dinge, als auch um Beziehungen, Funktionen, Hypothesen, geistige Vorstellungen, Möglichkeiten und
-Projekte."'\citep{Gitta} } Dies ist ein Teilgebiet der Geographie, das erste Anwendungsgebiet der
+Projekte."'\citep{Gitta} } Dies ist ein Teilgebiet der Geographie, eines der ersten Anwendungsgebiete der
 Informationsvisualisierung.
 Diese Theorie definiert ein "`Grundalphabet"' an grafischen Elementen, wobei zur Informationsübertragung
 jedem einzelnen Zeichen eine bestimmte Bedeutung zugeordnet wird. \citep{Bertin} geht dabei von einem
@@ -382,10 +429,10 @@ durch die Position von grafischen Primitiven untereinander Aussagen über ihre e
 Dabei spielen die Gestaltungsgesetze eine wichtige Rolle.
 Mit der grafischen Semiologie können also Informationen in ein grafische Zeichensystem
 transkribiert werden. Dieses System umfasst folgende acht Zeichen, die zur Kodierung von Daten in eine grafische Darstellung benutzt
-werden können. Sie werden visuelle Variablen genannt.
+werden können. Sie werden visuelle Variablen genannt und beschreiben die Eigenschaften geometrischer Primitive.
 \begin{itemize}
 \item Position auf der Ebene (angegeben durch x und y)
-\item Größe
+\item Größe (Fläche oder Länge)
 \item Helligkeitswert
 \item Musterung oder Textur
 \item Farbe
@@ -399,28 +446,25 @@ werden können. Sie werden visuelle Variablen genannt.
 \label{fig:visuelleVariablen}
 \end{figure}
 In Abbildung \ref{fig:visuelleVariablen} werden diese dargestellt.
-Jede dieser Variablen hat spezifische Eigenschaften, die einzelne Variable unterschiedlich gut oder schlecht
-für spezielle Aufgaben eignen. Um die Auswahl der geeignetesten Variablen zu vereinfachen, schlägt
+Jede dieser Variablen hat spezifische Eigenschaften, die sie unterschiedlich gut oder schlecht
+für spezielle Aufgaben eignen. Um für eine Aufgabe die geeignetste Variable zu bestimmen, schlägt
 \citep{Bertin} mehrere Konstruktionsregeln vor.
-Mithilfe dieser Regeln lassen sich die visuellen Variablen auswählen, mit denen die
-prägnanteste\footnote{siehe Abschnitt \ref{sec:Ziele}} Darstellung konstruiert werden kann.
-Es werden dabei drei allgemeine Konstruktionsregeln definiert:
-\begin{itemize}
-\item grafische Darstellung mit möglichst wenig Elementen, sodass die grafische Darstellung
-als Ganzes mit einem Minimum an Wahrnehmungsaufwand erfasst werden kann
-\item grafische Darstellung vereinfachen, ohne die Zahl der Beziehungen zu verringern
-\item grafische Darstellung durch Reduzierung vereinfachen
-\end{itemize}
-Zusätzliche Regeln sind stark abhängig von der Anzahl
-der vorhandenen unabhängigen und abhängigen Variablen der Ausgangsdaten und der gewählten
-grafischen Darstellung. So sollten beispielsweise für die wichtigsten und am deutlichsten
-geordneten Variablen die zwei Ebenen der Fläche verwendet werden, während Variablen wie
-Farbe und Muster als dritte Möglichkeit genutzt werden können um Informationen zu kodieren.
+Grundlegend beschreiben diese eine Vereinfachung der grafischen Darstellung.
+Die Anzahl an visuellen Variablen, Merkmalen und Ausprägungen wird reduziert,
+sodass die grafische Darstellung als Ganzes mit einem Minimum an Wahrnehmungsaufwand erfasst werden kann.
+Dabei dürfen keine Informationen und Beziehungen zwischen diesen verloren gehen, um Fehlinterpretationen
+zu vermeiden. Weitere Regeln sind stark abhängig von der Anzahl
+der vorhandenen Dimensionen des Beobachtungsraumes, der Anzahl der Merkmale eines
+Beobachtungspunktes\footnote{Vgl. Abschnitt \ref{sec:EigenschaftenDaten}} und der gewählten
+grafischen Darstellung. Da für die komplexen graphischen Darstellungen einer 
+Informationsvisualisierung meist mehrere visuelle Variablen gebraucht werden, sollte sich die Auswahl
+an den Bearbeitungszielen\footnote{Vgl. Abschnitt \ref{sec:Bearbeitungsziele}} orientieren.
+So sollten beispielsweise für wichtige, geordnete Variablen die Position in der Ebene verwendet werden,
+während Variablen wie Farbe, Muster und Textur als weitere Möglichkeit genutzt werden können, um Informationen zu kodieren.
 Erst wenn zusätzliche Variablen hinzugefügt werden, sollte eine Nebeneinanderstellung oder
-Überlagerung benutzt werden.
-Durch die Anwendung der Konstruktionsregeln können nun die visuellen Variablen genutzt werden, um
-die grafische Darstellung als Ziel der Informationsvisualisierung, zu konstruieren.\footnote{Eine Definition
-des Begriffs "`grafische Darstellung"' erfolgt im Abschnitt \ref{sec:Darstellungen}.}
+Überlagerung in Betracht gezogen werden.
+Durch die Anwendung der Konstruktionsregeln können die visuellen Variablen genutzt werden, um
+die grafische Darstellung als Ziel der Informationsvisualisierung zu konstruieren.
 
 \chapter{Informationsvisualisierung}
 \label{cha:Informationsvisualisierung}
