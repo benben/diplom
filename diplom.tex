@@ -286,102 +286,67 @@ und werden als Metadaten bezeichnet.
 \section{Klassifikation von Daten}
 \label{sec:KlassifikationDaten}
 
-Die Klassifikation von Daten wird sehr unterschiedlich durchgeführt. \citep{Schumann} unterteilen die Daten
-nach Varianz und Dimensionalität, während \citep{Preim} ausschließlich von Dimensionen ausgeht.
-Um eine für diese Arbeit sinnvolle Einteilung in Bezug auf die Informationsvisualisierung zu finden, wird in dieser
-Arbeit eine Einteilung nach Ursprung der Daten und nach Anzahl der 
+Die Klassifikation von Daten wird sehr unterschiedlich durchgeführt.
+\citep{Schumann} weisen auf eine uneinheitliche Begriffswahl in unterschiedlichen
+Publikationen hin.
+Um eine für diese Arbeit sinnvolle Einteilung in Bezug auf die Informationsvisualisierung
+zu finden, wird diese stark vereinfacht dargestellt und nach der Anzahl der abhängigen und
+unabhängigen Variablen und nach dem Ursprung der Daten vorgenommen.
 
-physically based (card seite 7)
+Ein Beobachtungsraum kann beliebig viele, ganzzahlige und positive Dimensionen haben. Ist die Anzahl
+dieser unabhängigen Variablen größer Eins, spricht man von mehrdimensionalen Daten. Das Beispiel
+in Abbildung \ref{fig:beispiel} hat zwei Dimensionen und damit zwei unabhängige
+Variablen (Kulturkreis und Begriff).
+Eine Sonderform der mehrdimensionalen Daten sind die raumbezogenen Daten.
+"Raumbezogene Daten liegen dann vor, wenn der Beobachtungsraum Ortskoordinaten enthält,
+die ein 2- oder 3-dimensionales räumliches Bezugssystem definieren."\citep[S.\,220]{Schumann}
+Das bedeutet das mindestens zwei und höchsten drei unabhängige Variablen des Datensatzes beispielsweise
+ein Koordinatensystem beschreiben. Diese Form der Informationsvisualisierung findet häufig
+in Geoinformationssystemen (GIS) Anwendung.
+In Bezug auf den Beobachtungsraum sind die zeitbezogenen Daten ein weiterer Spezialfall.
+Dabei ist eine unabhängige Variable mit der physikalischen Größe Zeit assoziiert.
+Dieser Bezug entspricht nicht immer den tatsächlichen zeitlichen Änderungen und macht
+eine adäquate Skalierung der zeitbezogenen Dimension notwendig.
+Beispielsweise kann bei einer Wetterstation die kontinuierliche Veränderung der Aussentemperatur
+nur jede Stunde gemessen werden und liegt dadurch in diskreten Intervallen vor.
 
-hauptsächlich wird die infoviz genutzt um abstrakte Multiparameterdaten zu visualisieren.
-deshalb sollen diese unter anderem anhand der im abschnitt davor beschriebenen eigenschaften beschrieben
-werden.
+Multiparameterdaten liegen dann vor, wenn die Anzahl der abhängigen Variablen größer Eins ist
+und der Beobachtungsraum nicht vernachlässigt werden kann. Das setzt komplexere
+Informationsvisualisierungen voraus, da unabhängige und abhängige Variablen gemeinsam
+dargestellt werden müssen. Die Unterscheidbarkeit zwischen diesen Klassen muss dabei
+erhalten bleiben.
+Eine Sonderform der Multiparameterdaten sind die multivariaten Daten. Dabei kann
+der Beobachtungsraum vernachlässigt werden, da er keine Rolle bei der Weiterverarbeitung
+der Daten spielt. Multivariate Daten können in mehrdimensionale Daten überführt werden,
+wenn für jedes vorhandene Merkmal eine Dimension in einem neuen Beobachtungsraum
+aufgespannt wird.\footnote{Vgl. \citep[S.\,172]{Schumann}}
+Ein Beispiel für einen Datensatz ist eine Karte mit Wetterstationen, die durch ihre
+Koordinaten bestimmt sind. Zusätzlich dazu liegen für jede Wetterstation unterschiedliche
+Daten für Temperatur, Luftdruck und Niederschlag vor.
+
+In der wissenschaftlich-technischen Datenvisualisierung werden meist nur physikalische Daten verarbeitet.
+Das können Daten über die menschliche Anatomie, das Universum oder Moleküle und Atome sein. Diese Daten
+haben immer einen räumlichen Bezug.
+
+auch wenn Visualisierungen von abstraktionen des physikalischen Raums möglich sind, so ist die information
+dennoch grundsätzlich geometrischer Natur.\footnote{VGL. Card et Al S. 6}
 
 physikalisch/abstrakt
 
 physikalisch hat immer einen raumbezug
 
-auch wenn Visualisierungen von abstraktionen des physikalischen Raums möglich sind, so ist die information
-dennoch grundsätzlich geometrischer Natur.\footnote{VGL. Card et Al S. 6}
+physically based (card seite 7)
 
+spezielle form der abstrakten daten: Strukturelle Beziehungen zwischen Datenobjekten
 
-Zeitbezogene Daten werden auch zu den abstrakten Daten zugeordnet. Zwar ist die Zeit eine physikalische
+Rein zeitbezogene Daten werden auch zu den abstrakten Daten zugeordnet. Zwar ist die Zeit eine physikalische
 Größe, kann aber nur sehr schwer dargestellt werden. Somit ist auch ein Börsenkurs bei näherer Betrachtung
-abstrakt, da kein räumlicher Bezug stattfinden kann auch wenn die abbildung in einem diagramm die zeit auf der x-Achse und die Höhe des Börsenwertes nur 
-gelernte visuelle Metaphern sind
+abstrakt, da kein räumlicher Bezug stattfinden kann
+auch wenn die einfache abbildung in einem diagramm, bei der die zeit auf der x-Achse und die Höhe des Börsenwertesauf der Y-Achse
+abgebildet sind, sind nur erlernte Metaphern, die ganz im Zeichen der Informationsvisualisierung versuchen
+einen fehlenden räumlichen Bezug zu konstruieren.
 
-einparameter/multiparameter
-
-einparameter
-abhängige und/oder unhabhängige variablen gleich 1
-
-multiparameter
-abhängige größer 1
-
-
-
-Für die Klassifikation von Daten gibt es keine einheitlichen Begriffe. 
-In dieser Arbeit werden die Begriffe nach \citep{Schumann} verwendet und mit den Begriffen aus \citep{Preim}
-erweitert um eine genaue Einteilung vornehmen zu können.
-\begin{description}
-\item[Multivariate / Mehrdimensionale Daten]
-Bei multivariaten Daten existiert kein direkter Beobachtungsraum oder dieser kann vernachlässigt werden, da er
-keine Rolle für die Weiterverarbeitung der Daten spielt. Somit findet eine Einteilung ausschließlich nach den
-abhängigen Variablen statt. Sonderformen der multivariaten Daten sind die univariaten,
-bivariaten und trivariaten Daten.
-
-Bei mehrdimensionalen Daten wird lediglich der Beobachtungsraum beschrieben. Dabei werden die abhängigen Variablen
-vernachlässigt und nur die Anzahl und Art der Dimensionen des Beobachtungsraumes beschreibt die Daten.
-Multivariate Daten können in multidimensionale Daten überführt werden.
-
-Das Beispiel in Abbildung \ref{fig:beispiel} ist keine Visualisierung von Multiparameterdaten,
-da nur ein Merkmal, der Farbton, als abhängige Variable dargestellt wird.
-
-\item[Multiparameterdaten]
-sind Daten, die zwei oder mehr Merkmale (abhängige Variablen) pro Beobachtungspunkt besitzen. Die Dimensionalität,
-Anordnung und Wirkungskreis der Beobachtungspunkte sind beliebig aber nicht vernachlässigbar.
-Beispielsweise gilt eine SQL-Tabelle mit einer Ordnungsnummer und 3 Spalten mit Datenwerten
-als mutlivariater und mehrdimensionaler Datensatz.
-Bei der Visualiserung von abhängigen und unabhängigen Variablen in einer Darstellung, sollte darauf geachtet
-werden, dass die Unterscheidbarkeit der beiden Klassen gegeben bleibt.
-Die Daten die der Darstellung aus Abbildung \ref{fig:beispiel} zugrundeliegen, können mit zusätzlichen
-Informationen erweitert werden um eine Multiparameterdatenmenge zu erhalten. Als weiteres Merkmal kann die
-Wichtigkeit der einzelnen Begriffe in den jeweiligen Kulturkreisen festgelegt werden.
-Die Ausprägung dieses neuen Merkmals kann beispielsweise in die Größe der einzelnen Farbflächen transkribiert
-werden. Somit stellen die Farbflächen durch Farbe und Größe zwei abhängige Variablen dar. Als Beispiel
-würde der Begriff "'Religion"' in unterschiedlichen Kulturkreisen verschiedene Farben und Größen haben.
-
-\item[Raumbezogene Daten]
-"Raumbezogene Daten liegen dann vor, wenn der Beobachtungsraum Ortskoordinaten enthält,
-die ein 2- oder 3-dimensionales räumliches Bezugssystem definieren."\citep[S.\,219]{Schumann}
-Das bedeutet das mindestens zwei und höchsten drei unabhängige Variablen des Datensatzes beispielsweise
-ein Koordinatensystem beschreiben. Dieser Raumbezug kann direkt und indirekt erfolgen und ist für
-den Anwender unverzichtbar.\footnote{dazu bitte kapitel XX von schumann lesen s.221}
-Ein eindimensionaler Beobachtungsraum ist möglich. Dabei erfolgt die Abbildung auf einer Linie.
-
-Eine spezielle Form der raumbezogenen Daten sind die Volumendaten, bei denen Beobachtunsgpunkte mit
-genau einem skalaren Wert über ein regelmäßiges dreidimensionales Gitter verteilt sind.
-\item[Zeitbezogene Daten]
-Bei zeitbezogenen Daten kann mindestens eine unabhängige Variable in einen zeitlichen Kontext eingeordnet werden.
-Der Zeitbezug kann dabei statisch (fester Zeitpunkt oder Intervall), quasistatisch (mehrere diskrete Zeitpunkte)
-oder dynamisch (Zeitreihen) sein. Damit kann die Informationsvisualisierung als Unterstützung zur
-Zeitreihenanalyse betrachtet werden.
-Als klassisches Beispiel gelten Börsen- oder Wetterdaten.
-\item[Abstrakte Daten]
-bilden eine Sonderform der Daten, kein Raumbezug möglich oder sinnvoll ist. Oft dienen
-ausschließlich solche Daten als Grundlage der Informationsvisualisierung und stammen aus meist aus virtuell
-erzeugten Abläufen.
-Als Beispiel können Aktienkurse, Verbindungsstatistiken von Netzwerkbetreibern und Relationen zwischen
-Dokumenten, Medien und Personen genannt werden.\footnote{Vgl. \citep{Preim}} Als Beispiel für nicht-abstrakte
-Daten gelten beispielsweise Wettermessungen an Wetterstationen oder Daten, die bei physikalischen Experimenten
-gesammelt wurden. Abstrakte Dimensionen wie Namen von Städten oder Personen sollten als diese gekennzeichnet
-werden und erkennbar und unterscheidbar sein.
-\item[Strukturelle Beziehungen zwischen Datenobjekten]
-Diese Daten beschreiben nicht direkte Beobachtungspunkte und Merkmalsausprägungen sondern die Beziehung zwischen
-abhängigen Variablen untereinander, unabhängigen Variablen untereinander oder zwischen abhängigen und unabhängigen
-Variablen.
-Unterschieden wird dabei zwischen hierarchischen Formen und Netzwerken. 
-\end{description}
+hauptsächlich wird die infoviz genutzt um abstrakte Multiparameterdaten zu visualisieren. (letzter satz)
 
 \section{Datentypen}
 \label{sec:Datentypen}
