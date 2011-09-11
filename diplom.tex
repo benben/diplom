@@ -87,6 +87,8 @@ um ein kzenpt für die software machen zu können ist es notwendig daten zu klas
 welche art von daten verarbeitet werden sollen. weiterhin ist eine klassifikation der visuellen Variablen nötig
 um der Software ein System zur Verfügung zu stellen, nach der grafische Darstellungen erzeugt werden können.
 
+um anforderungen an eine Software definieren zu können
+
 
 Zusätzlich dazu sind
 sie künstlerisch gestaltet um ein ansprechenden Gesamteindruck zu machen und damit den Betrachter zu
@@ -289,64 +291,72 @@ und werden als Metadaten bezeichnet.
 Die Klassifikation von Daten wird sehr unterschiedlich durchgeführt.
 \citep{Schumann} weisen auf eine uneinheitliche Begriffswahl in unterschiedlichen
 Publikationen hin.
-Um eine für diese Arbeit sinnvolle Einteilung in Bezug auf die Informationsvisualisierung
-zu finden, wird diese stark vereinfacht dargestellt und nach der Anzahl der abhängigen und
+Um eine für diese Arbeit sinnvolle Einteilung zu finden, wird diese stark vereinfacht dargestellt und nach der Anzahl der abhängigen und
 unabhängigen Variablen und nach dem Ursprung der Daten vorgenommen.
 
+\subsection{Mehrdimensionale Daten}
 Ein Beobachtungsraum kann beliebig viele, ganzzahlige und positive Dimensionen haben. Ist die Anzahl
-dieser unabhängigen Variablen größer Eins, spricht man von mehrdimensionalen Daten. Das Beispiel
+dieser unabhängigen Variablen größer Eins, spricht man von \textit{mehrdimensionalen Daten}. Das Beispiel
 in Abbildung \ref{fig:beispiel} hat zwei Dimensionen und damit zwei unabhängige
 Variablen (Kulturkreis und Begriff).
+
 Eine Sonderform der mehrdimensionalen Daten sind die raumbezogenen Daten.
 "Raumbezogene Daten liegen dann vor, wenn der Beobachtungsraum Ortskoordinaten enthält,
 die ein 2- oder 3-dimensionales räumliches Bezugssystem definieren."\citep[S.\,220]{Schumann}
-Das bedeutet das mindestens zwei und höchsten drei unabhängige Variablen des Datensatzes beispielsweise
-ein Koordinatensystem beschreiben. Diese Form der Informationsvisualisierung findet häufig
+Beispielsweise bedeutet das, dass mindestens zwei und höchsten drei unabhängige Variablen des Datensatzes
+ein Koordinatensystem beschreiben können. Diese Form der Informationsvisualisierung findet häufig
 in Geoinformationssystemen (GIS) Anwendung.
+
 In Bezug auf den Beobachtungsraum sind die zeitbezogenen Daten ein weiterer Spezialfall.
 Dabei ist eine unabhängige Variable mit der physikalischen Größe Zeit assoziiert.
 Dieser Bezug entspricht nicht immer den tatsächlichen zeitlichen Änderungen und macht
 eine adäquate Skalierung der zeitbezogenen Dimension notwendig.
 Beispielsweise kann bei einer Wetterstation die kontinuierliche Veränderung der Aussentemperatur
 nur jede Stunde gemessen werden und liegt dadurch in diskreten Intervallen vor.
+Diese Problematik muss in der Visualisierung beachtet werden.
 
-Multiparameterdaten liegen dann vor, wenn die Anzahl der abhängigen Variablen größer Eins ist
+\subsection{Multiparameterdaten}
+Daten werden als \textit{Multiparameterdaten} bezeichnet, wenn die Anzahl der abhängigen Variablen größer Eins ist
 und der Beobachtungsraum nicht vernachlässigt werden kann. Das setzt komplexere
 Informationsvisualisierungen voraus, da unabhängige und abhängige Variablen gemeinsam
 dargestellt werden müssen. Die Unterscheidbarkeit zwischen diesen Klassen muss dabei
 erhalten bleiben.
+Ein Beispiel für einen Multiparameterdatensatz ist eine Liste mit Wetterstationen, die durch ihre
+Koordinaten bestimmt sind. Zusätzlich dazu liegen für jede Wetterstation unterschiedliche
+Daten für Temperatur, Luftdruck und Niederschlag vor.
+
 Eine Sonderform der Multiparameterdaten sind die multivariaten Daten. Dabei kann
 der Beobachtungsraum vernachlässigt werden, da er keine Rolle bei der Weiterverarbeitung
 der Daten spielt. Multivariate Daten können in mehrdimensionale Daten überführt werden,
 wenn für jedes vorhandene Merkmal eine Dimension in einem neuen Beobachtungsraum
 aufgespannt wird.\footnote{Vgl. \citep[S.\,172]{Schumann}}
-Ein Beispiel für einen Datensatz ist eine Karte mit Wetterstationen, die durch ihre
-Koordinaten bestimmt sind. Zusätzlich dazu liegen für jede Wetterstation unterschiedliche
-Daten für Temperatur, Luftdruck und Niederschlag vor.
 
-In der wissenschaftlich-technischen Datenvisualisierung werden meist nur physikalische Daten verarbeitet.
-Das können Daten über die menschliche Anatomie, das Universum oder Moleküle und Atome sein. Diese Daten
-haben immer einen räumlichen Bezug.
+\subsection{Abstrakte Daten}
+Die wissenschaftlich-technischen Datenvisualisierung ist auf physikalische Daten fokussiert.
+Das können Daten über die menschliche Anatomie, das Universum oder über Moleküle und Atome sein. Diese Daten
+haben immer einen räumlichen Bezug. Visualisierungen von abstraktionen des physikalischen Raums
+sind möglich, trotzdem hat die zugrundeliegende Information eine geometrische Natur.\footnote{Vgl. \citep[S.\,6]{Card}}
+Fehlt ein physikalischer Raumbezug oder ist er nicht sinnvoll, werden Daten als \textit{abstrakte Daten} bezeichnet.
+Abstrakte Daten werden meist in einem rein digitalen und virtuellen Prozessen erzeugt. Als Beispiel
+können Verbindungsstatistiken von Netzwerkbetreibern, die Struktur eines Dateisystems auf einer
+Festplatte oder Texte und Quellcode von Programmen genannt werden.
 
-auch wenn Visualisierungen von abstraktionen des physikalischen Raums möglich sind, so ist die information
-dennoch grundsätzlich geometrischer Natur.\footnote{VGL. Card et Al S. 6}
+Eine spezielle Form der abstrakten Daten sind strukturelle Beziehungen zwischen Datenobjekten.
+Diese Daten beschreiben nicht Beobachtungspunkte und deren Merkmale, sondern die Beziehungen
+zwischen diesen Punkten und ihren abhängigen und unabhängigen Variablen. Unterschieden wird dabei
+zwischen hierarchischen Formen und Netzwerken. Beispiele sind die Relationen zwischen Dokumenten,
+Medien und Personen in einem Netzwerk.\footnote{Vgl. \citep{Preim}}
 
-physikalisch/abstrakt
-
-physikalisch hat immer einen raumbezug
-
-physically based (card seite 7)
-
-spezielle form der abstrakten daten: Strukturelle Beziehungen zwischen Datenobjekten
-
-Rein zeitbezogene Daten werden auch zu den abstrakten Daten zugeordnet. Zwar ist die Zeit eine physikalische
-Größe, kann aber nur sehr schwer dargestellt werden. Somit ist auch ein Börsenkurs bei näherer Betrachtung
-abstrakt, da kein räumlicher Bezug stattfinden kann
-auch wenn die einfache abbildung in einem diagramm, bei der die zeit auf der x-Achse und die Höhe des Börsenwertesauf der Y-Achse
-abgebildet sind, sind nur erlernte Metaphern, die ganz im Zeichen der Informationsvisualisierung versuchen
+Rein zeitbezogene Daten werden in dieser Arbeit den abstrakten Daten zugeordnet. Zwar ist die Zeit eine physikalische
+Größe, kann aber nur sehr schwer dargestellt werden. Ein Börsenkurs ist bei näherer Betrachtung
+abstrakt, da kein räumlicher Bezug stattfinden kann.
+Die einfache Abbildung in einem Diagramm, bei dem die Zeit auf der X-Achse und der Wert einer Aktie auf der Y-Achse
+abgebildet sind, sind nur erlernte Metaphern. Die "`Höhe"' des Aktienwertes spiegelt dabei keinesfalls eine räumliche
+Höhe sondern eine abstrakte Wertebeschreibung dar. Somit wird ganz im Zeichen der Informationsvisualisierung versucht,
 einen fehlenden räumlichen Bezug zu konstruieren.
 
-hauptsächlich wird die infoviz genutzt um abstrakte Multiparameterdaten zu visualisieren. (letzter satz)
+Die Informationsvisualisierung, wie sie in Kapitel \ref{cha:Informationsvisualisierung} beschrieben wird, benutzt
+vorrangig \textit{abstrakte Multiparameterdaten} als Grundlage einer grafischen Darstellung.
 
 \section{Datentypen}
 \label{sec:Datentypen}
@@ -381,6 +391,12 @@ stehen. Es handelt sich hierbei um Dinge, die georäumliche Lage, Verbreitung od
 um reale Dinge, als auch um Beziehungen, Funktionen, Hypothesen, geistige Vorstellungen, Möglichkeiten und
 Projekte."'\citep{Gitta} } Dies ist ein Teilgebiet der Geographie, eines der ersten Anwendungsgebiete der
 Informationsvisualisierung.
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth]{visuelleVariablen.pdf}
+\caption{visuelle Variablen aus \citep[S.\,51]{Bertin}}
+\label{fig:visuelleVariablen}
+\end{figure}
 Diese Theorie definiert ein "`Grundalphabet"' an grafischen Elementen, wobei zur Informationsübertragung
 jedem einzelnen Zeichen eine bestimmte Bedeutung zugeordnet wird. \citep{Bertin} geht dabei von einem
 monosemiotischen\footnote{"`Die Betrachtung einer Zeichenverbindung setzt die Kenntnis der Bedeutung jedes
@@ -404,12 +420,6 @@ werden können. Sie werden visuelle Variablen genannt und beschreiben die Eigens
 \item Richtung oder Orientierung
 \item Form des Elements
 \end{itemize}
-\begin{figure}
-\centering
-\includegraphics[width=\linewidth]{visuelleVariablen.pdf}
-\caption{visuelle Variablen aus \citep[S.\,51]{Bertin}}
-\label{fig:visuelleVariablen}
-\end{figure}
 In Abbildung \ref{fig:visuelleVariablen} werden diese dargestellt.
 Jede dieser Variablen hat spezifische Eigenschaften, die sie unterschiedlich gut oder schlecht
 für spezielle Aufgaben eignen. Um für eine Aufgabe die geeignetste Variable zu bestimmen, schlägt
@@ -423,7 +433,7 @@ der vorhandenen Dimensionen des Beobachtungsraumes, der Anzahl der Merkmale eine
 Beobachtungspunktes\footnote{Vgl. Abschnitt \ref{sec:EigenschaftenDaten}} und der gewählten
 grafischen Darstellung. Da für die komplexen graphischen Darstellungen einer 
 Informationsvisualisierung meist mehrere visuelle Variablen gebraucht werden, sollte sich die Auswahl
-an den Bearbeitungszielen\footnote{Vgl. Abschnitt \ref{sec:Bearbeitungsziele}} orientieren.
+an den Bearbeitungszielen\footnote{Vgl. Abschnitt \ref{sec:Ziele}} orientieren.
 So sollten beispielsweise für wichtige, geordnete Variablen die Position in der Ebene verwendet werden,
 während Variablen wie Farbe, Muster und Textur als weitere Möglichkeit genutzt werden können, um Informationen zu kodieren.
 Erst wenn zusätzliche Variablen hinzugefügt werden, sollte eine Nebeneinanderstellung oder
@@ -459,8 +469,8 @@ oder Softwaresystemen, die sich alle auch über die Zeit verändern können."'
 \end{quote}
 Das Einsatzgebiet der Informationsvisualisierung ist im Gegensatz zur Datenvisualisierung nicht mehr
 auf wissenschaftliche Bereiche beschränkt,
-sondern wird auch als alternative Suchmethode in Datenbanken,\footnote{Vgl. Visual Data Mining KEIM}
-als Wissensvermittlung in kulturellen Bereichen\footnote{Farben von Maccandless} und zur Visualisierung von
+sondern wird auch als alternative Suchmethode in Datenbanken\footnote{Vgl. Visual Data Mining in \citep{Keim}},
+als Wissensvermittlung in kulturellen Bereichen\footnote{Vgl. Abbildung \ref{fig:beispiel}} und zur Visualisierung von
 sozialen Netzwerken und Fahrplänen von öffentlichen Verkehrsmitteln verwendet.
 Insbesondere steht die Suche nach Beziehungen zwischen Datenobjekten im Vordergrund,
 da Informationsräume größer, komplexer und vernetzter werden und im Gegensatz
@@ -816,7 +826,7 @@ Neurowissenschaften zugeordnet und ist daher kein Teil dieser Arbeit.
 
 \section{Anforderungen}
 \label{sec:Anforderungen}
-Für die zu entwickelnde Software gibt es Anforderungen, die
+Für die zu entwickelnde Software werden Anforderungen festgelegt, die
 im folgenden beschrieben werden. Neben speziellen Anforderungen, die aus
 dem Bereich der Informationsvisualisierung stammen, werden noch weitere
 allgemeine Anforderungen an Benutzerführung und Performance gestellt.
