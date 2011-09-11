@@ -66,93 +66,41 @@ Informationsvisualisierung erfolgreich einsetzen zu können.
 \begin{figure}
 \centering
 \includegraphics[width=\linewidth]{Ausgabe.pdf}
-\caption{Beispiele für grafische Darstellungen der Informationsvisualisierung (von oben nach unten: Farben und
-deren Bedeutung in unterschiedlichen Kulturen \citep{mccandless}, Facebook-Freundschaften \citep{facebook},
-Temperaturwerte \citep{temp} und Architekturblabla \citep{architect} }
+\caption{Beispiel für eine Informationsvisualisierung aus \citep[S.\,76]{McCandless}}
 \label{fig:beispiel}
 \end{figure}
-Um mit der Informationsvisualisierung eine effiziente Kommunikationsgrundlage erarbeiten zu können, sind komplexe
-Vorüberlegungen nötig. Diese bilden die Grundlage für das Erstellen einer grafischen Darstellung aus Daten.
-Die drei wichtigsten Voraussetzungen für eine Informationsvisualisierung sind die Kenntnis der
-zugrundliegenden Daten und deren spezifische Eigenschaften, die Betrachtung aller möglichen visuellen Variablen und deren Ausprägungen
-und eine angemessene und sinnvolle Form der Transformation zwischen diesen beiden Zeichensystemen.
-Dafür ist der Einsatz von Software unabdingbar.
-In Abbildung 1 zeigt beispielhaft Ausschnitte aus grafische Darstellungen\footnote{Eine grafische Darstellung
-ist das Ergebnis der Informationsvisualisierung. Eine genaue Definition
-des Begriffs erfolgt im Abschnitt \ref{sec:Darstellungen}.} der Informationsvisualisierung.
+Abbildung \ref{fig:beispiel} zeigt beispielhaft eine Informationsvisualisierung.
+Sie wurde von David McCandless mit einem Vektorgrafikprogramm erstellt, um
+eine tiefgreifende Auseinandersetzung zwischen den Informationen und ihm, als menschlichen Betrachter,
+zu ermöglichen und Entscheidungen über das Design direkt treffen zu können. Der Nachteil dieser
+Arbeitsweise ist eine zeitaufwändige manuelle Transkription aller Datenwerte in eine grafische
+Darstellung. Bei der Visualisierung von komplexeren Zusammenhängen und größeren Datenmengen würde dieser 
+Nachteil noch verstärkt werden und es teilweise unmöglich machen eine Visualisierung durchzuführen.
 
+In dieser Arbeit soll untersucht werden, ob es möglich und sinnvoll ist, diesen Prozess  zu automatisieren,
+ohne Einschränkungen für den Anwender festlegen zu müssen.
+Eine Software muss dafür einen universellen Ansatz verfolgen, um ein möglichst breites Spektrum an
+unterschiedlichsten Bearbeitungsfällen abdecken zu können. 
+Aktuelle Softwarestandards wie beispielsweise Tabellenkalkulationsprogramme oder Programmierbibliotheken
+können das nur teilweise leisten oder beschränken sich auf spezielle Anwendungsgebiete.
+Meist kann dabei, für die Transformation von Daten zu einer grafischen Darstellung, nur
+aus einer begrenzten Auswahl an Voreinstellungen ausgewählt werden.
 
-(rechtfertigung)
-um ein kzenpt für die software machen zu können ist es notwendig daten zu klassifizieren um festzustellen
-welche art von daten verarbeitet werden sollen. weiterhin ist eine klassifikation der visuellen Variablen nötig
-um der Software ein System zur Verfügung zu stellen, nach der grafische Darstellungen erzeugt werden können.
-
-um anforderungen an eine Software definieren zu können
-
-
-Zusätzlich dazu sind
-sie künstlerisch gestaltet um ein ansprechenden Gesamteindruck zu machen und damit den Betrachter zu
-unterstützen.
-Aktuelle Softwarestandards wie beispielsweise Tabellenkalkulationsprogramme können das nicht leisten
-oder sind auf Spezialgebite beschränkt. Meist kann dabei für die Transformation aus Daten zu einer
-grafischen Darstellung nur aus einer begrenzten Auswahl an Voreinstellungen gewählt werden.
-Die Software sollte aber einen universelleres Konzept zur Umsetzung der Informationsvisualisierung haben, um den Benutzer möglichst große
-Gestaltungsfrieheit zu lassen und um ein breites Spektrum an Bearbeitungsfällen abdecken zu können.
-Bei der Recherche konnte keine Software gefunden werden, die diese Aspekte erfüllen kann.
-
-Ziel dieser Arbeit soll sein, eine Software zu konzipieren, die die Grundlagen der Visualisierung,
-Daten, grafisches System und Transformation in einem iterativen Prozess abbildet.
-
-
-
-
-Aktuelle Softwarestandards wie beispielsweise Tabellenkalkulationsprogramme können diesen Ansprüchen
-nur schwer gerecht werden. In Abbildung \ref{fig:beispiel} werden unterschiedliche teilweise
-sehr komplexe grafische Darstellungen gezeigt. Um solche Darstellungen realisieren zu können, ist
-eine intensive Auseinandersetzung mit den Ausgangsdaten und deren möglichen Darstellungsformen
-notwendig. Deshalb wurden s
-
-
-Eine Software muss deshalb einen universellen Ansatz haben, um ein möglichst breites Spektrum an
-unterschiedlichsten Bearbeitungsfällen abdecken zu können. Dabei muss der arbeitsintensive Vorgang
-der Visualisierung großer Datenmengen automatisch und unmittelbar erfolgen um eine 
-
-
-
-
-
-Alle betrachteten
-
-
-
-Die Auseinandersetzung mit der Information gewährleisten zu können, aber dem Benutzer dabei die Arbeit abzunehmen 
-Dazu muss die Software Funktionen bieten, die unterschiedlichste Datentypen verarbeiten können und diese auf visuelle Variablen
-abbilden zu können.
-
-Diese 
-vielzahl unterschiedlichster zugrundeliegender daten,
-unterschiedlichste anforderungen und viele verschiedene möglichkeiten der grafischen Darstellung
-fordern ein universelles tool.
-
-meist lassen sich komplexe daten nicht in standardisierte grafische darstellungen bringen
-
-in den abbildungen ist weiterhin zu erkennen, dass die grafischen darstellungen häufig aus 
-unterschiedlichen einfachen formen der grafischen Darstellung bestehen oder mehrere dieser Formen
-kombinieren.\footnote{siehe kapitel der formen}
-
-wie kann man : ? statt per custom tools oder von hand?
-
-anhand der beispiele in den abbildungen kann man erkennen, dass normale programme woe excel und co nicht ausreichend sind,
-da man einen tiefgreifenden einblick in die daten bekommen muss um eine passende graphische Darstellung zu finden.
-aufgrund der abstraktheit der daten kommt dabei häufig ein hybride technik zum einsatz um dem betrachter einfachen
-visuellen zugang zu liefern
-deshalb muss eine software einen grundlegenderen ansatz finden um grafische Darstellungen der Informationsvisualisierung
-produzieren zu können.
-
-
-Eine software für die Informationsvisualisierung muss also den anwender bei der arbeit mit den ausgangsdaten und bei der 
-grafischen Gestaltung unterstützen. eine auf die verbindung beider aspekte spezialisierte software konnte bei der
-recherche für diese arbeit nicht gefunden werden.
+Um eine möglichst universelle Software zu konzipieren, die dem Benutzer größtmögliche
+Gestaltungsfreiheit einräumt, sind folgende Vorüberlegungen notwendig:
+\begin{itemize}
+\item{Welche Art von Daten gibt es und wie können diese klassifiziert werden?}
+\item{Welche Möglichkeiten der grafischen Darstellung gibt es und wie können diese eingesetzt werden?}
+\item{Wie können Daten sinnvoll in eine grafische Darstellung transkribiert werden?}
+\end{itemize}
+Diese Vorüberlegungen machen ein Softwarekonzept notwendig, das dem Anwender unter anderem bei der Transkription
+von Daten in eine grafische Darstellung unterstützt. Um eine passende Metapher für diesen Arbeitsprozess zu benutzen,
+sollte diese Software durch visuelle Programmierung steuerbar sein. Damit kann die Verbindung zwischen Datenobjekten
+und Grafikobjekten auch auf der Benutzeroberfläche deutlich gemacht werden.
+Dabei muss der arbeitsintensive Vorgang der Transkription großer Datenmengen in eine grafische Darstellung
+automatisch und unmittelbar erfolgen um einen iterativen und kreativen Umgang möglich zu machen.
+Eine auf diese Aspekte spezialisierte Software konnte bei der
+Recherche für diese Arbeit nicht gefunden werden. Die Konzeption einer solchen Software ist Gegenstand dieser Arbeit.
 
 \section{Aufbau der Arbeit}
 Um einen Lösungansatz für das Problem einer universellen Informationsvisualisierung
