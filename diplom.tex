@@ -50,28 +50,32 @@ wissenschaftlichen Kontext kommend, zeichnet sich eine Entwicklung hin zu einem 
 um auch alltägliche Probleme mithilfe der Informationsvisualisierung lösen zu können.
 Auch wenn die Informationsvisualisierung konkrete Ziele hat, mit denen sehr spezielle Probleme gelöst
 werden, addressieren diese nicht mehr nur Experten und Wissenschaftler. Auch alltägliche Anwendungen
-im Bereich der sozialen Netzwerke, beim Onlineshopping oder beim Einkauf im Supermarkt, bei der Suche nach Informationen
+im Bereich der sozialen Netzwerke, beim Onlineshopping oder beim Einkauf im Supermarkt und bei der Suche nach Informationen
 im Internet oder in der Bibliothek können mit der Informationsvisualisierung unterstützt
-werden. Benutzerschnittstellen werden somit verständlicher und benutzerfreundlicher.
+werden. Benutzerschnittstellen können somit verständlicher und benutzerfreundlicher gestaltet werden.
 Die Informationsvisualisierung soll darüberhinaus ansprechend sein, um eine angenehme und ästhetisch ansprechende Benutzung
 gewährleisten zu können, aber gleichzeitig auch intuitiv sein, um ohne Vorkenntnisse Nutzen aus
-dieser Form der Mensch-Maschine-Interaktion ziehen zu können. Die tägliche Arbeit kann
-unterstützt werden, damit es Gelegenheitsanwendern leicht gemacht wird, Informationen und
-Wissen noch besser mit anderen kommunizieren und teilen zu können. Es liegt an den (digitalen) Werkzeugen,
+dieser Form der Mensch-Maschine-Interaktion ziehen zu können. Damit kann es auch Gelegenheitsanwendern
+leicht gemacht werden, Informationen und
+Wissen noch besser mit anderen kommunizieren und teilen zu können. Das erfordert (digitale) Werkzeuge,
 die den Benutzer unterstützen und ihm die Möglichkeit geben, diese Daten für seine Problemlösung nutzen zu können.
-Dabei ergibt sich eine Vielzahl von Fragestellungen, die beachtet und gelöst werden müssen, um die
-Informationsvisualisierung erfolgreich einsetzen zu können.
+Um die Informationsvisualisierung erfolgreich einsetzen zu können, muss eine Vielzahl von Fragstellungen
+beantwortet und gelöst werden.
 \begin{figure}
 \centering
-\includegraphics[width=\linewidth]{Ausgabe.pdf}
-\caption{Beispiel für eine Informationsvisualisierung aus \citep[S.\,76]{McCandless}}
+\includegraphics[width=\linewidth]{beispiel.pdf}
+\caption{Beispiel einer Informationsvisualisierung aus \citep[S.\,76]{McCandless}}
 \label{fig:beispiel}
 \end{figure}
 \section{Problemstellung}
-Abbildung \ref{fig:beispiel} zeigt beispielhaft eine Informationsvisualisierung.
+Abbildung \ref{fig:beispiel} zeigt beispielhaft eine Informationsvisualisierung.\footnote{In dieser
+Informationsvisualisierung wird die unterschiedliche Bedeutung von Farben in unterschiedlichen
+Kulturkreisen dargestellt. Die einzelnen Ringe der kreisförmigen Darstellung bilden zehn
+unterschiedliche Kulturkreise ab. Der Kreis ist unterteilt in 84 unterschiedliche Bedeutungen.
+Der Farbton der Rechtecke stellt dar, welche Farbe einem Begriff zugeordnet wird.}
 Sie wurde von David McCandless mit einem Vektorgrafikprogramm erstellt, um
-eine tiefgreifende Auseinandersetzung zwischen ihm, als menschlichen Betrachter, und den Informationen
-zu ermöglichen und Entscheidungen über das Design direkt treffen zu können. Der Nachteil dieser
+eine tiefgreifende Auseinandersetzung zwischen ihm (als menschlichen Betrachter) und den Informationen
+zu ermöglichen und Entscheidungen über das Design direkt treffen zu können.\footnote{Vgl. \citep{infoblog}} Der Nachteil dieser
 Arbeitsweise ist eine zeitaufwändige manuelle Transkription aller Datenwerte in eine grafische
 Darstellung. Bei der Visualisierung von komplexeren Zusammenhängen und größeren Datenmengen würde dieser 
 Nachteil noch verstärkt werden und es teilweise unmöglich machen eine Visualisierung durchzuführen.
@@ -92,7 +96,8 @@ Gestaltungsfreiheit einräumt, sind folgende Vorüberlegungen notwendig:
 \item{Welche Möglichkeiten der grafischen Darstellung gibt es und wie können diese eingesetzt werden?}
 \item{Wie können Daten sinnvoll in eine grafische Darstellung transkribiert werden?}
 \end{itemize}
-Diese Vorüberlegungen machen ein Softwarekonzept notwendig, das dem Anwender unter anderem bei der Transkription
+Diese Vorüberlegungen fordern ein Softwarekonzept, das den Anwender besonders bei der 
+arbeitsintensiven Transkription
 von Daten in eine grafische Darstellung unterstützt. Um eine passende Metapher für diesen Arbeitsprozess zu benutzen,
 sollte diese Software durch visuelle Programmierung steuerbar sein. Damit kann die Verbindung zwischen Datenobjekten
 und Grafikobjekten auch auf der Benutzeroberfläche deutlich gemacht werden.
@@ -156,14 +161,14 @@ zum Arbeitsfeld der Informationsvisualisierung ermöglichen.
 Daten werden in \citep{Gabler} als "`zum Zweck der Verarbeitung zusammengefasste Zeichen,
 die aufgrund bekannter oder unterstellter Abmachungen
 Informationen (d.h. Angaben über Sachverhalte und Vorgänge) darstellen"', beschrieben.
-Gegenstand dieser Arbeit sollen vor allem digital gespeicherte Daten sein.
+Als Gegenstand dieser Arbeit werden digital gespeicherte Daten betrachtet.
 Diese liegen in einer standardisierten Form vor und können für die elektrische Weiterverarbeitung
 und Kommunikation genutzt werden. Diese Daten sind dabei formalisierte Repäsentationen einer
 oder mehrerer Informationen, die übermittelt werden sollen.
 Daten können dabei aus der realen Welt stammen, beispielsweise erhoben durch
 die Messung einer physikalischen Größe, oder sie wurden digital erzeugt, beispielsweise durch
-computergestützte Simulationen oder aus der Nutzung der Telekommunikation.
-Der Anwender dieser Daten ist daher nicht direkt an den Daten als solche interessiert, sondern
+computergestützte Simulationen oder durch die Nutzung von Telekommunikationstechnik.
+Der Anwender dieser Daten ist nicht direkt an den Daten als solche interessiert, sondern
 an den Informationen und dem aus ihnen resultierenden Erkenntnisgewinn, die er mit verschiedenen
 Techniken aus diesen Daten gewinnen kann.
 
@@ -207,7 +212,7 @@ mehr als drei Dimensionen besitzen. Alle Dimensionen des Beobachtungsraumes werd
 Variablen} bezeichnet, da sie vor der Datenerhebung festgelegt werden und als beschreibende Begriffe für
 den zu visualisierenden Sachverhalt gelten.\footnote{\citep[S.\,24]{Bertin} bezeichnet die unabhängigen
 Variablen als Invariante und definiert: "`Die Invariante ist der vollständige und in bezug auf alle vorgegebenen
-Begriffe invariable Kennzeichnungsbegriff"'} Im Beispiel aus Abbildung \ref{fig:beispiel} sind die
+Begriffe invariable Kennzeichnungsbegriff."'} Im Beispiel aus Abbildung \ref{fig:beispiel} sind die
 unabhängigen Variablen die gewählten Kulturkreise und die verschiedenen Begriffe.
 \item[Beobachtungspunkt]
 Ein Beobachtungspunkt beschreibt eine Position im Beobachtungsraum an dem Daten vorhanden sind. Die Anzahl und Verteilung
@@ -270,7 +275,14 @@ dargestellt werden müssen. Die Unterscheidbarkeit zwischen diesen Klassen muss 
 erhalten bleiben.
 Ein Beispiel für einen Multiparameterdatensatz ist eine Liste mit Wetterstationen, die durch ihre
 Koordinaten bestimmt sind. Zusätzlich dazu liegen für jede Wetterstation unterschiedliche
-Daten für Temperatur, Luftdruck und Niederschlag vor.
+Daten für Temperatur, Luftdruck und Niederschlag vor.\footnote{Das Beispiel aus Abbildung
+\ref{fig:beispiel} ist kein Multiparameterdatensatz, da nur der Farbton der Rechtecke als
+abhängige Variable bezeichnet werden kann. Durch zusätzliche Informationen könnten die
+zugrundeliegenden Daten aber zu einem Multiparameterdatensatz erweitert werden. Beispielsweise
+könnte die Wichtigkeit der einzelnen Begriffe in einem Kulturkreis in der Größe der
+Farbfläche dargestellt werden. So würde zum Beispiel der Begriff "`Religion"' (48) für
+bestimmte Kulturkreise größer dargestellt werden. Andere Farbflächen erscheinen dagegen
+kleiner.}
 
 Eine Sonderform der Multiparameterdaten sind die multivariaten Daten. Dabei kann
 der Beobachtungsraum vernachlässigt werden, da er keine Rolle bei der Weiterverarbeitung
@@ -281,10 +293,10 @@ aufgespannt wird.\footnote{Vgl. \citep[S.\,172]{Schumann}}
 \subsection{Abstrakte Daten}
 Die wissenschaftlich-technischen Datenvisualisierung ist auf physikalische Daten fokussiert.
 Das können Daten über die menschliche Anatomie, das Universum oder über Moleküle und Atome sein. Diese Daten
-haben immer einen räumlichen Bezug. Visualisierungen von abstraktionen des physikalischen Raums
+haben immer einen räumlichen Bezug. Visualisierungen von Abstraktionen des physikalischen Raums
 sind möglich, trotzdem hat die zugrundeliegende Information eine geometrische Natur.\footnote{Vgl. \citep[S.\,6]{Card}}
 Fehlt ein physikalischer Raumbezug oder ist er nicht sinnvoll, werden Daten als \textit{abstrakte Daten} bezeichnet.
-Abstrakte Daten werden meist in einem rein digitalen und virtuellen Prozessen erzeugt. Als Beispiel
+Abstrakte Daten werden meist in rein digitalen und virtuellen Prozessen erzeugt. Als Beispiel
 können Verbindungsstatistiken von Netzwerkbetreibern, die Struktur eines Dateisystems auf einer
 Festplatte oder Texte und Quellcode von Programmen genannt werden.
 
