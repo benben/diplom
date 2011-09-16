@@ -540,47 +540,38 @@ immer den Anforderungen der Daten und Zielgruppe, des Bearbeitungsziels, der Rep
 
 \section{Visualisierungsprozess}
 \label{sec:Pipeline}
-Der Prozess der Visualisierung wird Visualisierungspipeline genannt. Diese beschreibt den Ablauf der einzelnen
-Schritte, die für eine Informationsvisualisierung notwendig sind, um aus abstrakten Daten in geometrische Daten
-zu übersetzen. In der Literatur gibt es keine einheitliche Beschreibung der Visualisierungspipeline aber
-die Darstellungen ähneln sich stark. Im folgenden soll der Ablauf einer Informationsvisualisierung an zwei Beispielen
-beschrieben werden.
-
-Das erste Beispiel stammt aus \citep{BenFry} und beschreibt den kompletten Prozess des Computational Designs,
-der eine Erweiterung der Informationsvisualisierung darstellt. Abbildung \ref{fig:benfryprocess} zeigt
-die einzelnen Stufen. Als Erstes wird die Beschaffung der Daten aus einer Datei oder einem Netzwerk
-beschrieben (acquire), danach finden erste Analysen statt um die Struktur der Daten zu erkennen (parse).
-Aus diesen Daten werden Bereiche von Interesse herausgetrennt (filter) und Methoden der Datenanalyse angewendet,
-die für die weitere Verarbeitung notwendig sind (mine). Im nächstne Schritt werden dann geeignete
-grafische Repräsentationen\footnote{Vgl. Abschnitt \ref{sec:grafischeSemiologie}} gefunden um die Daten
-darzustellen (represent). Die grafische Darstellung wird durch die visuelle Analyse des Nutzers
-verbessert, damit sie einfacher verständlich und ästhetischeren Ansprüchen gerecht wird (refine). Als letzter
-Schritt werden Interaktionsmöglichkeiten ergänzt, um dem Nutzer die Kontrolle über die
-Ausgabe, aber auch über vorher stattfindende Stufen des Prozesses zu geben (interact).
 \begin{figure}
 \centering
 \includegraphics[width=\linewidth]{benfryprocess.pdf}
 \caption{Der Prozess des Computational Designs nach \citep[S.\,13]{BenFry}, eigene Darstellung}
 \label{fig:benfryprocess}
 \end{figure}
+Der Prozess der Visualisierung wird Visualisierungspipeline genannt. Diese beschreibt den Ablauf der einzelnen
+Schritte, die für eine Informationsvisualisierung notwendig sind, um abstrakte Daten in geometrische Daten
+zu übersetzen. In der Literatur gibt es keine einheitliche Beschreibung der Visualisierungspipeline, aber
+die Darstellungen ähneln sich stark. Im folgenden soll der Ablauf der Informationsvisualisierung an einem Beispiel
+beschrieben werden. In \citep{BenFry} wird der Prozess des Computational Designs beschrieben und in einen
+größeren Kontext eingeordnet. Dadurch bietet sich die
+Pipeline besonders gut an, um einen Überblick über alle Arbeitsschritte zu erhalten. In Abbildung \ref{fig:benfryprocess}
+werden diese dargestellt.
 
-In \citep{Schumann} wird die Visualisierungspipeline eingegrenzter beschrieben. Abbildung
-\ref{fig:schumannprocess} zeigt die Stufen Daten, Filtering, Mapping, Rendering und Bild.
-Hier liegen die Daten bereits in adäquater Form vor und werden für die Visualisierung
-analysiert um wichtige Informationen für den nachfolgenden Schritt zu finden. Das können
-Extremwerte, Wertebereiche und Bereiche speziellen Interesses sein. Der Schritt des Mappings
-ist die Daten-zu-Geometrie-Abbildung\footnote{Vgl. \citep[S.\,16]{Schumann}} bei der
-die abstrakten Daten auf grafische Primitive übertragen werden. Das Rendering überführt
-anschließend diese geometrischen Daten in spezifische Ausgabeformate, wie beispielsweise Pixel auf
-einem Monitor oder Farbpunkte eines Druckerzeugnisses.
-\begin{figure}
-\centering
-\includegraphics[width=\linewidth]{schumannprocess.pdf}
-\caption{Der Prozess der Visualisierung nach \citep[S.\,15]{Schumann}, eigene Darstellung}
-\label{fig:schumannprocess}
-\end{figure}
+Als Erstes wird die Beschaffung der Daten aus einer Datei oder einem Netzwerk
+beschrieben (acquire). Danach finden erste Analysen statt, um die Struktur der Daten zu erkennen (parse).
+Wichtige Informationen können beispielsweise Extremwerte oder Wertebereiche und andere Bereiche speziellen
+Interesses sein.
+Diese Bereiche werden herausgetrennt (filter) und auf ihnen Methoden der Datenanalyse angewendet,
+die für die weitere Verarbeitung notwendig sind (mine). Im nächsten Schritt werden dann geeignete
+grafische Repräsentationen\footnote{Vgl. Abschnitt \ref{sec:grafischeSemiologie}} gefunden, um die Daten
+darzustellen (represent).\footnote{\citep{Schumann} erweitert diesen Punkt noch durch das Rendering, welches die eigentliche Rasterung
+und Darstellung auf dem eigentlichen Ausgabemedium durchführt.}
+Dieser Schritt wird auch \textit{Mapping} genannt und ist die Daten-zu-Geometrie-Abbildung\footnote{Vgl. \citep[S.\,16]{Schumann}}, bei der
+die abstrakten Daten auf grafische Primitive übertragen werden.
+Die grafische Darstellung wird dann iterativ durch die visuelle Analyse des Nutzers
+verbessert, damit sie einfacher verständlich und ästhetisch ansprechend wird (refine). Als letzter
+Schritt werden Interaktionsmöglichkeiten ergänzt, um dem Nutzer die Kontrolle über die
+Ausgabe, aber auch über vorher stattfindende Stufen des Prozesses geben zu können (interact).
 
-Der zuvor beschriebene Ablauf ist in allen Visualisierungsprozessen immanent, muss aber nicht starr
+Der hier beschriebene Ablauf ist allen Visualisierungsprozessen immanent, muss aber nicht zwangsläufig
 in der gegebenen Reihenfolge auftreten. Es gibt unterschiedliche Möglichkeiten, in die
 Visualisierungspipeline einzugreifen und zwischen einzelnen Stufen hin und her
 zuspringen.\footnote{In \citep{Schumann} Abschnitt 2.2 und 2.3 werden
