@@ -13,7 +13,14 @@
 \usepackage[locale=DE]{siunitx}
 \usepackage{graphicx}
 \usepackage{listings}
+\usepackage{color}
 
+\definecolor{light-gray}{gray}{0.95}
+
+\lstset{%
+basicstyle=\scriptsize,
+backgroundcolor=\color{light-gray}
+}
 
 \pagestyle{headings}
 
@@ -940,6 +947,9 @@ grafischer Benutzeroberfläche verwendetes Hilfsmittel, bei welchem grafisch
 dargestellte Programmblöcke durch gerichtete und qualifizierte Linien miteinander
 verlinkt werden."'
 \end{quote}
+Der Benutzer schreibt also keinen Quellcode und benutzt dabei vorgefertigte
+Funktionsnamen und Aufrufe in textueller Form, sondern zieht einzelne grafische
+Elemente und verbindet diese.
 
 Für Datasynth wurden einzelne Klassen definiert, die das Konzept der visuellen
 Programmierung umsetzen. In der folgenden Auflistung werden die einzelnen
@@ -984,9 +994,6 @@ auch die Darstellung des Kreises, da der Radius mit dem Wert dieser Node verbund
 \label{sec:Kernfunktionen}
 In diesem Kapitel werden exemplarisch wichtige Abschnitte der Software anhand ihres Quelltextes
 erläutert.
-\lstset{%
-basicstyle=\scriptsize
-}
 \lstinputlisting[language=C++]{code/factory.cpp}
 
 \chapter{Auswertung}
