@@ -850,7 +850,14 @@ ist nicht gegeben.
 \chapter{Umsetzung eines Prototyps}
 \label{cha:Umsetzung}
 
-beispielhafte implementierung “datasynth”
+In diesem Kapitel soll das Konzept prototypisch implementiert werden.
+Dieser Prototyp wird \textit{Datasynth} genannt.
+Um der Bearbeitungszeit dieser Arbeit gerecht zu werden, können nur grundlegende Funktionen
+programmiert werden.  Die Implementierung in dieser Arbeit beschränkt sich auf eine
+statische Ausgabe ohne Interaktionsmöglichkeiten, kann aber dahingehend erweitert werden.\footnote{Vgl. Abschnitt \ref{sec:Ausblick}}
+Datasynth wird aus diesem Grund mit einer freien
+Lizenz veröffentlicht, um eine Weiterentwicklung zu ermöglichen.
+
 
 1. dokumentation der untersuchungsdurchführung (des Entwicklungsvorganges)
 welche tools wurden wie angewendet, c++, of, git, boost, etc etc
@@ -859,21 +866,67 @@ präsentation von viz mit der software?!
 
 Einschränkungen durch Implementation
 
-um der Bearbeitungszeit dieser Arbeit gerecht zu werden, kann nur eine prototypische Version implementiert werden.
-aus diesem grund wird als freie Lizenz  öffentlich und transparent entwickelt, um die weiterentwicklung mit anderen weiterführen zu können
 
 
-künstliche Grenzen weil ja nur Prototyp entwickelt wird.
-statisch, 2D vollständigkeit wird durch dateninput festgelegt (vgl. schumann 6.2.1, s. 175)
 
-Die Implementierung in dieser Arbeit beschränkt sich auf eine statische Ausgabe ohne Interaktionsmöglichkeiten,
-kann aber dahingehend erweitert werden.\footnote{Vgl. Abschnitt \ref{sec:Ausblick}}
+
 
 \section{Technologien}
 \label{sec:Technologien}
-C++
-openFrameworks
-boost
+Um Datasynth zu entwickeln werden verschiedene Softwaretechnologien verwendet.
+Deren Einsatz wird nachfolgend kurz erläutert.
+\begin{description}
+\item[C++]
+
+definition von C++ aus einem buch
+
+Datasynth ist in C++ implementiert und nutzt daher die Vorteile
+wie Performance.
+
+\item[openFrameworks]
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth]{of.pdf}
+\caption{Funktionsweise von openFrameworks aus \citep{of_wiki}}
+\label{fig:of}
+\end{figure}
+ist ein in C++ geschriebenes Framework. Es soll durch seine
+Einfachheit und Intuitivität den kreativen Prozess und das
+Experimentieren mit Software unterstützen. openFrameworks
+kapselt viele unterschiedliche Bibliotheken für die
+computergestützte audio-visuelle Verarbeitung in eine gemeinsame,
+konsistente und einfache Programmierschnittstelle. Beispielsweise
+wird die Bibliothek openGL für Grafiken verwendet und die
+Bibliothek rtAudio für die Ein- und Ausgabe von Audiosignalen.
+Die Programmierschnittstelle von openFrameworks enthält
+wenige Klassen mit wenigen Funktionen um dem Benutzer einen
+einfachen Einstieg zu ermöglichen.\footnote{Vgl. \citep{of1} und \citep{of2}}
+Weiterhin ist openFrameworks kompatibel zu den Plattformen
+Linux, Mac OSX, Windows und erfüllt neben den genannten Vorteilen
+eine weitere Anforderung aus Abschnitt \ref{sec:Anforderungen}.
+Die Funktionsweise von openFrameworks wird in Abbildung
+\ref{fig:of} verdeutlicht. 
+Die Programmlogik, das Benutzerinterface und alle Ein- und
+Ausgaben für den Benutzer wurden für Datasynth mit openFrameworks
+realisiert.
+\item[boost]
+ist eine Sammlung von unterschiedlichen C++ Programmierbibliotheken.
+Diese Bibliotheken sind portabel einsetzbar und steigern die
+Produktivität beim Entwickeln einer Software, da sie unterschiedliche
+Anwendungsbereiche von C++ erweitern und vereinfachen.
+Einzelne Bibliotheken der Sammlung werden in neuen C++ Standard
+übernommen, um C++ selbst zu verbessern.
+Für Datasynth werden die Bibliotheken für Zeiger, Container
+und generische Programmierung verwendet, um zur Laufzeit flexibel
+auf Benutzereingaben reagieren zu können.
+\item[GitHub]
+ist eine Plattform für das gemeinsame Entwickeln von Software.\footnote{Vgl. http://www.github.com}
+Sie basiert auf dem Versionverwaltungstool git, welches entwickelt wurde
+um Änderungen an Quellcode aufzuzeichnen und diesen zwischen mehreren
+Entwicklern teilen zu können. GitHub verbindet diese Funktionalität mit
+einer Art sozialem Netzwerk, bei der verschiedene Nutzer kollaborativ
+an einer Software arbeiten können. Datasynth ist auf Github verfügbar.\footnote{Vgl. http://www.github.com/benben/datasynth}
+\end{description}
 \section{Visuelle Programmierung}
 \label{sec:visPro}
 
@@ -897,10 +950,13 @@ können, ist der nutzer nicht durch "context switches" abgelenkt und kann sich a
 das gilt auch für das verändern von parametern, da im selben augenblick, wie parameter vom nutzer geändert werden, ändern sich auch die ausgabe.
 damit kann der nutzer einerseits sofort erkennen was der parameter eigentlich macht und augenblicklich
 vergleichen und anpassen für seine präferierte lösung
-\subsection{Spread}
-\subsection{Node}
-\subsection{Pin}
-\subsection{Connection}
+Im folgenden werden die einzelne Elemente dieses Konzepts erläutert.
+\begin{description}
+\item[Node]
+\item[Pin]
+\item[Connection]
+\item[Spread]
+\end{description}
 \section{Wichtige Kernfunktionen}
 \label{sec:Kernfunktionen}
 auszüge aus quelltext mit erklärung
