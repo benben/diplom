@@ -12,6 +12,8 @@
 
 \usepackage[locale=DE]{siunitx}
 \usepackage{graphicx}
+\usepackage{listings}
+
 
 \pagestyle{headings}
 
@@ -63,7 +65,7 @@ Um die Informationsvisualisierung erfolgreich einsetzen zu können, muss eine Vi
 beantwortet und gelöst werden.
 \begin{figure}
 \centering
-\includegraphics[width=\linewidth]{beispiel.pdf}
+\includegraphics[width=\linewidth]{images/beispiel.pdf}
 \caption{Beispiel einer Informationsvisualisierung aus \citep[S.\,76]{McCandless}}
 \label{fig:beispiel}
 \end{figure}
@@ -352,7 +354,7 @@ Projekte."'\citep{Gitta} } Dies ist ein Teilgebiet der Geographie, eines der ers
 Informationsvisualisierung.
 \begin{figure}
 \centering
-\includegraphics[width=\linewidth]{visuelleVariablen.pdf}
+\includegraphics[width=\linewidth]{images/visuelleVariablen.pdf}
 \caption{visuelle Variablen aus \citep[S.\,51]{Bertin}}
 \label{fig:visuelleVariablen}
 \end{figure}
@@ -542,7 +544,7 @@ immer den Anforderungen der Daten und Zielgruppe, des Bearbeitungsziels, der Rep
 \label{sec:Pipeline}
 \begin{figure}
 \centering
-\includegraphics[width=\linewidth]{benfryprocess.pdf}
+\includegraphics[width=\linewidth]{images/benfryprocess.pdf}
 \caption{Der Prozess des Computational Designs nach \citep[S.\,13]{BenFry}, eigene Darstellung}
 \label{fig:benfryprocess}
 \end{figure}
@@ -683,7 +685,7 @@ Somit können alle visuellen Variablen direkt beeinflusst und für das aktuelle 
 werden.
 \begin{figure}
 \centering
-\includegraphics[width=\linewidth]{benfryprocess_marked.pdf}
+\includegraphics[width=\linewidth]{images/benfryprocess_marked.pdf}
 \caption{Einordnung in den Prozess des Computational Designs nach \citep{BenFry}, eigene Darstellung}
 \label{fig:benfryprocess_marked}
 \end{figure}
@@ -886,7 +888,7 @@ wie Performance.
 \item[openFrameworks]
 \begin{figure}
 \centering
-\includegraphics[width=\linewidth]{of.pdf}
+\includegraphics[width=\linewidth]{images/of.pdf}
 \caption{Funktionsweise von openFrameworks aus \citep{of_wiki}}
 \label{fig:of}
 \end{figure}
@@ -929,37 +931,64 @@ an einer Software arbeiten können. Datasynth ist auf Github verfügbar.\footnot
 \end{description}
 \section{Visuelle Programmierung}
 \label{sec:visPro}
+Um dem breiten Spektrum an Anforderungen gerecht zu werden,
+wird Datasynth mit einem Konzept der visuellen Programmierung gesteuert.
+\citep[S.\,XXX]{Henning} definieren visuelle Programmierung wie folgt:
+\begin{quote}
+"`Es handelt sich hierbei um ein in integrierten Entwicklungsumgebungen mit
+grafischer Benutzeroberfläche verwendetes Hilfsmittel, bei welchem grafisch
+dargestellte Programmblöcke durch gerichtete und qualifizierte Linien miteinander
+verlinkt werden."'
+\end{quote}
 
-Warum visuelle Programmierung? DEFINITION! und nochmal WARUM?
-weil es dem zugrundeliegenden prinzip des MAPPING der viz entspricht
-
-statt custom tools etc und immer wieder neu programmieren.....jetzt ein tool
-
-komplexität hinter einem einfachen interface verstecken (klavier aus memo’s talk in london)
-
-
-rapid prototyping / keine programmierkenntnisse erforderlich, ein durchschnittliches mathematisches verständnis reicht
-theoretische konzeption
-erklärung der einzelnen teile wie nodes etc doch erst bei implementierung?
-
-soll unterstützend sein bei der arbeit mit dem eigentlichen thema und das wesen der problemlösung verdeutlichen
-
-context switches vermeiden (siehe tufte 50) und die gleiche visuelle representation für das problem zeigen.
-dadurch das (bei ausreichendem displayplatz) alle elemente des UI und die aktuelle Ausgabe angezeigt werden
-können, ist der nutzer nicht durch "context switches" abgelenkt und kann sich auf die data viz konzentrieren.
-das gilt auch für das verändern von parametern, da im selben augenblick, wie parameter vom nutzer geändert werden, ändern sich auch die ausgabe.
-damit kann der nutzer einerseits sofort erkennen was der parameter eigentlich macht und augenblicklich
-vergleichen und anpassen für seine präferierte lösung
-Im folgenden werden die einzelne Elemente dieses Konzepts erläutert.
+Für Datasynth wurden einzelne Klassen definiert, die das Konzept der visuellen
+Programmierung umsetzen. In der folgenden Auflistung werden die einzelnen
+Elemente und ihre Funktionsweise beschrieben
 \begin{description}
 \item[Node]
 \item[Pin]
 \item[Connection]
 \item[Spread]
 \end{description}
+
+Der Einsatz von visueller Programmierung als Bedienkonzept für Datasynth hat
+mehrere Vorteile. Das Verbinden von Nodes, die als Datenquelle funktionieren, mit Nodes, die
+zur Ausgabe von grafischen Primitiven dienen, greift das grundlegende
+Prinzip der Informationsvisualisierung auf.\footnote{Vgl. Abschnitt \ref{sec:Grundprinzip}}
+Weiterhin sind keine Programmierkenntnisse erforderlich um eine Informationsvisualisierung
+vorzunehmen. Stattdessen reicht ein durchschnittliches mathematisches Verständnis.
+Durch die universelle Form der Benutzerschnittstelle ist ein iteratives
+Experimentieren möglich und somit kann Datasynth genutzt werden um schnell eine
+Idee für die Informationsvisualisierung zu skizzieren.
+Die komplexen internen Abläufe werden dabei hinter einem intuitiven und einfachen Interface
+versteckt. Dadurch können "`context switches"'\footnote{Vgl. \citep[S.\,50]{Tufte}}
+vermieden werden. Diese treten auf wenn zwischen unterschiedlichen Programmansichten gewechselt
+werden muss. Datasynth zeigt den Bereich für die visuelle Programmierung und die Ausgabe
+immer gleichzeitig. Auch das Verändern von Parametern, wirkt sich unmittelbar auf die Ausgabe
+aus. Der Nutzer kann dadurch sofort erkennen, welchen Einfluss seine Benutzereingaben bewirken und
+kann diese vergleichen und anpassen um schnell zum gewünschten Ergebnis zu kommen.
+Abbildung \ref{fig:datasynth} stellt dieses Prinzip an einem Beispiel dar.
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth]{images/datasynth.pdf}
+\caption{Ein Beispiel der Benutzeroberfläche von Datasynth. Die oberen zwei Fenster und
+die unteren zwei Fenster stellen zwei unterschiedliche Stadien der Software dar.
+Im oberen linken Fenster wird ein Kreis gezeichnet. Dieser hat einen Radius von 20 Pixel, da
+die rechte obere Node einen Wert von 20 Pixel an den Pin für den Radius des Kreises übergibt.
+Im unteren Stadium ändert sich der Wert dieser Node auf 125. Dadurch verändert sich unmittelbar
+auch die Darstellung des Kreises, da der Radius mit dem Wert dieser Node verbunden ist.}
+\label{fig:datasynth}
+\end{figure}
+
 \section{Wichtige Kernfunktionen}
 \label{sec:Kernfunktionen}
-auszüge aus quelltext mit erklärung
+In diesem Kapitel werden exemplarisch wichtige Abschnitte der Software anhand ihres Quelltextes
+erläutert.
+\lstset{%
+basicstyle=\scriptsize
+}
+\lstinputlisting[language=C++]{code/factory.cpp}
+
 \chapter{Auswertung}
 \label{cha:Auswertung}
 bewertung der ergebnisse vor dem hintergrund der hypothesen/problemstellung (Test des konstrukts und vergleich mit den Anforderungen
