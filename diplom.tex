@@ -21,6 +21,8 @@
 basicstyle=\scriptsize,
 backgroundcolor=\color{light-gray}
 }
+\setkomafont{captionlabel}{\small\bfseries}
+\setkomafont{caption}{\small}
 
 \pagestyle{headings}
 
@@ -947,18 +949,60 @@ grafischer Benutzeroberfläche verwendetes Hilfsmittel, bei welchem grafisch
 dargestellte Programmblöcke durch gerichtete und qualifizierte Linien miteinander
 verlinkt werden."'
 \end{quote}
-Der Benutzer schreibt also keinen Quellcode und benutzt dabei vorgefertigte
-Funktionsnamen und Aufrufe in textueller Form, sondern zieht einzelne grafische
-Elemente und verbindet diese.
+\begin{figure}
+\centering
+\lstinputlisting{code/grundrechenarten.txt}
+\caption{Pseudocode für eine Programmierung aller Grundrechenarten.}
+\label{fig:textuell}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth]{images/datasynth_basic.pdf}
+\caption{Die Grundrechenarten programmiert mit Datasynth.}
+\label{fig:datasynth_basic}
+\end{figure}
+Im Gegensatz zur textuellen Programmierung, bei der Buchstaben, Zeichen und Wörter
+verwendet werden, um Quellcode zu schreiben, wird die Programmlogik bei ber
+visuellen Programmierung durch grafische Elemente durchgeführt.
+Statt vorgefertigte Funktionsnamen und Aufrufe in textueller Form zu schreiben, werden einzelne grafische
+Elemente mit unterschiedlichen Funktionen erstellt und verbunden. Die visuelle Programmierung
+in Datasynth wird fast ausschließlich mit der Maus durchgeführt.
+Als Beispiel werden in Abbildung
+\ref{fig:textuell} werden die vier Grundrechenarten auf zwei Variablen angewendet.
+In Abbildung \ref{fig:datasynth_basic} wird die gleiche Berechnung mit Datasynth
+in visueller Programmierung umgesetzt.
 
 Für Datasynth wurden einzelne Klassen definiert, die das Konzept der visuellen
 Programmierung umsetzen. In der folgenden Auflistung werden die einzelnen
 Elemente und ihre Funktionsweise beschrieben
 \begin{description}
 \item[Node]
+Ein Node ist ein Knoten in dem Funktionalität gekapselt ist. Vergleichbar ist dieses
+Element mit einer Funktion in der textuellen Programmierung, kann also
+beliebig viele Parameter zur Eingabe haben. Im Gegensatz zu einer Funktion der textuellen
+Programmierung mit nur einem Rückgabewert kann eine Node beliebig viele Ausgabewerte haben.
+Eine Node zwischen der Eingabe und der Ausgabe unterschiedlichste Berechnungen durchführen.
+Diese Berechnungen werden unabhängig vom Rest der Software durchgeführt.
 \item[Pin]
+Ein Pin beschreibt die unterschiedlichen Ein- und Ausgabewerte einer Node.
+Es wird dabei zwischen Input und Output Pins unterschieden. Über die unterschiedlichen
+Inputpins können unterschiedliche Werte mit verschiedenen DAtentypen übergeben werden.
+Diese werden von der Node verarbeitet und die Ergebnisse dieser Berechnung
+über die Outputpins ausgegeben.
 \item[Connection]
+Eine Connection ist eine Verbindung zwischen zwei Pins. Dabei wird ein Outputpin einer
+Node mit dem Inputpin einer anderen Node verbunden und somit Werte übergeben. Eine Connection
+ist mit der Zuweisung in der textuellen Programmierung vergleichbar.
 \item[Spread]
+Ein Spread ist eine Struktur, die als universeller Datentyp funktioniert.
+Eingabe und Ausgabe von Nodes können nur Spreads sein. Spreads sind eine 
+eindimensionale Liste von Werten. Diese Werte können unterschiedliche Datentypen,
+wie beispielsweise Gleitkommazahlen oder Zeichenketten, haben. Im einfachsten Fall hat
+ein Spread nur ein einziges Element, ist damit also eine Konstante. In komplexeren
+Anwendungen kann ein Spread eine große Anzahl an Elementen enthalten die beispielsweise
+aus einer Datentabelle stammen. Somit kann der Benutzer eine Reihe von Zahlen mit
+einer Konstante multiplizieren ohne die Anzahl der einzelnen Werte eines Spreads
+beachten zu müssen.
 \end{description}
 
 Der Einsatz von visueller Programmierung als Bedienkonzept für Datasynth hat
@@ -994,7 +1038,48 @@ auch die Darstellung des Kreises, da der Radius mit dem Wert dieser Node verbund
 \label{sec:Kernfunktionen}
 In diesem Kapitel werden exemplarisch wichtige Abschnitte der Software anhand ihres Quelltextes
 erläutert.
+In Abbildung \ref{fig:factory} wird eine Struktur dargestellt, die die einzelnen
+Nodes zur Laufzeit erstellt. In dieser Struktur ist eine Liste gespeichert, die Wertepaare
+enthält. Ein Wertepaar besteht aus einer Zeichenkette, die eine Node eindeutig identifiziert
+und einem Objekt welches der Node entspricht. Ruft der Benutzer diese Struktur auf, indem
+er im Menü auf den Namen einer Node klickt, wird
+eine Zeichenkette übergeben und wenn die Liste eine solche Zeichenkette enthält, das
+entsprechende Objekt zurückgeliefert. So können vom Benutzer dynamisch zur Laufzeit
+neue Nodes erzeugt werden. Die Struktur dient also als eine Art Katalog, in dem alle
+Nodes enthalten sind, die der Nutzer zur Programmierung verwenden kann.
+\begin{figure}
+\centering
 \lstinputlisting[language=C++]{code/factory.cpp}
+\caption{Erzeugung einer Node-Instanz aus einer Liste aller vorhandener Node-Klassen}
+\label{fig:factory}
+\end{figure}
+
+In Abbildung \ref{fig:node} wird in Auszügen die Klassendefinition der BaseNode und
+der Node für Die Addition als Beispiel einer echten Node dargestellt.
+Eine Node ist eine einfache C++ Klasse, die alle Eigenschaften der Klasse BaseNode erbt.
+Die Node für die Addition überschreibt die process Methode der BaseNode um die zwei
+Inputpins zu addieren. Andere Klassen die von der BaseNode erben, können die process
+Methode mit ihrer eigenen Funktionalität überschreiben.
+Das macht es möglich alle Funktionen,
+die in einer Klasse implementiert werden können,
+in eine Node zu kapseln und für die visuelle Programmierung von Datasynth zu verwenden.
+\begin{figure}
+\centering
+\lstinputlisting[language=C++]{code/node.cpp}
+\caption{Klassendefinition der BaseNode und der Node für die Addition als Beispiel}
+\label{fig:node}
+\end{figure}
+
+In Abbildung \ref{fig:node} werden einzelne Ausschnitte aus dem Hauptprogramm gezeigt.
+In diesem Programm läuft die Hauptschleife ab, die alle Benutzereingaben behandelt,
+das Aktualisieren und Berechnen aller Nodes durchführt und Nodes und Connections
+hinzufügt oder löscht.
+\begin{figure}
+\centering
+\lstinputlisting[language=C++]{code/core.cpp}
+\caption{Erzeugung von Objekten einer Klasse bestimmt durch eine Zeichenkette.}
+\label{fig:node}
+\end{figure}
 
 \chapter{Auswertung}
 \label{cha:Auswertung}
