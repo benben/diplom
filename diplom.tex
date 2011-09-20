@@ -14,6 +14,7 @@
 \usepackage{graphicx}
 \usepackage{listings}
 \usepackage{color}
+\usepackage{tabularx}
 
 \definecolor{light-gray}{gray}{0.95}
 
@@ -1083,48 +1084,104 @@ hinzufügt oder löscht.
 
 \chapter{Auswertung}
 \label{cha:Auswertung}
+
+BEISPIEL ZUR AUS WERTUNG
+
 bewertung der ergebnisse vor dem hintergrund der hypothesen/problemstellung (Test des konstrukts und vergleich mit den Anforderungen
 was kann die software liefern? wofür bildet sie nur die grundlage? was kann sie nicht?
 
-2. ableiten von schlußfolgerungen
-????
-so eine software macht sinn, macht keinen sinn?
+In diesem Kapitel wird Datasynth anhand der in Abschnitt \ref{sec:Anforderungen}
+aufgestellten Anforderungen bewertet.
+
+Durch die Benutzung von Datasynth durch visuelle Programmierung, muss keine
+textuelle Programmiersprache erlernt werden. Stattdessen kann der Nutzer intuitiv
+grafische Elemente auf der Oberfläche erzeugen und durch verschiedene Verbindungen
+eine Programmlogik konstruieren. Die Ausgabe erfolgt unmittelbar. So kann der Nutzer
+ohne einen Zwischenschritt, wie beispielsweise Kompilierung oder Ausführung, die
+veränderte Ausgabe sofort überprüfen und gegebenenfalls anpassen. Damit ist eine
+\textit{einfache Benutzerinteraktion} möglich.
+
+Die Tabelle \ref{tab:vars} zeigt wie die grafischen Variablen aus Abschnitt
+\ref{sec:graphischeSemiologie} mit der für diese Arbeit entwickelten Version von
+Datasynth dargestellt werden können. In der Tabelle wird ausschließlich
+von Nodes gesprochen, die eine Ausgabe erzeugen.
+Durch die Bearbeitungszeit für diese Arbeit konnten nicht alle grafischen
+Variablen implementiert werden. Trotzdem sind \textit{flexible Visualisierungsmöglichkeiten}
+bereits durchführbar und fehlende Funktionalität wie beispielsweise Texturierung können
+durch den modularen Aufbau von Datasynth schnell und einfach hinzugefügt werden.
+
+\begin{table}
+\centering
+\begin{tabular}{|l|p{9cm}|}
+\hline
+\textbf{grafische Variable} & \textbf{Umsetzung mit Datasynth}\\
+\hline
+Position in der Ebene & Jede Node hat Inputpins für die X und Y Koordinaten der darzustellenden grafischen Primitive\\
+\hline
+Größe & Nodes haben die Möglichkeit, die Größe der auszugebenden Elemente anzupassen.
+So kann beispielsweise bei der Verwendung der Circle Node der Radius frei gewählt werden.\\
+\hline
+Helligkeitswert & Nodes haben die Möglichkeit eine Farbe anzunehmen. Durch sie kann
+der Helligkeitswert bestimmt werden.\\
+\hline
+Textur & nicht vorhanden\\
+\hline
+Farbe & Es gibt eine Node die eine Farbe im HSV-Farbraum erzeugt. Mit dieser Node kann die Ausgabe
+anderer Nodes beeinflusst werden.\\
+\hline
+Richtung & Es wurde noch keine Node für die Rotation implementiert.\\
+\hline
+Form & Es gibt unterschiedliche Nodes für unterschiedliche Formen, z.B. Kreis, Rechteck, Punkt und Linie.\\
+\hline
+\end{tabular}
+\caption{visuelle Variablen und ihre Umsetzung in Datasynth}
+\label{tab:vars}
+\end{table}
+
+Für die \textit{flexible Ein- und Ausgabe} wurden in der aktuellen
+Version nur jeweils eine Möglichkeit geschaffen, um eine lauffähige
+Version zu erhalten. Es existiert eine Node die eine CSV-Datei\footnote{kurze
+Erklärung CSV} einliest und enstprechend der Anzahl der vorhanden
+Spalten automatisch Outputpins anlegt, an denen die Spaltenwerte als
+Spreads ausgegeben werden. Für die Ausgabe existiert eine Render Node.
+Diese erzeugt eine Ausgabefenster in variabler Größe.
+
+Die \textit{Performanz} von Datasynth ist gut. Das Grundsystem wurde so
+programmiert, dass Nodes intern nur Rechnen, wenn sich die Eingaberwerte
+an den Inputpins geändert haben. Somit werden komplexe Rechenaufgaben nur
+durchgeführt, wenn der Nutzer Parameter anpasst.
+
+Alle Nodes sind einfache C++ Klassen, die von einer Elternklasse
+alle Variablen und Methoden erben, die für die Verwendung in Datasynth
+nötig sind. Somit ist eine hohe \textit{Erweiterbarkeit} gegeben, da potenziell jede
+Funktionalität, die in einer C++ Klasse implementiert werden kann, auch
+als Node in Datasynth verwendet werden kann.
+
+Durch die Verwendung von openFrameworks und boost als Basis der Entwicklung,
+ist es möglich Datasynth auf allen Plattformen auszuführen, die von openFrameworks
+unterstützt werden. Das sind zur Zeit Linux, Mac OSX, Microsoft Windows, Android
+und Apple iOS. Damit ist Datasynth \textit{cross-platform} einsetzbar.
+
+Datasynth wird öffentlich auf der Plattform GitHub entwickelt.\footnote{Vgl.
+Abschnitt \ref{sec:Technologien}} Als Lizenz wurde die MIT-Lizenz gewählt.
+Diese ermöglicht eine offene aber auch kommerzielle Weiterentwicklung.
+
+Die Anforderungen konnten größtenteils erfüllt werden, datasynth ist aber noch nicht für eine produktive
+arbeitsweise geeignet, da die bearbeitungszeit nur eine grundlegende implementation
+zulässt. dadurch hat datasynth nur einen geringen funktionsumfang und ein primitives
+nutzerinterface, wurde aber konsequent modular und flexibel aufgebaut um erweiterungen
+zuzulassen.
+
 \section{Probleme bei der Entwicklung}
 \label{sec:Probleme}
+Zusätzlich zu den Anforderungen haben sich bei der Entwicklung Probleme aufgetan,
+die im folgenden kurz erläutert werden sollen.
+
 reflection/introspection von c++
 universelle datentypen (schwierig in c++)
 geeignete daten finden
 mulit-window ausgabe (gelöst mit ofxFenster, da glut das nicht hergibt)
-\section{Vorteile}
-\label{sec:Vorteile}
-durhc parameter kann der benutzer die Wertebereiche der Abbildungen direkt verändern
-und kann somit auch ohne komplette kenntnis der daten live die beste "einstellung
-der parameter" herauszufinden, anstatt vorher Metadaten kennen bzw studieren bzw anlegen zu müssen (min,max, ...)
 
-mehrere viz können statisch in einer präsentation kombiniert werden. so kann ohne
-benutzerinteraktion mehrere blickwinkel auf den datensatz ermöglicht werden
-
-\section{Nachteile}
-\label{sec:Nachteile}
-benutzer hat alle freiheiten aber muss dadurch auch die grundregeln der viz beherrschen
-und verstehen ( z.b. kreis radius/fläche, was eignet sich für was am besten)
-gestaltungsregeln müssen vom nutzer angwendet werden um viz zu verstärken
-Klärung der möglichen Fragen, use nach BERTIN (Theorie des graphischen Bildes)
-
-erweiterbarkeit:
-wenn eine gewisse funktionalität noch nicht als node vorliegt, kann diese hinzuprogrammiert
-werden. verweis dabei auf die angedachten features zur erleichterung von nutzer entwicklungen
-mit beispielsweise ruby
-
-das statische:
-fehlende nutzerinteraktion und dadurch fehlende interaktive kombination von viz techniken
-(klick auf glyphe erzeugt eine genaue viz der werte dieses datenobjektes)
-
-low-level-ansatz:
-führt dazu, dass man immer vom urschleim anfangen muss um komplexe objekte zu erzeugen.
-deshalb wichtiges feature: kapselbarkeit von mehreren nodes zu einer komplexen high-level-node
-so könnte man z.b. eine Sunburst node kreiiren die dann zwar 10 anstöpselmöglichkeiten hat aber sonst nix weiter
-man benutzt grafische primitive und manche komplexe viz hat sehr viele primitive in komplexen abhängigkeiten, also kapseln
 
 \chapter{Zusammenfassung}
 \label{cha:Zusammenfassung}
@@ -1146,6 +1203,37 @@ eignet sich die software?! JA NEEIN ?
 
 gut aber durc hdas wesen der software entstehen neue probleme(siehe nachteile)
 die beachtet werden müssen, dafür müssen lösungen her
+
+\subsection{Vorteile}
+\label{sec:Vorteile}
+durhc parameter kann der benutzer die Wertebereiche der Abbildungen direkt verändern
+und kann somit auch ohne komplette kenntnis der daten live die beste "einstellung
+der parameter" herauszufinden, anstatt vorher Metadaten kennen bzw studieren bzw anlegen zu müssen (min,max, ...)
+
+mehrere viz können statisch in einer präsentation kombiniert werden. so kann ohne
+benutzerinteraktion mehrere blickwinkel auf den datensatz ermöglicht werden
+
+\subsection{Nachteile}
+\label{sec:Nachteile}
+benutzer hat alle freiheiten aber muss dadurch auch die grundregeln der viz beherrschen
+und verstehen ( z.b. kreis radius/fläche, was eignet sich für was am besten)
+gestaltungsregeln müssen vom nutzer angwendet werden um viz zu verstärken
+Klärung der möglichen Fragen, use nach BERTIN (Theorie des graphischen Bildes)
+
+erweiterbarkeit:
+wenn eine gewisse funktionalität noch nicht als node vorliegt, kann diese hinzuprogrammiert
+werden. verweis dabei auf die angedachten features zur erleichterung von nutzer entwicklungen
+mit beispielsweise ruby
+
+das statische:
+fehlende nutzerinteraktion und dadurch fehlende interaktive kombination von viz techniken
+(klick auf glyphe erzeugt eine genaue viz der werte dieses datenobjektes)
+
+low-level-ansatz:
+führt dazu, dass man immer vom urschleim anfangen muss um komplexe objekte zu erzeugen.
+deshalb wichtiges feature: kapselbarkeit von mehreren nodes zu einer komplexen high-level-node
+so könnte man z.b. eine Sunburst node kreiiren die dann zwar 10 anstöpselmöglichkeiten hat aber sonst nix weiter
+man benutzt grafische primitive und manche komplexe viz hat sehr viele primitive in komplexen abhängigkeiten, also kapseln
 
 \section{Ausblick}
 \label{sec:Ausblick}
