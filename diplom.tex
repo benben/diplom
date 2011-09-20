@@ -1071,7 +1071,7 @@ in eine Node zu kapseln und für die visuelle Programmierung von Datasynth zu ve
 \label{fig:node}
 \end{figure}
 
-In Abbildung \ref{fig:node} werden einzelne Ausschnitte aus dem Hauptprogramm gezeigt.
+In Abbildung \ref{fig:core} werden einzelne Ausschnitte aus dem Hauptprogramm gezeigt.
 In diesem Programm läuft die Hauptschleife ab, die alle Benutzereingaben behandelt,
 das Aktualisieren und Berechnen aller Nodes durchführt und Nodes und Connections
 hinzufügt oder löscht.
@@ -1079,7 +1079,7 @@ hinzufügt oder löscht.
 \centering
 \lstinputlisting[language=C++]{code/core.cpp}
 \caption{Erzeugung von Objekten einer Klasse bestimmt durch eine Zeichenkette.}
-\label{fig:node}
+\label{fig:core}
 \end{figure}
 
 \chapter{Auswertung}
@@ -1177,11 +1177,31 @@ zuzulassen.
 Zusätzlich zu den Anforderungen haben sich bei der Entwicklung Probleme aufgetan,
 die im folgenden kurz erläutert werden sollen.
 
-reflection/introspection von c++
-universelle datentypen (schwierig in c++)
-geeignete daten finden
-mulit-window ausgabe (gelöst mit ofxFenster, da glut das nicht hergibt)
+Da C++ eine sehr maschinennahe Sprache ist und auf Performance optimiert ist,
+ist es schwierig sogenannte Reflections und Introspections durchzuführen.
+So können beispielsweise nicht während der Laufzeit einzelne Informationen
+über eine Klasse abgefragt werden oder verändert werden. DAs können zum Beispiel
+die Ausgabe aller vorhandenen Methoden und Variablen eines Objektes sein.
+Um trotzdem dynamisch und flexibel Nodes zur Laufzeit anlegen zu können, wurde
+daher ein Weg gewählt der auf Vererbung und der Obejekterzeugung aus Abbildung
+\ref{fig:factory} besteht. Um dieses Problem zu lösen, könnte auf eine
+höhere Skriptsprache wie beispielsweise Ruby\footnote{Ruby ist ausgelegt
+zur Laufzeit Klassen zu untersuchen und modifizieren.} zurückgegriffen werden,
+um einzelne Teile des Hauptprogramms zu realisieren.
 
+Universelle Datentypen sind in C++ nihct vorhanden. Um die Verbindungen
+zwischen den einzelnen Nodes datentypagnostisch zu halten wurde ein
+eigener Datentyp Spread definiert.\footnote{Eine Definition des Spreads erfolgte im Abschnitt \ref{sec:vizPro}}
+Dieser enthält durch den boost::variant Container eine Möglichkeit primitive DAtentypen
+wie Gleitkommazahlen und String abzuspeichern. Vor der Verwendung in einer Node müssen diese
+Datentypen wieder hergestellt werden.
+
+openFrameworks unterstützt nicht das Erstellen und Verwenden mehrerer
+unabhängiger Fenster, wie es für Datasynth notwendig ist. Deshalb wurde
+auf das ofxFenster Addon zurückgegriffen, welches die Fensterverwaltung
+mit einem System austauscht.\footnote{openFrameworks verwendet standardmässig GLUT
+zur Fensterverwaltung. Das ofxFenster Addon benutzt dagegen das neuere und
+flexiblere GHOST aus dem Blender-Projekt.}
 
 \chapter{Zusammenfassung}
 \label{cha:Zusammenfassung}
