@@ -1082,6 +1082,37 @@ hinzufügt oder löscht.
 \label{fig:core}
 \end{figure}
 
+\section{Probleme bei der Entwicklung}
+\label{sec:Probleme}
+Zusätzlich zu den Anforderungen haben sich bei der Entwicklung Probleme aufgetan,
+die im folgenden kurz erläutert werden sollen.
+
+Da C++ eine sehr maschinennahe Sprache ist und auf Performance optimiert ist,
+ist es schwierig sogenannte Reflections und Introspections durchzuführen.
+So können beispielsweise nicht während der Laufzeit einzelne Informationen
+über eine Klasse abgefragt werden oder verändert werden. DAs können zum Beispiel
+die Ausgabe aller vorhandenen Methoden und Variablen eines Objektes sein.
+Um trotzdem dynamisch und flexibel Nodes zur Laufzeit anlegen zu können, wurde
+daher ein Weg gewählt der auf Vererbung und der Obejekterzeugung aus Abbildung
+\ref{fig:factory} besteht. Um dieses Problem zu lösen, könnte auf eine
+höhere Skriptsprache wie beispielsweise Ruby\footnote{Ruby ist ausgelegt
+zur Laufzeit Klassen zu untersuchen und modifizieren.} zurückgegriffen werden,
+um einzelne Teile des Hauptprogramms zu realisieren.
+
+Universelle Datentypen sind in C++ nihct vorhanden. Um die Verbindungen
+zwischen den einzelnen Nodes datentypagnostisch zu halten wurde ein
+eigener Datentyp Spread definiert.\footnote{Eine Definition des Spreads erfolgte im Abschnitt \ref{sec:vizPro}}
+Dieser enthält durch den boost::variant Container eine Möglichkeit primitive DAtentypen
+wie Gleitkommazahlen und String abzuspeichern. Vor der Verwendung in einer Node müssen diese
+Datentypen wieder hergestellt werden.
+
+openFrameworks unterstützt nicht das Erstellen und Verwenden mehrerer
+unabhängiger Fenster, wie es für Datasynth notwendig ist. Deshalb wurde
+auf das ofxFenster Addon zurückgegriffen, welches die Fensterverwaltung
+mit einem System austauscht.\footnote{openFrameworks verwendet standardmässig GLUT
+zur Fensterverwaltung. Das ofxFenster Addon benutzt dagegen das neuere und
+flexiblere GHOST aus dem Blender-Projekt.}
+
 \chapter{Auswertung}
 \label{cha:Auswertung}
 
@@ -1166,135 +1197,94 @@ Datasynth wird öffentlich auf der Plattform GitHub entwickelt.\footnote{Vgl.
 Abschnitt \ref{sec:Technologien}} Als Lizenz wurde die MIT-Lizenz gewählt.
 Diese ermöglicht eine offene aber auch kommerzielle Weiterentwicklung.
 
-Die Anforderungen konnten größtenteils erfüllt werden, datasynth ist aber noch nicht für eine produktive
-arbeitsweise geeignet, da die bearbeitungszeit nur eine grundlegende implementation
-zulässt. dadurch hat datasynth nur einen geringen funktionsumfang und ein primitives
-nutzerinterface, wurde aber konsequent modular und flexibel aufgebaut um erweiterungen
-zuzulassen.
-
-\section{Probleme bei der Entwicklung}
-\label{sec:Probleme}
-Zusätzlich zu den Anforderungen haben sich bei der Entwicklung Probleme aufgetan,
-die im folgenden kurz erläutert werden sollen.
-
-Da C++ eine sehr maschinennahe Sprache ist und auf Performance optimiert ist,
-ist es schwierig sogenannte Reflections und Introspections durchzuführen.
-So können beispielsweise nicht während der Laufzeit einzelne Informationen
-über eine Klasse abgefragt werden oder verändert werden. DAs können zum Beispiel
-die Ausgabe aller vorhandenen Methoden und Variablen eines Objektes sein.
-Um trotzdem dynamisch und flexibel Nodes zur Laufzeit anlegen zu können, wurde
-daher ein Weg gewählt der auf Vererbung und der Obejekterzeugung aus Abbildung
-\ref{fig:factory} besteht. Um dieses Problem zu lösen, könnte auf eine
-höhere Skriptsprache wie beispielsweise Ruby\footnote{Ruby ist ausgelegt
-zur Laufzeit Klassen zu untersuchen und modifizieren.} zurückgegriffen werden,
-um einzelne Teile des Hauptprogramms zu realisieren.
-
-Universelle Datentypen sind in C++ nihct vorhanden. Um die Verbindungen
-zwischen den einzelnen Nodes datentypagnostisch zu halten wurde ein
-eigener Datentyp Spread definiert.\footnote{Eine Definition des Spreads erfolgte im Abschnitt \ref{sec:vizPro}}
-Dieser enthält durch den boost::variant Container eine Möglichkeit primitive DAtentypen
-wie Gleitkommazahlen und String abzuspeichern. Vor der Verwendung in einer Node müssen diese
-Datentypen wieder hergestellt werden.
-
-openFrameworks unterstützt nicht das Erstellen und Verwenden mehrerer
-unabhängiger Fenster, wie es für Datasynth notwendig ist. Deshalb wurde
-auf das ofxFenster Addon zurückgegriffen, welches die Fensterverwaltung
-mit einem System austauscht.\footnote{openFrameworks verwendet standardmässig GLUT
-zur Fensterverwaltung. Das ofxFenster Addon benutzt dagegen das neuere und
-flexiblere GHOST aus dem Blender-Projekt.}
+Die Anforderungen konnten mit wenigen Einschränkungen erfüllt werden.
 
 \chapter{Zusammenfassung}
 \label{cha:Zusammenfassung}
-1. zusammenfassung der ergebnisse, lesson learned
-???
-2. optional: persönliche bemerkungen, hinweis auf weiteren forschungsbedarf, ausblick in dei zukunft
-was kannnoch alles an der Software getan werden?
-
--> datasynth als Erkundungstool für daten, als datenleser (ist das nicht auch eine kompetenz
-die man entwickeln sollte: daten lesen und verstehen zu können, also heisst es nicht auch heutzutage
-und in zukunft immer mehr: daten verstehen heißt die welt verstehen)
-
-einordnung der software mit vergleichen zu anderen apps (grundlage sind funktionalität, 
-lso was kommt dabei raus) ist so ein ding zwischen statistiktool spss, 
-
 \section{Fazit}
 \label{sec:Fazit}
-eignet sich die software?! JA NEEIN ?
 
-gut aber durc hdas wesen der software entstehen neue probleme(siehe nachteile)
-die beachtet werden müssen, dafür müssen lösungen her
+Der Grundgedanke der Informationsvisualisierung, die Verbindung
+von abstrakten Daten mit visuellen Variablen, wird in der Benutzeroberfläche
+von Datasynth aufgegriffen. So können Nodes, die Datenquellen einlesen und verarbeiten, über
+Nodes für Parameter, mit Nodes verbunden werden, die eine grafische
+Darstellung erzeugen. Dabei besteht die Möglichkeit, die Auswirkungen von
+Parameteränderungen direkt beobachten zu können.
+Dadurch erhält der Benutzer die Möglichkeit sich in einem iterativen
+Prozess kreativ mit den Daten auseinanderzusetzen, ohne sich dabei Gedanken
+machen zu müssen, wie große Datenmengen technisch in visuelle Variablen
+übersetzt werden können.
+Dadurch wird eine explorative Datenanalyse möglich.
+Denn auch ohne genaue Kenntnis einer Datenmengen, kann durch visuelles Experimentieren
+Erkenntnisse über die Beschaffenheit dieser getroffen werden.
+Durch die Möglichkeit direkt das grundlegende Zeichensystem\footnote{Vgl. Abschnitt \ref{sec:graphischeSemiologie}} einer
+grafischen Darstellung zu verändern, können mehrere DArstellungsformen
+miteinander kombiniert werden. Diese hybriden Darstellungen eignen sich,
+um zu überprüfen, wie geeignet unterschiedliche Blickwinkel auf eine Datenmenge sind.
 
-\subsection{Vorteile}
-\label{sec:Vorteile}
-durhc parameter kann der benutzer die Wertebereiche der Abbildungen direkt verändern
-und kann somit auch ohne komplette kenntnis der daten live die beste "einstellung
-der parameter" herauszufinden, anstatt vorher Metadaten kennen bzw studieren bzw anlegen zu müssen (min,max, ...)
+Da der Benutzer alle Freiheiten bei der Gestaltung hat, muss er die
+Grundregeln für die grafische Darstellung und allgemeine Gestaltungsregeln beherrschen.
+Datasynth hat dafür noch keine Benutzerhilfen implementiert.
+So muss der Benutzer selbst entscheiden, welche visuellen Variablen sich wie 
+gut für eine bestimmte Aufgabe eignen.
+Datasynth hat nur die Mgölcihkeit der GEnerierung statischer Bilder.
+Für eine Informationsvisualisierung ist es in manchen Fällen sinnvoll Interaktionsmöglichkeiten
+zu ermöglichen um die grafische Darstellung noch effektiver benutzen zu können.\footnote{Beispielsweise
+kann die Möglichkeit eines Zooms implementiert werden, oder beim Klicken auf ein bestimmten
+Bereich der grafischen Darstellung werden zusätzliche Informationen angezeigt.}
+Durch den sehr grundlegenden Ansatz bei dem grafische Darstellungen mithilfe ihrer
+visuellen Variablen erzeugt werden, ist es mit der aktuellen Version von DAtasynth
+noch sehr aufwändig komplexe Objekte zu erzeugen. Eine Gruppierung von Nodes
+könnte dabei abhilfe schaffen und beispielsweise eine Tortendiagramm Node ermöglichen,
+die aus verschiedenen anderen Nodes besteht.\footnote{Vgl. Abschnitt \ref{sec:Ausblick}}
 
-mehrere viz können statisch in einer präsentation kombiniert werden. so kann ohne
-benutzerinteraktion mehrere blickwinkel auf den datensatz ermöglicht werden
-
-\subsection{Nachteile}
-\label{sec:Nachteile}
-benutzer hat alle freiheiten aber muss dadurch auch die grundregeln der viz beherrschen
-und verstehen ( z.b. kreis radius/fläche, was eignet sich für was am besten)
-gestaltungsregeln müssen vom nutzer angwendet werden um viz zu verstärken
-Klärung der möglichen Fragen, use nach BERTIN (Theorie des graphischen Bildes)
-
-erweiterbarkeit:
-wenn eine gewisse funktionalität noch nicht als node vorliegt, kann diese hinzuprogrammiert
-werden. verweis dabei auf die angedachten features zur erleichterung von nutzer entwicklungen
-mit beispielsweise ruby
-
-das statische:
-fehlende nutzerinteraktion und dadurch fehlende interaktive kombination von viz techniken
-(klick auf glyphe erzeugt eine genaue viz der werte dieses datenobjektes)
-
-low-level-ansatz:
-führt dazu, dass man immer vom urschleim anfangen muss um komplexe objekte zu erzeugen.
-deshalb wichtiges feature: kapselbarkeit von mehreren nodes zu einer komplexen high-level-node
-so könnte man z.b. eine Sunburst node kreiiren die dann zwar 10 anstöpselmöglichkeiten hat aber sonst nix weiter
-man benutzt grafische primitive und manche komplexe viz hat sehr viele primitive in komplexen abhängigkeiten, also kapseln
+Datasynth eignet sich, trotz weniger Einschränkungen, für die Erstellung einer grafischen Darstellung der
+Informationsvisualisierung. Durch die intuitive Benutzeroberfläche ist
+ein schnelles Experimentieren mit den Daten möglich und
+erste Skizzen für eine Informationsvisualisierung sind schnell erstellt.
+Durch die eingeschränkte Bearbeitungszeit dieser Arbeit konnte Datasynth nur mit
+einem geringen Funktionsumfang und einer einfachen Benutzeroberfläche implementiert werden.
+Um die Produktivität bei der Arbeit mit Datasynth zu erhöhen, kann die Software
+mit einigen Funktionen erweitert werden.
 
 \section{Ausblick}
 \label{sec:Ausblick}
-Da die software lediglich einen Prototypen darstellt ergeben sich mannigfalitge
-Erweiterungsmöglichkeiten. Hier sollen einige weniger, dafür aber sehr wichtige
-mögliche Erweiterungen genannt werden.
-
-ruby
-erweiterung auf andere bereiche des visualisierungsprozesses
-kapselung von patches
-  vielfältige möglichkeiten wie
-    erweiterung und kapselung von verschiedenen viz templates als nodes (Isofläche Node oder Flow Ribbons)
-    eigene erstellung von ikonen /vgl. schumann s. 197)
-    (dazu erfüllt datasynth alle genannten anforderungen von sich aus (editor, binder, viewer)
-
-v4p laden und speichern möglich! crazy!
-
-erweiterung der ausgabemöglichkeiten (statt ausgabe auf bildschirm, ausgabe als
-postscript, ausgabe als interaktive 3D HTML5 Anwendung (dazu wären navigations
-und interaktionsmöglichkeiten notwendig (vgl. schumann s. 175), ...)
-
-eng verbunden damit sind die möglichkeit allgemeine interaktionsmöglichkeiten
-einzubauen um parameter für beispielsweise selektionsbedingungen auch von
-end-anwendern der viz benutzbar zu machen
-
-evaluationsmöglichkeit (wie kann ich schon in datasynth testen ob die ausgabe
-geeignet ist) (muss erforscht werden)
-
-automatische generierung von legenden/skalen(+einteilungen), muss erforscht
-werden inwieweit das überhaupt machbar ist bei einem so universellen ansatz
-oder ob es nicht doch besser ist, diese dinge der nachbearbeitung zu überlassen
-(weil datasynth ja nur die massen-arbeit machen soll und nicht einzelne details am ende)
-
-eventbasierte steuerung
-
-threaded nodes
-
-reiner export als abstrakte werte (koordinaten, höhe, breite, typ) in gängige 3D-Austausch-Formate
-
-export von einzelnen teilbereichen (ebenen) zur graphischen weiterverarbeitung mit anderer software
-
+Da Datasynth lediglich einen Prototypen darstellt, ergeben sich vielfältige
+Ansätzer für die Erweiterung. Einige Möglichkeiten bedingen weiterer 
+Forschungsarbeit und können nur als Thesen betrachtet werden. Im folgenden
+wird eine Auswahl für Erweiterungsmöglichkeiten aufgelistet.
+\begin{description}
+\item[Skriptsprache]
+Es können universelle Nodes geschaffen werden, die vom Benutzer mit einer höheren
+Skriptsprache programmiert werden können. Damit können fehlende Funktionalitäten
+eigenhändig implementiert werden und Datasynth erweitert werden.
+Auch die Anwendung in der eigentlichen Software kann von Vorteil sein um die in
+Abschnitt \ref{sec:Probleme} genannten Probleme zu umgehen. Dabei sollte dann nur
+die rechenintensive Programmlogik in C++ implementiert werden.
+\item[Gruppierung von Nodes]
+Um schnell und effizient komplexe grafische Darstellungen generieren zu können,
+ist eine Gruppierung von Nodes sinnvoll. Damit können Templates entstehen,
+die eine grafische Darstellung in einer Node kapseln. So sind einzelne Nodes
+für Tortendiagramme oder Netzwerkstrukturen denkbar.
+\item[weitere Ausgabemöglichkeiten]
+Zusätzlich zu der Ausgabe als einzelnes Bild sind weitere Formate sinnvoll.
+So könnten Nodes implementiert werden, die eine Ausgabe als Postscript oder
+in gängige 3D-Formate ermöglichen. Um die Weiterverarbeitung der erzeugten
+Ausgaben effizienter zu machen, beitet sich der Export einzelner Teilbereiche
+an. So könnte beispielsweise aus einem erzeugten Bild einzelne Ebenen exportiert werden.
+\item[Interaktionsmöglichkeiten]
+Zusätzlich zur rein statischen Darstellung können mit Datasynth
+Interaktionsmöglichkeiten festgelegt werden. So ist eine automatische
+Ausgabe als interaktive HTML5 Website denkbar, bei der einzelne Elemente
+anklickbar und durch Benutzerinterkation veränderbar sind. Außerdem sind 
+Zoomfunktionen denkbar um dem Betrachter weitere Möglichkeiten zur
+Erkundung der grafischen DArstellung zu geben.
+\item[Evaluation]
+Datasynth kann dem Nutzer behilflich sein, die richtige Form
+der grafischen DArstellung zu finden und ihn mit adäquaten Mitteln darauf
+hinweisen wie gut oder schlecht sich gewisse Darstellungen eignen.
+\end{description}
+    
 \chapter{Anhang}
 \section{Liste von bestehender Softwarelösungen}
 todo: alle links zusammensuchen
