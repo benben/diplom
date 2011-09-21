@@ -36,7 +36,7 @@ backgroundcolor=\color{light-gray}
 \author{Benjamin Knofe}
 \subject{Diplomarbeit}
 \publishers{Hochschule für Technik, Wirtschaft und Kultur Leipzig}
-\dedication{Dank an \\ Christina Sanko, Pyry Jahkola, Ted Mosby, Sarah Walter, Professor Dr. Robert Müller, Philip Whitfield}
+\dedication{Dank an \\ Christina Sanko, Pyry Jahkola, Ted Mosby, Sarah Walter, Stephan Keller, Professor Dr. Robert Müller, Philip Whitfield}
 \maketitle
 \tableofcontents
 
@@ -116,8 +116,8 @@ und Grafikobjekten auch auf der Benutzeroberfläche deutlich gemacht werden.
 Um eine iterative und kreative Benutzung zu ermöglichen, muss der arbeitsintensive Vorgang
 der Transkription großer Datenmengen in eine grafische Darstellung
 automatisch und unmittelbar erfolgen.
-Eine auf diese Aspekte spezialisierte Software konnte bei der
-Recherche für diese Arbeit nicht gefunden werden. Die Konzeption einer solchen Software ist Gegenstand dieser Arbeit.
+
+Die Konzeption einer auf diese Aspekte spezialisierte Software ist Gegenstand dieser Arbeit.
 \section{Aufbau der Arbeit}
 Um einen Lösungansatz für das Problem einer universellen Informationsvisualisierung
 zu finden, werden in dieser Arbeit Schritte durchgeführt, die die Konzeption einer Software zum Ziel haben.
@@ -700,7 +700,7 @@ werden.
 \label{fig:benfryprocess_marked}
 \end{figure}
 
-\section{Rahmenbedingungen}
+\section{Vorbetrachtungen}
 Für die Arbeit mit der Infomationsvisualisierung gelten einige Rahmenbedingungen, die vor der
 Konzeption einer Software beachtet werden müssen.
 
@@ -740,7 +740,7 @@ des Ausgabegerätes übernommen.
 Mögliche Farbwerte der einzelnen Bildpunkte und damit die Farbräume der Ausgabegeräte
 müssen beachtet werden. Die Ausgabe auf Computermonitoren erfolgt im RGB-Farbraum während
 für Druckerzeugnisse unterschiedliche Farbräume möglich sind.
-
+meens
 Die Rahmenbedingungen der Bildsynthese konnten in diesem Abschnitt nur grundlegend beschrieben
 werden. Eine tiefgreifendere Beschreibung des Themas erfolgt in \citep{Computergrafik}.
 
@@ -861,10 +861,10 @@ ist nicht gegeben.
 
 \chapter{Umsetzung eines Prototyps}
 \label{cha:Umsetzung}
-In diesem Kapitel wird das Konzept in prototypisch implementiert.
+In diesem Kapitel wird das Konzept prototypisch implementiert.
 Dieser Prototyp trägt den Namen \textit{Datasynth}.
 Um der Bearbeitungszeit dieser Arbeit gerecht zu werden, können nur grundlegende Funktionen
-programmiert werden.
+umgesetzt werden, die notwendig sind, um das Prinzip der Software zu verdeutlichen.
 
 \section{Technologien}
 \label{sec:Technologien}
@@ -873,13 +873,13 @@ Deren Einsatz wird nachfolgend kurz erläutert.
 \begin{description}
 \item[C++]
 C++ ist eine objektorientierte Programmiersprache. Sie bietet
-eine maschinennahe Möglichkeit Programme zu schreiben.
-Datasynth nutzt durch openFrameworks und boost die Vorteile
+eine maschinennahe Möglichkeit, um Programme zu schreiben.
+Datasynth nutzt durch openFrameworks und boost einige Vorteile
 von C++. Dazu gehören die höhere Geschwindigkeit beim Ausführen
-und die einfache Einbindung anderer Bibliotheken wie 
+und die einfache Einbindung anderer Bibliotheken, wie 
 beispielsweise OpenGL für Grafikoperationen. Außerdem
 finden das Programmierparadigma der Objektorientierung
-in den einzelnen Nodes Awendung.
+in den einzelnen Nodes von Datasynth Anwendung.
 \item[openFrameworks]
 \begin{figure}
 \centering
@@ -889,18 +889,21 @@ in den einzelnen Nodes Awendung.
 \end{figure}
 ist ein in C++ geschriebenes Framework. Es soll durch seine
 Einfachheit und Intuitivität den kreativen Prozess und das
-Experimentieren mit Software unterstützen. openFrameworks
+Experimentieren unterstützen. openFrameworks
 kapselt viele unterschiedliche Bibliotheken für die
 computergestützte audio-visuelle Verarbeitung in eine gemeinsame,
 konsistente und einfache Programmierschnittstelle. Beispielsweise
 wird die Bibliothek openGL für Grafiken verwendet und die
 Bibliothek rtAudio für die Ein- und Ausgabe von Audiosignalen.
+Das erlaubt dem Programmierer eine schnelle und effiziente Arbeitsweise ohne
+lange Einarbeitungszeiten und ist daher für Datasynth optimal.
 Die Programmierschnittstelle von openFrameworks enthält
-wenige Klassen mit wenigen Funktionen um dem Benutzer einen
-einfachen Einstieg zu ermöglichen.\footnote{Vgl. \citep{of1} und \citep{of2}}
-Weiterhin ist openFrameworks kompatibel zu den Plattformen
-Linux, Mac OSX, Windows und erfüllt neben den genannten Vorteilen
-eine weitere Anforderung aus Abschnitt \ref{sec:Anforderungen}.
+wenige Klassen mit wenigen Funktionen um überschaubar zu bleiben.\footnote{Vgl. \citep{of1} und \citep{of2}}
+Für spezielle Anforderungen kann auf die eigentlichen Bibliotheken
+zurückgegriffen werden.
+openFrameworks ist kompatibel zu den Plattformen
+Linux, Mac OSX, Windows und erfüllt, neben den genannten Vorteilen,
+die Anforderung der Plattformunabhängigkeit aus Abschnitt \ref{sec:Anforderungen}.
 Die Funktionsweise von openFrameworks wird in Abbildung
 \ref{fig:of} verdeutlicht. 
 Die Programmlogik, das Benutzerinterface und alle Ein- und
@@ -911,24 +914,23 @@ ist eine Sammlung von unterschiedlichen C++ Programmierbibliotheken.
 Diese Bibliotheken sind portabel einsetzbar und steigern die
 Produktivität beim Entwickeln einer Software, da sie unterschiedliche
 Anwendungsbereiche von C++ erweitern und vereinfachen.
-Einzelne Bibliotheken der Sammlung werden in neuen C++ Standard
+Einzelne Bibliotheken der Sammlung werden in den neuen C++ Standard
 übernommen, um C++ selbst zu verbessern.
 Für Datasynth werden die Bibliotheken für Zeiger, Container
-und generische Programmierung verwendet, um zur Laufzeit flexibel
-auf Benutzereingaben reagieren zu können.
+und generische Programmierung verwendet, um die Entwicklung weiter zu vereinfachen.
 \item[GitHub]
-ist eine Plattform für das gemeinsame Entwickeln von Software.\footnote{Vgl. http://www.github.com}
+ist eine Internetplattform für das gemeinsame Entwickeln von Software.\footnote{Vgl. http://www.github.com}
 Sie basiert auf dem Versionverwaltungstool git, welches entwickelt wurde
 um Änderungen an Quellcode aufzuzeichnen und diesen zwischen mehreren
-Entwicklern teilen zu können. GitHub verbindet diese Funktionalität mit
-einer Art sozialem Netzwerk, bei der verschiedene Nutzer kollaborativ
+Entwicklern teilen zu können. GitHub verbindet die Funktionalitätvon git mit
+einem sozialen Netzwerk, bei der verschiedene Nutzer kollaborativ
 an einer Software arbeiten können. Datasynth ist auf Github verfügbar.\footnote{Vgl. http://www.github.com/benben/datasynth}
 \end{description}
 \section{Visuelle Programmierung}
 \label{sec:visPro}
 Um dem breiten Spektrum an Anforderungen gerecht zu werden,
-wird Datasynth mit einem Konzept der visuellen Programmierung gesteuert.
-\citep[S.\,XXX]{Henning} definieren visuelle Programmierung wie folgt:
+wird Datasynth mit einer Form der visuellen Programmierung gesteuert.
+\citep[S.\,56]{Henning} definieren visuelle Programmierung wie folgt:
 \begin{quote}
 "`Es handelt sich hierbei um ein in integrierten Entwicklungsumgebungen mit
 grafischer Benutzeroberfläche verwendetes Hilfsmittel, bei welchem grafisch
@@ -949,74 +951,81 @@ verlinkt werden."'
 \end{figure}
 Im Gegensatz zur textuellen Programmierung, bei der Buchstaben, Zeichen und Wörter
 verwendet werden, um Quellcode zu schreiben, wird die Programmlogik bei ber
-visuellen Programmierung durch grafische Elemente durchgeführt.
-Statt vorgefertigte Funktionsnamen und Aufrufe in textueller Form zu schreiben, werden einzelne grafische
-Elemente mit unterschiedlichen Funktionen erstellt und verbunden. Die visuelle Programmierung
+visuellen Programmierung durch grafische Elemente erstellt.
+Statt vorgefertigte Funktionsnamen und Aufrufe zu schreiben, werden einzelne grafische
+Elemente mit unterschiedlichen Aufgaben erzeugt und diese untereinander verbunden. Die visuelle Programmierung
 in Datasynth wird fast ausschließlich mit der Maus durchgeführt.
-Als Beispiel werden in Abbildung
-\ref{fig:textuell} werden die vier Grundrechenarten auf zwei Variablen angewendet.
+Als Beispiel wird in Abbildung
+\ref{fig:textuell} eine textuelle Programmierung mit Pseudocode gezeigt, die zwei Variablen mit den vier Grundrechenarten verbindet.
 In Abbildung \ref{fig:datasynth_basic} wird die gleiche Berechnung mit Datasynth
 in visueller Programmierung umgesetzt.
 
-Für Datasynth wurden einzelne Klassen definiert, die das Konzept der visuellen
-Programmierung umsetzen. In der folgenden Auflistung werden die einzelnen
+Für Datasynth wurden einzelne Klassen definiert, die in ihrer Summe das Konzept der visuellen
+Programmierung bilden. In der folgenden Auflistung werden die einzelnen
 Elemente und ihre Funktionsweise beschrieben
 \begin{description}
 \item[Node]
 Ein Node ist ein Knoten in dem Funktionalität gekapselt ist. Vergleichbar ist dieses
-Element mit einer Funktion in der textuellen Programmierung, kann also
+Element mit einer Funktion in der textuellen Programmierung. Eine Node kann also
 beliebig viele Parameter zur Eingabe haben. Im Gegensatz zu einer Funktion der textuellen
-Programmierung mit nur einem Rückgabewert kann eine Node beliebig viele Ausgabewerte haben.
-Eine Node zwischen der Eingabe und der Ausgabe unterschiedlichste Berechnungen durchführen.
-Diese Berechnungen werden unabhängig vom Rest der Software durchgeführt.
+Programmierung mit nur einem Rückgabewert, können beliebig viele Ausgabewerte zurückgegeben werden.
+Eine Node kann zwischen der Eingabe und der Ausgabe unterschiedlichste Berechnungen durchführen.
+Diese können unter anderem arithmetischer oder logischer Natur sein. Eine Node kann beispielsweise
+Zahlen miteinander multiplizieren oder bei einem bestimmten Grenzwert von true nach false
+umschalten.
+Alle Berechnungen werden unabhängig von allen anderen vorhandenen Nodes durchgeführt.
 \item[Pin]
 Ein Pin beschreibt die unterschiedlichen Ein- und Ausgabewerte einer Node.
 Es wird dabei zwischen Input und Output Pins unterschieden. Über die unterschiedlichen
-Inputpins können unterschiedliche Werte mit verschiedenen DAtentypen übergeben werden.
+Inputpins können verschiedene Werte übergeben werden, die für eine Berechnung in der Node notwendig sind.
 Diese werden von der Node verarbeitet und die Ergebnisse dieser Berechnung
 über die Outputpins ausgegeben.
+Vergleichbar sind die Inputpins mit den Parametern einer Funktion in der textuellen Programmierung.
+Die Output Pins können als Rückgabewerte einer Funktion verstanden werden.
 \item[Connection]
-Eine Connection ist eine Verbindung zwischen zwei Pins. Dabei wird ein Outputpin einer
-Node mit dem Inputpin einer anderen Node verbunden und somit Werte übergeben. Eine Connection
-ist mit der Zuweisung in der textuellen Programmierung vergleichbar.
+Eine Connection ist die Verbindung zwischen zwei Pins. Dabei wird vom Benutzer ein Outputpin einer
+Node mit dem Inputpin einer anderen Node verbunden. Nur durch diese Verbindung können
+Nodes miteinander kommunizieren und Werte austauschen. Eine Connection
+ist mit einer Zuweisung in der textuellen Programmierung vergleichbar.
 \item[Spread]
-Ein Spread ist eine Struktur, die als universeller Datentyp funktioniert.
-Eingabe und Ausgabe von Nodes können nur Spreads sein. Spreads sind eine 
+Ein Spread ist eine Struktur, die in Datasynth als universeller Datentyp funktioniert.\footnote{Der
+Begriff Spread wurde aus der Software vvvv übernommen. Vgl. Abschnitt \ref{sec:bestehendeSoftware}}
+Eingabe- und Ausgabewerte von Nodes können nur Spreads sein. Spreads sind eine 
 eindimensionale Liste von Werten. Diese Werte können unterschiedliche Datentypen,
 wie beispielsweise Gleitkommazahlen oder Zeichenketten, haben. Im einfachsten Fall hat
-ein Spread nur ein einziges Element, ist damit also eine Konstante. In komplexeren
-Anwendungen kann ein Spread eine große Anzahl an Elementen enthalten die beispielsweise
+die Liste eines Spreads nur ein einziges Element, ist damit also eine Konstante. In komplexeren
+Anwendungen kann ein Spread eine große Anzahl an Elementen enthalten, die beispielsweise
 aus einer Datentabelle stammen. Somit kann der Benutzer eine Reihe von Zahlen mit
 einer Konstante multiplizieren ohne die Anzahl der einzelnen Werte eines Spreads
-beachten zu müssen.
+beachten zu müssen, da Datasynth automatisch Spreads miteinander verrechnen kann.
 \end{description}
 
 Der Einsatz von visueller Programmierung als Bedienkonzept für Datasynth hat
 mehrere Vorteile. Das Verbinden von Nodes, die als Datenquelle funktionieren, mit Nodes, die
 zur Ausgabe von grafischen Primitiven dienen, greift das grundlegende
 Prinzip der Informationsvisualisierung auf.\footnote{Vgl. Abschnitt \ref{sec:Grundprinzip}}
-Weiterhin sind keine Programmierkenntnisse erforderlich um eine Informationsvisualisierung
-vorzunehmen. Stattdessen reicht ein durchschnittliches mathematisches Verständnis.
+Darüber hinaus sind keine Programmierkenntnisse erforderlich, um eine Informationsvisualisierung
+erstellen zu können. Ein durchschnittliches mathematisches Verständnis reicht für einfache Aufgaben aus.
 Durch die universelle Form der Benutzerschnittstelle ist ein iteratives
-Experimentieren möglich und somit kann Datasynth genutzt werden um schnell eine
-Idee für die Informationsvisualisierung zu skizzieren.
+Experimentieren möglich und Datasynth kann genutzt werden, um unkompliziert eine
+Idee für die Informationsvisualisierung festzuhalten.
 Die komplexen internen Abläufe werden dabei hinter einem intuitiven und einfachen Interface
 versteckt. Dadurch können "`context switches"'\footnote{Vgl. \citep[S.\,50]{Tufte}}
-vermieden werden. Diese treten auf wenn zwischen unterschiedlichen Programmansichten gewechselt
-werden muss. Datasynth zeigt den Bereich für die visuelle Programmierung und die Ausgabe
-immer gleichzeitig. Auch das Verändern von Parametern, wirkt sich unmittelbar auf die Ausgabe
+vermieden werden. Diese treten auf, wenn der Benutzer zwischen unterschiedlichen Programmansichten wechseln
+muss. Datasynth kann den Bereich für die Benutzerinteraktion und die Ausgabe
+immer gleichzeitig anzeigen. Auch das Verändern von Parametern wirkt sich unmittelbar auf die Ausgabe
 aus. Der Nutzer kann dadurch sofort erkennen, welchen Einfluss seine Benutzereingaben bewirken und
 kann diese vergleichen und anpassen um schnell zum gewünschten Ergebnis zu kommen.
 Abbildung \ref{fig:datasynth} stellt dieses Prinzip an einem Beispiel dar.
 \begin{figure}
 \centering
 \includegraphics[width=\linewidth]{images/datasynth.pdf}
-\caption{Ein Beispiel der Benutzeroberfläche von Datasynth. Die oberen zwei Fenster und
-die unteren zwei Fenster stellen zwei unterschiedliche Stadien der Software dar.
-Im oberen linken Fenster wird ein Kreis gezeichnet. Dieser hat einen Radius von 20 Pixel, da
-die rechte obere Node einen Wert von 20 Pixel an den Pin für den Radius des Kreises übergibt.
-Im unteren Stadium ändert sich der Wert dieser Node auf 125. Dadurch verändert sich unmittelbar
-auch die Darstellung des Kreises, da der Radius mit dem Wert dieser Node verbunden ist.}
+\caption{Ein Beispiel der Benutzeroberfläche von Datasynth. Zwischen der oberen Reihe
+und der unteren Reihe von Fenstern hat eine Benutzerinteraktion stattgefunden.
+Im oberen rechten Fenster wird ein Kreis gezeichnet. Dieser hat einen Radius von 20 Pixel, da
+die rechte obere Node im linken Fenster einen Wert von 20 Pixel an den Pin für den Radius des Kreises übergibt.
+In der unteren Reihe wurde der Wert auf 125 geändert. Dadurch verändert sich unmittelbar
+auch die Darstellung, da der Radius des Kreises mit dem Wert dieser Node verbunden ist.}
 \label{fig:datasynth}
 \end{figure}
 
