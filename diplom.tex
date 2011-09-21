@@ -861,27 +861,10 @@ ist nicht gegeben.
 
 \chapter{Umsetzung eines Prototyps}
 \label{cha:Umsetzung}
-
-In diesem Kapitel soll das Konzept prototypisch implementiert werden.
-Dieser Prototyp wird \textit{Datasynth} genannt.
+In diesem Kapitel wird das Konzept in prototypisch implementiert.
+Dieser Prototyp trägt den Namen \textit{Datasynth}.
 Um der Bearbeitungszeit dieser Arbeit gerecht zu werden, können nur grundlegende Funktionen
-programmiert werden.  Die Implementierung in dieser Arbeit beschränkt sich auf eine
-statische Ausgabe ohne Interaktionsmöglichkeiten, kann aber dahingehend erweitert werden.\footnote{Vgl. Abschnitt \ref{sec:Ausblick}}
-Datasynth wird aus diesem Grund mit einer freien
-Lizenz veröffentlicht, um eine Weiterentwicklung zu ermöglichen.
-
-
-1. dokumentation der untersuchungsdurchführung (des Entwicklungsvorganges)
-welche tools wurden wie angewendet, c++, of, git, boost, etc etc
-2. darstellung der ergebnisse (verdeutlichung durch beispiele, erläuterung des erkenntnisfortschritts)
-präsentation von viz mit der software?!
-
-Einschränkungen durch Implementation
-
-
-
-
-
+programmiert werden.
 
 \section{Technologien}
 \label{sec:Technologien}
@@ -889,12 +872,14 @@ Um Datasynth zu entwickeln werden verschiedene Softwaretechnologien verwendet.
 Deren Einsatz wird nachfolgend kurz erläutert.
 \begin{description}
 \item[C++]
-
-definition von C++ aus einem buch
-
-Datasynth ist in C++ implementiert und nutzt daher die Vorteile
-wie Performance.
-
+C++ ist eine objektorientierte Programmiersprache. Sie bietet
+eine maschinennahe Möglichkeit Programme zu schreiben.
+Datasynth nutzt durch openFrameworks und boost die Vorteile
+von C++. Dazu gehören die höhere Geschwindigkeit beim Ausführen
+und die einfache Einbindung anderer Bibliotheken wie 
+beispielsweise OpenGL für Grafikoperationen. Außerdem
+finden das Programmierparadigma der Objektorientierung
+in den einzelnen Nodes Awendung.
 \item[openFrameworks]
 \begin{figure}
 \centering
