@@ -36,7 +36,8 @@ backgroundcolor=\color{light-gray}
 \author{Benjamin Knofe}
 \subject{Diplomarbeit}
 \publishers{Hochschule für Technik, Wirtschaft und Kultur Leipzig}
-\dedication{Dank an \\ Christina Sanko, Pyry Jahkola, Ted Mosby, Sarah Walter, Stephan Keller, Professor Dr. Robert Müller, Philip Whitfield}
+\dedication{Dank an \\ Christina Sanko, Pyry Jahkola, Ted Mosby, Sarah Walter,
+Stephan Keller, Professor Dr. Robert Müller, Philip Whitfield}
 \maketitle
 \tableofcontents
 
@@ -138,7 +139,7 @@ beschrieben wird. Abschnitt \ref{sec:Definition} definiert den Begriff
 der Informationsvisualisierung, die als eine Weiterentwicklung der wissenschaftlichen
 Datenvisualisierung beschrieben wird. Danach folgt im Abschnitt \ref{sec:Arbeitsfelder} eine Abgrenzung zu den verwandten
 Arbeitsfeldern, die mit den Techniken Informationsvisualisierung arbeiten oder Teilbereiche der Informationsvisualisierung
-sind. Welche Ziele eine Informationsvisualisierung hat und wie man diese klassifizieren und bewerten kann wird
+sind. Welche Ziele eine Informationsvisualisierung hat und wie diese klassifiziert und bewertet werden können, wird
 im Abschnitt \ref{sec:Ziele} behandelt. Im folgenden Abschnitt \ref{sec:Pipeline} wird der eigentliche Arbeitsablauf
 einer Informationsvisualisierung anhand verschiedener Arbeitsschritte beschrieben um im Abschnitt
 \ref{sec:Darstellungen} die grafische Darstellung und deren Formen als Ergebnis dessen zu zeigen.
@@ -260,7 +261,7 @@ unabhängigen Variablen und nach dem Ursprung der Daten vorgenommen.
 
 \subsection{Mehrdimensionale Daten}
 Ein Beobachtungsraum kann beliebig viele, ganzzahlige und positive Dimensionen haben. Ist die Anzahl
-dieser \textit{unabhängigen} Variablen größer Eins, spricht man von \textit{mehrdimensionalen Daten}. Das Beispiel
+dieser \textit{unabhängigen} Variablen größer Eins, wird von \textit{mehrdimensionalen Daten} gesprochen. Das Beispiel
 in Abbildung \ref{fig:beispiel} hat zwei Dimensionen und damit zwei unabhängige
 Variablen (Kulturkreis und Begriff).
 
@@ -348,7 +349,8 @@ das heißt eine künstlich erzeugte Ordnung eingebracht werden, zum Beispiel dur
 haben die gleichen Eigenschaften wie nominale Typen.
 Nur die Reihenfolge ist bei diesem Typ allgemeingültig festgelegt. Dadurch kann als zusätzlicher Operator die Richtung der
 Ausprägung durch die Ordnungsrelation genutzt werden.
-\item[Quantitative Datentypen] besitzen einen Wertebereich und gestatten die Durchführung von arithmetischen Operationen. Es existiert eine
+\item[Quantitative Datentypen] besitzen einen Wertebereich und gestatten die Durchführung von arithmetischen Operationen.
+Es existiert eine
 Maßeinheit, mit der die Abstände zwischen einzelnen Ausprägungen angegeben werden können. Durch eine 
 künstliche Einteilung in Intervalle kann dieser Typ in ordinale Datentypen übersetzt werden. Beispiel
 dafür sind Temperaturwerte, die in kalt, warm und heiß unterteilt werden.
@@ -728,8 +730,7 @@ Parallelprojektion liegt das Projektionszentrum unendlich weit entfernt. Somit v
 die Projektionsstrahlen parallel. Vgl. \citep{wiki_projektion}} Der Nutzen der virtuellen
 Kamera kann durch Nutzerinteraktion erhöht werden. Der Anwender kann somit Parameter der
 virtuellen Kamera, wie beispielsweise Position und Zoom selbst beeinflussen um den Fokus
-auf einzelne Teilbereiche der grafischen Darstellung zu setzen.\footnote{Vgl. Focus und
-.... Techniken in \citep[S.\,1]{Schumann} und \citep[S.\,1]{Preim}}
+auf einzelne Teilbereiche der grafischen Darstellung zu setzen.
 
 Durch die Eigenschaften heutiger Ausgabegeräte müssen durch die Visualisierung erzeugte
 Grafiken gerastert werden. Die Technik der Rasterung überführt die kontinuierlichen Werte
@@ -811,11 +812,10 @@ es nötig, die Software selbst erweitern zu können. Dafür soll eine Skriptspra
 implementiert werden, die es erlaubt, zur Laufzeit neue Funktionen hinzuzufügen.
 Außerdem besteht die Möglichkeit durch eine Kapselung aller Funktionen
 einfach eigene Module zu programmieren.
-\item[Cross-Platform]
-Damit die Software von vielen Nutzern einsatzbar ist, wird sie für die
-drei großen Plattformen Linux, Apple OSX und Microsoft Windows entwickelt.
-Dies wird durch die zugrundeliegende Bibliothek
-openframeworks\footnote{Vgl. Abschnitt \ref{sec:Technologien}} gewährleistet.
+\item[Plattformunabhängigkeit]
+Die Software soll auf den drei großen Plattformen Linux, Apple OSX und Microsoft Windows
+lauffähig sein. Durch die Entwicklung auf Basis von openframeworks\footnote{Vgl. Abschnitt \ref{sec:Technologien}}
+wird eine Plattformunabhängigkeit gewährleistet.
 \item[Frei und Offen]
 Die Software wird unter einer freien Lizenz entwickelt und veröffentlicht
 um eigene Erweiterungen von Nutzern zuzulassen. Durch die Wahl der Lizenz kann
@@ -1036,10 +1036,10 @@ erläutert.
 In Abbildung \ref{fig:factory} wird eine Struktur dargestellt, die die einzelnen
 Nodes zur Laufzeit erstellt. In dieser Struktur ist eine Liste gespeichert, die Wertepaare
 enthält. Ein Wertepaar besteht aus einer Zeichenkette, die eine Node eindeutig identifiziert
-und einem Objekt welches der Node entspricht. Ruft der Benutzer diese Struktur auf, indem
-er im Menü auf den Namen einer Node klickt, wird
-eine Zeichenkette übergeben und wenn die Liste eine solche Zeichenkette enthält, das
-entsprechende Objekt zurückgeliefert. So können vom Benutzer dynamisch zur Laufzeit
+und einem Objekt erzeugt aus der gleichnamigen Klasse einer Node.
+Wenn der Benutzer eine Node erstellen will und im Menü auf einen entsprechenden Eintrag geklickt hat,
+wird eine Zeichenkette übergeben und wenn die Liste der Struktur eine solche Zeichenkette enthält, das
+entsprechende Objekt erzeugt. So können vom Benutzer dynamisch zur Laufzeit
 neue Nodes erzeugt werden. Die Struktur dient also als eine Art Katalog, in dem alle
 Nodes enthalten sind, die der Nutzer zur Programmierung verwenden kann.
 \begin{figure}
@@ -1050,14 +1050,13 @@ Nodes enthalten sind, die der Nutzer zur Programmierung verwenden kann.
 \end{figure}
 
 In Abbildung \ref{fig:node} wird in Auszügen die Klassendefinition der BaseNode und
-der Node für Die Addition als Beispiel einer echten Node dargestellt.
+der Node für die Addition zweier Gleitkommazahlen als Beispiel einer echten Node dargestellt.
 Eine Node ist eine einfache C++ Klasse, die alle Eigenschaften der Klasse BaseNode erbt.
-Die Node für die Addition überschreibt die process Methode der BaseNode um die zwei
+Die Node für die Addition zweier Gleitkommazahlen überschreibt die process Methode der BaseNode, um die zwei
 Inputpins zu addieren. Andere Klassen die von der BaseNode erben, können die process
 Methode mit ihrer eigenen Funktionalität überschreiben.
-Das macht es möglich alle Funktionen,
-die in einer Klasse implementiert werden können,
-in eine Node zu kapseln und für die visuelle Programmierung von Datasynth zu verwenden.
+Das macht es möglich alle Funktionen, die in einer C++ Methode implementiert werden können,
+in einer Klasse als Node zu kapseln und für die visuelle Programmierung von Datasynth zu verwenden.
 \begin{figure}
 \centering
 \lstinputlisting[language=C++]{code/node.cpp}
@@ -1066,7 +1065,7 @@ in eine Node zu kapseln und für die visuelle Programmierung von Datasynth zu ve
 \end{figure}
 
 In Abbildung \ref{fig:core} werden einzelne Ausschnitte aus dem Hauptprogramm gezeigt.
-In diesem Programm läuft die Hauptschleife ab, die alle Benutzereingaben behandelt,
+In diesem Teil von Datasynth läuft die Hauptschleife ab, die alle Benutzereingaben behandelt,
 das Aktualisieren und Berechnen aller Nodes durchführt und Nodes und Connections
 hinzufügt oder löscht.
 \begin{figure}
@@ -1078,209 +1077,212 @@ hinzufügt oder löscht.
 
 \section{Probleme bei der Entwicklung}
 \label{sec:Probleme}
-Zusätzlich zu den Anforderungen haben sich bei der Entwicklung Probleme aufgetan,
-die im folgenden kurz erläutert werden sollen.
+Währen der Entwicklung an Datasynth sind Probleme aufgetreten, die im Folgenden
+kurz erläutert werden.
 
 Da C++ eine sehr maschinennahe Sprache ist und auf Performance optimiert ist,
 ist es schwierig sogenannte Reflections und Introspections durchzuführen.
-So können beispielsweise nicht während der Laufzeit einzelne Informationen
-über eine Klasse abgefragt werden oder verändert werden. DAs können zum Beispiel
-die Ausgabe aller vorhandenen Methoden und Variablen eines Objektes sein.
-Um trotzdem dynamisch und flexibel Nodes zur Laufzeit anlegen zu können, wurde
-daher ein Weg gewählt der auf Vererbung und der Obejekterzeugung aus Abbildung
-\ref{fig:factory} besteht. Um dieses Problem zu lösen, könnte auf eine
-höhere Skriptsprache wie beispielsweise Ruby\footnote{Ruby ist ausgelegt
-zur Laufzeit Klassen zu untersuchen und modifizieren.} zurückgegriffen werden,
-um einzelne Teile des Hauptprogramms zu realisieren.
+So können während der Laufzeit keine Informationen
+über eine Klasse abgefragt oder verändert werden. Das können zum Beispiel
+die Ausgabe aller vorhandenen Methoden und Instanzvariablen eines Objektes sein.
+Um trotzdem dynamisch und flexibel Nodes zur Laufzeit anlegen zu können, die
+intern eine unterschiedliche Funktionsweise haben, wurde
+ein Weg gewählt, der aus Vererbung und der Objekterzeugung aus Abbildung
+\ref{fig:factory} besteht. Alle Nodes werden als Zeiger
+im Hauptrogramm gespeichert. Durch diese Abstraktion können Objekte
+unterschiedlicher Klassen in einem einzigen Container gespeichert werden.
+Durch das einheitliche, von der BaseNode vererbte Interface können alle
+Nodes dynamisch verarbeitet werden.
 
-Universelle Datentypen sind in C++ nihct vorhanden. Um die Verbindungen
-zwischen den einzelnen Nodes datentypagnostisch zu halten wurde ein
+Universelle Datentypcontainer sind in C++ nicht standardmäßig vorhanden. Um die Verbindungen
+zwischen den einzelnen Nodes datentypagnostisch zu halten, wurde ein
 eigener Datentyp Spread definiert.\footnote{Eine Definition des Spreads erfolgte im Abschnitt \ref{sec:vizPro}}
-Dieser enthält durch den boost::variant Container eine Möglichkeit primitive DAtentypen
-wie Gleitkommazahlen und String abzuspeichern. Vor der Verwendung in einer Node müssen diese
-Datentypen wieder hergestellt werden.
+Durch die Abstraktion in einen boost::variant Container ergibt sich eine einheitliche Möglichkeit primitive Datentypen
+wie beispielsweise Gleitkommazahlen und Zeichenketten abzuspeichern. Vor der Verwendung in einer Node müssen diese
+Datentypen wieder mit boost::get rekonstruiert werden.
 
 openFrameworks unterstützt nicht das Erstellen und Verwenden mehrerer
-unabhängiger Fenster, wie es für Datasynth notwendig ist. Deshalb wurde
-auf das ofxFenster Addon zurückgegriffen, welches die Fensterverwaltung
-mit einem System austauscht.\footnote{openFrameworks verwendet standardmässig GLUT
-zur Fensterverwaltung. Das ofxFenster Addon benutzt dagegen das neuere und
+unabhängiger Fenster. Deshalb musste
+auf ein Addon zurückgegriffen werden, welches die Fensterverwaltung
+mit einem alternativen System austauscht.\footnote{openFrameworks verwendet standardmässig GLUT
+zur Fensterverwaltung. Das benutzte ofxFenster Addon benutzt dagegen das neuere und
 flexiblere GHOST aus dem Blender-Projekt.}
 
 \chapter{Auswertung}
 \label{cha:Auswertung}
-
-BEISPIEL ZUR AUS WERTUNG
-
-bewertung der ergebnisse vor dem hintergrund der hypothesen/problemstellung (Test des konstrukts und vergleich mit den Anforderungen
-was kann die software liefern? wofür bildet sie nur die grundlage? was kann sie nicht?
-
 In diesem Kapitel wird Datasynth anhand der in Abschnitt \ref{sec:Anforderungen}
 aufgestellten Anforderungen bewertet.
 
-Durch die Benutzung von Datasynth durch visuelle Programmierung, muss keine
+Durch die Bedienung von Datasynth mit visueller Programmierung, muss keine
 textuelle Programmiersprache erlernt werden. Stattdessen kann der Nutzer intuitiv
 grafische Elemente auf der Oberfläche erzeugen und durch verschiedene Verbindungen
-eine Programmlogik konstruieren. Die Ausgabe erfolgt unmittelbar. So kann der Nutzer
-ohne einen Zwischenschritt, wie beispielsweise Kompilierung oder Ausführung, die
-veränderte Ausgabe sofort überprüfen und gegebenenfalls anpassen. Damit ist eine
-\textit{einfache Benutzerinteraktion} möglich.
+eine Programmlogik erstellen. Das Ergebnis einer Berechnung oder die Ausgabe von
+Grafiken erfolgt dabei unmittelbar. Diese kann der Nutzer
+ohne einen Zwischenschritt, wie beispielsweise Kompilierung oder Ausführung,
+sofort überprüfen und gegebenenfalls anpassen. Das führt zu einer
+\textit{einfachen Benutzerinteraktion} und einer kurzen Einarbeitungszeit.
 
-Die Tabelle \ref{tab:vars} zeigt wie die grafischen Variablen aus Abschnitt
-\ref{sec:graphischeSemiologie} mit der für diese Arbeit entwickelten Version von
-Datasynth dargestellt werden können. In der Tabelle wird ausschließlich
+Die Tabelle \ref{tab:vars} zeigt, wie die grafischen Variablen aus Abschnitt
+\ref{sec:graphischeSemiologie} mit Datasynth dargestellt werden können. In der Tabelle wird ausschließlich
 von Nodes gesprochen, die eine Ausgabe erzeugen.
-Durch die Bearbeitungszeit für diese Arbeit konnten nicht alle grafischen
+Durch die begrenzte Bearbeitungszeit dieser Arbeit konnten nicht alle grafischen
 Variablen implementiert werden. Trotzdem sind \textit{flexible Visualisierungsmöglichkeiten}
-bereits durchführbar und fehlende Funktionalität wie beispielsweise Texturierung können
-durch den modularen Aufbau von Datasynth schnell und einfach hinzugefügt werden.
-
+bereits durchführbar und fehlende Funktionalität, wie beispielsweise Texturierung können
+durch den modularen Aufbau von Datasynth einfach hinzugefügt werden.
 \begin{table}
 \centering
 \begin{tabular}{|l|p{9cm}|}
 \hline
 \textbf{grafische Variable} & \textbf{Umsetzung mit Datasynth}\\
 \hline
-Position in der Ebene & Jede Node hat Inputpins für die X und Y Koordinaten der darzustellenden grafischen Primitive\\
+Position in der Ebene & Jede Node hat Inputpins für die X und Y Koordinaten der darzustellenden grafischen Primitive.\\
 \hline
 Größe & Nodes haben die Möglichkeit, die Größe der auszugebenden Elemente anzupassen.
 So kann beispielsweise bei der Verwendung der Circle Node der Radius frei gewählt werden.\\
 \hline
-Helligkeitswert & Nodes haben die Möglichkeit eine Farbe anzunehmen. Durch sie kann
-der Helligkeitswert bestimmt werden.\\
+Helligkeitswert & Nodes haben die Möglichkeit eine Farbe anzunehmen. Durch sie wird
+auch Helligkeitswert festgelegt.\\
 \hline
-Textur & nicht vorhanden\\
+Textur & nicht implementiert\\
 \hline
-Farbe & Es gibt eine Node die eine Farbe im HSV-Farbraum erzeugt. Mit dieser Node kann die Ausgabe
+Farbe & Es gibt eine Node, die aus drei Eingangswerten eine Farbe im HSV-Farbraum erzeugt. Mit dieser Node kann die Farbgebnung
 anderer Nodes beeinflusst werden.\\
 \hline
-Richtung & Es wurde noch keine Node für die Rotation implementiert.\\
+Richtung & Rotation ist nicht implementiert.\\
 \hline
-Form & Es gibt unterschiedliche Nodes für unterschiedliche Formen, z.B. Kreis, Rechteck, Punkt und Linie.\\
+Form & Es existieren unterschiedliche Nodes für unterschiedliche Formen, zum Beispiel Kreis, Rechteck, Punkt und Linie. Diese Nodes
+können kombiniert werden um komplexe Formen zu realisieren.\\
 \hline
 \end{tabular}
 \caption{visuelle Variablen und ihre Umsetzung in Datasynth}
 \label{tab:vars}
 \end{table}
 
-Für die \textit{flexible Ein- und Ausgabe} wurden in der aktuellen
-Version nur jeweils eine Möglichkeit geschaffen, um eine lauffähige
-Version zu erhalten. Es existiert eine Node die eine CSV-Datei\footnote{kurze
-Erklärung CSV} einliest und enstprechend der Anzahl der vorhanden
-Spalten automatisch Outputpins anlegt, an denen die Spaltenwerte als
-Spreads ausgegeben werden. Für die Ausgabe existiert eine Render Node.
+Für die \textit{flexible Ein- und Ausgabe} wurde jeweils eine Möglichkeit implementiert, um eine lauffähige
+Version von Datasynth zu erhalten. Es existiert eine Node, die eine CSV-Datei\footnote{CSV
+bedeutet comma seperated values und beschreibt den Aufbau einer Textdatei, in der einzelne Werte durch
+ein Komma abgetrennt werden um diese maschinell weiterverarbeiten zu können.} einliest und enstprechend der Anzahl der vorhanden
+Spalten automatisch Outputpins erzeugt, an denen die einzelnen Spalten als
+Spreads ausgegeben werden. Für die Ausgabe als Bild existiert eine Render Node.
 Diese erzeugt eine Ausgabefenster in variabler Größe.
 
-Die \textit{Performanz} von Datasynth ist gut. Das Grundsystem wurde so
-programmiert, dass Nodes intern nur Rechnen, wenn sich die Eingaberwerte
-an den Inputpins geändert haben. Somit werden komplexe Rechenaufgaben nur
-durchgeführt, wenn der Nutzer Parameter anpasst.
+Die \textit{Performanz} von Datasynth war bei allen durchgeführten Tests sehr gut. Das Grundsystem wurde so
+programmiert, dass Nodes intern nur eine Berechnung durchführen, wenn die Werte
+an den Inputpins verändert werden. Somit werden komplexe Rechenaufgaben nur
+durchgeführt, wenn der Nutzer Parameter anpasst. Die grafische Ausgabe
+der Render Node erfordert den größten Rechenaufwand, da die Ausgabe kontinuierlich
+gezeichnet wird. Dieser Aufwand kann durch entsprechende Steuerung
+reduziert werden.
 
 Alle Nodes sind einfache C++ Klassen, die von einer Elternklasse
 alle Variablen und Methoden erben, die für die Verwendung in Datasynth
 nötig sind. Somit ist eine hohe \textit{Erweiterbarkeit} gegeben, da potenziell jede
 Funktionalität, die in einer C++ Klasse implementiert werden kann, auch
-als Node in Datasynth verwendet werden kann.
+als Node in Datasynth benutzbar wird.
 
 Durch die Verwendung von openFrameworks und boost als Basis der Entwicklung,
-ist es möglich Datasynth auf allen Plattformen auszuführen, die von openFrameworks
-unterstützt werden. Das sind zur Zeit Linux, Mac OSX, Microsoft Windows, Android
-und Apple iOS. Damit ist Datasynth \textit{cross-platform} einsetzbar.
+ist es möglich, Datasynth auf allen Plattformen auszuführen, die von openFrameworks
+unterstützt werden. Das sind Linux, Mac OS X, Microsoft Windows, Android
+und Apple iOS. Dadurch ist Datasynth \textit{plattformunabhängig} einsetzbar.
 
-Datasynth wird öffentlich auf der Plattform GitHub entwickelt.\footnote{Vgl.
+Datasynth wird öffentlich, auf der Plattform GitHub entwickelt.\footnote{Vgl.
 Abschnitt \ref{sec:Technologien}} Als Lizenz wurde die MIT-Lizenz gewählt.
-Diese ermöglicht eine offene aber auch kommerzielle Weiterentwicklung.
+Diese ermöglicht jedem eine offene, aber auch kommerzielle Weiterentwicklung.
 
-Die Anforderungen konnten mit wenigen Einschränkungen erfüllt werden.
+Datasynth kann nahezu alle Anforderungen erfüllen. 
 
 \chapter{Zusammenfassung}
 \label{cha:Zusammenfassung}
 \section{Fazit}
 \label{sec:Fazit}
-
-Der Grundgedanke der Informationsvisualisierung, die Verbindung
-von abstrakten Daten mit visuellen Variablen, wird in der Benutzeroberfläche
-von Datasynth aufgegriffen. So können Nodes, die Datenquellen einlesen und verarbeiten, über
-Nodes für Parameter, mit Nodes verbunden werden, die eine grafische
-Darstellung erzeugen. Dabei besteht die Möglichkeit, die Auswirkungen von
-Parameteränderungen direkt beobachten zu können.
-Der Benutzer die Möglichkeit sich in einem iterativen
-Prozess kreativ mit den Daten auseinanderzusetzen, ohne sich dabei Gedanken
-machen zu müssen, wie große Datenmengen technisch in visuelle Variablen
-übersetzt werden können.
-Dadurch wird eine explorative Datenanalyse möglich.
+Der Grundgedanke der Informationsvisualisierung ist die Ausnutzung
+der menschlichen Fähigkeit, visuell große Mengen an Informationen in kürzester Zeit
+aufnehmen und verarbeiten zu können. Der Kern einer Informationsvisualisierung
+besteht dabei aus der Transkription von abstrakten Daten in visuellen Variablen einer
+grafischen Darstellung. Diese Verbindung wird in der Benutzeroberfläche
+von Datasynth aufgegriffen um eine Metapher für den Arbeitsprozess der Informationsvisualisierung
+zu schaffen. So können Nodes, die Datenquellen einlesen und verarbeiten, mit Nodes verbunden werden, die eine grafische
+Darstellung erzeugen. Diese Verbindungen können durch Berechnungen und Parametrisierung beeinflusst werden.
+Dabei besteht die Möglichkeit, die Auswirkungen von Änderungen des Visualisierungsablaufs direkt beobachten zu können.
+Der Benutzer erhält die Möglichkeit, sich in einem iterativen
+Prozess kreativ mit Daten auseinanderzusetzen, ohne dabei manuell
+große Mengen von Daten darstellen zu müssen.
+Das macht eine explorative Datenanalyse möglich.
 Denn auch ohne genaue Kenntnis einer Datenmenge, kann durch visuelles Experimentieren
-Erkenntnisse über die Beschaffenheit dieser getroffen werden.
-Diese Möglichkeit der Analyse macht vor dem Hintergrund Sinn, dass es theoretisch
+Erkenntnisse über die Beschaffenheit dieser Daten getroffen werden.
+Diese Möglichkeit der Analyse macht vor dem Hintergrund Sinn, dass es
 möglich ist, alle beschriebenen Klassen von Daten verarbeiten zu können. Dafür müssen
 nur entsprechende Nodes implementiert werden.
-Durch die Möglichkeit direkt das grundlegende Zeichensystem\footnote{Vgl. Abschnitt \ref{sec:graphischeSemiologie}} einer
+Durch die Möglichkeit, direkt das grundlegende Zeichensystem\footnote{Vgl. Abschnitt \ref{sec:graphischeSemiologie}} einer
 grafischen Darstellung zu verändern, können mehrere Darstellungsformen
 miteinander kombiniert werden und damit neue Wege der Informationsvisualisierung erforscht werden.
-Diese hybriden Darstellungen eignen sich,
-um zu überprüfen, wie geeignet unterschiedliche Blickwinkel auf eine Datenmenge sind.
+Diese hybriden Darstellungsformen eignen sich,
+um zu überprüfen, wie geeignet unterschiedliche Betrachtungsweisen und Blickwinkel auf eine Datenmenge sind.
 
 Da der Benutzer alle Freiheiten bei der Gestaltung hat, muss er die
 Grundregeln für die grafische Darstellung und allgemeine Gestaltungsregeln beherrschen.
-Datasynth hat dafür noch keine Benutzerhilfen implementiert.
 So muss der Benutzer selbst entscheiden, welche visuellen Variablen sich wie 
-gut für eine bestimmte Aufgabe eignen.
-Datasynth hat nur die Mgölcihkeit der GEnerierung statischer Bilder.
-Für eine Informationsvisualisierung ist es in manchen Fällen sinnvoll Interaktionsmöglichkeiten
-zu ermöglichen um die grafische Darstellung noch effektiver benutzen zu können.\footnote{Beispielsweise
-kann die Möglichkeit eines Zooms implementiert werden, oder beim Klicken auf ein bestimmten
-Bereich der grafischen Darstellung werden zusätzliche Informationen angezeigt.}
-Durch den sehr grundlegenden Ansatz bei dem grafische Darstellungen mithilfe ihrer
-visuellen Variablen erzeugt werden, ist es mit der aktuellen Version von DAtasynth
-noch sehr aufwändig komplexe Objekte zu erzeugen. Eine Gruppierung von Nodes
-könnte dabei abhilfe schaffen und beispielsweise eine Tortendiagramm Node ermöglichen,
-die aus verschiedenen anderen Nodes besteht.\footnote{Vgl. Abschnitt \ref{sec:Ausblick}}
+gut für eine bestimmte Aufgabe eignen. Ein geeignetes System zu finden, das dem
+Benutzer Hilfestellungen zu dieser Thematik gibt, muss noch erforscht werden.
 
-Datasynth eignet sich, trotz weniger Einschränkungen, für die Erstellung einer grafischen Darstellung der
-Informationsvisualisierung. Durch die intuitive Benutzeroberfläche ist
-ein schnelles Experimentieren mit den Daten möglich und
-erste Skizzen für eine Informationsvisualisierung sind schnell erstellt.
-Durch die eingeschränkte Bearbeitungszeit dieser Arbeit konnte Datasynth nur mit
-einem geringen Funktionsumfang und einer einfachen Benutzeroberfläche implementiert werden.
-Um die Produktivität bei der Arbeit mit Datasynth zu erhöhen, kann die Software
-mit einigen Funktionen erweitert werden.
+Datasynth in seiner prototypischen Implementierung hat die einfache Möglichkeit der Generierung statischer Bilder.
+Für eine Informationsvisualisierung ist es meist sinnvoll Interaktionsmöglichkeiten
+anzubieten, um die grafische Darstellung noch effektiver einsetzbar zu machen.\footnote{Beispielsweise
+kann die Möglichkeit eines Zooms implementiert werden oder beim Klicken auf einen bestimmten
+Bereich der grafischen Darstellung werden zusätzliche Informationen angezeigt.}
+Durch den sehr grundlegenden Ansatz, bei dem grafische Darstellungen mithilfe ihrer
+visuellen Variablen erzeugt werden, ist es mit Datasynth sehr aufwändig komplexe Objekte zu erzeugen. Eine Gruppierung von Nodes
+kann dabei abhilfe schaffen und beispielsweise eine einzige Node für ein 
+Tortendiagramm ermöglichen.\footnote{Vgl. Abschnitt \ref{sec:Ausblick}}
+
+Die Entwicklung von Datasynth hat gezeigt, dass es durchaus sinnvoll ist,
+ein auf Informationsvisualisierung spezialisiertes Softwarekonzept zu entwickeln.
+Werden von einer Software alle gestellten Anforderungen erfüllt, kann
+diese zu einer erhöhten Produktiviät und einem vereinfachten Umgang mit
+Daten genutzt werden. Davon profitieren vor allem unerfahrene Gelegenheitsanwender,
+die die Informationsvisualisierung als Werkzeug für ihre jeweiligen Arbeitsfelder
+einsetzen. Aber auch Experten erhalten damit eine einfache und schnelle Möglichkeit
+erste Erkundungen der Datenmenge durchzuführen. Nicht zuletzt kann es Künstlern
+die Möglichkeit geben, auf Basis von Daten ästhetisch ansprechende
+Informationsvisualisierungen zu erschaffen. All das trägt zum besseren
+Verstehen und Verständnis der heutigen technisierten Welt bei.
 
 \section{Ausblick}
 \label{sec:Ausblick}
 Da Datasynth lediglich einen Prototypen darstellt, ergeben sich vielfältige
-Ansätzer für die Erweiterung. Einige Möglichkeiten bedingen weiterer 
-Forschungsarbeit und können nur als Thesen betrachtet werden. Im folgenden
-wird eine Auswahl für Erweiterungsmöglichkeiten aufgelistet.
+Ansätze für Weiterentwicklungen. Einige Möglichkeiten bedingen weiterer 
+Forschungsarbeit und können als Thesen betrachtet werden. Im folgenden
+werden die vielversprechendsten Ansätze aufgelistet.
 \begin{description}
 \item[Skriptsprache]
-Es können universelle Nodes geschaffen werden, die vom Benutzer mit einer höheren
-Skriptsprache programmiert werden können. Damit können fehlende Funktionalitäten
-eigenhändig implementiert werden und Datasynth erweitert werden.
-Auch die Anwendung in der eigentlichen Software kann von Vorteil sein um die in
+Es können universelle Nodes geschaffen werden, die vom Benutzer selbst mit einer höheren
+Skriptsprache programmiert werden können. Fehlende Funktionalitäten
+werden damit eigenhändig implementiert und Datasynth erweitert.
+Auch die Anwendung einer Skriptsprache in der eigentlichen Software kann von Vorteil sein, um die in
 Abschnitt \ref{sec:Probleme} genannten Probleme zu umgehen. Dabei sollte dann nur
 die rechenintensive Programmlogik in C++ implementiert werden.
 \item[Gruppierung von Nodes]
 Um schnell und effizient komplexe grafische Darstellungen generieren zu können,
-ist eine Gruppierung von Nodes sinnvoll. Damit können Templates entstehen,
-die eine grafische Darstellung in einer Node kapseln. So sind einzelne Nodes
+ist eine Gruppierung von Nodes sinnvoll. Damit können Templates erzeugt werden,
+die eine grafische Darstellungsform in einer Node kapseln. So sind einzelne Nodes
 für Tortendiagramme oder Netzwerkstrukturen denkbar.
 \item[weitere Ausgabemöglichkeiten]
-Zusätzlich zu der Ausgabe als einzelnes Bild sind weitere Formate sinnvoll.
-So könnten Nodes implementiert werden, die eine Ausgabe als Postscript oder
+Zusätzlich zu der Ausgabe als einzelnes Bild sind weitere Formate nützlich.
+So können Nodes implementiert werden, die eine Ausgabe als Postscript oder
 in gängige 3D-Formate ermöglichen. Um die Weiterverarbeitung der erzeugten
-Ausgaben effizienter zu machen, beitet sich der Export einzelner Teilbereiche
-an. So könnte beispielsweise aus einem erzeugten Bild einzelne Ebenen exportiert werden.
+Ausgaben effizienter zu machen, bietet sich eine Exportfunktion für einzelne Teilbereiche
+an. So können beispielsweise aus einem erzeugten Bild einzelne Ebenen exportiert werden.
 \item[Interaktionsmöglichkeiten]
 Zusätzlich zur rein statischen Darstellung können mit Datasynth
-Interaktionsmöglichkeiten festgelegt werden. So ist eine automatische
+Interaktionsmöglichkeiten erzeugt werden. So ist eine automatische
 Ausgabe als interaktive HTML5 Website denkbar, bei der einzelne Elemente
-anklickbar und durch Benutzerinterkation veränderbar sind. Außerdem sind 
-Zoomfunktionen denkbar um dem Betrachter weitere Möglichkeiten zur
-Erkundung der grafischen DArstellung zu geben.
+anklickbar und durch Benutzerinteraktion veränderbar sind. Außerdem sind 
+Zoomfunktionen denkbar, um dem Betrachter weitere Möglichkeiten zur
+Erkundung der grafischen Darstellung zu geben.
 \item[Evaluation]
 Datasynth kann dem Nutzer behilflich sein, die richtige Form
-der grafischen DArstellung zu finden und ihn mit adäquaten Mitteln darauf
-hinweisen wie gut oder schlecht sich gewisse Darstellungen eignen.
+der grafischen Darstellung zu finden und ihn mit adäquaten Mitteln darauf
+hinweisen, wie gut oder schlecht sich gewisse Darstellungen eignen.
 \end{description}
     
 \chapter{Anhang}
