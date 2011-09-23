@@ -1,4 +1,4 @@
-\documentclass[a4paper, 12pt, DIVcalc, onepage, pdftex, headsepline, footsepline]{scrreprt}
+\documentclass[a4paper, 12pt, DIV=calc, version=first, pdftex, headsepline, footsepline]{scrreprt}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -124,46 +124,34 @@ Um einen Lösungansatz für das Problem einer universellen Informationsvisualisi
 zu finden, werden in dieser Arbeit Schritte durchgeführt, die die Konzeption einer Software zum Ziel haben.
 Diese Software wird prototypisch implementiert.
 
-In Kapitel \ref{cha:Grundlagen} im Abschnitt \ref{sec:DatenInfo} werden die Begriffe Daten und
-Informationen definiert und im Kontext der Informationsvisualisierung betrachtet.
-Im Abschnitt \ref{sec:EigenschaftenDaten} werden die
-unterschiedlichen Eigenschaften von Daten untersucht. Mit diesem Kriterienkatalog können Daten im
-Abschnitt \ref{sec:KlassifikationDaten} klassifiziert werden.
-Im folgenden Abschnitt \ref{sec:Datentypen} werden die verschiedenen Datentypen behandelt, die die eigentlichen
-Datenwerte beschreiben.
-Abschnitt \ref{sec:grafischeSemiologie} beschreibt ein System zur Klassifikation von grafischen Variablen,
-die grundlegenden Elemente einer grafischen Darstellung.
-Die Information, die in unterschiedlichen Klassen von Daten codiert ist, und das visuelle Zeichensystem bilden
-die "`Rohstoffe"' für die Informationsvisualisierung, die im Kapitel \ref{cha:Informationsvisualisierung}
-beschrieben wird. Abschnitt \ref{sec:Definition} definiert den Begriff
-der Informationsvisualisierung, die als eine Weiterentwicklung der wissenschaftlichen
-Datenvisualisierung beschrieben wird. Danach folgt im Abschnitt \ref{sec:Arbeitsfelder} eine Abgrenzung zu den verwandten
-Arbeitsfeldern, die mit den Techniken Informationsvisualisierung arbeiten oder Teilbereiche der Informationsvisualisierung
-sind. Welche Ziele eine Informationsvisualisierung hat und wie diese klassifiziert und bewertet werden können, wird
-im Abschnitt \ref{sec:Ziele} behandelt. Im folgenden Abschnitt \ref{sec:Pipeline} wird der eigentliche Arbeitsablauf
-einer Informationsvisualisierung anhand verschiedener Arbeitsschritte beschrieben um im Abschnitt
-\ref{sec:Darstellungen} die grafische Darstellung und deren Formen als Ergebnis dessen zu zeigen.
+In Kapitel \ref{cha:Grundlagen} werden die grundlegenden Begriffe beschrieben, die für die 
+das Arbeitsfeld der Informationsvisualisierung wichtig sind. Es werden die Begriffe
+Daten und Informationen definiert und eine Klassifikation von Daten vorgenommen.
+Nachfolgend wird eine System zur Beschreibung der Grundelemente einer grafischen Darstellung
+eingeführt. 
 
-Das Kapitel \ref{cha:Software} beschreibt nun die Konzeption einer Informationsvisualisierungssoftware.
-Dabei wird im Abschnitt \ref{sec:Grundprinzip} noch einmal das Grundprinzip der Informationsvisualisierung
-beschrieben und eine Einordnung der Software in den Visualisierungsprozess vorgenommen.
-Im Abschnitt \ref{sec:Rahmenbedingungen} werden die Rahmenbedingungen der Software festgelegt um im Abschnitt
-\ref{sec:Anforderungen} Anforderungen definieren zu können. Der Abschnitt \ref{sec:bestehendeSoftware}
-zeigt exemplarisch vorhandene Softwarelösungen.
+In Kapitel \ref{cha:Informationsvisualisierung} wird der Begriff der Informationsvisualisierung
+definiert und von verwandten Arbeitsfeldern abgegrenzt. Danach werden die Bearbeitungsziele
+der Informationsvisualisierung und die Visualisierungspipeline als Einteilung des Arbeitsprozesses
+beschrieben. Im letzten Abschnitt dieses Kapitels wird die grafische Darstellung als Produkt
+der Informationsvisualisierung charakterisiert.
 
-Im Kapitel \ref{cha:Umsetzung} wird die Implementation eines Prototyps dokumentiert. Dabei wird in Abschnitt
-\ref{sec:Technologien} auf die verwendeten Technologien eingegangen. Danach wird in Abschnitt
-\ref{sec:visPro} das Konzept der visuellen Programmierung als wesentliches Merkmal der Benutzerinteraktion
-beschrieben und Gründe für diese Entscheidung genannt.
-Als letzter Punkt dieses Kapitels werden in Abschnitt \ref{sec:Kernfunktionen} beispielhaft Kernfunktionen
-der Software mit Quelltext gezeigt und erläutert.
+In Kapitel \ref{cha:Software} wird eine Software konzipiert.
+Dabei wird das grundlegende Prinzip der Informationsvisualisierung beschrieben, welches Ausgangspunkt
+des Konzepts ist. Der Aufgabenbereich der Software wird dabei in die Visualisierungspipeline eingeordnet
+und durhc Rahmenbedingungen und Anforderungen definiert. Danach erfolgt eine Analyse bestehender
+Softwarelösungen.
 
-Das vorletzte Kapitel \ref{cha:Auswertung} nennt in Abschnitt \ref{sec:Probleme} die Probleme, die während
-der Entwicklung aufgetreten sind und wertet die Vorteile (Abschnitt \ref{sec:Vorteile}) und Nachteile
-(Abschnitt \ref{sec:Nachteile}) aus.
+Kapitel \ref{cha:Umsetzung} dokumentiert die Umsetzung des Prototyps. Neben den verwendeten
+Technologien wird die visuelle Programmierung als Konzept für die Benutzeroberfläche beschrieben.
+Nachfolgend werden wichtige Kernfunktionen der Software gezeigt und Probleme bei der Entwicklung
+aufgezeigt.
 
-Das Kapitel \ref{cha:Zusammenfassung} schließt die Arbeit mit einem Fazit in Abschnitt \ref{sec:Fazit} und
-einem Ausblick in Abschnitt \ref{sec:Ausblick} ab.
+In Kapitel \ref{cha:Auswertung} erfolgt die Auswertung des Prototyps. Dieser wird anhand der
+vorangegangen Anforderungen bewertet.
+
+In Kapitel \ref{cha:Zusammenfassung} werden die Ergebnisse dieser Arbeit aufgezeigt und einen
+Ausblick auf mögliche weiterführende Forschungsarbeit gegeben.
 
 \chapter{Grundlagen}
 \label{cha:Grundlagen}
@@ -639,14 +627,14 @@ Für diese Arbeit sind vor allem die hybriden Techniken interessant, da diese ve
 neue Sichtweisen ohne vorgefertigte Festlegungen zu schaffen. Um diese Darstellungsformen
 umsetzen zu können, wird im nächsten Kapitel eine Software konzipiert.
 
-\chapter{Konzept einer geeigneten Softwarelösung}
+\chapter{Konzept eines Informationsvisualisierers}
 \label{cha:Software}
 \section{Grundprinzip der Informationsvisualisierung}
 \label{sec:Grundprinzip}
 \subsection{Allgemeine Betrachtungen}
 Die Übertragung von symbolischen Informationen auf geometrische Informationen kann als grundlegendes Prinzip der
-Informationsvisualisierung bezeichnet werden. Dieser Schritt ist die ausführende Stufe, die als Mapping in der
-Visualisierungspipeline bezeichnet wird. Bevor es zu diesem Schritt kommen kann, ist es wichtig
+Informationsvisualisierung bezeichnet werden. Dieser Schritt ist die ausführende Stufe in der Visualisierungspipeline,
+die als Mapping bezeichnet werden kann. Bevor es zu diesem Schritt kommen kann, ist es wichtig
 alle Ausgangsbedingungen zu beachten, die zu einer Informationsvisualisierung führen, die alle Bearbeitungsziele aus
 Abschnitt \ref{sec:Ziele} erfüllt. Das bedeutet, dass alle Schritte vor dem Mapping wie zum Beispiel die Auswahl
 aller Parameter nicht von einer Software erledigt werden können und stattdessen vom Nutzer in einem kreativen
