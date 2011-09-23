@@ -32,12 +32,12 @@ backgroundcolor=\color{light-gray}
 %add hyphenation later
 
 \begin{document}
-\title{Konzeptfindung und prototypische Realisierung eines Informationsvisualisierers}
+\title{Konzeptfindung und prototypische Realisierung einer Software für die Informationsvisualisierung}
 \author{Benjamin Knofe}
 \subject{Diplomarbeit}
 \publishers{Hochschule für Technik, Wirtschaft und Kultur Leipzig}
 \dedication{Dank an \\ Christina Sanko, Pyry Jahkola, Ted Mosby, Sarah Walter,
-Stephan Keller, Professor Dr. Robert Müller, Philip Whitfield}
+Stephan Keller, Professor Dr.-Ing. Robert Müller, Philip Whitfield}
 \maketitle
 \tableofcontents
 
@@ -409,12 +409,21 @@ die grafische Darstellung als Ziel der Informationsvisualisierung zu konstruiere
 Die Visualisierung ist im allgemeinen als eine "rechnergestützte, visuelle Präsentation von Daten, Informationen und Wissen
 in einer für den Menschen adäquaten und für die jeweilige Anwendung in diesem Kontext sinnvollen Form
 zu verstehen."\citep[S.\,3]{Schumann}
-Die rein wissenschaftlich-technische Visualisierung arbeitet ausschließlich mit Ausgangsdaten,
-die einen physikalischen Bezugsrahmen und somit einen konkreten Orts- und Zeitbezug haben. Diese Form der
-Visualiserung wird auch Datenvisualisierung genannt.
-Die Informationstheorie geht hauptsächlich von einem quantitativen Informationsbegriff aus.\footnote{Vgl. 
-Abschnitt \ref{sec:DatenInfo}} Für die Visualisierung von Informationen sind aber
-weiterführende, qualitative Fragen von Bedeutung:
+Sie nutzt das Vermögen des menschlichen Gehirns durch visuelle Reize große Mengen an Information
+intuitiv erfassen und verarbeiten zu können. Dabei werden die natürlichen Fähigkeiten des Menschen,
+wie beispielsweise die Muster- und Farberkennung genutzt, um ohne Vorkenntnisse Entscheidungen über
+einen Sachverhalt treffen zu können. Zum Beispiel kann jeder Mensch zwischen zwei Objekten entscheiden,
+welches das größere oder hellere Objekt ist, solang die visuellen Unterschiede ausreichend groß sind.\footnote{
+Eine Ausnahme bilden Menschen mit einer Sehbehinderung. Um eine Visualisierung für diese Menschen
+nutzbar zu machen, gelten besondere Anforderungen, die nicht Teil dieser Arbeit sind.}
+
+Die wissenschaftlich-technische Visualisierung ist eine Sonderform der Visualisierung. Sie arbeitet ausschließlich mit Ausgangsdaten,
+die einen physikalischen Bezugsrahmen und somit einen konkreten Ortsbezug haben. Diese Form der
+Visualiserung wird auch Datenvisualisierung genannt. Dabei wird von einem, durch die Informationstheorie
+geprägten, quantitativen Informationsbegriff ausgegangen.\footnote{Vgl. 
+Abschnitt \ref{sec:DatenInfo}}
+
+Für die Visualisierung von Informationen sind weiterführende, qualitative Fragen von Bedeutung:
 \begin{itemize}
 \item Was macht eine Information wichtig oder unwichtig in einem gegebenen Kontext?
 \item Wie kann das Verständnis von großen Informationsmengen für Menschen vereinfacht werden?
@@ -428,65 +437,62 @@ versucht die Informationsvisualisierung zu beantworten.
 Multiparameterdaten(z.B. Medienobjekte mit verschiedenen Attributen), Hierarchien, Netzwerken, Text
 oder Softwaresystemen, die sich alle auch über die Zeit verändern können."'
 \end{quote}
-Das Einsatzgebiet der Informationsvisualisierung ist im Gegensatz zur Datenvisualisierung nicht mehr
+Das Einsatzgebiet der Informationsvisualisierung ist im Gegensatz zur Datenvisualisierung nicht
 auf wissenschaftliche Bereiche beschränkt,
-sondern wird auch als alternative Suchmethode in Datenbanken\footnote{Vgl. Visual Data Mining in \citep{Keim}},
+sondern kann beispielsweise auch als alternative Suchmethode in Multimedia-Datenbanken\footnote{Vgl. Visual Data Mining in \citep{Keim}},
 als Wissensvermittlung in kulturellen Bereichen\footnote{Vgl. Abbildung \ref{fig:beispiel}} und zur Visualisierung von
-sozialen Netzwerken und Fahrplänen von öffentlichen Verkehrsmitteln verwendet.
+sozialen Netzwerken und Fahrplänen öffentlicher Verkehrsmittel verwendet werden.
 Insbesondere steht die Suche nach Beziehungen zwischen Datenobjekten im Vordergrund,
-da Informationsräume größer, komplexer und vernetzter werden und im Gegensatz
-zu physikalischen Daten nicht immer ein räumlicher Bezug existiert.
+da Informationsräume größer, komplexer und vernetzter werden. Im Gegensatz
+zu physikalischen Daten existiert dabei nicht immer ein räumlicher Bezug.
 Eine Aufgabe der Informationsvisualiserung ist es, diesen Ortsbezug beim Betrachter wieder gedanklich
-entstehen zu lassen, um den kognitiven Aufwand, der für das Verständnis der Daten nötig ist, zu minimieren.
+entstehen zu lassen. Der kognitive Aufwand, der für das Verständnis der Information aus den Daten nötig ist, wird minimiert.
 
 Durch die Verschiebung der Daten aus dem wissenschaftlichen Kontext
-in die Alltagskultur, ändert sich die Zielgruppe der Visualisierung. Durch das Internet
+in die Alltagskultur ändert sich die Zielgruppe der Visualisierung. Durch das Internet
 wird der Personenkreis stark vergrößert, der ein Interesse und Nutzen an Informationsvisualisierungen
-hat, aber dem ein mathematischer, natur- oder ingeneurswissenschaftlicher Hintergrund
-fehlt. Daraus entstehen weitere Anforderungen. So muss die Informationsvisualisierung vom Benutzer
+hat. Es enstehen weitere Anforderungen, da dieser Gruppe meist ein mathematischer, natur- oder ingeneurswissenschaftlicher Hintergrund
+fehlt. So muss die Informationsvisualisierung vom Benutzer
 schnell und einfach erfasst und ohne Vorkenntnisse verstanden werden können.
 Außerdem muss sie eine "`angemessene und grafische Qualität haben, um über den
 reinen Nutzwert hinaus auch Qualitäten in Bezug auf Nutzungsfreude und Unterhaltungswert [zu] besitzen"'\citep[S.\,438]{Preim}.
-Dafür reichen einfache Datentabellen und Tabellenkalkulationsprogramme
-nicht mehr aus, um notwendige alternative Darstellungsformen zu finden.
+Es wird zunehmend schwieriger solche Darstellungsformen mit aktuellen Softwarestandards zu erstellen.
 
-Die Grenzen zwischen den einzelnen Disziplinen sind fließend 
-und eine genaue Beschreibung dieser steht noch aus. Die Informationsvisualisierung kann
+Die Grenzen zwischen den einzelnen Disziplinen der Visualisierung sind fließend. Die Informationsvisualisierung kann
 auch wissenschaftlich betrieben werden, da sich Methoden und Verfahren stark ähneln.
-Das Arbeitsfeld der Informationsvisualisierung, die Thema dieser Arbeit ist, adressiert damit
-einen Spezialfall der Datenvisualisierung, der alle Anforderungen an Datenvisualisierung enthält
-und mit zusätztlichen Anforderungen, wie Zielgruppe, Repräsentation und Medium, erweitert. Digitale
-Techniken werden zur Erhebung, Speicherung, Weiterverarbeitung und Ausgabe genutzt.
+Das Arbeitsfeld der Informationsvisualisierung, die Thema dieser Arbeit ist,
+geht von einem Spezialfall der Datenvisualisierung aus. Dieser erweitert die Anforderungen an Datenvisualisierung mit
+Betrachtungen über die Zielgruppe, Repräsentation und Medium. Dabei kommen digitale
+Techniken zur Erhebung, Speicherung, Weiterverarbeitung und Ausgabe zum Einsatz.
 
 \section{Verwandte Arbeitsfelder}
 \label{sec:Arbeitsfelder}
-Oft berühren Teilgebiete der Informationsvisualiserung verwandte Arbeitsfelder oder werden für die Problemlösung
+Oft nutzt die Informationsvisualisierung Teilgebiete verwandter Arbeitsfelder oder sie wird für die Problemlösung
 in anderen Bereichen verwendet.
 Nachfolgend werden Arbeitsgebiete beschrieben, die häufig mit der Informationsvisualisierung in Verbindung
-gebracht oder verwechselt werden. Meist sind die diese nicht klar
-voneinander trennbar oder eine genauere Abgrenzung ist noch Forschungsgegenstand. Die nachfolgende Liste beschreibt nur
+gebracht oder verwechselt werden. Eine klare Abgrenzung der Bereiche ist schwierig. Die nachfolgende Liste beschreibt
 eine Auswahl und erhebt keinen Anspruch auf Vollständigkeit.
 \begin{description}
 \item[Computergrafik]
 Die Computergrafik ist ein Teil der Informatik und beschreibt die Ausgabe von zwei- und dreidimensionalen
-Objekten als Raster oder Vektorgrafik. Informationsvisualisierung benutzt die Techniken der Computergrafik, ist aber kein Teil
-dieses Gebietes.
+Objekten als Raster oder Vektorgrafik. Die Informationsvisualisierung benutzt Techniken der Computergrafik, ist aber kein
+Bestandteil dieses Gebietes.
 \item[Statistik]
 Die Statistik ist ein Verfahren für die "`hypothesengeleitete Auswertung von numerischen (quantitativen)
 Daten"'\citep[S.\,23]{Statistik}. Durch die Verwendung quantitativer Daten, wird eine Verbindung zwischen
-Empirie und Theorie geschaffen.  Dabei ist die Informationsvisualisierung, neben der Mathematik, das wichtigste
+Empirie und Theorie geschaffen.  Neben der Mathematik ist die Visualisierung das wichtigste
 Werkzeug der Statistik. So wird der Visualisierungsprozess aus Abschnitt \ref{sec:Pipeline} besonders in
 im Bereich der deskriptiven Statistik benutzt, um Erkenntnisse zu gewinnen und darzustellen.
 Auch die Informationsvisualisierung als eigenständige Disziplin benutzt Techniken der Statistik um Daten aufzubereiten.
 \item[Präsentations- und Prozessvisualisierung]
-Häufig werden Präsentationsvisualisierung und Prozessvisualisierung als Visualisierung bezeichnet, sind
-aber eigene Gebiete. In ihnen geht es auch um die Sichtbarmachung von Informationen, diese wurden aber nicht aus
-großen Datenmengen gewonnen und sind daher auch ohne Softwareunterstützung herstellbar.
-\item[Data Mining] ist der automatische Versuch, Datenmengen zu ordnen und mithilfe
+Häufig werden Präsentations- und Prozessvisualisierungen als Informationsvisualisierung bezeichnet, sind
+aber eigenständige Gebiete. In ihnen geht es auch um die Sichtbarmachung von Informationen. Diese basieren aber nicht auf
+großen Datenmengen und können daher auch ohne Softwareunterstützung erstellt werden.
+\item[Data Mining] ist der computergestützte automatische Versuch, Datenmengen zu ordnen und mithilfe
 von Algorithmen Erkenntnisse zu erhalten. Im Gegensatz dazu versucht die Informationsvisualisierung eine geeignete grafische Repräsentation
 bereitzustellen, die dem Nutzer die Möglichkeit gibt, diese Erkenntnisse selbst zu finden. Für die Datengewinnung
 ist die Informationsvisualisierung auf Techniken des Data Mining angewiesen. Es gibt Bestrebungen beide Gebiete 
-im "Visual Data Mining"\footnote{Vgl. Daniel Keim} zu Verbinden um Synergien zu bilden.
+im "Visual Data Mining"\footnote{Vgl. \citep{Keim}} zu Verbinden um Synergien zu bilden.
 \item[Interface- und Interactiondesign]
 Diese Felder beschreiben die Gestaltung von Benutzeroberflächen. Damit arbeiten sie, wie die Visualisierung, an
 der Schnittstelle zwischen Mensch und Maschine. Interfacedesign benutzt häufig Techniken der Visualisierung
@@ -494,9 +500,9 @@ um grafische Konzepte zu realisieren, da die Informationen primär visuell über
 \item[Computational Design]
 Dieser von \citep{BenFry} eingeführte Begriff beschreibt die Vereinigung vieler Disziplinen zu einem neuen
 interdisziplinären Arbeitsfeld. Der Ansatz des Computational Designs ist es, die Informationsvisualisierung in einem größeren
-Kontext zu betrachten und mit technischen Bereichen wie der Informatik und künstlerischen
-Bereichen des Designs zu verbinden. Somit wird der Informationsvisualisierungsbegriff auf ein größeres Arbeitsfeld
-bezogen.
+Kontext zu betrachten und dabei die technischen Bereiche der Informatik mit den künstlerischen
+Bereichen des Designs zu verbinden. Der Prozess des Computational Designs wird in Abschnitt \ref{sec:Pipeline}
+genutzt, um den Arbeitsprozess der Informationsvisualisierung zu beschreiben.
 \end{description}
 
 \section{Bearbeitungsziele}
