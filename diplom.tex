@@ -688,65 +688,27 @@ Softwarelösungen Einschränkungen bei der grafischen Darstellung vermeiden.
 \label{cha:Software}
 \section{Allgemeine Betrachtungen}
 \label{sec:AllgemeineBetrachtungen}
-Die Übertragung von symbolischen Informationen auf geometrische Informationen kann als grundlegendes Prinzip der
-Informationsvisualisierung bezeichnet werden. Dieser Schritt ist die ausführende Stufe in der Visualisierungspipeline,
-die als Mapping bezeichnet werden kann. Bevor es zu diesem Schritt kommen kann, ist es wichtig
-alle Ausgangsbedingungen zu beachten, die zu einer Informationsvisualisierung führen, die alle Bearbeitungsziele aus
-Abschnitt \ref{sec:Ziele} erfüllt. Das bedeutet, dass alle Schritte vor dem Mapping wie zum Beispiel die Auswahl
-aller Parameter nicht von einer Software erledigt werden können und stattdessen vom Nutzer in einem kreativen
-Prozess gefunden werden müssen.
-
-Nur die arbeitsintensive Aufgabe der Übertragung der einzelnen Ausprägungen auf die visuellen Variablen muss
-dann noch vom Rechner übernommen werden, ohne das der Nutzer dabei im kreativen Gestaltungsprozess eingeschränkt
-wird. Parameter können direkt verändert werden um die Ausgabe direkt zu steuern, während der
-Rechner alle Änderungen sofort ausgibt. Es wird eine kreative Auseinandersetzung
-mit Daten ermöglicht, die neue Formen der Informationsvisualisierung und damit neue Sichtweisen auf
-die eigentlichen Probleme zulässt.
-
-Wie in Kapitel \ref{cha:Grundlagen} und \ref{cha:Informationsvisualisierung} gezeigt, gibt es eine Vielzahl an
-Daten und grafischen Darstellungsmöglichkeiten. Dazu kommen neue hybride Formen durch Mashups\footnote{"`Mashup (von
-englisch to mash für vermischen) bezeichnet die Erstellung neuer Medieninhalte durch die nahtlose
-(Re-)Kombination bereits bestehender Inhalte."'\citep{wiki_mashup}}. Es muss ein Ansatz gewählt
-werden, bei dem die Verwendung von unterschiedlichsten Datensätzen und Darstellungsformen ermöglicht wird.
-Die Software muss dazu möglichst universell sein um flexibel viele unterschiedliche Anwendungsfälle
-bearbeiten zu können. Dabei dürfen die Bearbeitunsziele aus Abschnitt \ref{sec:Ziele} nicht
-vernachlässigt werden.
-
-Dieser Ansatz soll mit einer Software auf einer niedrigeren Ebene der Informationsvisualisierung umgesetzt werden als
-es bisherige Softwarelösungen wie beispielsweise Microsoft Excel getan haben. Statt grafische Darstellungen auszuwählen
-die auf die Datensätze abgebildet werden, soll dem Benutzer erlaubt werden einzelne Variablen des gleichen abstrakten Datensatzes,
-auf die visuellen Variablen einer Grafik zu übertragen. Die Software kann automatisch den Wertebereich auf atomare Elemente der
-grafischen Darstellung abbilden. Somit können trotz dieses Low-Level-Ansatzes große Mengen an Datenpunkten
-in kürzester Zeit dargestellt werden. Anders als bei aktuellen Softwarepaketen finden damit folgende Fragen
-eine Beantwortung:
-\begin{itemize}
-\item Welche Darstellungsform eignet sich am besten für ein konkrete Aufgabe?
-\item Gibt es Mischformen aus vorhandenen Darstellunsgformen mit denen ein Problem noch besser gelöst werden kann?
-\item Gibt es neue unerforschte Ansätze für die Visualisierung?
-\end{itemize}
-
-\section{Einordnung in den Visualisierungsprozess}
-\label{sec:Einordnung}
-
-Die im vorangegangenen Kapitel beschriebene Software soll in dieser Arbeit nur auf einen Teilbereich
-des Visualisierungsprozesses konzentriert werden, um den grundlegenden Ansatz demonstrieren zu können. Dabei werden
-einzelne Bereiche des Prozesses nicht beachtet, können aber durch den modularen Aufbau der Software
-noch ergänzt werden.\footnote{Vgl. dazu Abschnitt \ref{sec:visPro} und \ref{sec:Ausblick}} In der
-Einteilung nach \citep{BenFry} befindet sich der Aufgabenbereich der Software in den
-Stufen \textit{present} und \textit{refine}. Diese werden um eine zusätzliche Bearbeitungsmöglichkeit ergänzt.
-Der Prozess des Mappings kann stark beeinflusst werden, woraus ein iterativer Arbeitsprozess entsteht.
-Bei jeder Interaktion des Benutzers wird automatisch und unmittelbar die
-aktuelle Ausgabe verändert und der Nutzer kann visuell analysieren welche Verbindungen noch nötig sind
-oder welche zusätzlichen Parameter einzelne Verbindungen noch brauchen, um eine sinnvolle grafische 
-Darstellung zu erzeugen.
-Somit können alle visuellen Variablen direkt beeinflusst und für das aktuelle Bearbeitungsziel angepasst
-werden.
 \begin{figure}
 \centering
 \includegraphics[width=\linewidth]{images/benfryprocess_marked.pdf}
 \caption{Einordnung in den Prozess des Computational Designs nach \citep{BenFry}, eigene Darstellung}
 \label{fig:benfryprocess_marked}
 \end{figure}
+Die Übertragung von symbolischen Informationen auf geometrische Informationen kann als grundlegendes Prinzip der
+Informationsvisualisierung bezeichnet werden. In der Fassung von \citep{BenFry} befindet sich der Aufgabenbereich
+der Software in den Stufen \textit{present} und \textit{refine}. Die Software erlaubt dem Nutzer beide Stufen
+bearbeiten zu können. In Abbildung \ref{fig:benfryprocess_marked} ist dieser weitere iterative Schritt
+abgebildet. Die hohe Anzahl der Beobachtungspunkte eines Datensatzes macht eine vom Nutzer manuell durchgeführte Transkription
+sehr aufwändig und zeitintensiv. Eine Unterstützung des Benutzers durch eine Software ist daher sinnvoll.
+Dabei darf der Nutzer in seinem kreativen Gestaltungsprozess nicht eingeschränkt werden.
+
+Wie in Kapitel \ref{cha:Grundlagen} und \ref{cha:Informationsvisualisierung} gezeigt, gibt es eine Vielzahl an
+Daten und grafischen Darstellungsformen. Dazu kommen neue hybride Formen durch Mashups\footnote{"`Mashup (von
+englisch "`to mash"' für vermischen) bezeichnet die Erstellung neuer Medieninhalte durch die nahtlose
+(Re-)Kombination bereits bestehender Inhalte."'\citep{wiki_mashup}}.
+Die Software muss möglichst universell sein um flexibel viele unterschiedliche Anwendungsfälle
+bearbeiten zu können. Dabei dürfen die Bearbeitunsziele aus Abschnitt \ref{sec:Ziele} nicht
+vernachlässigt werden.
 
 \section{Anforderungen}
 \label{sec:Anforderungen}
@@ -902,11 +864,53 @@ auch die Darstellung, da der Radius des Kreises mit dem Wert dieser Node verbund
 \end{figure}
 
 \section{Prozesskette}
+In der Prozesskette wird der generische Arbeitsablauf eines Benutzers
+der Software beschrieben. Dieser ist unabhängig von den zu bearbeitenden Daten
+und den gewählten Darstellungsformen. Die Prozesskette ist in vier
+Arbeitsschritte unterteilt.
 \subsection{Laden der Daten}
+Der Benutzer erzeugt einen Node, der es möglich macht externe Datenquellen
+in das Programm zu laden. Unterschiedliche Nodes machen es möglich Datenquellen auf
+dem Computer oder im Netzwerk einlesen zu können. Dabei werden etablierte
+Datenformate wie XML, CSV, JSON und netCDF unterstützt. Wenn der Benutzer eine 
+Datenquelle ausgewählt hat, erhält der Node automatisch Output-Pins.
+Diese repäsentieren die ursprüngliche Datenstruktur der Datenquelle.
+Die Datenquelle für das Beispiel aus Abbildung \ref{fig:beispiel} kann eine Tabelle sein,
+bei der in der ersten Spalte alle Begriffe stehen und jede weitere Spalte die Farben
+eines jeden Kulturkreises beschreibt. Bei zehn Kulturkreisen hat die Tabelle
+elf Spalten und der Node würde elf Output-Pins besitzen. Diese können dann unterschiedlich
+weiterverarbeitet werden.
+Die Erzeugung mehrerer unterschiedlicher Nodes für die Einbindung von Daten macht ein
+\textit{Mashup} unterschiedlicher Datenquellen möglich.
 \subsection{Festlegung der visuelle Variablen}
-\subsection{Kontrolle der Ausgabe}
-\subsection{Verfeinerung der Parameter}
-\subsection{Erzeugung einer Bilddatei}
+Der Benutzer hat nun die Möglichkeit weitere Nodes anzulegen, die die visuellen
+Variablen darstellen. Diese können unabhängig voneinander erzeugt und mit einem datengebenden
+Node verbunden werden. Der Benutzer erhält die Freiheit zwischen datengebenden Nodes und
+Nodes die eine grafische Ausgabe erzeugen weitere Nodes einzufügen, um diese Verbindungen
+parametrisieren zu können. Das macht unterschiedlichste Darstellunsgformen möglich.
+Um das Beispiel aus Abbildung \ref{fig:beispiel} zu realisieren, muss der Benutzer einen
+Node erzeugen, der Rechtecke erzeugen kann. Dieser Node hat Input-Pins um die Position
+in der Ebene, die Größe, die Rotation und die Farbe festlegen zu können. Der Benutzer
+verbindet dann die Output-Pins des datengebenden Nodes mit den Input-Pins dieser Node
+und erzeugt damit eine erste grafische Darstellung der Daten.
+\subsection{Evaluation der grafischen Darstellung}
+Um die aktuelle grafische Darstellung überprüfen zu können, kann der Benutzer Nodes
+erzeugen, die eine Art Vorschau ermöglichen. Ein Render-Node erzeugt ein weiteres
+Ausgabefenster und zeigt die Ausgabe, die von den vorhandenen Nodes erzeugt wird.
+Bei jeder Interaktion des Benutzers, die Parameter einzelner Nodes ändert,
+wird automatisch und unmittelbar die aktuelle Ausgabe verändert.
+Der Benutzer kann visuell analysieren welche Verbindungen noch nötig sind
+oder welche zusätzlichen Parameter einzelne Verbindungen noch brauchen, um eine sinnvolle grafische 
+Darstellung zu erzeugen. Ist das Beispiel aus Abbildung \ref{fig:beispiel} mit den vorangegangen Schritten noch nicht
+zufriedenstellend visualisiert, kann der Benutzer weitere Nodes und Connections
+hinzufügen. So kann beispielsweise eine zusätzlicher Multiplikator-Node und ein
+Variablen-Node dazu genutzt werden um den Radius des Kreises anpassen zu können.
+\subsection{Export der grafischen Darstellung}
+Ist der Benutzer zufrieden mit der grafischen Darstellung, kann er weitere Nodes
+erzeugen, die diese exportieren. Zur Speicherung von grafischen Darstellungen
+eignen sich bekannte Bildformate wie JPEG, PNG, BMP oder TIFF. Eine Node, die andere Formate
+für die Weiterverarbeitung unterstützt ist denkbar. Weitere Exportmöglichkeiten
+können Vektorgrafiken oder interaktive HTML Seiten sein.
 
 \section{Analyse bestehender Software}
 \label{sec:bestehendeSoftware}
