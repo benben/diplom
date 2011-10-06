@@ -1,4 +1,4 @@
-\documentclass[a4paper, 12pt, DIV=calc, version=first, pdftex, headsepline, footsepline]{scrreprt}
+\documentclass[a4paper, 12pt, DIV=calc, version=first, pdftex, headsepline, footsepline, bibtotocnumbered, liststotocnumbered]{scrreprt}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -37,7 +37,7 @@ backgroundcolor=\color{light-gray}
 \subject{Diplomarbeit}
 \publishers{Hochschule für Technik, Wirtschaft und Kultur Leipzig}
 \dedication{Dank an \\ Christina Sanko, Pyry Jahkola, Ted Mosby, Sarah Walter,
-Stephan Keller, Professor Dr.-Ing. Robert Müller, Philip Whitfield}
+Stephan Keller, Professor Dr.-Ing. Robert Müller, Philip Whitfield, Johannes Knofe, René Zschoch}
 \maketitle
 \tableofcontents
 
@@ -684,11 +684,10 @@ einzelne Vorteile anderer Darstellungsformen zu verbinden, um neue Sichtweisen z
 Damit solche Informationsvisualisierungstechniken gefunden werden können, müssen
 Softwarelösungen Einschränkungen bei der grafischen Darstellung vermeiden.
 
-\chapter{Konzept}
+\chapter{Konzeption}
 \label{cha:Software}
-\section{Grundprinzip der Informationsvisualisierung}
-\label{sec:Grundprinzip}
-\subsection{Allgemeine Betrachtungen}
+\section{Allgemeine Betrachtungen}
+\label{sec:AllgemeineBetrachtungen}
 Die Übertragung von symbolischen Informationen auf geometrische Informationen kann als grundlegendes Prinzip der
 Informationsvisualisierung bezeichnet werden. Dieser Schritt ist die ausführende Stufe in der Visualisierungspipeline,
 die als Mapping bezeichnet werden kann. Bevor es zu diesem Schritt kommen kann, ist es wichtig
@@ -726,7 +725,8 @@ eine Beantwortung:
 \item Gibt es neue unerforschte Ansätze für die Visualisierung?
 \end{itemize}
 
-\subsection{Einordnung in den Visualisierungsprozess}
+\section{Einordnung in den Visualisierungsprozess}
+\label{sec:Einordnung}
 
 Die im vorangegangenen Kapitel beschriebene Software soll in dieser Arbeit nur auf einen Teilbereich
 des Visualisierungsprozesses konzentriert werden, um den grundlegenden Ansatz demonstrieren zu können. Dabei werden
@@ -747,78 +747,6 @@ werden.
 \caption{Einordnung in den Prozess des Computational Designs nach \citep{BenFry}, eigene Darstellung}
 \label{fig:benfryprocess_marked}
 \end{figure}
-
-\section{Vorbetrachtungen}
-Für die Arbeit mit der Infomationsvisualisierung gelten einige Rahmenbedingungen, die vor der
-Konzeption einer Software beachtet werden müssen.
-
-Ein Großteil der Ausgabemöglichkeiten sind zweidimensional.\footnote{Es gibt immer wieder
-Ansätze, die die 3D-Technik nutzen um Visualisierungen darzustellen. Diese Entwicklungen
-müssen aber noch weiter erforscht werden um ihre Tauglichkeit zu prüfen.} Dabei kann
-die Ausgabe digital auf einem Display oder als Druck einer grafischen Darstellung
-erfolgen. Soll eine grafische Darstellung benutzt werden, in der mehr als 2 Variablen
-für die Positionierung der Grafikprimitive im Raum verwendet werden, muss daher für die
-Ausgabe eine Projektion vorgenommen werden. Die Projektion ist die mathematische
-Realisierung des Modells der virtuellen Kamera. In \citep[S.\,26]{Computergrafik} werden die 
-Eigenschaften dieser Kamera wie folgt beschrieben:
-\begin{itemize}
-\item die Position der Kamera ist gegeben durch die Koordinaten eines Punkts;
-\item der Bildausschnitt ist rechtwinklig;
-\item der Schärfebereich der Kamera ist unendlich groß.
-\end{itemize}
-Für diese virtuelle Kamera wird in der Computergrafik die Zentralprojektion verwendet.
-Bei dieser wird jeder Punkt im Raum mit einem Projektionsstrahl (in Form einer Geraden)
-auf eine Ebene abgebildet. Die Ebene kann beispielsweise ein Monitor sein. Alle 
-Projektionsstrahlen schneiden sich in einem Punkt außerhalb dieser Ebene, dem sogenannten
-Projektionszentrum. Abbildung XXX veranschaulicht dieses Prinzip. Die Parallelprojektion
-findet als Sonderfall der Zentralprojektion ebenfalls Anwendung.\footnote{Bei der
-Parallelprojektion liegt das Projektionszentrum unendlich weit entfernt. Somit verlaufen
-die Projektionsstrahlen parallel. Vgl. \citep{wiki_projektion}} Der Nutzen der virtuellen
-Kamera kann durch Nutzerinteraktion erhöht werden. Der Anwender kann somit Parameter der
-virtuellen Kamera, wie beispielsweise Position und Zoom selbst beeinflussen um den Fokus
-auf einzelne Teilbereiche der grafischen Darstellung zu setzen.
-
-Durch die Eigenschaften heutiger Ausgabegeräte müssen durch die Visualisierung erzeugte
-Grafiken gerastert werden. Die Technik der Rasterung überführt die kontinuierlichen Werte
-einer Projektion in diskrete Werte des Geräte-Koordinatensystems. Dabei werden Werte
-gerundet und in die zweidimensionale Matrix\footnote{Auflösung der Ausgabe in Pixel oder DPI}
-des Ausgabegerätes übernommen.
-
-Mögliche Farbwerte der einzelnen Bildpunkte und damit die Farbräume der Ausgabegeräte
-müssen beachtet werden. Die Ausgabe auf Computermonitoren erfolgt im RGB-Farbraum während
-für Druckerzeugnisse unterschiedliche Farbräume möglich sind.
-meens
-Die Rahmenbedingungen der Bildsynthese konnten in diesem Abschnitt nur grundlegend beschrieben
-werden. Eine tiefgreifendere Beschreibung des Themas erfolgt in \citep{Computergrafik}.
-
-Die Daten und deren durch Informationsvisualisierung erzeugte visuelle Repräsentationen sind immer
-gebunden an ihr Speicher- und Ausgabeformat.
-Zuerst müssen die Daten gesammelt und gespeichert werden. Dazu müssen adäquate
-Formate gefunden werden, die die Software verarbeiten kann. Es gibt bereits
-etablierte Ansätze große Datenmengen zu speichern und zu übertragen. Die Daten
-werden dabei maschinenlesbar codiert. Etablierte Formate wie
-CSV und XML kommen zum Einsatz. Daneben existieren noch weitere Formate mit spezifischen
-Vor- und Nachteilen. JSON\footnote{JavaScript Object Notation} hat Ähnlichkeit mit XML,
-ist aber besser vom Menschen lesbar. Im wissenschaftlichen Bereich findet
-häufig das netCDF Format\footnote{Vgl. \citep{Schumann}}
-Anwendung. Neben diesen sehr bekannten Formaten existieren noch viele weitere
-Möglichkeiten Daten zu speichern.
-
-Zur Speicherung der grafischen Darstellungen einer Informationsvisualisierung eignen sich bekannte
-Formate wie JPEG, PNG, BMP, TIFF und viele andere. Dabei müssen formatspezifische
-Eigenschaften wie beispielsweise die Kompression beachtet werden.
-
-Für die Mensch-Maschine-Interaktion stehen meist nur Maus und Tastatur zur Verfügung.
-Daneben gibt es neue Ansätze der Bewegungsteuerung mit Datenhandschuh und
-Kamera-Tracking zur Bewegungs- und Gestenerkennung. Diese müssen aber noch weiter
-erforscht werden, bevor ein effizienter Einsatz in der Informationsvisualisierung
-möglich ist.
-
-Aus Sicht des Anwenders spielt außerdem die Wahrnehmungs- und Auflösungsfähigkeit
-des menschlichen Auges eine Rolle und welche Menge an visueller Information
-im Gehirn verarbeitet werden kann.
-Dieser und andere Aspekte werden dem Arbeitsfeld der Kognitionspsychologie und
-Neurowissenschaften zugeordnet und ist daher kein Teil dieser Arbeit.
 
 \section{Anforderungen}
 \label{sec:Anforderungen}
@@ -870,108 +798,6 @@ die Lizenz eine kommerzielle Erweiterung und Nutzung zu. Für private Anwender
 ist die Software kostenlos verfügbar.
 \end{description}
 
-\section{Analyse bestehender Software}
-\label{sec:bestehendeSoftware}
-Durch das weite Arbeitsfeld der Informationsvisualisierung, das meist
-fließend in andere Bereiche über geht, existiert eine große Anzahl an
-Softwarelösungen und Programmierbibliotheken. Hier sollen exemplarisch
-einzelne Anwendungen beschrieben werden, die verschiedene gefordete
-Funktionen enthalten, diese aber nicht in einem Softwarepaket, das
-speziell auf die Informationsvisualisierung zugeschnitten ist, zusammenfassen.
-Eine Liste aller betrachteten Programme findet sich in Tabelle
-\ref{tab:Softwareliste} im Anhang.
-\begin{description}
-\item[vvvv]
-ist eine datenstromorientierte Enticklungsumgebung, die universell eingesetzt werden kann.
-Mit ihr können unterschiedlichste audiovisuelle Medien gekoppelt und
-verarbeitet werden. vvvv setzt auf visuelle Programmierung, ist aber
-nicht spezialisiert auf Informationsvisualisierung und nicht für alle
-Plattformen verfügbar.
-\item[MeVisLab]
-ist eine Software aus dem medizinischen Bereich, die durch visuelle
-Programmierung bedient werden kann. MeVisLab ist eine fortgeschrittene
-IDE\footnote{Integrated Development Environment} mit verschiedenen
-Erweiterungsmöglichkeiten, ist aber spezialisiert auf die medizinische
-Bildverarbeitung.
-\item[d3.js]
-ist eine Bibliothek die einen ähnlichen Ansatz wie in Kapitel \ref{cha:Software}
-verfolgt. Sie ist in Javascript geschrieben und beschränkt sich dadurch auf
-Webanwendungen. Der Nutzer muss Javascript programmieren können, um diese
-Bibliothek nutzen zu können.
-\item[NodeBox 2 Beta]
-ist ein Programm um generative Grafiken zu erstellen. Es entspricht nahezu
-allen beschriebenen Anforderungen. Durch die Programmierung ist es aber recht
-langsam einzusetzen. Auch die Anbindung von unterschiedlichen Datenquellen
-ist nicht gegeben.
-\end{description}
-
-\chapter{Umsetzung eines Prototyps}
-\label{cha:Umsetzung}
-In diesem Kapitel wird das Konzept prototypisch implementiert.
-Dieser Prototyp trägt den Namen \textit{Datasynth}.
-Um der Bearbeitungszeit dieser Arbeit gerecht zu werden, können nur grundlegende Funktionen
-umgesetzt werden, die notwendig sind, um das Prinzip der Software zu verdeutlichen.
-
-\section{Technologien}
-\label{sec:Technologien}
-Um Datasynth zu entwickeln werden verschiedene Softwaretechnologien verwendet.
-Deren Einsatz wird nachfolgend kurz erläutert.
-\begin{description}
-\item[C++]
-ist eine objektorientierte Programmiersprache. Sie bietet
-eine maschinennahe Möglichkeit, um Programme zu schreiben.
-Datasynth nutzt durch openFrameworks und boost einige Vorteile
-von C++. Dazu gehören die höhere Geschwindigkeit beim Ausführen
-und die einfache Einbindung anderer Bibliotheken, wie 
-beispielsweise OpenGL für Grafikoperationen. Außerdem
-finden das Programmierparadigma der Objektorientierung
-in den einzelnen Nodes von Datasynth Anwendung.
-\item[openFrameworks]
-\begin{figure}
-\centering
-\includegraphics[width=\linewidth]{images/of.pdf}
-\caption{Funktionsweise von openFrameworks aus \citep{of_wiki}}
-\label{fig:of}
-\end{figure}
-ist ein in C++ geschriebenes Framework. Es soll durch seine
-Einfachheit und Intuitivität den kreativen Prozess und das
-Experimentieren unterstützen. openFrameworks
-kapselt viele unterschiedliche Bibliotheken für die
-computergestützte audio-visuelle Verarbeitung in eine gemeinsame,
-konsistente und einfache Programmierschnittstelle. Beispielsweise
-wird die Bibliothek openGL für Grafiken verwendet und die
-Bibliothek rtAudio für die Ein- und Ausgabe von Audiosignalen.
-Das erlaubt dem Programmierer eine schnelle und effiziente Arbeitsweise ohne
-lange Einarbeitungszeiten und ist daher für Datasynth optimal.
-Die Programmierschnittstelle von openFrameworks enthält
-wenige Klassen mit wenigen Funktionen um überschaubar zu bleiben.\footnote{Vgl. \citep{of1} und \citep{of2}}
-Für spezielle Anforderungen kann auf die eigentlichen Bibliotheken
-zurückgegriffen werden.
-openFrameworks ist kompatibel zu den Plattformen
-Linux, Mac OSX, Windows und erfüllt, neben den genannten Vorteilen,
-die Anforderung der Plattformunabhängigkeit aus Abschnitt \ref{sec:Anforderungen}.
-Die Funktionsweise von openFrameworks wird in Abbildung
-\ref{fig:of} verdeutlicht. 
-Die Programmlogik, das Benutzerinterface und alle Ein- und
-Ausgaben für den Benutzer wurden für Datasynth mit openFrameworks
-realisiert.
-\item[boost]
-ist eine Sammlung von unterschiedlichen C++ Programmierbibliotheken.
-Diese Bibliotheken sind portabel einsetzbar und steigern die
-Produktivität beim Entwickeln einer Software, da sie unterschiedliche
-Anwendungsbereiche von C++ erweitern und vereinfachen.
-Einzelne Bibliotheken der Sammlung werden in den neuen C++ Standard
-übernommen, um C++ selbst zu verbessern.
-Für Datasynth werden die Bibliotheken für Zeiger, Container
-und generische Programmierung verwendet, um die Entwicklung weiter zu vereinfachen.
-\item[GitHub]
-ist eine Internetplattform für das gemeinsame Entwickeln von Software.\footnote{Vgl. http://www.github.com}
-Sie basiert auf dem Versionverwaltungstool git, welches entwickelt wurde
-um Änderungen an Quellcode aufzuzeichnen und diesen zwischen mehreren
-Entwicklern teilen zu können. GitHub verbindet die Funktionalitätvon git mit
-einem sozialen Netzwerk, bei der verschiedene Nutzer kollaborativ
-an einer Software arbeiten können. Datasynth ist auf Github verfügbar.\footnote{Vgl. http://www.github.com/benben/datasynth}
-\end{description}
 \section{Visuelle Programmierung}
 \label{sec:visPro}
 Um dem breiten Spektrum an Anforderungen gerecht zu werden,
@@ -1049,7 +875,7 @@ beachten zu müssen, da Datasynth automatisch Spreads miteinander verrechnen kan
 Der Einsatz von visueller Programmierung als Bedienkonzept für Datasynth hat
 mehrere Vorteile. Das Verbinden von Nodes, die als Datenquelle funktionieren, mit Nodes, die
 zur Ausgabe von grafischen Primitiven dienen, greift das grundlegende
-Prinzip der Informationsvisualisierung auf.\footnote{Vgl. Abschnitt \ref{sec:Grundprinzip}}
+Prinzip der Informationsvisualisierung auf.
 Darüber hinaus sind keine Programmierkenntnisse erforderlich, um eine Informationsvisualisierung
 erstellen zu können. Ein durchschnittliches mathematisches Verständnis reicht für einfache Aufgaben aus.
 Durch die universelle Form der Benutzerschnittstelle ist ein iteratives
@@ -1074,6 +900,116 @@ In der unteren Reihe wurde der Wert auf 125 geändert. Dadurch verändert sich u
 auch die Darstellung, da der Radius des Kreises mit dem Wert dieser Node verbunden ist.}
 \label{fig:datasynth}
 \end{figure}
+
+\section{Prozesskette}
+\subsection{Laden der Daten}
+\subsection{Festlegung der visuelle Variablen}
+\subsection{Kontrolle der Ausgabe}
+\subsection{Verfeinerung der Parameter}
+\subsection{Erzeugung einer Bilddatei}
+
+\section{Analyse bestehender Software}
+\label{sec:bestehendeSoftware}
+Durch das weite Arbeitsfeld der Informationsvisualisierung, das meist
+fließend in andere Bereiche über geht, existiert eine große Anzahl an
+Softwarelösungen und Programmierbibliotheken. Hier sollen exemplarisch
+einzelne Anwendungen beschrieben werden, die verschiedene gefordete
+Funktionen enthalten, diese aber nicht in einem Softwarepaket, das
+speziell auf die Informationsvisualisierung zugeschnitten ist, zusammenfassen.
+Eine Liste aller betrachteten Programme findet sich in Tabelle
+\ref{tab:Softwareliste} im Anhang.
+\begin{description}
+\item[vvvv]
+ist eine datenstromorientierte Enticklungsumgebung, die universell eingesetzt werden kann.
+Mit ihr können unterschiedlichste audiovisuelle Medien gekoppelt und
+verarbeitet werden. vvvv setzt auf visuelle Programmierung, ist aber
+nicht spezialisiert auf Informationsvisualisierung und nicht für alle
+Plattformen verfügbar.
+\item[MeVisLab]
+ist eine Software aus dem medizinischen Bereich, die durch visuelle
+Programmierung bedient werden kann. MeVisLab ist eine fortgeschrittene
+IDE\footnote{Integrated Development Environment} mit verschiedenen
+Erweiterungsmöglichkeiten, ist aber spezialisiert auf die medizinische
+Bildverarbeitung.
+\item[d3.js]
+ist eine Bibliothek die einen ähnlichen Ansatz wie in Kapitel \ref{cha:Software}
+verfolgt. Sie ist in Javascript geschrieben und beschränkt sich dadurch auf
+Webanwendungen. Der Nutzer muss Javascript programmieren können, um diese
+Bibliothek nutzen zu können.
+\item[NodeBox 2 Beta]
+ist ein Programm um generative Grafiken zu erstellen. Es entspricht nahezu
+allen beschriebenen Anforderungen. Durch die Programmierung ist es aber recht
+langsam einzusetzen. Auch die Anbindung von unterschiedlichen Datenquellen
+ist nicht gegeben.
+\end{description}
+
+\chapter{Prototypische Realisierung}
+\label{cha:Umsetzung}
+In diesem Kapitel wird das Konzept prototypisch implementiert.
+Dieser Prototyp trägt den Namen \textit{Datasynth}.
+Um der Bearbeitungszeit dieser Arbeit gerecht zu werden, können nur grundlegende Funktionen
+umgesetzt werden, die notwendig sind, um das Prinzip der Software zu verdeutlichen.
+
+\section{Technologien}
+\label{sec:Technologien}
+Um Datasynth zu entwickeln werden verschiedene Softwaretechnologien verwendet.
+Deren Einsatz wird nachfolgend kurz erläutert.
+\begin{description}
+\item[C++]
+ist eine objektorientierte Programmiersprache. Sie bietet
+eine maschinennahe Möglichkeit, um Programme zu schreiben.
+Datasynth nutzt durch openFrameworks und boost einige Vorteile
+von C++. Dazu gehören die höhere Geschwindigkeit beim Ausführen
+und die einfache Einbindung anderer Bibliotheken, wie 
+beispielsweise OpenGL für Grafikoperationen. Außerdem
+finden das Programmierparadigma der Objektorientierung
+in den einzelnen Nodes von Datasynth Anwendung.
+\item[openFrameworks]
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth]{images/of.pdf}
+\caption{Funktionsweise von openFrameworks aus \citep{of_wiki}}
+\label{fig:of}
+\end{figure}
+ist ein in C++ geschriebenes Framework. Es soll durch seine
+Einfachheit und Intuitivität den kreativen Prozess und das
+Experimentieren unterstützen. openFrameworks
+kapselt viele unterschiedliche Bibliotheken für die
+computergestützte audio-visuelle Verarbeitung in eine gemeinsame,
+konsistente und einfache Programmierschnittstelle. Beispielsweise
+wird die Bibliothek openGL für Grafiken verwendet und die
+Bibliothek rtAudio für die Ein- und Ausgabe von Audiosignalen.
+Das erlaubt dem Programmierer eine schnelle und effiziente Arbeitsweise ohne
+lange Einarbeitungszeiten und ist daher für Datasynth optimal.
+Die Programmierschnittstelle von openFrameworks enthält
+wenige Klassen mit wenigen Funktionen um überschaubar zu bleiben.\footnote{Vgl. \citep{of1} und \citep{of2}}
+Für spezielle Anforderungen kann auf die eigentlichen Bibliotheken
+zurückgegriffen werden.
+openFrameworks ist kompatibel zu den Plattformen
+Linux, Mac OSX, Windows und erfüllt, neben den genannten Vorteilen,
+die Anforderung der Plattformunabhängigkeit aus Abschnitt \ref{sec:Anforderungen}.
+Die Funktionsweise von openFrameworks wird in Abbildung
+\ref{fig:of} verdeutlicht. 
+Die Programmlogik, das Benutzerinterface und alle Ein- und
+Ausgaben für den Benutzer wurden für Datasynth mit openFrameworks
+realisiert.
+\item[boost]
+ist eine Sammlung von unterschiedlichen C++ Programmierbibliotheken.
+Diese Bibliotheken sind portabel einsetzbar und steigern die
+Produktivität beim Entwickeln einer Software, da sie unterschiedliche
+Anwendungsbereiche von C++ erweitern und vereinfachen.
+Einzelne Bibliotheken der Sammlung werden in den neuen C++ Standard
+übernommen, um C++ selbst zu verbessern.
+Für Datasynth werden die Bibliotheken für Zeiger, Container
+und generische Programmierung verwendet, um die Entwicklung weiter zu vereinfachen.
+\item[GitHub]
+ist eine Internetplattform für das gemeinsame Entwickeln von Software.\footnote{Vgl. http://www.github.com}
+Sie basiert auf dem Versionverwaltungstool git, welches entwickelt wurde
+um Änderungen an Quellcode aufzuzeichnen und diesen zwischen mehreren
+Entwicklern teilen zu können. GitHub verbindet die Funktionalitätvon git mit
+einem sozialen Netzwerk, bei der verschiedene Nutzer kollaborativ
+an einer Software arbeiten können. Datasynth ist auf Github verfügbar.\footnote{Vgl. http://www.github.com/benben/datasynth}
+\end{description}
 
 \section{Wichtige Kernfunktionen}
 \label{sec:Kernfunktionen}
