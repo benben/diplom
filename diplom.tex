@@ -614,7 +614,7 @@ Das Ergebnis dieser Verfahren ist jedoch immer die grafische Darstellung.
 \section{Grafische Darstellung}
 \label{sec:Darstellungen}
 \subsection{Begriff}
-Die grafische Darstellung ist das Produkt der Informationsvisualisierung. Sie besteht
+Die grafische Darstellung ist das Ergebnis der Informationsvisualisierung. Sie besteht
 aus den in Abschnitt \ref{sec:grafischeSemiologie} genannten
 visuellen Variablen.
 Als allgemeinste Form der grafischen Darstellung beschreiben \citep{Schumann} das
@@ -622,30 +622,27 @@ Diagramm. Es "`ist eine graphische Repräsentation von Informationen mit Hilfe
 graphischer Elemente"'\citep[S.\,126]{Schumann}. \citep{Bertin} spricht dagegen
 vom Begriff der "`grafischen Darstellung"' und grenzt diesen von
 der bildhaften Darstellung\footnote{In \citep{Bertin} werden Fotos oder künstlerische Bilder explizit ausgeschlossen.}
-ab, die nicht monosemiotisch\footnote{Vgl. Abschnitt \ref{sec:grafischeSemiologie}} ist. Diese Klassifikation wird weiter in Diagramme, Netze
+ab, die nicht monosemiotisch\footnote{Vgl. Abschnitt \ref{sec:grafischeSemiologie}} ist.
+Diese Klassifikation wird weiter in Diagramme, Netze
 und Karten unterteilt. \citep{Schumann} weist außerdem auf eine Doppeldeutigkeit
 des deutschen Begriffes hin, denn im englischen gibt es "`diagram"' und "`chart"'.
-In dieser Arbeit wird der Begriff
-der grafischen Darstellung verwendet und schließt damit alle Darstellungsformen der
-Informationsvisualisierung ein.
+In dieser Arbeit wird der Begriff der \textit{grafischen Darstellung} verwendet und schließt
+damit alle Darstellungsformen der Informationsvisualisierung ein.
 
 \subsection{Darstellungsformen}
 \label{sec:Darstellungsformen}
-\begin{figure}
-\centering
-\includegraphics[width=\linewidth]{images/formen.pdf}
-\caption{Verschiedene Darstellungsformen, eigene Darstellung}
-\label{fig:formen}
-\end{figure}
 Die grafische Darstellung hat verschiedene Darstellungsformen, die für unterschiedliche
 Anwendungsfälle konzipiert wurden. Sie sind alle stark anwendungsabhängig und es müssen viele
 Anforderungen beachtet werden, um die effizienteste Technik der grafischen Darstellung zu
 finden.\footnote{Vgl. Abschnitt \ref{sec:Ziele}}
 Die folgende Auflistung von Darstellungsformen orientiert sich an den Darstellungsformen für
 Multiparameterdaten in \citep[S.\,213]{Schumann} und
-wird ergänzt durch \citep{Preim} und eigene Beobachtungen. Sie erhebt keinen Anspruch auf
-Vollständigkeit. Folgende Techniken sind möglich:
-Ein Beispiel für die Recursive-Pattern-Technik findet sich in Anhang XXX
+wird ergänzt durch \citep{Preim} und eigene Beobachtungen. Aufgrund der Vielzahl an unterschiedlichen
+Darstellungsformen kann die Tabelle \ref{tab:darstellungsformen} nur einen beispielhaften Überblick geben. Die
+Nummern hinter den einzelnen Darstellungsformen verweisen auf die Darstellungen in 
+Abbildung \ref{fig:formen}.
+Ein Beispiel für die Recursive-Pattern-Technik findet sich im Anhang in Abschnitt \ref{sec:temperatures}, da pixelbasierte
+Techniken nur sehr schwer schematisch dargestellt werden können.
 
 \begin{table}
 \centering
@@ -674,6 +671,14 @@ hybrid & Mischtechniken bestehend aus anderen Techniken\\
 \caption{Techniken der Darstellung}
 \label{tab:darstellungsformen}
 \end{table}
+
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth]{images/formen.pdf}
+\caption{Verschiedene Darstellungsformen, eigene Darstellung}
+\label{fig:formen}
+\end{figure}
+
 Für diese Arbeit sind vor allem die hybriden Techniken interessant, da diese versuchen
 einzelne Vorteile anderer Darstellungsformen zu verbinden, um neue Sichtweisen zu erforschen.
 Damit solche Informationsvisualisierungstechniken gefunden werden können, müssen
@@ -1343,8 +1348,16 @@ Pure Data & http://www.puredata.info/ \\
 vvvv & http://www.vvvv.org/ \\
 \label{tab:Softwareliste}
 \end{tabular}
-\section{Beispiel: Bevölkerungsdaten Stadt Leipzig}
-viz mit streckenzügen (sternförmig, parallel), kreisen (matrix),
+\section{Beispiel: Temperaturen einer Wetterstation}
+\label{sec:temperatures}
+\begin{figure}
+\centering
+\includegraphics[width=8.5cm]{images/temperatures.pdf}
+\caption{Verschiedene Darstellungsformen, eigene Darstellung}
+\label{fig:temperatures}
+\end{figure}
+\section{Beispiel: Medienunternehmen in den Stadtteilen Leipzigs}
+\label{sec:companyclash}
 
 \bibliography{diplom}
 \listoftables
