@@ -868,7 +868,7 @@ In der Prozesskette wird der generische Arbeitsablauf eines Benutzers
 der Software beschrieben. Dieser ist unabhängig von den zu bearbeitenden Daten
 und den gewählten Darstellungsformen. Die Prozesskette ist in vier
 Arbeitsschritte unterteilt.
-\subsection{Laden der Daten}
+\subsection{Importieren von Datenquellen}
 Der Benutzer erzeugt einen Node, der es möglich macht externe Datenquellen
 in das Programm zu laden. Unterschiedliche Nodes machen es möglich Datenquellen auf
 dem Computer oder im Netzwerk einlesen zu können. Dabei werden etablierte
@@ -910,7 +910,7 @@ Ist der Benutzer zufrieden mit der grafischen Darstellung, kann er weitere Nodes
 erzeugen, die diese exportieren. Zur Speicherung von grafischen Darstellungen
 eignen sich bekannte Bildformate wie JPEG, PNG, BMP oder TIFF. Eine Node, die andere Formate
 für die Weiterverarbeitung unterstützt ist denkbar. Weitere Exportmöglichkeiten
-können Vektorgrafiken oder interaktive HTML Seiten sein.
+sind Vektorgrafiken oder interaktive HTML Seiten.
 
 \section{Analyse bestehender Software}
 \label{sec:bestehendeSoftware}
@@ -1061,6 +1061,47 @@ hinzufügt oder löscht.
 \label{fig:core}
 \end{figure}
 
+\section{Implementierte Nodes}
+\label{sec:ImplementierteNodes}
+\begin{table}
+\centering
+\begin{tabular}{|l|p{10cm}|}
+\hline
+\textbf{Node} & \textbf{Funktion}\\
+\hline
+Add & Addiert zwei Spreads miteinander und gibt eine Summe dieser zurück.\\
+\hline
+Substract & Zieht vom Spread der am ersten Input-Pin anliegt, den Spread vom zweiten Input-Pin ab und gibt die Differenz aus.\\
+\hline
+Multiply & Multipliziert zwei Spreads und gibt das Produkt aus.\\
+\hline
+Divide & Teilt den Spread am ersten Input-Pin durch den Spread der am zweiten Input-Pin anliegt und gibt das Ergebnis aus.\\
+\hline
+Variable & Diesem Node kann der Benutzer einen skalaren Wert zuweisen. Damit wird am Output-Pin ein Spread mit einer einzigen
+Variable erzeugt. Diese kann genutzt werden um Berechnungen mit anderen Spreads durchzuführen.\\
+\hline
+CSVParser & Mit diesem Node hat der Benutzer die Möglichkeit eine CSV-Datei zu importieren.
+Die "`Spalten"' der Daten wird dabei als Spreads über die Output-Pins ausgegeben.\\
+\hline
+RGBColor & Erzeugt aus drei Input-Pins (Rot, Grün, Blau) einen Spread mit Farbwerten. Dieser kann von anderen Nodes benutzt werden,
+um ihre Ausgabe einzufärben.\\
+\hline
+Line & Dieser Node zeichnet eine Linie. Die Linie ist bestimmt durch ihre Anfangskoordinaten und ihre Endkoordinaten und kann eine Farbe annehmen.\\
+\hline
+Circle & Dieser Node zeichnet einen Kreis. Der Kreis ist bestimmt durch Koordinaten, Radius und Farbe.\\
+\hline
+Render & Diese Node erzeugt ein weiteres Fenster, in dem der Benutzer die aktuelle Ausgabe überprüfen kann.
+Wenn er mit der aktuellen Ausgabe zufrieden ist, kann er durch Tastendruck den Render-Node veranlassen ein
+hochauflösendes Bild zu exportieren.\\
+\hline
+\end{tabular}
+\caption{visuelle Variablen und ihre Umsetzung in Datasynth}
+\label{tab:nodes}
+\end{table}
+In Tabelle \ref{tab:nodes} werden einzelne Nodes exemplarisch aufgeführt und ihre Funktion beschrieben.
+Diese Nodes reichen bereits aus, um einfache Visualisierungen durchzuführen. Eine vollständige Liste aller
+für Datasynth implementierten Nodes findet sich im Anhang in Abschnitt \ref{sec:alleNodes}.
+
 \section{Probleme}
 \label{sec:Probleme}
 Währen der Entwicklung an Datasynth sind Probleme aufgetreten, die im Folgenden
@@ -1108,41 +1149,13 @@ ohne einen Zwischenschritt, wie beispielsweise Kompilierung oder Ausführung,
 sofort überprüfen und gegebenenfalls anpassen. Das führt zu einer
 \textit{einfachen Benutzerinteraktion} und einer kurzen Einarbeitungszeit.
 
-Die Tabelle \ref{tab:vars} zeigt, wie die grafischen Variablen aus Abschnitt
-\ref{sec:grafischeSemiologie} mit Datasynth dargestellt werden können. In der Tabelle wird ausschließlich
-von Nodes gesprochen, die eine Ausgabe erzeugen.
-Durch die begrenzte Bearbeitungszeit dieser Arbeit konnten nicht alle grafischen
-Variablen implementiert werden. Trotzdem sind \textit{flexible Visualisierungsmöglichkeiten}
-bereits durchführbar und fehlende Funktionalität, wie beispielsweise Texturierung können
-durch den modularen Aufbau von Datasynth einfach hinzugefügt werden.
-\begin{table}
-\centering
-\begin{tabular}{|l|p{9cm}|}
-\hline
-\textbf{grafische Variable} & \textbf{Umsetzung mit Datasynth}\\
-\hline
-Position in der Ebene & Jede Node hat Inputpins für die X und Y Koordinaten der darzustellenden grafischen Primitive.\\
-\hline
-Größe & Nodes haben die Möglichkeit, die Größe der auszugebenden Elemente anzupassen.
-So kann beispielsweise bei der Verwendung der Circle Node der Radius frei gewählt werden.\\
-\hline
-Helligkeitswert & Nodes haben die Möglichkeit eine Farbe anzunehmen. Durch sie wird
-auch Helligkeitswert festgelegt.\\
-\hline
-Textur & nicht implementiert\\
-\hline
-Farbe & Es gibt eine Node, die aus drei Eingangswerten eine Farbe im HSV-Farbraum erzeugt. Mit dieser Node kann die Farbgebnung
-anderer Nodes beeinflusst werden.\\
-\hline
-Richtung & Rotation ist nicht implementiert.\\
-\hline
-Form & Es existieren unterschiedliche Nodes für unterschiedliche Formen, zum Beispiel Kreis, Rechteck, Punkt und Linie. Diese Nodes
-können kombiniert werden um komplexe Formen zu realisieren.\\
-\hline
-\end{tabular}
-\caption{visuelle Variablen und ihre Umsetzung in Datasynth}
-\label{tab:vars}
-\end{table}
+In Abschnitt \ref{sec:ImplementierteNodes} wurden alle Nodes aufgelistet,
+die für den Prototyp entstanden sind. Mit diesen können erste komplexe Visualisierungen\footnote{Vgl. Abschnitt
+\ref{sec:temperatures} und \ref{sec:companyclash} im Anhang} durchgeführt werden.
+Aufgrund der begrenzten Bearbeitungszeit konnten zwei visuelle
+Variablen nicht implementiert werden. Der sehr komplexe Node für die Texturierung
+und die Funktion der Rotation wurde nicht umgesetzt. Die fehlende Funktionalität kann aber
+durch den modularen Aufbau von Datasynth nachträglich hinzugefügt werden.
 
 Für die \textit{flexible Ein- und Ausgabe} wurde jeweils eine Möglichkeit implementiert, um eine lauffähige
 Version von Datasynth zu erhalten. Es existiert eine Node, die eine CSV-Datei\footnote{CSV
@@ -1175,7 +1188,7 @@ Datasynth wird öffentlich, auf der Plattform GitHub entwickelt.\footnote{Vgl.
 Abschnitt \ref{sec:Technologien}} Als Lizenz wurde die MIT-Lizenz gewählt.
 Diese ermöglicht jedem eine offene, aber auch kommerzielle Weiterentwicklung.
 
-Datasynth kann nahezu alle Anforderungen erfüllen. 
+Datasynth kann nahezu alle Anforderungen erfüllen.
 
 \chapter{Zusammenfassung}
 \label{cha:Zusammenfassung}
@@ -1272,30 +1285,107 @@ hinweisen, wie gut oder schlecht sich gewisse Darstellungen eignen.
 \end{description}
     
 \chapter{Anhang}
-\section{Liste von bestehender Softwarelösungen}
-todo: alle links zusammensuchen
-
-Die nachfolgende Tabelle gibt eine unvollständige, aber umfassende
-Liste an Softwarelösungen für die Visualisierung. Einige Anwendungen
-sind auf Visualisierung großer Datenmengen spezialisiert, andere
-berühren den Bereich nur mit einigen Funktionen.
-
+\section{Liste von bestehenden Softwarelösungen}
 \begin{tabular}{l|l}
 \hline
 Name & Webadresse \\
 \hline
-Pure Data & http://www.puredata.info/ \\
-vvvv & http://www.vvvv.org/ \\
-\label{tab:Softwareliste}
+d3 & http://mbostock.github.com/d3/\\
+Gephi & http://gephi.org/\\
+GGobi & http://www.ggobi.org/\\
+Graphviz & http://www.graphviz.org/\\
+InfoVis Toolkit & http://ivtk.sourceforge.net/\\
+MAX 6 & http://cycling74.com/\\
+MeVisLab & http://mevislab.de/\\
+N-Land & http://davis.wpi.edu/~matt/courses/nland/cgi93.html\\
+NodeBox 2 Beta & http://beta.nodebox.net/\\
+prefuse & http://prefuse.org/\\
+Processing & http://processing.org/\\
+protovis & http://mbostock.github.com/protovis/\\
+Pure Data & http://www.puredata.info/\\
+VTK & http://www.vtk.org/\\
+vvvv & http://www.vvvv.org/\\
+\hline
 \end{tabular}
+
+\section{Liste aller implementierten Nodes}
+\label{sec:alleNodes}
+\centering
+\begin{tabular}{|l|p{10cm}|}
+\hline
+\textbf{Node} & \textbf{Funktion}\\
+\hline
+Add & Addiert zwei Spreads miteinander und gibt eine Summe dieser zurück.\\
+\hline
+Substract & Zieht vom Spread der am ersten Input-Pin anliegt, den Spread vom zweiten Input-Pin ab und gibt die Differenz aus.\\
+\hline
+Multiply & Multipliziert zwei Spreads und gibt das Produkt aus.\\
+\hline
+Divide & Teilt den Spread am ersten Input-Pin durch den Spread der am zweiten Input-Pin anliegt und gibt das Ergebnis aus.\\
+\hline
+Modulo & Berechnet den Modulo zweier Spreads.\\
+\hline
+GreaterThan & Vergleicht zwei Spreads miteinander. Wenn der Spread am ersten Input-Pin größer
+als der am zweiten Input-Pin ist, wird 1 zurückgegeben. Andernfalls wird 0 zurückgegeben.\\
+\hline
+LessThan & Vergleicht zwei Spreads miteinander. Wenn der Spread am ersten Input-Pin kleiner
+als der am zweiten Input-Pin ist, wird 1 zurückgegeben. Andernfalls wird 0 zurückgegeben.\\
+\hline
+Min & Gibt den kleinsten Wert eines Spreads zurück.\\
+\hline
+Max & Gibt den größten Wert eines Spreads zurück.\\
+\hline
+Map & Verschiebt die Werte eines Spreads von einem Wertebereich in einen anderen.\\
+\hline
+Unique & Entfernt alle Duplikate eines Wertes aus einem Spread.\\
+\hline
+\end{tabular}
+
+\begin{table}
+\centering
+\begin{tabular}{|l|p{10cm}|}
+\hline
+\textbf{Node} & \textbf{Funktion}\\
+\hline
+OutBox & Zeigt den Inhalt eines Spreads für den Benutzer an. Dieser Node hat keine Funktion für den Programmablauf sondern
+dient dem Nutzer zur Kontrolle von Spreads.\\
+\hline
+Variable & Diesem Node kann der Benutzer einen skalaren Wert zuweisen. Damit wird am Output-Pin ein Spread mit einer einzigen
+Variable erzeugt. Diese kann genutzt werden um Berechnungen mit anderen Spreads durchzuführen.\\
+\hline
+CSVParser & Mit diesem Node hat der Benutzer die Möglichkeit eine CSV-Datei zu importieren.
+Die "`Spalten"' der Daten wird dabei als Spreads über die Output-Pins ausgegeben.\\
+\hline
+RGBColor & Erzeugt aus drei Input-Pins (Rot, Grün, Blau) einen Spread mit Farbwerten. Dieser kann von anderen Nodes benutzt werden,
+um ihre Ausgabe einzufärben.\\
+\hline
+Text & Gibt dem Nutzer die Möglichkeit Text einzugeben. Dieser Text wird über den Ouput-Pin des Node ausgegeben.\\
+\hline
+String & Zeichnet einen einfachen Text in der Ausgabe. Die Ausgabe des Textes kann durch die Position und die Farbe beeinflusst werden.\\
+\hline
+Line & Dieser Node zeichnet eine Linie. Die Linie ist bestimmt durch ihre Anfangskoordinaten und ihre Endkoordinaten und kann eine Farbe annehmen.\\
+\hline
+Circle & Dieser Node zeichnet einen Kreis. Der Kreis ist bestimmt durch Koordinaten, Radius und Farbe.\\
+\hline
+Rectangle & Dieser Node zeichnet ein Rechteck. Das Rechteck ist bestimmt durch Koordinaten, Breite, Höhe und Farbe.\\
+\hline
+Pixel & Dieser Node zeichnet einen Pixel. Der Pixel ist bestimmt durch Koordinaten und Farbe.\\
+\hline
+Render & Diese Node erzeugt ein weiteres Fenster, in dem der Benutzer die aktuelle Ausgabe überprüfen kann.
+Wenn er mit der aktuellen Ausgabe zufrieden ist, kann er durch Tastendruck den Render-Node veranlassen ein
+hochauflösendes Bild zu exportieren.\\
+\hline
+\end{tabular}
+\caption{Alle in Datasynth implementieren Nodes}
+\label{tab:alleNodes}
+\end{table}
+
+
 \section{Beispiel: Temperaturen einer Wetterstation}
 \label{sec:temperatures}
-\begin{figure}
 \centering
-\includegraphics[width=8.5cm]{images/temperatures.pdf}
-\caption{Verschiedene Darstellungsformen, eigene Darstellung}
-\label{fig:temperatures}
-\end{figure}
+\includegraphics[width=14cm, height=15cm]{images/temperatures.pdf}
+
 \section{Beispiel: Medienunternehmen in den Stadtteilen Leipzigs}
 \label{sec:companyclash}
 
