@@ -694,19 +694,21 @@ Softwarelösungen Einschränkungen bei der grafischen Darstellung vermeiden.
 \caption{Einordnung in den Prozess des Computational Designs nach \citep{BenFry}, eigene Darstellung}
 \label{fig:benfryprocess_marked}
 \end{figure}
-Die Übertragung von symbolischen Informationen auf geometrische Informationen kann als grundlegendes Prinzip der
-Informationsvisualisierung bezeichnet werden. In der Fassung von \citep{BenFry} befindet sich der Aufgabenbereich
-der Software in den Stufen \textit{present} und \textit{refine}. Die Software erlaubt dem Nutzer beide Stufen
-bearbeiten zu können. In Abbildung \ref{fig:benfryprocess_marked} ist dieser weitere iterative Schritt
-abgebildet. Die hohe Anzahl der Beobachtungspunkte eines Datensatzes macht eine vom Nutzer manuell durchgeführte Transkription
+Die Übertragung von symbolischen Informationen auf geometrische Informationen ist das grundlegende Prinzip der
+Informationsvisualisierung. In der Fassung von \citep{BenFry} wird diese Transkription in den
+Stufen \textit{present} und \textit{refine} durchgeführt. Die Software muss also dem Benutzer die Möglichkeit geben,
+diese Arbeitsschritte durchführen zu können. In Abbildung \ref{fig:benfryprocess_marked} ist dieser weitere iterative Schritt
+abgebildet. Ist der Benutzer mit der grafischen Darstellung nicht zufrieden, so kann er Parameter anpassen. Dieser Ablauf
+kann beliebig oft wiederholt werden, bis ein zufriedenstellendes Ergebnis vorliegt.
+Die hohe Anzahl der Beobachtungspunkte eines Datensatzes macht eine vom Nutzer manuell durchgeführte Transkription
 sehr aufwändig und zeitintensiv. Eine Unterstützung des Benutzers durch eine Software ist daher sinnvoll.
 Dabei darf der Nutzer in seinem kreativen Gestaltungsprozess nicht eingeschränkt werden.
 
 Wie in Kapitel \ref{cha:Grundlagen} und \ref{cha:Informationsvisualisierung} gezeigt, gibt es eine Vielzahl an
-Daten und grafischen Darstellungsformen. Dazu kommen neue hybride Formen durch Mashups\footnote{"`Mashup (von
+Daten und grafischen Darstellungsformen. Weiterhin entstehen neue hybride Formen durch Mashups\footnote{"`Mashup (von
 englisch "`to mash"' für vermischen) bezeichnet die Erstellung neuer Medieninhalte durch die nahtlose
 (Re-)Kombination bereits bestehender Inhalte."'\citep{wiki_mashup}}.
-Die Software muss möglichst universell sein um flexibel viele unterschiedliche Anwendungsfälle
+Die Software muss möglichst daher universell sein, um flexibel viele unterschiedliche Anwendungsfälle
 bearbeiten zu können. Dabei dürfen die Bearbeitunsziele aus Abschnitt \ref{sec:Ziele} nicht
 vernachlässigt werden.
 
@@ -715,46 +717,46 @@ vernachlässigt werden.
 Für die zu entwickelnde Software werden Anforderungen festgelegt, die
 im folgenden beschrieben werden. Neben speziellen Anforderungen, die aus
 dem Bereich der Informationsvisualisierung stammen, werden noch weitere
-allgemeine Anforderungen an Benutzerführung und Performance gestellt.
+Anforderungen an Benutzerführung und Performance gestellt.
 \begin{description}
 \item[Einfache Benutzerinteraktion]
-Damit auch technisch unerfahrene Nutzer wie Journalisten oder private
-Anwender schnell und einfach Ergebnisse erzielen können, kann die Software
-durch visuelle Programmierung bedient werden. Für die Bedienung der Software mithilfe der visuellen
+Damit auch technisch unerfahrene Nutzer schnell und einfach Ergebnisse erzielen können, kann die Software
+mit visueller Programmierung gesteuert werden. Für die Bedienung der Software mithilfe der visuellen
 Programmierung, die in Abschnitt \ref{sec:visPro} genauer beschrieben wird,
 reicht ein grundlegendes mathematisches Verständnis des Nutzers aus.
-Weiterhin veranschaulicht sie den eigentlichen den Anwendungsbreich der Software.
+Weiterhin veranschaulicht sie den eigentlichen Anwendungsbreich der Software.
 \item[Flexible Visualisierungsmöglichkeiten]
 Um alle möglichen Darstellungsformen abbilden zu können, muss die 
-Möglichkeit bestehen alle visuellen Variablen\footnote{Vgl.
+Möglichkeit bestehen, alle visuellen Variablen\footnote{Vgl.
 \ref{sec:grafischeSemiologie}} und damit alle Darstellungsformen\footnote{Vgl.
-\ref{sec:Darstellungsformen}} abbilden zu können. Der Nutzer darf dabei
-in seiner Arbeit nicht durch Vorauswahl vorgefertigter Darstellungen
+\ref{sec:Darstellungsformen}} reproduzieren zu können. Der Nutzer darf dabei
+in seiner Arbeit nicht durch vorgefertigte Darstellungsformen
 eingeschränkt werden.
 \item[Flexible Ein- und Ausgabe]
 Zur automatischen Dateneinspeisung in die Software sollen mehrere Möglichkeiten
-bestehen, um in unterschiedliche Workflow-Prozesse eingebunden werden zu können.
+bestehen, um in unterschiedliche Workflows eingebunden werden zu können.
 Neben Dateiformaten wie XML, JSON und CSV ist eine Netzwerk- und
-Datenbankanbindung sinnvoll.
+Datenbankanbindung sinnvoll. Als Ausgabeformate können gängige Bildformate
+verwendet werden.
 \item[Performanz]
 Der Benutzer kann alle Verbindungen und Parameter zwischen Datenobjekten und ihrer
 visuellen Repräsentation direkt beeinflussen. Für eine direkte visuelle Analyse
 durch den Nutzer, muss die Software die Möglichkeit bieten, sofort
 nach Interaktion des Nutzers, die Veränderungen darzustellen. Dafür wird eine
-ausreichende Performanz benötigt.
+ausreichende Performanz benötigt, um störende Ladezeiten zu vermeiden.
 \item[Erweiterbarkeit]
 Durch unterschiedliche Anforderungen in den verschiedenen Arbeitsbereichen ist
 es nötig, die Software selbst erweitern zu können. Dafür soll eine Skriptsprache
 implementiert werden, die es erlaubt, zur Laufzeit neue Funktionen hinzuzufügen.
-Außerdem besteht die Möglichkeit durch eine Kapselung aller Funktionen
-einfach eigene Module zu programmieren.
+Außerdem besteht, durch die Kapselung aller Funktionen, die Möglichkeit, dass der
+Benutzer eigene Module programmiert.
 \item[Plattformunabhängigkeit]
-Die Software soll auf den drei großen Plattformen Linux, Apple OSX und Microsoft Windows
+Die Software soll auf den drei großen Plattformen Linux, Mac OS X und Microsoft Windows
 lauffähig sein. Durch die Entwicklung auf Basis von openframeworks\footnote{Vgl. Abschnitt \ref{sec:Technologien}}
-wird eine Plattformunabhängigkeit gewährleistet.
+wird diese Plattformunabhängigkeit gewährleistet.
 \item[Frei und Offen]
-Die Software wird unter einer freien Lizenz entwickelt und veröffentlicht
-um eigene Erweiterungen von Nutzern zuzulassen. Durch die Wahl der Lizenz kann
+Die Software wird unter einer freien Lizenz entwickelt und veröffentlicht,
+um eigene Erweiterungen von Nutzern möglich zu machen. Durch die Wahl der Lizenz kann
 die Entwicklung durch alle Interessenten vorangetrieben werden. Außerdem lässt
 die Lizenz eine kommerzielle Erweiterung und Nutzung zu. Für private Anwender
 ist die Software kostenlos verfügbar.
@@ -763,7 +765,7 @@ ist die Software kostenlos verfügbar.
 \section{Visuelle Programmierung}
 \label{sec:visPro}
 Um dem breiten Spektrum an Anforderungen gerecht zu werden,
-wird Datasynth mit einer Form der visuellen Programmierung gesteuert.
+wird die Software mit einer Form der visuellen Programmierung gesteuert.
 \citep[S.\,56]{Henning} definieren visuelle Programmierung wie folgt:
 \begin{quote}
 "`Es handelt sich hierbei um ein in integrierten Entwicklungsumgebungen mit
@@ -788,86 +790,96 @@ verwendet werden, um Quellcode zu schreiben, wird die Programmlogik bei ber
 visuellen Programmierung durch grafische Elemente erstellt.
 Statt vorgefertigte Funktionsnamen und Aufrufe zu schreiben, werden einzelne grafische
 Elemente mit unterschiedlichen Aufgaben erzeugt und diese untereinander verbunden. Die visuelle Programmierung
-in Datasynth wird fast ausschließlich mit der Maus durchgeführt.
-Als Beispiel wird in Abbildung
-\ref{fig:textuell} eine textuelle Programmierung mit Pseudocode gezeigt, die zwei Variablen mit den vier Grundrechenarten verbindet.
-In Abbildung \ref{fig:datasynth_basic} wird die gleiche Berechnung mit Datasynth
+wird fast ausschließlich mit der Maus durchgeführt.
+Als Beispiel wird in Abbildung \ref{fig:textuell} eine textuelle Programmierung mit
+Pseudocode gezeigt, die zwei Variablen mit den vier Grundrechenarten verbindet.
+In Abbildung \ref{fig:datasynth_basic} wird die gleiche Berechnung
 in visueller Programmierung umgesetzt.
 
-Für Datasynth wurden einzelne Klassen definiert, die in ihrer Summe das Konzept der visuellen
+Für die Software werden einzelne Klassen definiert, die in ihrer Summe das Konzept der visuellen
 Programmierung bilden. In der folgenden Auflistung werden die einzelnen
-Elemente und ihre Funktionsweise beschrieben
+Elemente und ihre Funktionsweise beschrieben.
 \begin{description}
 \item[Node]
 Ein Node ist ein Knoten in dem Funktionalität gekapselt ist. Vergleichbar ist dieses
-Element mit einer Funktion in der textuellen Programmierung. Eine Node kann also
-beliebig viele Parameter zur Eingabe haben. Im Gegensatz zu einer Funktion der textuellen
-Programmierung mit nur einem Rückgabewert, können beliebig viele Ausgabewerte zurückgegeben werden.
-Eine Node kann zwischen der Eingabe und der Ausgabe unterschiedlichste Berechnungen durchführen.
-Diese können unter anderem arithmetischer oder logischer Natur sein. Eine Node kann beispielsweise
+Element mit einer Funktion oder Methode in der textuellen Programmierung. Ein Node kann also
+beliebig viele Parameter zur Eingabe haben. Als Ausgabe sind mehrere unterschiedliche Werte möglich.
+Ein Node kann zwischen der Eingabe und der Ausgabe unterschiedlichste Berechnungen durchführen.
+Diese können unter anderem arithmetischer oder logischer Natur sein. Ein Node kann beispielsweise
 Zahlen miteinander multiplizieren oder bei einem bestimmten Grenzwert von true nach false
 umschalten.
-Alle Berechnungen werden unabhängig von allen anderen vorhandenen Nodes durchgeführt.
+Alle Berechnungen in einem Node werden unabhängig von allen anderen vorhandenen Nodes durchgeführt.
 \item[Pin]
-Ein Pin beschreibt die unterschiedlichen Ein- und Ausgabewerte einer Node.
-Es wird dabei zwischen Input und Output Pins unterschieden. Über die unterschiedlichen
-Inputpins können verschiedene Werte übergeben werden, die für eine Berechnung in der Node notwendig sind.
-Diese werden von der Node verarbeitet und die Ergebnisse dieser Berechnung
-über die Outputpins ausgegeben.
-Vergleichbar sind die Inputpins mit den Parametern einer Funktion in der textuellen Programmierung.
-Die Output Pins können als Rückgabewerte einer Funktion verstanden werden.
+Ein Pin beschreibt die unterschiedlichen Ein- und Ausgabewerte eines Node.
+Es wird dabei zwischen Input- und Output-Pins unterschieden. Über die unterschiedlichen
+Input-Pins können verschiedene Werte übergeben werden, die für eine Berechnung in dem Node notwendig sind.
+Diese werden von dem Node verarbeitet und die Ergebnisse dieser Berechnung
+über die Output-Pins ausgegeben.
+Vergleichbar sind die Input-Pins mit den Parametern einer Funktion in der textuellen Programmierung.
+Die Output-Pins können als Rückgabewerte einer Funktion verstanden werden.
 \item[Connection]
-Eine Connection ist die Verbindung zwischen zwei Pins. Dabei wird vom Benutzer ein Outputpin einer
+Eine Connection ist die Verbindung zwischen zwei Pins. Dabei wird vom Benutzer ein Output-Pin einer
 Node mit dem Inputpin einer anderen Node verbunden. Nur durch diese Verbindung können
 Nodes miteinander kommunizieren und Werte austauschen. Eine Connection
-ist mit einer Zuweisung in der textuellen Programmierung vergleichbar.
+ist mit einer Zuweisung oder gegenseitigen Funktionsaufrufen in der textuellen Programmierung vergleichbar.
 \item[Spread]
-Ein Spread ist eine Struktur, die in Datasynth als universeller Datentyp funktioniert.\footnote{Der
+Ein Spread ist eine Struktur, die in der Software als universeller Datentyp funktioniert.\footnote{Der
 Begriff Spread wurde aus der Software vvvv übernommen. Vgl. Abschnitt \ref{sec:bestehendeSoftware}}
-Eingabe- und Ausgabewerte von Nodes können nur Spreads sein. Spreads sind eine 
-eindimensionale Liste von Werten. Diese Werte können unterschiedliche Datentypen,
+Eingabe- und Ausgabewerte von Nodes können nur Spreads sein. Ein Spread ist eine 
+eindimensionale Liste von Werten. Diese Werte können unterschiedliche primtive Datentypen,
 wie beispielsweise Gleitkommazahlen oder Zeichenketten, haben. Im einfachsten Fall hat
-die Liste eines Spreads nur ein einziges Element, ist damit also eine Konstante. In komplexeren
+die Liste eines Spreads nur ein einziges Element, ist damit also eine einfache Variable. In komplexeren
 Anwendungen kann ein Spread eine große Anzahl an Elementen enthalten, die beispielsweise
 aus einer Datentabelle stammen. Somit kann der Benutzer eine Reihe von Zahlen mit
-einer Konstante multiplizieren ohne die Anzahl der einzelnen Werte eines Spreads
-beachten zu müssen, da Datasynth automatisch Spreads miteinander verrechnen kann.
+einer Konstante multiplizieren, ohne die Anzahl der einzelnen Werte eines Spreads
+beachten zu müssen. Die Software ist in der Lage, auch Spreads mit einer unterschiedlichen
+Anzahl von Elementen miteinander zu verrechnen.
 \end{description}
 
-Der Einsatz von visueller Programmierung als Bedienkonzept für Datasynth hat
+Der Einsatz von visueller Programmierung als Bedienkonzept hat
 mehrere Vorteile. Das Verbinden von Nodes, die als Datenquelle funktionieren, mit Nodes, die
-zur Ausgabe von grafischen Primitiven dienen, greift das grundlegende
+die visuellen Variablen repräsentieren, greift das grundlegende
 Prinzip der Informationsvisualisierung auf.
 Darüber hinaus sind keine Programmierkenntnisse erforderlich, um eine Informationsvisualisierung
 erstellen zu können. Ein durchschnittliches mathematisches Verständnis reicht für einfache Aufgaben aus.
 Durch die universelle Form der Benutzerschnittstelle ist ein iteratives
-Experimentieren möglich und Datasynth kann genutzt werden, um unkompliziert eine
-Idee für die Informationsvisualisierung festzuhalten.
-Die komplexen internen Abläufe werden dabei hinter einem intuitiven und einfachen Interface
+Experimentieren möglich. Diese kann vom Benutzer eingesetzt werden, um unkompliziert eine
+Idee für die Informationsvisualisierung zu skizzieren.
+Die komplexen internen Abläufe werden hinter einem intuitiven und einfachen Interface
 versteckt. Dadurch können "`context switches"'\footnote{Vgl. \citep[S.\,50]{Tufte}}
 vermieden werden. Diese treten auf, wenn der Benutzer zwischen unterschiedlichen Programmansichten wechseln
-muss. Datasynth kann den Bereich für die Benutzerinteraktion und die Ausgabe
-immer gleichzeitig anzeigen. Auch das Verändern von Parametern wirkt sich unmittelbar auf die Ausgabe
-aus. Der Nutzer kann dadurch sofort erkennen, welchen Einfluss seine Benutzereingaben bewirken und
+muss. Stattdessen wird der Bereich für die Benutzerinteraktion und die Ausgabe
+immer gleichzeitig angezeigt. Der Nutzer kann dadurch sofort erkennen, welchen Einfluss seine Benutzereingaben haben und
 kann diese vergleichen und anpassen um schnell zum gewünschten Ergebnis zu kommen.
 Abbildung \ref{fig:datasynth} stellt dieses Prinzip an einem Beispiel dar.
 \begin{figure}
 \centering
 \includegraphics[width=\linewidth]{images/datasynth.pdf}
-\caption{Ein Beispiel der Benutzeroberfläche von Datasynth. Zwischen der oberen Reihe
+\caption{Ein Beispiel für eine Benutzeroberfläche der visuellen Programmierung. Zwischen der oberen Reihe
 und der unteren Reihe von Fenstern hat eine Benutzerinteraktion stattgefunden.
 Im oberen rechten Fenster wird ein Kreis gezeichnet. Dieser hat einen Radius von 20 Pixel, da
 die rechte obere Node im linken Fenster einen Wert von 20 Pixel an den Pin für den Radius des Kreises übergibt.
 In der unteren Reihe wurde der Wert auf 125 geändert. Dadurch verändert sich unmittelbar
-auch die Darstellung, da der Radius des Kreises mit dem Wert dieser Node verbunden ist.}
+auch die Darstellung, da der Radius des Kreises mit dem Wert dieser Node verbunden ist. Die Position
+des Kreises ist in beiden Darstellungen bei 150 Pixel in der Höhe und Breite, da der obere linke Node den Wert 150 hat und mit
+zwei Verbindungen die x- und y-Position des Kreises beschreibt.}
 \label{fig:datasynth}
 \end{figure}
 
 \section{Prozesskette}
-In der Prozesskette wird der generische Arbeitsablauf eines Benutzers
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth]{images/prozesskette.pdf}
+\caption{Schematische Prozesskette der Software}
+\label{fig:prozesskette}
+\end{figure}
+In der Prozesskette wird der generische Arbeitsablauf beim Benutzen
 der Software beschrieben. Dieser ist unabhängig von den zu bearbeitenden Daten
 und den gewählten Darstellungsformen. Die Prozesskette ist in vier
-Arbeitsschritte unterteilt.
+Arbeitsschritte unterteilt, die nacheinander abgearbeitet werden müssen,
+um eine grafische Darstellung zu erzeugen.
+Die einzelnen Schritt der Prozesskette werden in Abbildung \ref{fig:prozesskette} dargestellt und im
+Folgenden beschrieben.
 \subsection{Importieren von Datenquellen}
 Der Benutzer erzeugt einen Node, der es möglich macht externe Datenquellen
 in das Programm zu laden. Unterschiedliche Nodes machen es möglich Datenquellen auf
@@ -882,7 +894,7 @@ elf Spalten und der Node würde elf Output-Pins besitzen. Diese können dann unt
 weiterverarbeitet werden.
 Die Erzeugung mehrerer unterschiedlicher Nodes für die Einbindung von Daten macht ein
 \textit{Mashup} unterschiedlicher Datenquellen möglich.
-\subsection{Festlegung der visuelle Variablen}
+\subsection{Festlegung der visuellen Variablen}
 Der Benutzer hat nun die Möglichkeit weitere Nodes anzulegen, die die visuellen
 Variablen darstellen. Diese können unabhängig voneinander erzeugt und mit einem datengebenden
 Node verbunden werden. Der Benutzer erhält die Freiheit zwischen datengebenden Nodes und
