@@ -44,7 +44,9 @@ backgroundcolor=\color{light-gray}
 \author{Benjamin Knofe}
 \subject{Diplomarbeit}
 \publishers{Hochschule für Technik, Wirtschaft und Kultur Leipzig}
-\dedication{Dank an \\ Christina Sanko, Pyry Jahkola, Ted Mosby, Sarah Walter,
+\dedication{Danke\\für Kritik, Kommentare, Diskussionen, Code und Hilfe\\
+(in alphabetischer Reihenfolge)\\
+Christina Sanko, Pyry Jahkola, Ted Mosby, Sarah Walter,
 Stephan Keller, Professor Dr.-Ing. Robert Müller, Philip Whitfield, Johannes Knofe, René Zschoch, Moritz Kreutzer, Theresia Becher}
 \maketitle
 \tableofcontents
@@ -649,9 +651,9 @@ Multiparameterdaten in \citep[S.\,213]{Schumann} und
 wird ergänzt durch \citep{Preim} und eigene Beobachtungen. Aufgrund der Vielzahl an unterschiedlichen
 Darstellungsformen kann die Tabelle \ref{tab:darstellungsformen} nur einen beispielhaften Überblick geben. Die
 Nummern hinter den einzelnen Darstellungsformen verweisen auf die Darstellungen in 
-Abbildung \ref{fig:formen}.
-Ein Beispiel für die Recursive-Pattern-Technik findet sich im Anhang in Abschnitt \ref{sec:temperatures}, da pixelbasierte
-Techniken nur sehr schwer schematisch dargestellt werden können.
+Abbildung \ref{fig:formen}.\footnote{Ein Beispiel für die Recursive-Pattern-Technik
+findet sich im Anhang in Abschnitt \ref{sec:temperatures}, da pixelbasierte
+Techniken nur sehr schwer schematisch dargestellt werden können.}
 
 \begin{table}
 \centering
@@ -1347,10 +1349,10 @@ Divide & Teilt den Spread am ersten Input-Pin durch den Spread der am zweiten In
 Modulo & Berechnet den Modulo zweier Spreads und gibt den Rest als Spread aus.\\
 \hline
 GreaterThan & Vergleicht zwei Spreads miteinander. Wenn der Spread am ersten Input-Pin größer
-als der am zweiten Input-Pin ist, wird 1 zurückgegeben. Andernfalls wird 0 zurückgegeben.\\
+als der am zweiten Input-Pin ist, wird 1 zurückgegeben.\\
 \hline
 LessThan & Vergleicht zwei Spreads miteinander. Wenn der Spread am ersten Input-Pin kleiner
-als der am zweiten Input-Pin ist, wird 1 zurückgegeben. Andernfalls wird 0 zurückgegeben.\\
+als der am zweiten Input-Pin ist, wird 1 zurückgegeben.\\
 \hline
 Min & Gibt den kleinsten Wert eines Spreads zurück.\\
 \hline
@@ -1380,7 +1382,7 @@ Die "`Spalten"' der Daten wird dabei als Spreads über die Output-Pins ausgegebe
 RGBColor & Erzeugt aus drei Input-Pins für die Farbkanäle Rot, Grün und Blau einen Spread mit Farbwerten. Dieser
 kann von anderen Nodes benutzt werden, um ausgegebene grafische Elemente einzufärben.\\
 \hline
-Text & Gibt dem Nutzer die Möglichkeit Text einzugeben. Dieser Text wird über den Ouput-Pin des Node als Spread ausgegeben.\\
+Text & Gibt dem Nutzer die Möglichkeit Text einzugeben und als Spread weiterzuverarbeiten.\\
 \hline
 String & Zeichnet einen einfachen Text in der Ausgabe. Die Ausgabe des Textes kann durch die Position und die Farbe beeinflusst werden.\\
 \hline
@@ -1391,8 +1393,6 @@ Circle & Dieser Node zeichnet einen Kreis. Der Kreis ist bestimmt durch Koordina
 hat dafür drei Input-Pins.\\
 \hline
 Rectangle & Dieser Node zeichnet ein Rechteck. Das Rechteck ist bestimmt durch Koordinaten, Breite, Höhe und Farbe.\\
-\hline
-Pixel & Dieser Node zeichnet einen Pixel. Der Pixel ist bestimmt durch Koordinaten und Farbe.\\
 \hline
 Render & Dieser Node erzeugt ein weiteres Fenster, in dem der Benutzer die aktuelle Ausgabe überprüfen kann.
 Wenn er mit der aktuellen Ausgabe zufrieden ist, kann er durch Tastendruck den Render-Node veranlassen, ein
