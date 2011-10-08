@@ -45,7 +45,7 @@ backgroundcolor=\color{light-gray}
 \subject{Diplomarbeit}
 \publishers{Hochschule für Technik, Wirtschaft und Kultur Leipzig}
 \dedication{Dank an \\ Christina Sanko, Pyry Jahkola, Ted Mosby, Sarah Walter,
-Stephan Keller, Professor Dr.-Ing. Robert Müller, Philip Whitfield, Johannes Knofe, René Zschoch}
+Stephan Keller, Professor Dr.-Ing. Robert Müller, Philip Whitfield, Johannes Knofe, René Zschoch, Moritz Kreutzer, Theresia Becher}
 \maketitle
 \tableofcontents
 
@@ -1271,32 +1271,32 @@ Verstehen und Verständnis der heutigen technisierten Welt bei.
 Da Datasynth lediglich einen Prototypen darstellt, ergeben sich vielfältige
 Ansätze für Weiterentwicklungen. Einige Möglichkeiten bedingen weiterer 
 Forschungsarbeit und können als Thesen betrachtet werden. Im folgenden
-werden die vielversprechendsten Ansätze aufgelistet.
+werden die vielversprechendsten Ansätze beschrieben.
 \begin{description}
 \item[Skriptsprache]
 Es können universelle Nodes geschaffen werden, die vom Benutzer selbst mit einer höheren
 Skriptsprache programmiert werden können. Fehlende Funktionalitäten
-werden damit eigenhändig implementiert und Datasynth erweitert.
+können damit vom Benutzer selbst implementiert werden.
 Auch die Anwendung einer Skriptsprache in der eigentlichen Software kann von Vorteil sein, um die in
-Abschnitt \ref{sec:Probleme} genannten Probleme zu umgehen. Dabei sollte dann nur
-die rechenintensive Programmlogik in C++ implementiert werden.
+Abschnitt \ref{sec:Probleme} genannten Probleme zu umgehen. Dabei sollte nur
+die rechenintensive Programmlogik in C++ weiterentwickelt werden.
 \item[Gruppierung von Nodes]
 Um schnell und effizient komplexe grafische Darstellungen generieren zu können,
 ist eine Gruppierung von Nodes sinnvoll. Damit können Templates erzeugt werden,
-die eine grafische Darstellungsform in einer Node kapseln. So sind einzelne Nodes
+die eine grafische Darstellungsform in einem Node kapseln. So sind einzelne Nodes
 für Tortendiagramme oder Netzwerkstrukturen denkbar.
 \item[Weitere Ausgabemöglichkeiten]
-Zusätzlich zu der Ausgabe als einzelnes Bild sind weitere Formate nützlich.
+Zusätzlich zu der Ausgabe als statische Bilddatei sind weitere Ausgabeformate sinnvoll.
 So können Nodes implementiert werden, die eine Ausgabe als Postscript oder
-in gängige 3D-Formate ermöglichen. Um die Weiterverarbeitung der erzeugten
-Ausgaben effizienter zu machen, bietet sich eine Exportfunktion für einzelne Teilbereiche
-an. So können beispielsweise aus einem erzeugten Bild einzelne Ebenen exportiert werden.
+in 3D-Austauschformate ermöglichen. Um die grafische Weiterverarbeitung der erzeugten
+Darstellungen effizienter zu machen, bietet sich eine Exportfunktion für einzelne Teilbereiche
+an. Beispielsweise können aus einem erzeugten Bild einzelne Ebenen exportiert werden.
 \item[Interaktionsmöglichkeiten]
 Zusätzlich zur rein statischen Darstellung können mit Datasynth
-Interaktionsmöglichkeiten erzeugt werden. So ist eine automatische
-Ausgabe als interaktive HTML5 Website denkbar, bei der einzelne Elemente
+Interaktionsmöglichkeiten erzeugt werden. Eine automatische
+Ausgabe als interaktive HTML5 Website ist denkbar, bei der einzelne Elemente
 anklickbar und durch Benutzerinteraktion veränderbar sind. Außerdem sind 
-Zoomfunktionen denkbar, um dem Betrachter weitere Möglichkeiten zur
+Zoomfunktionen sinnvoll, um dem Betrachter weitere Möglichkeiten zur
 Erkundung der grafischen Darstellung zu geben.
 \item[Evaluation]
 Datasynth kann dem Nutzer behilflich sein, die richtige Form
@@ -1336,15 +1336,15 @@ vvvv & http://www.vvvv.org/\\
 \hline
 \textbf{Node} & \textbf{Funktion}\\
 \hline
-Add & Addiert zwei Spreads miteinander und gibt eine Summe dieser zurück.\\
+Add & Addiert zwei Spreads miteinander und gibt ein Spread als Summe dieser zurück.\\
 \hline
-Substract & Zieht vom Spread der am ersten Input-Pin anliegt, den Spread vom zweiten Input-Pin ab und gibt die Differenz aus.\\
+Substract & Zieht vom Spread der am ersten Input-Pin anliegt, den Spread vom zweiten Input-Pin ab und gibt die Differenz als Spread aus.\\
 \hline
-Multiply & Multipliziert zwei Spreads und gibt das Produkt aus.\\
+Multiply & Multipliziert zwei Spreads und gibt das Produkt als Spread aus.\\
 \hline
-Divide & Teilt den Spread am ersten Input-Pin durch den Spread der am zweiten Input-Pin anliegt und gibt das Ergebnis aus.\\
+Divide & Teilt den Spread am ersten Input-Pin durch den Spread der am zweiten Input-Pin anliegt und gibt das Ergebnis als Spread aus.\\
 \hline
-Modulo & Berechnet den Modulo zweier Spreads.\\
+Modulo & Berechnet den Modulo zweier Spreads und gibt den Rest als Spread aus.\\
 \hline
 GreaterThan & Vergleicht zwei Spreads miteinander. Wenn der Spread am ersten Input-Pin größer
 als der am zweiten Input-Pin ist, wird 1 zurückgegeben. Andernfalls wird 0 zurückgegeben.\\
@@ -1372,29 +1372,31 @@ OutBox & Zeigt den Inhalt eines Spreads für den Benutzer an. Dieser Node hat ke
 dient dem Nutzer zur Kontrolle von Spreads.\\
 \hline
 Variable & Diesem Node kann der Benutzer einen skalaren Wert zuweisen. Damit wird am Output-Pin ein Spread mit einer einzigen
-Variable erzeugt. Diese kann genutzt werden um Berechnungen mit anderen Spreads durchzuführen.\\
+Variable erzeugt. Diese kann genutzt werden, um Berechnungen mit anderen Spreads durchzuführen.\\
 \hline
-CSVParser & Mit diesem Node hat der Benutzer die Möglichkeit eine CSV-Datei zu importieren.
+CSVParser & Mit diesem Node hat der Benutzer die Möglichkeit, eine CSV-Datei zu importieren.
 Die "`Spalten"' der Daten wird dabei als Spreads über die Output-Pins ausgegeben.\\
 \hline
-RGBColor & Erzeugt aus drei Input-Pins (Rot, Grün, Blau) einen Spread mit Farbwerten. Dieser kann von anderen Nodes benutzt werden,
-um ihre Ausgabe einzufärben.\\
+RGBColor & Erzeugt aus drei Input-Pins für die Farbkanäle Rot, Grün und Blau einen Spread mit Farbwerten. Dieser
+kann von anderen Nodes benutzt werden, um ausgegebene grafische Elemente einzufärben.\\
 \hline
-Text & Gibt dem Nutzer die Möglichkeit Text einzugeben. Dieser Text wird über den Ouput-Pin des Node ausgegeben.\\
+Text & Gibt dem Nutzer die Möglichkeit Text einzugeben. Dieser Text wird über den Ouput-Pin des Node als Spread ausgegeben.\\
 \hline
 String & Zeichnet einen einfachen Text in der Ausgabe. Die Ausgabe des Textes kann durch die Position und die Farbe beeinflusst werden.\\
 \hline
-Line & Dieser Node zeichnet eine Linie. Die Linie ist bestimmt durch ihre Anfangskoordinaten und ihre Endkoordinaten und kann eine Farbe annehmen.\\
+Line & Dieser Node zeichnet eine Linie. Der Node hat fünf Input-Pins, die Anfangskoordinaten, Endkoordinaten und Farbe
+der Linie bestimmen.\\
 \hline
-Circle & Dieser Node zeichnet einen Kreis. Der Kreis ist bestimmt durch Koordinaten, Radius und Farbe.\\
+Circle & Dieser Node zeichnet einen Kreis. Der Kreis ist bestimmt durch Koordinaten, Radius und Farbe. Der Node
+hat dafür drei Input-Pins.\\
 \hline
 Rectangle & Dieser Node zeichnet ein Rechteck. Das Rechteck ist bestimmt durch Koordinaten, Breite, Höhe und Farbe.\\
 \hline
 Pixel & Dieser Node zeichnet einen Pixel. Der Pixel ist bestimmt durch Koordinaten und Farbe.\\
 \hline
-Render & Diese Node erzeugt ein weiteres Fenster, in dem der Benutzer die aktuelle Ausgabe überprüfen kann.
-Wenn er mit der aktuellen Ausgabe zufrieden ist, kann er durch Tastendruck den Render-Node veranlassen ein
-hochauflösendes Bild zu exportieren.\\
+Render & Dieser Node erzeugt ein weiteres Fenster, in dem der Benutzer die aktuelle Ausgabe überprüfen kann.
+Wenn er mit der aktuellen Ausgabe zufrieden ist, kann er durch Tastendruck den Render-Node veranlassen, ein
+hochauflösende Bilddatei zu erstellen.\\
 \hline
 \end{tabular}
 \caption{Alle in Datasynth implementieren Nodes}
