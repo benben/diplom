@@ -1,4 +1,12 @@
-\documentclass[a4paper, 12pt, DIV=calc, version=first, pdftex, headsepline, footsepline, bibtotocnumbered, liststotocnumbered]{scrreprt}
+\documentclass[a4paper, 
+               12pt,
+               DIV=calc,
+               version=first,
+               pdftex,
+               headsepline,
+               footsepline,
+               bibtotocnumbered,
+               liststotocnumbered]{scrreprt}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -502,7 +510,8 @@ aber eigenständige Gebiete. In ihnen geht es auch um die Sichtbarmachung von In
 großen Datenmengen und können auch ohne Softwareunterstützung erstellt werden. Bei der Visualisierung
 von Prozessen muss die Zeit als besonderer Faktor berücksichtigt werden.
 \item[Data Mining] ist der computergestützte automatische Versuch, Datenmengen zu ordnen und mithilfe
-von Algorithmen Erkenntnisse zu erhalten. Im Gegensatz dazu versucht die Informationsvisualisierung eine geeignete grafische Repräsentation
+von Algorithmen Erkenntnisse zu erhalten. Im Gegensatz dazu versucht die Informationsvisualisierung eine geeignete
+grafische Repräsentation
 bereitzustellen, die dem Nutzer die Möglichkeit gibt, diese Erkenntnisse selbst zu finden. Für die Datengewinnung
 ist die Informationsvisualisierung auf Techniken des Data Mining angewiesen. Es gibt Bestrebungen beide Gebiete 
 im "Visual Data Mining"\footnote{Vgl. \citep{Keim}} zu Verbinden um Synergien zu bilden.
@@ -776,13 +785,13 @@ verlinkt werden."'
 \begin{figure}
 \centering
 \lstinputlisting{code/grundrechenarten.txt}
-\caption{Pseudocode für eine Programmierung aller Grundrechenarten.}
+\caption{Pseudocode für eine textuelle Programmierung aller Grundrechenarten.}
 \label{fig:textuell}
 \end{figure}
 \begin{figure}
 \centering
 \includegraphics[width=\linewidth]{images/datasynth_basic.pdf}
-\caption{Die Grundrechenarten programmiert mit Datasynth.}
+\caption{Die Grundrechenarten umgesetzt mit visueller Programmierung.}
 \label{fig:datasynth_basic}
 \end{figure}
 Im Gegensatz zur textuellen Programmierung, bei der Buchstaben, Zeichen und Wörter
@@ -838,14 +847,15 @@ Anzahl von Elementen miteinander zu verrechnen.
 
 Der Einsatz von visueller Programmierung als Bedienkonzept hat
 mehrere Vorteile. Das Verbinden von Nodes, die als Datenquelle funktionieren, mit Nodes, die
-die visuellen Variablen repräsentieren, greift das grundlegende
-Prinzip der Informationsvisualisierung auf.
-Darüber hinaus sind keine Programmierkenntnisse erforderlich, um eine Informationsvisualisierung
-erstellen zu können. Ein durchschnittliches mathematisches Verständnis reicht für einfache Aufgaben aus.
-Durch die universelle Form der Benutzerschnittstelle ist ein iteratives
-Experimentieren möglich. Diese kann vom Benutzer eingesetzt werden, um unkompliziert eine
+die visuellen Variablen repräsentieren, spiegelt das grundlegende
+Prinzip der Informationsvisualisierung in der Benutzeroberfläche wieder. Für den Benutzer ist
+es dadurch verständlicher welche Aufgabe die Software hat und wie mit ihr Probleme gelöst
+werden können.
+Mit der gewählten Benutzeroberfläche sind keine Programmierkenntnisse erforderlich, um eine Informationsvisualisierung
+zu erstellen. Ein durchschnittliches mathematisches Verständnis des Benutzers reicht für einfache Aufgaben aus.
+Das macht ein iteratives Experimentieren möglich. Der Benutzer kann die Software nutzen, um unkompliziert eine
 Idee für die Informationsvisualisierung zu skizzieren.
-Die komplexen internen Abläufe werden hinter einem intuitiven und einfachen Interface
+Die komplexen internen Abläufe werden dabei hinter einem intuitiven und einfachen Interface
 versteckt. Dadurch können "`context switches"'\footnote{Vgl. \citep[S.\,50]{Tufte}}
 vermieden werden. Diese treten auf, wenn der Benutzer zwischen unterschiedlichen Programmansichten wechseln
 muss. Stattdessen wird der Bereich für die Benutzerinteraktion und die Ausgabe
@@ -873,72 +883,75 @@ zwei Verbindungen die x- und y-Position des Kreises beschreibt.}
 \caption{Schematische Prozesskette der Software}
 \label{fig:prozesskette}
 \end{figure}
-In der Prozesskette wird der generische Arbeitsablauf beim Benutzen
-der Software beschrieben. Dieser ist unabhängig von den zu bearbeitenden Daten
+In der Prozesskette wird der generische Arbeitsablauf für die Benutzung
+der Software beschrieben. Dieser ist unabhängig von den zu verarbeitenden Daten
 und den gewählten Darstellungsformen. Die Prozesskette ist in vier
 Arbeitsschritte unterteilt, die nacheinander abgearbeitet werden müssen,
 um eine grafische Darstellung zu erzeugen.
-Die einzelnen Schritt der Prozesskette werden in Abbildung \ref{fig:prozesskette} dargestellt und im
+Die einzelnen Schritte der Prozesskette werden in Abbildung \ref{fig:prozesskette} dargestellt und im
 Folgenden beschrieben.
 \subsection{Importieren von Datenquellen}
 Der Benutzer erzeugt einen Node, der es möglich macht externe Datenquellen
-in das Programm zu laden. Unterschiedliche Nodes machen es möglich Datenquellen auf
-dem Computer oder im Netzwerk einlesen zu können. Dabei werden etablierte
-Datenformate wie XML, CSV, JSON und netCDF unterstützt. Wenn der Benutzer eine 
+in die Software zu laden. Unterschiedliche Nodes machen es möglich Datenquellen auf
+dem Computer oder im Netzwerk importieren zu können. Dabei werden etablierte
+Dateiformate wie XML, CSV, JSON und netCDF unterstützt. Wenn der Benutzer eine 
 Datenquelle ausgewählt hat, erhält der Node automatisch Output-Pins.
 Diese repäsentieren die ursprüngliche Datenstruktur der Datenquelle.
 Die Datenquelle für das Beispiel aus Abbildung \ref{fig:beispiel} kann eine Tabelle sein,
 bei der in der ersten Spalte alle Begriffe stehen und jede weitere Spalte die Farben
 eines jeden Kulturkreises beschreibt. Bei zehn Kulturkreisen hat die Tabelle
-elf Spalten und der Node würde elf Output-Pins besitzen. Diese können dann unterschiedlich
+elf Spalten und der Node besitzt dadurch elf Output-Pins. Die Spreads, die durch
+die Output-Pins ausgegeben werden, können unterschiedlich
 weiterverarbeitet werden.
 Die Erzeugung mehrerer unterschiedlicher Nodes für die Einbindung von Daten macht ein
 \textit{Mashup} unterschiedlicher Datenquellen möglich.
 \subsection{Festlegung der visuellen Variablen}
-Der Benutzer hat nun die Möglichkeit weitere Nodes anzulegen, die die visuellen
+Der Benutzer hat die Möglichkeit weitere Nodes anzulegen, die die visuellen
 Variablen darstellen. Diese können unabhängig voneinander erzeugt und mit einem datengebenden
-Node verbunden werden. Der Benutzer erhält die Freiheit zwischen datengebenden Nodes und
-Nodes die eine grafische Ausgabe erzeugen weitere Nodes einzufügen, um diese Verbindungen
+Node verbunden werden. Sie erzeugen beispielsweise grafische Formen wie Kreise oder Rechecke,
+die in ihrer zum Beispiel in ihrer Position, Farbe und Richtung beeinflusst werden können.
+Der Benutzer hat die Möglichkeit zwischen datengebenden Nodes und
+Nodes, die eine grafische Ausgabe erzeugen, weitere Nodes einzufügen, um diese Verbindungen
 parametrisieren zu können. Das macht unterschiedlichste Darstellunsgformen möglich.
 Um das Beispiel aus Abbildung \ref{fig:beispiel} zu realisieren, muss der Benutzer einen
-Node erzeugen, der Rechtecke erzeugen kann. Dieser Node hat Input-Pins um die Position
+Node erzeugen, der Rechtecke zeichnet. Dieser Node hat Input-Pins um die Position
 in der Ebene, die Größe, die Rotation und die Farbe festlegen zu können. Der Benutzer
 verbindet dann die Output-Pins des datengebenden Nodes mit den Input-Pins dieser Node
-und erzeugt damit eine erste grafische Darstellung der Daten.
+und erzeugt damit eine grafische Darstellung der Daten.
 \subsection{Evaluation der grafischen Darstellung}
 Um die aktuelle grafische Darstellung überprüfen zu können, kann der Benutzer Nodes
-erzeugen, die eine Art Vorschau ermöglichen. Ein Render-Node erzeugt ein weiteres
-Ausgabefenster und zeigt die Ausgabe, die von den vorhandenen Nodes erzeugt wird.
+erzeugen, die eine Vorschau ermöglichen. Ein Render-Node erzeugt ein weiteres
+Fenster und zeigt die Ausgabe, die von den vorhandenen Nodes erzeugt wird, an.
 Bei jeder Interaktion des Benutzers, die Parameter einzelner Nodes ändert,
 wird automatisch und unmittelbar die aktuelle Ausgabe verändert.
-Der Benutzer kann visuell analysieren welche Verbindungen noch nötig sind
-oder welche zusätzlichen Parameter einzelne Verbindungen noch brauchen, um eine sinnvolle grafische 
+Der Benutzer kann visuell analysieren, welche Verbindungen noch nötig sind
+oder welche zusätzlichen Parameter einzelne Verbindungen noch benötigen, um eine sinnvolle grafische 
 Darstellung zu erzeugen. Ist das Beispiel aus Abbildung \ref{fig:beispiel} mit den vorangegangen Schritten noch nicht
 zufriedenstellend visualisiert, kann der Benutzer weitere Nodes und Connections
 hinzufügen. So kann beispielsweise eine zusätzlicher Multiplikator-Node und ein
-Variablen-Node dazu genutzt werden um den Radius des Kreises anpassen zu können.
+Variable-Node genutzt werden, um die Position aller Rechtecke anpassen zu können.
 \subsection{Export der grafischen Darstellung}
 Ist der Benutzer zufrieden mit der grafischen Darstellung, kann er weitere Nodes
 erzeugen, die diese exportieren. Zur Speicherung von grafischen Darstellungen
 eignen sich bekannte Bildformate wie JPEG, PNG, BMP oder TIFF. Eine Node, die andere Formate
 für die Weiterverarbeitung unterstützt ist denkbar. Weitere Exportmöglichkeiten
-sind Vektorgrafiken oder interaktive HTML Seiten.
+sind Vektorgrafiken, 3D-Austauschformate oder interaktive HTML Seiten.
 
-\section{Analyse bestehender Software}
+\section{Bestehende Softwarelösungen}
 \label{sec:bestehendeSoftware}
 Durch das weite Arbeitsfeld der Informationsvisualisierung, das meist
-fließend in andere Bereiche über geht, existiert eine große Anzahl an
+fließend in andere Bereiche übergeht, existiert eine große Anzahl an
 Softwarelösungen und Programmierbibliotheken. Hier sollen exemplarisch
 einzelne Anwendungen beschrieben werden, die verschiedene gefordete
 Funktionen enthalten, diese aber nicht in einem Softwarepaket, das
 speziell auf die Informationsvisualisierung zugeschnitten ist, zusammenfassen.
-Eine Liste aller betrachteten Programme findet sich in Tabelle
-\ref{tab:Softwareliste} im Anhang.
+Eine Liste aller betrachteten Programme findet sich im Anhang in Abschnitt
+\ref{sec:Softwareliste}.
 \begin{description}
 \item[vvvv]
 ist eine datenstromorientierte Enticklungsumgebung, die universell eingesetzt werden kann.
 Mit ihr können unterschiedlichste audiovisuelle Medien gekoppelt und
-verarbeitet werden. vvvv setzt auf visuelle Programmierung, ist aber
+verarbeitet werden. vvvv wird durch visuelle Programmierung gesteuert, ist aber
 nicht spezialisiert auf Informationsvisualisierung und nicht für alle
 Plattformen verfügbar.
 \item[MeVisLab]
@@ -948,8 +961,8 @@ IDE\footnote{Integrated Development Environment} mit verschiedenen
 Erweiterungsmöglichkeiten, ist aber spezialisiert auf die medizinische
 Bildverarbeitung.
 \item[d3.js]
-ist eine Bibliothek die einen ähnlichen Ansatz wie in Kapitel \ref{cha:Software}
-verfolgt. Sie ist in Javascript geschrieben und beschränkt sich dadurch auf
+ist eine Bibliothek, die Teile einer HTML-Seite mit Daten verbinden kann.
+Sie ist in Javascript geschrieben und beschränkt sich auf
 Webanwendungen. Der Nutzer muss Javascript programmieren können, um diese
 Bibliothek nutzen zu können.
 \item[NodeBox 2 Beta]
@@ -968,12 +981,12 @@ umgesetzt werden, die notwendig sind, um das Prinzip der Software zu verdeutlich
 
 \section{Technologien}
 \label{sec:Technologien}
-Um Datasynth zu entwickeln werden verschiedene Softwaretechnologien verwendet.
-Deren Einsatz wird nachfolgend kurz erläutert.
+Um Datasynth zu entwickeln, werden verschiedene Technologien verwendet.
+Im Folgenden wird ihr Einsatz bei der Entwicklung beschrieben.
 \begin{description}
 \item[C++]
 ist eine objektorientierte Programmiersprache. Sie bietet
-eine maschinennahe Möglichkeit, um Programme zu schreiben.
+eine maschinennahe Möglichkeit, effiziente Programme zu entwickeln.
 Datasynth nutzt durch openFrameworks und boost einige Vorteile
 von C++. Dazu gehören die höhere Geschwindigkeit beim Ausführen
 und die einfache Einbindung anderer Bibliotheken, wie 
@@ -989,21 +1002,20 @@ in den einzelnen Nodes von Datasynth Anwendung.
 \end{figure}
 ist ein in C++ geschriebenes Framework. Es soll durch seine
 Einfachheit und Intuitivität den kreativen Prozess und das
-Experimentieren unterstützen. openFrameworks
+Experimentieren beim Programmieren unterstützen. openFrameworks
 kapselt viele unterschiedliche Bibliotheken für die
 computergestützte audio-visuelle Verarbeitung in eine gemeinsame,
 konsistente und einfache Programmierschnittstelle. Beispielsweise
 wird die Bibliothek openGL für Grafiken verwendet und die
-Bibliothek rtAudio für die Ein- und Ausgabe von Audiosignalen.
-Das erlaubt dem Programmierer eine schnelle und effiziente Arbeitsweise ohne
-lange Einarbeitungszeiten und ist daher für Datasynth optimal.
+Bibliothek FreeImage für das Importieren, Bearbeiten und Exportieren von Bilddateien.
+openFrameworks erlaubt dem Programmierer eine schnelle und effiziente Arbeitsweise ohne
+lange Einarbeitungszeiten und ist daher für die Implementation von Datasynth optimal geeignet.
 Die Programmierschnittstelle von openFrameworks enthält
-wenige Klassen mit wenigen Funktionen um überschaubar zu bleiben.\footnote{Vgl. \citep{of1} und \citep{of2}}
-Für spezielle Anforderungen kann auf die eigentlichen Bibliotheken
+wenige Klassen mit wenigen Funktionen, um überschaubar zu bleiben.\footnote{Vgl. \citep{of1} und \citep{of2}}
+Für spezielle Anforderungen kann auf die Befehle der zugrundeliegenden Bibliotheken
 zurückgegriffen werden.
 openFrameworks ist kompatibel zu den Plattformen
-Linux, Mac OSX, Windows und erfüllt, neben den genannten Vorteilen,
-die Anforderung der Plattformunabhängigkeit aus Abschnitt \ref{sec:Anforderungen}.
+Linux, Mac OS X, Microsoft Windows.
 Die Funktionsweise von openFrameworks wird in Abbildung
 \ref{fig:of} verdeutlicht. 
 Die Programmlogik, das Benutzerinterface und alle Ein- und
@@ -1014,17 +1026,18 @@ ist eine Sammlung von unterschiedlichen C++ Programmierbibliotheken.
 Diese Bibliotheken sind portabel einsetzbar und steigern die
 Produktivität beim Entwickeln einer Software, da sie unterschiedliche
 Anwendungsbereiche von C++ erweitern und vereinfachen.
-Einzelne Bibliotheken der Sammlung werden in den neuen C++ Standard
+Einzelne Bibliotheken der Sammlung wurden in den neuen C++ Standard
 übernommen, um C++ selbst zu verbessern.
 Für Datasynth werden die Bibliotheken für Zeiger, Container
 und generische Programmierung verwendet, um die Entwicklung weiter zu vereinfachen.
 \item[GitHub]
-ist eine Internetplattform für das gemeinsame Entwickeln von Software.\footnote{Vgl. http://www.github.com}
+ist eine Internetplattform für das kollaborative Entwickeln von Software.
 Sie basiert auf dem Versionverwaltungstool git, welches entwickelt wurde
 um Änderungen an Quellcode aufzuzeichnen und diesen zwischen mehreren
-Entwicklern teilen zu können. GitHub verbindet die Funktionalitätvon git mit
-einem sozialen Netzwerk, bei der verschiedene Nutzer kollaborativ
-an einer Software arbeiten können. Datasynth ist auf Github verfügbar.\footnote{Vgl. http://www.github.com/benben/datasynth}
+Entwicklern teilen zu können. GitHub verbindet die Funktionalität von git mit
+einem sozialen Netzwerk, bei der verschiedene Nutzer gemeinsam
+an einer Software arbeiten können. Die Entwicklung von Datasynth kann online 
+verfolgt werden.\footnote{Vgl. http://www.github.com/benben/datasynth}
 \end{description}
 
 \section{Wichtige Kernfunktionen}
@@ -1034,24 +1047,23 @@ erläutert.
 In Abbildung \ref{fig:factory} wird eine Struktur dargestellt, die die einzelnen
 Nodes zur Laufzeit erstellt. In dieser Struktur ist eine Liste gespeichert, die Wertepaare
 enthält. Ein Wertepaar besteht aus einer Zeichenkette, die eine Node eindeutig identifiziert
-und einem Objekt erzeugt aus der gleichnamigen Klasse einer Node.
+und einem Objekt, dass aus der gleichnamigen Klasse eines Node erzeugt wurde.
 Wenn der Benutzer eine Node erstellen will und im Menü auf einen entsprechenden Eintrag geklickt hat,
-wird eine Zeichenkette übergeben und wenn die Liste der Struktur eine solche Zeichenkette enthält, das
-entsprechende Objekt erzeugt. So können vom Benutzer dynamisch zur Laufzeit
+wird eine Zeichenkette übergeben und wenn die Liste der Struktur eine solche Zeichenkette enthält, der
+entsprechende Node erzeugt. So können vom Benutzer dynamisch zur Laufzeit
 neue Nodes erzeugt werden. Die Struktur dient also als eine Art Katalog, in dem alle
-Nodes enthalten sind, die der Nutzer zur Programmierung verwenden kann.
+Nodes enthalten sind, die der Nutzer zur visuellen Programmierung verwenden kann.
 \begin{figure}
 \centering
 \lstinputlisting[language=C++]{code/factory.cpp}
 \caption{Erzeugung einer Node-Instanz aus einer Liste aller vorhandener Node-Klassen}
 \label{fig:factory}
 \end{figure}
-
-In Abbildung \ref{fig:node} wird in Auszügen die Klassendefinition der BaseNode und
-der Node für die Addition zweier Gleitkommazahlen als Beispiel einer echten Node dargestellt.
-Eine Node ist eine einfache C++ Klasse, die alle Eigenschaften der Klasse BaseNode erbt.
-Die Node für die Addition zweier Gleitkommazahlen überschreibt die process Methode der BaseNode, um die zwei
-Inputpins zu addieren. Andere Klassen die von der BaseNode erben, können die process
+In Abbildung \ref{fig:node} wird in Auszügen die Klassendefinition des BaseNode und
+des Node für die Addition zweier Gleitkommazahlen als Beispiel dargestellt.
+Ein Node ist eine einfache C++ Klasse, die alle Eigenschaften der Klasse BaseNode erbt.
+Der Node für die Addition zweier Gleitkommazahlen überschreibt die process Methode der BaseNode, um die zwei
+Inputpins zu addieren. Andere Klassen die von dem BaseNode erben, können die process
 Methode mit ihrer eigenen Funktionalität überschreiben.
 Das macht es möglich alle Funktionen, die in einer C++ Methode implementiert werden können,
 in einer Klasse als Node zu kapseln und für die visuelle Programmierung von Datasynth zu verwenden.
@@ -1061,7 +1073,6 @@ in einer Klasse als Node zu kapseln und für die visuelle Programmierung von Dat
 \caption{Klassendefinition der BaseNode und der Node für die Addition als Beispiel}
 \label{fig:node}
 \end{figure}
-
 In Abbildung \ref{fig:core} werden einzelne Ausschnitte aus dem Hauptprogramm gezeigt.
 In diesem Teil von Datasynth läuft die Hauptschleife ab, die alle Benutzereingaben behandelt,
 das Aktualisieren und Berechnen aller Nodes durchführt und Nodes und Connections
@@ -1081,126 +1092,133 @@ hinzufügt oder löscht.
 \hline
 \textbf{Node} & \textbf{Funktion}\\
 \hline
-Add & Addiert zwei Spreads miteinander und gibt eine Summe dieser zurück.\\
+Add & Addiert zwei Spreads miteinander und gibt ein Spread als Summe dieser zurück.\\
 \hline
-Substract & Zieht vom Spread der am ersten Input-Pin anliegt, den Spread vom zweiten Input-Pin ab und gibt die Differenz aus.\\
+Substract & Zieht vom Spread der am ersten Input-Pin anliegt, den Spread vom zweiten Input-Pin ab und gibt die Differenz als Spread aus.\\
 \hline
-Multiply & Multipliziert zwei Spreads und gibt das Produkt aus.\\
+Multiply & Multipliziert zwei Spreads und gibt das Produkt als Spread aus.\\
 \hline
-Divide & Teilt den Spread am ersten Input-Pin durch den Spread der am zweiten Input-Pin anliegt und gibt das Ergebnis aus.\\
+Divide & Teilt den Spread am ersten Input-Pin durch den Spread der am zweiten Input-Pin anliegt und gibt das Ergebnis als Spread aus.\\
 \hline
 Variable & Diesem Node kann der Benutzer einen skalaren Wert zuweisen. Damit wird am Output-Pin ein Spread mit einer einzigen
-Variable erzeugt. Diese kann genutzt werden um Berechnungen mit anderen Spreads durchzuführen.\\
+Variable erzeugt. Diese kann genutzt werden, um Berechnungen mit anderen Spreads durchzuführen.\\
 \hline
-CSVParser & Mit diesem Node hat der Benutzer die Möglichkeit eine CSV-Datei zu importieren.
+CSVParser & Mit diesem Node hat der Benutzer die Möglichkeit, eine CSV-Datei zu importieren.
 Die "`Spalten"' der Daten wird dabei als Spreads über die Output-Pins ausgegeben.\\
 \hline
-RGBColor & Erzeugt aus drei Input-Pins (Rot, Grün, Blau) einen Spread mit Farbwerten. Dieser kann von anderen Nodes benutzt werden,
-um ihre Ausgabe einzufärben.\\
+RGBColor & Erzeugt aus drei Input-Pins für die Farbkanäle Rot, Grün und Blau einen Spread mit Farbwerten. Dieser
+kann von anderen Nodes benutzt werden, um ausgegebene grafische Elemente einzufärben.\\
 \hline
-Line & Dieser Node zeichnet eine Linie. Die Linie ist bestimmt durch ihre Anfangskoordinaten und ihre Endkoordinaten und kann eine Farbe annehmen.\\
+Line & Dieser Node zeichnet eine Linie. Der Node hat fünf Input-Pins, die Anfangskoordinaten, Endkoordinaten und Farbe
+der Linie bestimmen.\\
 \hline
-Circle & Dieser Node zeichnet einen Kreis. Der Kreis ist bestimmt durch Koordinaten, Radius und Farbe.\\
+Circle & Dieser Node zeichnet einen Kreis. Der Kreis ist bestimmt durch Koordinaten, Radius und Farbe. Der Node
+hat dafür drei Input-Pins.\\
 \hline
-Render & Diese Node erzeugt ein weiteres Fenster, in dem der Benutzer die aktuelle Ausgabe überprüfen kann.
-Wenn er mit der aktuellen Ausgabe zufrieden ist, kann er durch Tastendruck den Render-Node veranlassen ein
-hochauflösendes Bild zu exportieren.\\
+Render & Dieser Node erzeugt ein weiteres Fenster, in dem der Benutzer die aktuelle Ausgabe überprüfen kann.
+Wenn er mit der aktuellen Ausgabe zufrieden ist, kann er durch Tastendruck den Render-Node veranlassen, ein
+hochauflösende Bilddatei zu erstellen.\\
 \hline
 \end{tabular}
-\caption{visuelle Variablen und ihre Umsetzung in Datasynth}
+\caption{Exemplarische Auflistung implementierter Nodes}
 \label{tab:nodes}
 \end{table}
-In Tabelle \ref{tab:nodes} werden einzelne Nodes exemplarisch aufgeführt und ihre Funktion beschrieben.
+In Tabelle \ref{tab:nodes} werden implementierte Nodes exemplarisch aufgeführt und ihre Funktion beschrieben.
 Diese Nodes reichen bereits aus, um einfache Visualisierungen durchzuführen. Eine vollständige Liste aller
 für Datasynth implementierten Nodes findet sich im Anhang in Abschnitt \ref{sec:alleNodes}.
 
 \section{Probleme}
 \label{sec:Probleme}
-Währen der Entwicklung an Datasynth sind Probleme aufgetreten, die im Folgenden
-kurz erläutert werden.
+Währen der Realisierung von Datasynth traten Probleme auf, die im Folgenden
+erläutert werden.
 
 Da C++ eine sehr maschinennahe Sprache ist und auf Performance optimiert ist,
-ist es schwierig sogenannte Reflections und Introspections durchzuführen.
-So können während der Laufzeit keine Informationen
-über eine Klasse abgefragt oder verändert werden. Das können zum Beispiel
-die Ausgabe aller vorhandenen Methoden und Instanzvariablen eines Objektes sein.
-Um trotzdem dynamisch und flexibel Nodes zur Laufzeit anlegen zu können, die
-intern eine unterschiedliche Funktionsweise haben, wurde
-ein Weg gewählt, der aus Vererbung und der Objekterzeugung aus Abbildung
-\ref{fig:factory} besteht. Alle Nodes werden als Zeiger
-im Hauptrogramm gespeichert. Durch diese Abstraktion können Objekte
-unterschiedlicher Klassen in einem einzigen Container gespeichert werden.
-Durch das einheitliche, von der BaseNode vererbte Interface können alle
-Nodes dynamisch verarbeitet werden.
+ist es schwierig Reflections und Introspections durchzuführen.
+Es können während der Laufzeit keine Informationen
+über die Beschaffenheit einer Klasse abgefragt werden.
+Das können zum Beispiel die Ausgabe aller vorhandenen Methoden und Instanzvariablen eines Objektes sein.
+Auch Eigenschaften einer Klasse können nicht dynamisch verändert werden. Beispielsweise
+ist es nicht möglich, die process Methode einer Node zur Laufzeit zu überschreiben.
+Um trotzdem flexibel Nodes zur Laufzeit erzeugen zu können, erben alle Nodes
+von einer universellen Elternklasse. In einem Container werden dann ausschließlich Zeiger
+auf die Objekte vom Typ der Elternklasse gespeichert. An den Speicherstellen
+liegen dann die eigentlichen Objekte einer Node-Klasse. Das Hauptprogramm kann
+über alle Elemente des Containers iterieren und somit alle vom Benutzer erzeugten
+Nodes aufrufen.
 
-Universelle Datentypcontainer sind in C++ nicht standardmäßig vorhanden. Um die Verbindungen
+Universelle Datentypcontainer sind in C++ nicht standardmäßig vorhanden.\footnote{Nullzeiger sind
+möglich, erfordern aber eine unsichere und unflexbile Wiederherstellung des ursprünglichen Datentyps.} Um die Verbindungen
 zwischen den einzelnen Nodes datentypagnostisch zu halten, wurde ein
 eigener Datentyp Spread definiert.\footnote{Eine Definition des Spreads erfolgte im Abschnitt \ref{sec:visPro}}
-Durch die Abstraktion in einen boost::variant Container ergibt sich eine einheitliche Möglichkeit primitive Datentypen
-wie beispielsweise Gleitkommazahlen und Zeichenketten abzuspeichern. Vor der Verwendung in einer Node müssen diese
-Datentypen wieder mit boost::get rekonstruiert werden.
+Durch die Abstraktion in einen boost::variant Container ergibt sich eine einheitliche Möglichkeit, primitive Datentypen
+wie beispielsweise Gleitkommazahlen und Zeichenketten abzuspeichern. Vor der Verwendung in einer Node werden diese
+Datentypen mit boost::get rekonstruiert. Der Vorteil gegenüber Nullzeigern ist, dass bei fehlgeschlagener
+Wiederherstellung eine Fehlerbehandlung möglich ist.
 
 openFrameworks unterstützt nicht das Erstellen und Verwenden mehrerer
 unabhängiger Fenster. Deshalb musste
 auf ein Addon zurückgegriffen werden, welches die Fensterverwaltung
 mit einem alternativen System austauscht.\footnote{openFrameworks verwendet standardmässig GLUT
-zur Fensterverwaltung. Das benutzte ofxFenster Addon benutzt dagegen das neuere und
-flexiblere GHOST aus dem Blender-Projekt.}
+zur Fensterverwaltung. Das benutzte ofxFenster Addon benutzt dagegen die neuere und
+flexiblere Bibliothek GHOST aus dem Blender-Projekt.} Damit können auch nach dem Start des Programms
+neue Fenster erzeugt werden, was beispielsweise für die Funktionalität des Render-Node wichtig ist.
 
-\chapter{Auswertung}
+\chapter{Evaluation}
 \label{cha:Auswertung}
 In diesem Kapitel wird Datasynth anhand der in Abschnitt \ref{sec:Anforderungen}
 aufgestellten Anforderungen bewertet.
 
 Durch die Bedienung von Datasynth mit visueller Programmierung, muss keine
 textuelle Programmiersprache erlernt werden. Stattdessen kann der Nutzer intuitiv
-grafische Elemente auf der Oberfläche erzeugen und durch verschiedene Verbindungen
+grafische Elemente auf der Oberfläche erzeugen und durch Verbindungen
 eine Programmlogik erstellen. Das Ergebnis einer Berechnung oder die Ausgabe von
-Grafiken erfolgt dabei unmittelbar. Diese kann der Nutzer
+Grafiken erfolgt dabei unmittelbar in einem seperaten Fenster. Dort kann der Nutzer
 ohne einen Zwischenschritt, wie beispielsweise Kompilierung oder Ausführung,
-sofort überprüfen und gegebenenfalls anpassen. Das führt zu einer
-\textit{einfachen Benutzerinteraktion} und einer kurzen Einarbeitungszeit.
+die grafische Darstellung sofort überprüfen und gegebenenfalls anpassen. Dadurch wird eine
+\textit{einfachen Benutzerinteraktion} ermöglicht.
 
-In Abschnitt \ref{sec:ImplementierteNodes} wurden alle Nodes aufgelistet,
-die für den Prototyp entstanden sind. Mit diesen können erste komplexe Visualisierungen\footnote{Vgl. Abschnitt
+In Abschnitt \ref{sec:ImplementierteNodes} wurden Nodes aufgelistet,
+die für die prototypische Realisierung entstanden sind. Damit können erste Informationsvisualisierungen\footnote{Vgl. Abschnitt
 \ref{sec:temperatures} und \ref{sec:companyclash} im Anhang} durchgeführt werden.
 Aufgrund der begrenzten Bearbeitungszeit konnten zwei visuelle
 Variablen nicht implementiert werden. Der sehr komplexe Node für die Texturierung
-und die Funktion der Rotation wurde nicht umgesetzt. Die fehlende Funktionalität kann aber
+und die Funktion der Rotation wurden nicht umgesetzt. Die fehlende Funktionalität kann aber
 durch den modularen Aufbau von Datasynth nachträglich hinzugefügt werden.
 
-Für die \textit{flexible Ein- und Ausgabe} wurde jeweils eine Möglichkeit implementiert, um eine lauffähige
-Version von Datasynth zu erhalten. Es existiert eine Node, die eine CSV-Datei\footnote{CSV
-bedeutet comma seperated values und beschreibt den Aufbau einer Textdatei, in der einzelne Werte durch
-ein Komma abgetrennt werden um diese maschinell weiterverarbeiten zu können.} einliest und enstprechend der Anzahl der vorhanden
-Spalten automatisch Outputpins erzeugt, an denen die einzelnen Spalten als
-Spreads ausgegeben werden. Für die Ausgabe als Bild existiert eine Render Node.
-Diese erzeugt eine Ausgabefenster in variabler Größe.
+Für die \textit{flexible Ein- und Ausgabe} wurde jeweils eine Möglichkeit implementiert, um die komplette
+Prozesskette von Datasynth zu implementieren. Es existiert ein Node, der eine
+CSV-Datei einliest und enttsprechend der Anzahl der vorhanden
+Spalten automatisch Output-Pins erzeugt, an denen die einzelnen Spalten als
+Spreads ausgegeben werden. Für die Ausgabe als Bild existiert ein Render-Node.
+Dieser erzeugt ein Ausgabefenster in variabler Größe und kann per Tastendruck
+hochauflösende Bilddateien im PNG-Format exportieren.
 
 Die \textit{Performanz} von Datasynth war bei allen durchgeführten Tests sehr gut. Das Grundsystem wurde so
 programmiert, dass Nodes intern nur eine Berechnung durchführen, wenn die Werte
-an den Inputpins verändert werden. Somit werden komplexe Rechenaufgaben nur
+an den Input-Pins verändert werden. Somit werden komplexe Rechenaufgaben nur
 durchgeführt, wenn der Nutzer Parameter anpasst. Die grafische Ausgabe
-der Render Node erfordert den größten Rechenaufwand, da die Ausgabe kontinuierlich
+des Render-Node erfordert den größten Rechenaufwand, da die Ausgabe kontinuierlich
 gezeichnet wird. Dieser Aufwand kann durch entsprechende Steuerung
 reduziert werden.
 
 Alle Nodes sind einfache C++ Klassen, die von einer Elternklasse
 alle Variablen und Methoden erben, die für die Verwendung in Datasynth
-nötig sind. Somit ist eine hohe \textit{Erweiterbarkeit} gegeben, da potenziell jede
-Funktionalität, die in einer C++ Klasse implementiert werden kann, auch
-als Node in Datasynth benutzbar wird.
+nötig sind. Somit ist eine hohe \textit{Erweiterbarkeit} gegeben, da es möglich ist,
+nahezu jede Funktionalität, die in einer C++ Klasse implementiert werden kann, auch
+als Node in Datasynth benutzbar zu machen.
 
-Durch die Verwendung von openFrameworks und boost als Basis der Entwicklung,
+Durch die Verwendung von openFrameworks und boost als Basis der Entwicklung
 ist es möglich, Datasynth auf allen Plattformen auszuführen, die von openFrameworks
-unterstützt werden. Das sind Linux, Mac OS X, Microsoft Windows, Android
-und Apple iOS. Dadurch ist Datasynth \textit{plattformunabhängig} einsetzbar.
+unterstützt werden. Das sind Linux, Mac OS X, Microsoft Windows.
+Dadurch ist Datasynth \textit{plattformunabhängig} einsetzbar.
 
 Datasynth wird öffentlich, auf der Plattform GitHub entwickelt.\footnote{Vgl.
 Abschnitt \ref{sec:Technologien}} Als Lizenz wurde die MIT-Lizenz gewählt.
 Diese ermöglicht jedem eine offene, aber auch kommerzielle Weiterentwicklung.
 
-Datasynth kann nahezu alle Anforderungen erfüllen.
+Datasynth kann nahezu alle Anforderungen erfüllen. Im Anhang in Abschnitt
+\ref{sec:companyclash} befindet sich eine Informationsvisualisierung, die mit
+Datasynth realisiert wurde.
 
 \chapter{Zusammenfassung}
 \label{cha:Zusammenfassung}
@@ -1208,9 +1226,9 @@ Datasynth kann nahezu alle Anforderungen erfüllen.
 \label{sec:Fazit}
 Der Grundgedanke der Informationsvisualisierung ist die Ausnutzung
 der menschlichen Fähigkeit, visuell große Mengen an Informationen in kürzester Zeit
-aufnehmen und verarbeiten zu können. Der Kern einer Informationsvisualisierung
-besteht dabei aus der Transkription von abstrakten Daten in visuellen Variablen einer
-grafischen Darstellung. Diese Verbindung wird in der Benutzeroberfläche
+aufnehmen und verarbeiten zu können.
+Die Transkription von abstrakten Daten in visuellen Variablen einer
+grafischen Darstellung ist der. Diese Verbindung wird in der Benutzeroberfläche
 von Datasynth aufgegriffen um eine Metapher für den Arbeitsprozess der Informationsvisualisierung
 zu schaffen. So können Nodes, die Datenquellen einlesen und verarbeiten, mit Nodes verbunden werden, die eine grafische
 Darstellung erzeugen. Diese Verbindungen können durch Berechnungen und Parametrisierung beeinflusst werden.
@@ -1235,16 +1253,6 @@ Grundregeln für die grafische Darstellung und allgemeine Gestaltungsregeln behe
 So muss der Benutzer selbst entscheiden, welche visuellen Variablen sich wie 
 gut für eine bestimmte Aufgabe eignen. Ein geeignetes System zu finden, das dem
 Benutzer Hilfestellungen zu dieser Thematik gibt, muss noch erforscht werden.
-
-Datasynth in seiner prototypischen Implementierung hat die einfache Möglichkeit der Generierung statischer Bilder.
-Für eine Informationsvisualisierung ist es meist sinnvoll Interaktionsmöglichkeiten
-anzubieten, um die grafische Darstellung noch effektiver einsetzbar zu machen.\footnote{Beispielsweise
-kann die Möglichkeit eines Zooms implementiert werden oder beim Klicken auf einen bestimmten
-Bereich der grafischen Darstellung werden zusätzliche Informationen angezeigt.}
-Durch den sehr grundlegenden Ansatz, bei dem grafische Darstellungen mithilfe ihrer
-visuellen Variablen erzeugt werden, ist es mit Datasynth sehr aufwändig komplexe Objekte zu erzeugen. Eine Gruppierung von Nodes
-kann dabei abhilfe schaffen und beispielsweise eine einzige Node für ein 
-Tortendiagramm ermöglichen.\footnote{Vgl. Abschnitt \ref{sec:Ausblick}}
 
 Die Entwicklung von Datasynth hat gezeigt, dass es durchaus sinnvoll ist,
 ein auf Informationsvisualisierung spezialisiertes Softwarekonzept zu entwickeln.
@@ -1298,6 +1306,7 @@ hinweisen, wie gut oder schlecht sich gewisse Darstellungen eignen.
     
 \chapter{Anhang}
 \section{Liste von bestehenden Softwarelösungen}
+\label{sec:Softwareliste}
 \begin{tabular}{l|l}
 \hline
 Name & Webadresse \\
