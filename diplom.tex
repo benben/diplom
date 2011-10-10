@@ -57,9 +57,9 @@ Die Menge an digital gespeicherten Daten nimmt stetig zu. Im Jahr 2011 werden la
 Studie\footnote{Vgl. \citep{EMC}} voraussichtlich 1,8 Zettabyte\footnote{1 Zettabyte = \num{1d21}
 Byte = 1.000.000.000.000 Gigabyte} an Daten erzeugt und kopiert. In nahezu allen Bereichen unseres
 täglichen Lebens werden Daten erhoben, gemessen und gespeichert. Neben der Wissenschaft, Wirtschaft
-und Kultur, verfolgen öffentliche Bereiche der Politik und Verwaltung eine neue Strategie im Umgang
-mit Daten. So haben Städte wie beispielsweise Leipzig eine öffentliche Datenschnittstelle oder
-Staaten wie Großbritannien verfolgen ein ganzheitliches Konzept des e-Government. Aufgrund dieser
+und Kultur verfolgen öffentliche Bereiche der Politik und Verwaltung eine neue Strategie im Umgang
+mit Daten. So haben Städte wie beispielsweise Leipzig eine öffentliche Datenschnittstelle.
+Staaten, wie Großbritannien, verfolgen ein ganzheitliches Konzept des e-Government. Aufgrund dieser
 aktuellen Entwicklungen ist es notwendig, neue Strategien zu entwickeln, die diese Daten
 für die jeweiligen Zielgruppen sinnvoll extrahieren, aufarbeiten und darstellen. Aus diesem
 Grund wurden in verschiedenen Forschungsfeldern, wie beispielsweise Statistik, Data Mining,
@@ -78,7 +78,7 @@ im Bereich der sozialen Netzwerke, beim Onlineshopping und bei der Suche nach In
 im Internet können mit der Informationsvisualisierung verbessert
 werden. Sie unterstützt die Gestaltung von Benutzerschnittstellen, um diese verständlicher und intuitiv einsetzbar zu machen.
 Damit wird es vor allem Gelegenheitsanwendern leicht gemacht, Informationen und
-Wissen noch besser mit anderen zu kommunizieren und teilen. Das erfordert (digitale) Werkzeuge,
+Wissen noch besser mit Anderen zu kommunizieren und teilen. Das erfordert (digitale) Werkzeuge,
 die den Benutzer unterstützen und ihm die Möglichkeit geben, Daten für Problemlösungen nutzen zu können.
 Um die Informationsvisualisierung erfolgreich einzusetzen, muss eine Vielzahl von Fragstellungen
 beantwortet und gelöst werden.
@@ -99,18 +99,18 @@ eine tiefgreifende Auseinandersetzung zwischen ihm (als menschlichen Betrachter)
 zu ermöglichen und Entscheidungen über das Design direkt treffen zu können.\footnote{Vgl. \citep{infoblog}} Der Nachteil dieser
 Arbeitsweise ist eine zeitaufwändige manuelle Transkription aller Datenwerte in eine grafische
 Darstellung. Bei der Visualisierung von komplexeren Zusammenhängen und größeren Datenmengen würde dieser 
-Nachteil noch verstärkt werden und es teilweise unmöglich machen eine Visualisierung durchzuführen.
+Nachteil noch verstärkt werden und es teilweise unmöglich machen, eine Visualisierung durchzuführen.
 
-In dieser Arbeit soll untersucht werden, ob es möglich und sinnvoll ist, diesen Prozess  zu automatisieren,
+In dieser Arbeit wird untersucht, ob es möglich und sinnvoll ist, diesen Prozess  zu automatisieren,
 ohne Einschränkungen für den Anwender festlegen zu müssen.
-Eine Software muss dafür einen universellen Ansatz verfolgen, um ein möglichst breites Spektrum an
+Eine Software muss dafür einen universellen Ansatz verfolgen, um ein breites Spektrum an
 unterschiedlichsten Bearbeitungsfällen abdecken zu können. 
 Aktuelle Softwarestandards wie beispielsweise Tabellenkalkulationsprogramme oder Programmierbibliotheken
 können das nur teilweise leisten oder beschränken sich auf spezielle Anwendungsgebiete.
-Meist kann dabei, für die Transkription von Daten zu einer grafischen Darstellung, nur
+Meist kann dabei, für die Transkription von Daten zu einer grafischen Darstellung nur
 aus einer begrenzten Auswahl an Voreinstellungen gewählt werden.
 
-Um eine universelle Software zu konzipieren, die dem Benutzer größtmögliche
+Um eine universelle Software zu konzipieren, die dem Benutzer eine größtmögliche
 Gestaltungsfreiheit einräumt, sind folgende Vorüberlegungen notwendig:
 \begin{itemize}
 \item{Welche Art von Daten gibt es und wie können diese klassifiziert werden?}
@@ -132,7 +132,7 @@ Diese Software wird prototypisch implementiert.
 
 In Kapitel \ref{cha:Grundlagen} werden die grundlegenden Begriffe beschrieben, die für
 das Arbeitsfeld der Informationsvisualisierung wichtig sind. Es werden die Begriffe
-Daten und Informationen definiert und eine Klassifikation von Daten vorgenommen.
+\textit{Daten} und \textit{Informationen} definiert und eine Klassifikation von Daten vorgenommen.
 Nachfolgend wird ein System zur Beschreibung der Grundelemente einer grafischen Darstellung
 eingeführt. 
 
@@ -164,9 +164,9 @@ Dieser Teil der Arbeit beschreibt die grundlegenden Begriffe, die einen Zugang
 zum Arbeitsfeld der Informationsvisualisierung ermöglichen.
 \section{Daten und Information}
 \label{sec:DatenInfo}
-Daten werden in \citep{Gabler} als "`zum Zweck der Verarbeitung zusammengefasste Zeichen,
+Daten werden als "`zum Zweck der Verarbeitung zusammengefasste Zeichen,
 die aufgrund bekannter oder unterstellter Abmachungen
-Informationen (d.h. Angaben über Sachverhalte und Vorgänge) darstellen"', beschrieben.
+Informationen (d.h. Angaben über Sachverhalte und Vorgänge) darstellen"'\footnote{\citep{Gabler}}, beschrieben.
 Als Gegenstand dieser Arbeit werden digital gespeicherte Daten betrachtet.
 Diese liegen in einer standardisierten Form vor und können für die elektronische Weiterverarbeitung
 und Kommunikation genutzt werden. Diese Daten sind dabei formalisierte Repräsentationen einer
@@ -180,18 +180,18 @@ Techniken aus diesen Daten gewinnen kann.
 Der Begriff der Information ist schwer einzugrenzen und wird in unterschiedlichen Wissenschaften
 in verschiedenen Formen ausgelegt. Der philosophische Bereich der Erkenntnistheorie versucht,
 einen allgemeingültigen Informationsbegriff zu definieren. Trotzdem kann noch nicht von einer
-einheitlichen Theorie der Information gesprochen werden und es beschäftigen sich viele verschiedene
+einheitlichen Theorie der Information gesprochen werden. Es beschäftigen sich viele verschiedene
 Gebiete wie die Informatik, Informationstheorie, Nachrichtentechnik und andere mit diesem
-Begriff.\footnote{Vgl. \citep{wiki_info}} In \citep[S.\,3]{Hoeher} wird die Information wie folgt beschrieben:
+Begriff.\footnote{Vgl. \citep{wiki_info}} In \cite{Hoeher} wird die Information wie folgt beschrieben:
 \begin{quote}
 "`Die Informationstheorie definiert Information als eine quantitativ bestimmbare Wissenzunahme durch
-die Übermittlung von Zeichen in einem Kommunikationssystem."'
+die Übermittlung von Zeichen in einem Kommunikationssystem."'\footnote{\citep[S.\,3]{Hoeher}}
 \end{quote}
 Information ist das Ergebnis der Kommunikation, das beim Empfänger einen Erkenntnisgewinn auslöst,
 sofern dieser den Informationsinhalt entschlüsseln kann. Dafür müssen sich Sender und Empfänger
 auf ein Zeichensystem einigen.
-In Bezug auf grafische Darstellungen wird in \citep{Bertin} die Information als der transkribierbare
-Inhalt eines Gedankens definiert, das heißt die Information ist der Teil der Daten, die in einer
+In Bezug auf grafische Darstellungen wird in \cite{Bertin} die Information als der transkribierbare
+Inhalt eines Gedankens definiert. Das heißt die Information ist der Teil der Daten, die in einer
 Informationsvisualisierung dargestellt werden kann. Die Informationsvisualisierung als solche hat die
 Aufgabe, diese Information für den Menschen aufzudecken und in verständlicher Form aufzubereiten.
 Die reinen Daten, die zwar diese Informationen enthalten,
@@ -207,7 +207,7 @@ Digitale Daten gelten als Ausgangspunkt für die Konzeption einer Informationsvi
 Eigenschaften von Daten sind maßgeblich für weitere Schritte der Informationsvisualisierung.\footnote{Vgl. 
 Abschnitt \ref{sec:Pipeline}}
 Die Kenntnis der Beschaffenheit der Daten ist somit Voraussetzung für alle nachfolgenden Schritte.
-\citep{Schumann} beschreiben ein Modell der Eigenschaften von Daten. Jeder Datensatz\footnote{Menge von Daten}
+\cite{Schumann} beschreiben ein Modell der Eigenschaften von Daten. Jeder Datensatz\footnote{Menge von Daten}
 hat folgende Eigenschaften, nach denen er klassifiziert werden kann:
 \begin{description}
 \item[Beobachtungsraum]
@@ -216,20 +216,20 @@ dreidimensionaler Raum sein, kann aber auch abstrakt beschrieben werden und nur 
 mehr als drei Dimensionen besitzen. Alle Dimensionen des Beobachtungsraumes werden als \textit{unabhängige
 Variablen} bezeichnet, da sie vor der Datenerhebung festgelegt werden und als beschreibende Begriffe für
 den zu visualisierenden Sachverhalt gelten.\footnote{\citep[S.\,24]{Bertin} bezeichnet die unabhängigen
-Variablen als Invariante und definiert: "`Die Invariante ist der vollständige und in bezug auf alle vorgegebenen
-Begriffe invariable Kennzeichnungsbegriff."'} Im Beispiel aus Abbildung \ref{fig:beispiel} sind die
-unabhängigen Variablen die gewählten Kulturkreise und die verschiedenen Begriffe.
+Variablen als Invariante und definiert: "`Die Invariante ist der vollständige und in bezug [sic] auf alle vorgegebenen
+Begriffe invariable Kennzeichnungsbegriff."'} Im Beispiel aus Abbildung \ref{fig:beispiel} können die
+gewählten Kulturkreise und die verschiedenen Begriffe als unabhängigen Variablen bezeichnet werden.
 \item[Beobachtungspunkt]
-Ein Beobachtungspunkt beschreibt eine Position im Beobachtungsraum an dem Daten vorhanden sind. Die Anzahl und Verteilung
-der Beobachtungspunkte ist unabhängig von der Beschaffenheit des Beobachtungsraumes. Beobachtungspunkte haben einen
+Ein Beobachtungspunkt beschreibt eine Position im Beobachtungsraum an dem Daten vorhanden sind. Die Anzahl und die Verteilung
+der Beobachtungspunkte sind unabhängig von der Beschaffenheit des Beobachtungsraumes. Beobachtungspunkte haben einen
 Wirkungskreis, der die "`räumliche"' Gültigkeit der Werte beschreibt. Dieser kann punktuell, lokal oder global sein.
 Im Beispiel aus Abbildung \ref{fig:beispiel} sind alle farbigen Rechtecke im Kreis Beobachtungspunkte, denn an
 diesen konnte ein zugehöriger Farbwert recherchiert werden.
 \item[Merkmal]
 Das Merkmal ist eine Größe, die an einem Beobachtungspunkt gemessen oder berechnet wird. Dabei kann
 ein Beobachtungspunkt mehrere Merkmale besitzen. Merkmale werden als \textit{abhängige Variablen} bezeichnet, da
-sie abhängig von der Position des Beobachtungspunktes im Beobachtungsraum sind.
-Im Beispiel aus Abbildung \ref{fig:beispiel} ist das der Farbton eines Rechtecks im Kreis.
+sie von der Position des Beobachtungspunktes im Beobachtungsraum abhängig sind.
+Im Beispiel aus Abbildung \ref{fig:beispiel} ist der Farbton eines Rechtecks im Kreis ein Merkmal.
 \item[Ausprägung]
 Die Ausprägung beschreibt den eigentlichen Wert, den ein Merkmal annehmen kann. Dieser Wert hat einen
 Wertebereich und kann ein Skalar oder Vektor sein.\footnote{In einem dreidimensionalen Beobachtungsraum
@@ -245,9 +245,9 @@ und werden als Metadaten bezeichnet.
 \label{sec:KlassifikationDaten}
 
 Die Klassifikation von Daten wird sehr unterschiedlich durchgeführt.
-\citep{Schumann} weisen auf eine uneinheitliche Begriffswahl in unterschiedlichen
+\cite{Schumann} weisen auf eine uneinheitliche Begriffswahl in unterschiedlichen
 Publikationen hin.
-Um eine für diese Arbeit sinnvolle Einteilung zu finden, wird diese stark vereinfacht dargestellt und nach der Anzahl der abhängigen und
+Hier wird eine vereinfachte Einteilung dargestellt. Diese wird nach der Anzahl der abhängigen und
 unabhängigen Variablen und nach dem Ursprung der Daten vorgenommen.
 
 \subsection{Mehrdimensionale Daten}
@@ -258,10 +258,10 @@ Variablen (Kulturkreis und Begriff) und damit zwei Dimensionen.
 
 Eine Sonderform der mehrdimensionalen Daten sind die raumbezogenen Daten.
 "`Raumbezogene Daten liegen dann vor, wenn der Beobachtungsraum Ortskoordinaten enthält,
-die ein 2- oder 3-dimensionales räumliches Bezugssystem definieren."'\citep[S.\,220]{Schumann}
+die ein 2- oder 3-dimensionales räumliches Bezugssystem definieren."'\footnote{\citep[S.\,220]{Schumann}}
 Beispielsweise bedeutet das, dass mindestens zwei und maximal drei unabhängige Variablen des Datensatzes
 ein Koordinatensystem beschreiben können. Diese Form der Informationsvisualisierung findet häufig
-in Geoinformationssystemen (GIS) Anwendung.
+in Geoinformationssystemen Anwendung.
 
 In Bezug auf den Beobachtungsraum sind die zeitbezogenen Daten ein weiterer Spezialfall.
 Dabei ist eine unabhängige Variable mit der physikalischen Größe Zeit assoziiert.
@@ -301,8 +301,8 @@ Alter, Wohnort und Geschlecht der Person fehlen dagegen.
 \subsection{Abstrakte Daten}
 Die wissenschaftlich-technische Datenvisualisierung ist auf naturwissenschaftliche Daten fokussiert.
 Das können Daten über die menschliche Anatomie, das Universum oder über Moleküle und Atome sein. Diese Daten
-haben einen räumlichen Bezug. Visualisierungen von Abstraktionen des physikalischen Raums
-sind möglich, trotzdem hat die zugrundeliegende Information eine geometrische Natur.\footnote{Vgl. \citep[S.\,6]{Card}}
+haben einen räumlichen Bezug. Visualisierungen von Abstraktionen des physikalischen Raumes
+sind möglich. Trotzdem hat die zugrunde liegende Information eine geometrische Natur.\footnote{Vgl. \citep[S.\,6]{Card}}
 Fehlt ein naturwissenschaftlicher Raumbezug oder ist er nicht sinnvoll, werden Daten als \textit{abstrakte Daten} bezeichnet.
 Zwischen dem Beobachtungsraum dieser Art von Daten und unserer realen dreidimensionalen Umgebung und unserem zeitlichen Empfinden
 besteht kein oder nur ein sehr schwacher Zusammenhang.
@@ -328,17 +328,18 @@ vorrangig \textit{abstrakte Multiparameterdaten} als Grundlage einer grafischen 
 \label{sec:Datentypen}
 Datentypen beschreiben die eigentlichen Ausprägungen eines Merkmals und können zu einer zusätzlichen
 Klassifikation beitragen. Das ist wichtig um erkennen zu können welche Verarbeitungschritte mit den Daten
-möglich sind. Meist erfolgt eine Einteilung in drei Klassen. Während \citep{Bertin} von qualitativen,
-geordneten und quantitativen Komponenten spricht, unterscheiden \citep{Preim} nominale, ordinale und
+möglich sind. Meist erfolgt eine Einteilung in drei Klassen. Während \cite{Bertin} von qualitativen,
+geordneten und quantitativen Komponenten spricht, unterscheiden \cite{Preim} nominale, ordinale und
 quantitative Datentypen.
-Hier wird die neuere Einteilung aus \citep{Preim} beschrieben.
+Hier wird die neuere Einteilung von \cite{Preim} erläutert.
 \begin{description}
 \item[Nominale Datentypen]
-beschreiben meist Namen von Datenobjekten. Ihr Abstand ist äquidistant, da sich vor einer eingehenden Analyse
+Meist werden Namen und Bezeichnungen von Datenobjekten als nominale Datentypen klassifiziert.
+Ihr Abstand ist äquidistant, da sich vor einer eingehenden Analyse
 keine Ausprägungen besonders nah oder entfernt voneinander zeigen. Die einzige mögliche Operation ist der Test auf
 Gleichheit beziehungsweise Ungleichheit. Es gibt keine allgemeingültige, eindeutige Reihenfolge
-nach der die Ausprägungen sortiert werden könnten. Dadurch kann nur eine Reihenfolge nach bestimmten Gesichtpunkten erfolgen,
-das heißt eine künstlich erzeugte Ordnung eingebracht werden, zum Beispiel durch alphabetische Sortierung von Namen.
+nach der die Ausprägungen sortiert werden könnten. Dadurch kann nur eine Reihenfolge nach bestimmten Gesichtpunkten erfolgen.
+Das heißt eine künstlich erzeugte Ordnung wird eingebracht, zum Beispiel durch alphabetische Sortierung von Namen.
 In Abbildung \ref{fig:beispiel} haben die Farben, Kulturkreise und Begriffe einen nominalen Datentyp.
 \item[Ordinale Datentypen]
 haben die gleichen Eigenschaften wie nominale Typen.
@@ -354,7 +355,7 @@ Ein Beispiel ist eine Temperaturmessung, bei der die Zahlenwerte in der Einheit 
 \end{description}
 \section{Grafische Semiologie}
 \label{sec:grafischeSemiologie}
-Die grafische Semiologie ist ein in \citep{Bertin} erstmals beschriebenes System zur Klassifikation von grafischen Zeichen.
+Die grafische Semiologie ist ein von \cite{Bertin} erstmals beschriebenes System zur Klassifikation von grafischen Zeichen.
 Es stammt ursprünglich aus der thematischen Kartographie.\footnote{"`Thematische Karten enthalten vorwiegend
 Erscheinungen oder Vorkommnisse nicht topographischer Art, welche jedoch mit der Erdoberfläche in Verbindung
 stehen. Es handelt sich hierbei um Dinge, die georäumliche Lage, Verbreitung oder Bewegung besitzen, sowohl
@@ -369,7 +370,7 @@ HW = Helligkeitswert, MU = Musterung/Textur, FA = Farbe, RI = Richtung}
 \label{fig:visuelleVariablen}
 \end{figure}
 Diese Theorie definiert ein "`Grundalphabet"' an grafischen Elementen, wobei zur Informationsübertragung
-jedem einzelnen Zeichen eine bestimmte Bedeutung zugeordnet wird. \citep{Bertin} geht dabei von einem
+jedem einzelnen Zeichen eine bestimmte Bedeutung zugeordnet wird. \cite{Bertin} geht dabei von einem
 monosemiotischen\footnote{"`Die Betrachtung einer Zeichenverbindung setzt die Kenntnis der Bedeutung jedes
 einzelnen Zeichens voraus."'\citep[S.\,3]{Bertin}} System aus, das den rationalen Teil der Bilderwelt, die
 grafische Darstellung, eindeutig beschreibt.
@@ -397,7 +398,7 @@ um die Information in den kreisförmig angeordneten farbigen Rechtecken darzuste
 
 Jede dieser Variablen hat spezifische Eigenschaften, wodurch sie sich unterschiedlich gut oder schlecht
 für spezielle Aufgaben eignen. Um für eine Aufgabe die geeignetste Variable zu bestimmen, schlägt
-\citep{Bertin} mehrere Konstruktionsregeln vor.
+\cite{Bertin} mehrere Konstruktionsregeln vor.
 Grundlegend beschreiben diese eine Vereinfachung der grafischen Darstellung.
 Die Anzahl an visuellen Variablen, Merkmalen und Ausprägungen wird reduziert,
 sodass die grafische Darstellung als Ganzes mit einem Minimum an Wahrnehmungsaufwand erfasst werden kann.
@@ -406,11 +407,11 @@ zu vermeiden. Weitere Regeln sind stark abhängig von der Anzahl
 der vorhandenen Dimensionen des Beobachtungsraumes, der Anzahl der Merkmale eines
 Beobachtungspunktes\footnote{Vgl. Abschnitt \ref{sec:EigenschaftenDaten}} und der gewählten
 grafischen Darstellung. Da für die komplexen graphischen Darstellungen einer 
-Informationsvisualisierung meist mehrere visuelle Variablen gebraucht werden, sollte sich die Auswahl
-an den Bearbeitungszielen\footnote{Vgl. Abschnitt \ref{sec:Ziele}} orientieren.
-So sollten beispielsweise für wichtige, geordnete Variablen die Position in der Ebene verwendet werden,
-während Variablen wie Farbe, Muster und Textur als weitere Möglichkeit genutzt werden können, um Informationen zu kodieren.
-Erst wenn zusätzliche Variablen hinzugefügt werden, sollte eine Nebeneinanderstellung oder
+Informationsvisualisierung meist mehrere visuelle Variablen eignen, kann eine Auswahl
+durch den Abgleich mit den Bearbeitungszielen\footnote{Vgl. Abschnitt \ref{sec:Ziele}} erfolgen.
+Beispielsweise eignen sich für wichtige, geordnete Variablen die Position in der Ebene,
+während Variablen wie Farbe, Muster und Textur als Möglichkeit genutzt werden können, um Zusatzinformationen zu kodieren.
+Erst wenn weitere Variablen hinzugefügt werden, muss eine Nebeneinanderstellung oder
 Überlagerung in Betracht gezogen werden.
 Die Konstruktionsregeln und die visuellen Variablen werden genutzt, um
 die grafische Darstellung als Ziel der Informationsvisualisierung zu erstellen.
@@ -421,12 +422,12 @@ die grafische Darstellung als Ziel der Informationsvisualisierung zu erstellen.
 \label{sec:Definition}
 Die Visualisierung ist im Allgemeinen als eine "`rechnergestützte, visuelle Präsentation von Daten, Informationen und Wissen
 in einer für den Menschen adäquaten und für die jeweilige Anwendung in diesem Kontext sinnvollen Form
-zu verstehen."'\citep[S.\,3]{Schumann}
+zu verstehen."'\footnote{\citep[S.\,3]{Schumann}}
 Sie nutzt das Vermögen des menschlichen Gehirns durch visuelle Reize große Mengen an Information
 intuitiv erfassen und verarbeiten zu können. Dabei werden die natürlichen Fähigkeiten des Menschen,
-wie beispielsweise die Muster- und Farberkennung genutzt, um ohne besondere Vorkenntnisse Entscheidungen über
+wie beispielsweise die Muster- und Farberkennung, genutzt, um ohne besondere Vorkenntnisse Entscheidungen über
 einen Sachverhalt treffen zu können. Zum Beispiel kann jeder Mensch zwischen zwei Objekten entscheiden,
-welches das größere oder hellere Objekt ist, solang die visuellen Unterschiede ausreichend groß sind.\footnote{
+welches das größere oder hellere Objekt ist, solange die visuellen Unterschiede ausreichend groß sind.\footnote{
 Eine Ausnahme bilden Menschen mit einer Sehbehinderung. Um eine Visualisierung für diese Menschen
 nutzbar zu machen, gelten besondere Anforderungen, die nicht Teil dieser Arbeit sind.}
 
@@ -438,17 +439,17 @@ Abschnitt \ref{sec:DatenInfo}}
 
 Für die Visualisierung von Informationen sind weiterführende, qualitative Fragen von Bedeutung:
 \begin{itemize}
-\item Was macht eine Information wichtig oder unwichtig in einem gegebenen Kontext?
+\item Was macht eine Information in einem gegebenen Kontext wichtig oder unwichtig?
 \item Wie kann das Verständnis von großen Informationsmengen für Menschen vereinfacht werden?
 \item Wie können Informationen visuell aufbereitet werden, um eine effizientere Problemlösung zu ermöglichen?
 \end{itemize}
 Diese Fragen, die aufgrund eines wachsenden Spektrums an abstrakten Daten immer wichtiger werden,
 versucht die Informationsvisualisierung zu beantworten.
-\citep[S.\,434]{Preim} definieren Informationsvisualisierung folgendermaßen:
+\cite{Preim} definieren Informationsvisualisierung folgendermaßen:
 \begin{quote}
 "`Informationsvisualisierung beschäftigt sich mit der Visualisierung vorrangig abstrakter Daten, wie
 Multiparameterdaten (z.B. Medienobjekte mit verschiedenen Attributen), Hierarchien, Netzwerken, Text
-oder Softwaresystemen, die sich alle auch über die Zeit verändern können."'
+oder Softwaresystemen, die sich alle auch über die Zeit verändern können."'\footnote{\citep[S.\,434]{Preim}}
 \end{quote}
 Das Einsatzgebiet der Informationsvisualisierung ist im Gegensatz zur Datenvisualisierung nicht
 auf wissenschaftliche Bereiche beschränkt,
@@ -471,14 +472,14 @@ hat. Es enstehen weitere Anforderungen, da dieser Gruppe meist ein mathematische
 fehlt. So muss die Informationsvisualisierung vom Benutzer
 schnell und einfach erfasst und ohne besondere Vorkenntnisse verstanden werden können.
 Außerdem muss sie eine "`angemessene und grafische Qualität haben, um über den
-reinen Nutzwert hinaus auch Qualitäten in Bezug auf Nutzungsfreude und Unterhaltungswert [zu] besitzen"'\citep[S.\,438]{Preim}.
+reinen Nutzwert hinaus auch Qualitäten in Bezug auf Nutzungsfreude und Unterhaltungswert [zu] besitzen."'\footnote{\citep[S.\,438]{Preim}}
 Es wird zunehmend schwieriger solche Darstellungsformen mit aktuellen Softwarestandards zu erstellen.
 
 Die Grenzen zwischen den einzelnen Disziplinen der Visualisierung sind fließend. Die Informationsvisualisierung kann
 auch wissenschaftlich betrieben werden, da sich Methoden und Verfahren stark ähneln.
 Das Arbeitsfeld der Informationsvisualisierung, die Thema dieser Arbeit ist,
 geht von einem Spezialfall der Datenvisualisierung aus. Dieser erweitert die Anforderungen an Datenvisualisierung mit
-Betrachtungen über die Zielgruppe, Repräsentation und das Medium. Dabei kommen digitale
+Betrachtungen über die Zielgruppe, die Repräsentation und das Medium. Dabei kommen digitale
 Techniken zur Erhebung, Speicherung, Weiterverarbeitung und Ausgabe zum Einsatz.
 
 \section{Verwandte Arbeitsfelder}
@@ -486,7 +487,7 @@ Techniken zur Erhebung, Speicherung, Weiterverarbeitung und Ausgabe zum Einsatz.
 Oft nutzt die Informationsvisualisierung Teilgebiete verwandter Arbeitsfelder oder sie wird für die Problemlösung
 in anderen Bereichen verwendet.
 Nachfolgend werden Arbeitsgebiete beschrieben, die häufig mit der Informationsvisualisierung in Verbindung
-gebracht oder verwechselt werden. Eine klare Abgrenzung der Bereiche ist schwierig. Die nachfolgende Liste beschreibt
+gebracht oder verwechselt werden. Eine klare Abgrenzung der Bereiche ist schwierig. Die nachfolgende Liste zeigt
 eine Auswahl und erhebt keinen Anspruch auf Vollständigkeit.
 \begin{description}
 \item[Computergrafik]
@@ -495,14 +496,14 @@ Objekten als Raster oder Vektorgrafik. Die Informationsvisualisierung benutzt Te
 Bestandteil dieses Gebietes.
 \item[Statistik]
 Die Statistik ist ein Verfahren für die "`hypothesengeleitete Auswertung von numerischen (quantitativen)
-Daten"'\citep[S.\,23]{Statistik}. Durch die Verwendung quantitativer Daten, wird eine Verbindung zwischen
+Daten"'\citep[S.\,23]{Statistik}. Durch die Verwendung quantitativer Daten wird eine Verbindung zwischen
 Empirie und Theorie geschaffen.  Neben der Mathematik ist die Visualisierung das wichtigste
 Werkzeug der Statistik. So wird der Visualisierungsprozess aus Abschnitt \ref{sec:Pipeline} besonders
 im Bereich der deskriptiven Statistik benutzt, um Erkenntnisse zu gewinnen und darzustellen.
-Auch die Informationsvisualisierung als eigenständige Disziplin benutzt Techniken der Statistik um Daten aufzubereiten.
+Auch die Informationsvisualisierung als eigenständige Disziplin benutzt Techniken der Statistik, um Daten aufzubereiten.
 \item[Präsentations- und Prozessvisualisierung]
 Häufig werden Präsentations- und Prozessvisualisierungen als Informationsvisualisierung bezeichnet, sind
-aber eigenständige Gebiete. In ihnen geht es auch um die Sichtbarmachung von Informationen. Diese basieren aber nicht auf
+aber eigenständige Gebiete. In ihnen geht es auch um das Sichtbarmachen von Informationen. Diese basieren aber nicht auf
 großen Datenmengen und können auch ohne Softwareunterstützung erstellt werden. Bei der Visualisierung
 von Prozessen muss die Zeit als besonderer Faktor berücksichtigt werden.
 \item[Data Mining] ist der computergestützte automatisierte Versuch, Datenmengen zu ordnen und mithilfe
@@ -510,13 +511,13 @@ von Algorithmen Erkenntnisse zu erhalten. Im Gegensatz dazu versucht die Informa
 grafische Repräsentation
 bereitzustellen, die dem Nutzer die Möglichkeit gibt, diese Erkenntnisse selbst zu finden. Für die Datengewinnung
 ist die Informationsvisualisierung auf Techniken des Data Mining angewiesen. Es gibt Bestrebungen beide Gebiete 
-im "`Visual Data Mining"'\footnote{Vgl. \citep{Keim}} zu Verbinden um Synergien zu bilden.
+im "`Visual Data Mining"'\footnote{Vgl. \citep{Keim}} zu Verbinden, um Synergien zu bilden.
 \item[Interface- und Interactiondesign]
 Diese Felder beschreiben die Gestaltung von Benutzeroberflächen. Damit arbeiten sie, wie die Visualisierung, an
-der Schnittstelle zwischen Mensch und Maschine. Interfacedesign benutzt häufig Techniken der Visualisierung
+der Schnittstelle zwischen Mensch und Maschine. Interfacedesign benutzt häufig Techniken der Visualisierung,
 um grafische Konzepte zu realisieren, da die Informationen primär visuell übertragen werden.
 \item[Computational Design]
-Dieser von \citep{BenFry} eingeführte Begriff beschreibt die Vereinigung vieler Disziplinen zu einem neuen
+Dieser von \cite{BenFry} eingeführte Begriff beschreibt die Vereinigung vieler Disziplinen zu einem neuen
 interdisziplinären Arbeitsfeld. Der Ansatz des Computational Designs ist es, die Informationsvisualisierung in einem größeren
 Kontext zu betrachten und dabei die technischen Bereiche der Informatik mit den künstlerischen
 Bereichen des Designs zu verbinden. Der Prozess des Computational Designs wird in Abschnitt \ref{sec:Pipeline}
@@ -525,54 +526,54 @@ genutzt, um den Arbeitsprozess der Informationsvisualisierung zu beschreiben.
 
 \section{Bearbeitungsziele}
 \label{sec:Ziele}
-Mit der Informationsvisualisierung wird die Analyse einer gegebenen Datenmenge unterstützt und
-es können Ergebnisse effizient präsentiert werden. Dadurch wird die Kommunikation vereinfacht,
+Mit der Informationsvisualisierung wird die Analyse einer gegebenen Datenmenge unterstützt.
+Es können Ergebnisse effizient präsentiert werden. Dadurch wird die Kommunikation vereinfacht,
 um einen Erkenntnisgewinn bei allen Beteiligten zu schaffen.
-Die Visualisierung kann nach \citep{Schumann} für die drei folgenden Stufen der Analyse eingesetzt werden:
+Die Visualisierung kann nach \cite{Schumann} für die drei folgenden Stufen der Analyse eingesetzt werden:
 \begin{description}
 \item[Explorative Analyse]
 Die explorative Analyse beschreibt die Eigenschaften von Daten als Ausgangspunkt der Forschung.
-Durch interaktive und ungerichtete Suche in den Daten
+Durch eine interaktive und ungerichtete Suche in den Daten
 kann die Hypothesengenerierung mithilfe der Informationsvisualisierung unterstützt werden. Dazu muss eine
 geeignete weit gefasste und nicht beschränkte Darstellung gefunden werden. Diese Informationsvisualisierungen
 können Ausgangspunkt für folgende Analysen sein. Das Initialbeispiel in Abbildung \ref{fig:beispiel} kann
 genutzt werden um eine weiterführende Forschungsfrage zu entwickeln: Warum wird die Farbe Rot überdurchschnittlich
 oft mit positiven Begriffen assoziiert?
 \item[Konfirmative Analyse]
-Hier existieren bereits ein oder mehrere Hypothesen die mithilfe der Informationsvisualisierung überprüft werden sollen.
+Hier existieren bereits eine oder mehrere Hypothesen, die mithilfe der Informationsvisualisierung überprüft werden sollen.
 Dabei wird eine Datenmenge hinsichtlich eines speziellen Aspekts untersucht und ausgewertet.
 \item[Präsentation]
 Ergebnisse aus der Analyse der Daten werden mithilfe der Informationsvisualisierung dargestellt, um sie für Dritte verständlich
-zu machen und mit Ihnen über den Sachverhalt kommunizieren zu können.
-Wichtig ist dabei eine ansprechende und ästhetische Darstellung, denn
+zu machen und mit ihnen über den Sachverhalt kommunizieren zu können.
+Dabei ist eine ansprechende und ästhetische Darstellung wichtig, denn
 ein ansprechendes Erscheinungsbild verstärkt den Willen, sich mit einer Darstellung auseinanderzusetzen.
 \end{description}
 
-Um eine adäquate Informationsvisualisierung klassifizieren zu können, nennen \citep{Schumann} drei Eigenschaften.
-Diese sind Effektivität, Expressivität und Angemessenheit. Diese Eigenschaften müssen bei der Konzeption einer
+Um eine adäquate Informationsvisualisierung klassifizieren zu können, nennen \cite{Schumann} drei Eigenschaften:
+Effektivität, Expressivität und Angemessenheit. Diese Eigenschaften müssen bei der Konzeption einer
 Informationsvisualisierungssoftware beachtet werden.
 \begin{description}
 \item[Expressivität]
 Die Informationsvisualisierung soll nur die in den Daten enthaltenen Informationen zeigen.
-Diese sollen dabei möglichst unverfälscht wiedergeben werden, um falsche Schlussfolgerungen beim Betrachter zu vermeiden.
+Diese sollen dabei möglichst unverfälscht wiedergeben werden, um falsche Schlussfolgerungen bei dem Betrachter zu vermeiden.
 \item[Effektivität]
 Die Darstellung muss zu den visuellen Fähigkeiten des Betrachters und den Eigenschaften des Ausgabegerätes
 passen.
 \item[Angemessenheit]
 Ressourcen und Rechenaufwand und damit die Kosten einer Visualisierung sollen den Anforderungen entsprechen.
 \end{description}
-\citep{Bertin} beschreibt dagegen nur den Begriff der Prägnanz als Qualitätsmaß.
-Prägnanz wird von \citep[S.\,17]{Bertin} wie folgt definiert:
+\cite{Bertin} beschreibt dagegen nur den Begriff der Prägnanz als Qualitätsmaß.
+Prägnanz wird definiert:
 \begin{quote}
 "`Wenn eine Konstruktion zur Beantwortung einer gestellten Frage unter sonst gleichen Voraussetzungen eine
 kürzere Betrachtungszeit erfordert als eine andere Konstruktion, so bezeichne man diese als prägnanter in
-Bezug auf die gestellte Frage."'
+Bezug auf die gestellte Frage."'\footnote{\citep[S.\,17]{Bertin}}
 \end{quote}
-Darüber hinaus ist es schwer, allgemeingültige Aussagen zu treffen, wie ein komplexer Sachverhalt und dessen
-Informationen am effizientesten zu visualisieren sind, da die Informationsvisualisierung stark anwendungsabhängig ist und
-immer den Anforderungen der Daten, der Zielgruppe, des Bearbeitungsziels, der Repräsentation und des Mediums entsprechen soll.
+Darüber hinaus fällt es schwer, allgemeingültige Aussagen zu treffen, wie ein komplexer Sachverhalt und dessen
+Informationen am effizientesten zu visualisieren sind. Die Informationsvisualisierung ist stark anwendungsabhängig und soll
+immer den Anforderungen der Daten, der Zielgruppe, des Bearbeitungsziels, der Repräsentation und des Mediums entsprechen.
 Eine rein automatisierte Informationsvisualisierung kann nur sehr schwer alle diese Anforderungen berücksichtigen. Daher
-sollten Benutzer in allen Stufen des Visualisierungsprozesses eingreifen und gegebenenfalls Anpassungen vornehmen können. Eine Software
+sollten die Benutzer in allen Stufen des Visualisierungsprozesses eingreifen und gegebenenfalls Anpassungen vornehmen können. Eine Software
 muss dazu geeignete Mittel zur Verfügung stellen.
 
 \section{Visualisierungsprozess}
@@ -581,16 +582,15 @@ Der Prozess der Visualisierung wird Visualisierungspipeline genannt.\footnote{Vg
 Diese Pipeline beschreibt den Ablauf aller
 Schritte, die notwendig sind, um abstrakte Daten in visuelle Variablen
 zu transkribieren, um eine grafische Darstellung zu erzeugen. In der Literatur gibt es keine einheitliche
-Beschreibung der Visualisierungspipeline, aber die Darstellungen ähneln sich stark.
+Beschreibung der Visualisierungspipeline, jedoch ähneln sich die Darstellungen stark.
 Im Folgenden soll der Ablauf der Informationsvisualisierung
-beschrieben werden. In \citep{BenFry} wird der Prozess in einen
-größeren Kontext eingeordnet. Dadurch bietet sich diese
-Visualisierungspipeline besonders gut an, um einen Überblick über alle Arbeitsschritte zu erhalten. Abbildung \ref{fig:benfryprocess}
-stellt diese dar.
+beschrieben werden. Von \cite{BenFry} wird der Prozess in einen
+größeren Kontext eingeordnet. Dadurch eignet sich diese
+Visualisierungspipeline besonders gut, um einen Überblick über alle Arbeitsschritte zu erhalten.\footnote{Vgl. \ref{fig:benfryprocess}}
 \begin{figure}
 \centering
 \includegraphics[width=\linewidth]{images/benfryprocess.pdf}
-\caption{Der Prozess des Computational Designs nach \citep[S.\,13]{BenFry}, eigene Darstellung}
+\caption{Der Prozess des Computational Designs aus \cite[S.\,13]{BenFry}}
 \label{fig:benfryprocess}
 \end{figure}
 Als Erstes werden Daten aus einer Datei oder einem Netzwerk
@@ -600,19 +600,19 @@ Interesses sein.
 Diese Bereiche werden herausgetrennt (filter), um auf ihnen Methoden der Datenanalyse anwenden zu können,
 die für die weitere Verarbeitung notwendig sind (mine). Im nächsten Schritt werden dann geeignete
 grafische Repräsentationen\footnote{Vgl. Abschnitt \ref{sec:grafischeSemiologie}} gefunden, um die Daten
-darzustellen (represent).\footnote{\citep{Schumann} erweitern diesen Punkt noch durch das Rendering, welches die eigentliche Rasterung
-und Darstellung auf dem eigentlichen Ausgabemedium durchführt.}
+darzustellen (represent).\footnote{\cite{Schumann} erweitern diesen Punkt durch das Rendering, welches die eigentliche Rasterung
+und Darstellung auf dem Ausgabemedium durchführt.}
 Dieser Schritt wird auch als \textit{Mapping} bezeichnet und ist eine
 Daten-zu-Geometrie-Abbildung\footnote{Vgl. \citep[S.\,16]{Schumann}}, bei der
 die abstrakten Daten auf visuelle Variablen übertragen werden.
 Die grafische Darstellung wird dann iterativ durch die visuelle Analyse des Nutzers
 verbessert, damit sie einfacher verständlich und ästhetisch ansprechend wird und die Bearbeitungsziele erfüllt (refine). Als letzter
 Schritt werden Interaktionsmöglichkeiten ergänzt, um dem Nutzer die Kontrolle über die
-Ausgabe, aber auch über vorher stattfindende Stufen des Prozesses geben zu können (interact).
+Ausgabe, aber auch über vorher stattfindende Stufen des Prozesses, geben zu können (interact).
 
 Der hier beschriebene Ablauf ist allen Visualisierungsprozessen immanent, muss aber nicht zwangsläufig
 in der gegebenen Reihenfolge auftreten. Es gibt unterschiedliche Möglichkeiten, in die
-Visualisierungspipeline einzugreifen und zwischen einzelnen Stufen zu wechseln.\footnote{In
+Visualisierungspipeline einzugreifen und zwischen den einzelnen Stufen zu wechseln.\footnote{In
 \citep{Schumann} Abschnitt 2.2 und 2.3 werden unterschiedliche Verfahren beschrieben.}
 Das Ergebnis dieser Verfahren ist jedoch immer die grafische Darstellung.
 
@@ -622,17 +622,17 @@ Das Ergebnis dieser Verfahren ist jedoch immer die grafische Darstellung.
 Die grafische Darstellung ist das Ergebnis der Informationsvisualisierung. Sie besteht
 aus den in Abschnitt \ref{sec:grafischeSemiologie} genannten
 visuellen Variablen.
-Als allgemeinste Form der grafischen Darstellung beschreiben \citep{Schumann} das
-Diagramm. Es "`ist eine graphische Repräsentation von Informationen mit Hilfe
-graphischer Elemente"' \citep[S.\,126]{Schumann}. \citep{Bertin} spricht dagegen
+Als allgemeinste Form der grafischen Darstellung beschreiben \cite{Schumann} das
+Diagramm. Es "`ist eine graphische [sic] Repräsentation von Informationen mit Hilfe
+graphischer Elemente."'\footnote{\citep[S.\,126]{Schumann}} \cite{Bertin} spricht dagegen
 vom Begriff der "`grafischen Darstellung"' und grenzt diesen von
-der bildhaften Darstellung\footnote{In \citep{Bertin} werden Fotos oder künstlerische Bilder explizit ausgeschlossen.}
+der bildhaften Darstellung\footnote{In \cite{Bertin} werden Fotos oder künstlerische Bilder explizit ausgeschlossen.}
 ab, die nicht monosemiotisch\footnote{Vgl. Abschnitt \ref{sec:grafischeSemiologie}} ist.
 Diese Klassifikation wird weiter in Diagramme, Netze
-und Karten unterteilt. \citep[S.\,126]{Schumann} weisen außerdem auf eine Doppeldeutigkeit
-des deutschen Begriffes hin, denn in der englischen Sprache gibt es "`diagram"' und "`chart"'.
+und Karten unterteilt. \cite{Schumann} weisen außerdem auf eine Doppeldeutigkeit
+des deutschen Begriffes "`Diagramm"' hin, denn in der englischen Sprache gibt es "`diagram"' und "`chart"'.
 Dort beschreibt "`diagram"' die Darstellung nicht-quantitativer Beziehungen, während "`chart"' für die
-allgemeine Form der grafischen Darstellung steht.
+allgemeine Form der grafischen Darstellung steht.\footnote{\citep[S.\,126]{Schumann}}
 In dieser Arbeit wird der Begriff der \textit{grafischen Darstellung} verwendet und schließt
 damit alle möglichen Darstellungsformen der Informationsvisualisierung ein.
 
@@ -667,12 +667,12 @@ hybrid & Mischtechniken bestehend aus anderen Techniken\\
 \end{table}
 
 Die grafische Darstellung hat verschiedene Darstellungsformen, die für unterschiedliche
-Anwendungsfälle konzipiert wurden. Sie sind alle stark anwendungsabhängig und es müssen viele
+Anwendungsfälle konzipiert wurden. Sie sind alle stark anwendungsabhängig. Es müssen viele
 Anforderungen beachtet werden, um die effizienteste Technik der grafischen Darstellung zu
 finden.\footnote{Vgl. Abschnitt \ref{sec:Ziele}}
 Die folgende Auflistung von Darstellungsformen orientiert sich an den Darstellungsformen für
-Multiparameterdaten in \citep[S.\,213]{Schumann} und
-wird ergänzt durch \citep{Preim} und eigene Beobachtungen. Aufgrund der Vielzahl an unterschiedlichen
+Multiparameterdaten von \cite{Schumann} und
+wird ergänzt durch \cite{Preim} und eigene Beobachtungen. Aufgrund der Vielzahl an unterschiedlichen
 Darstellungsformen kann die Tabelle \ref{tab:darstellungsformen} nur einen beispielhaften Überblick geben. Die
 Nummern hinter den einzelnen Darstellungsformen verweisen auf die Darstellungen in 
 Abbildung \ref{fig:formen}.\footnote{Ein Beispiel für die Recursive-Pattern-Technik
@@ -686,7 +686,7 @@ Techniken nur sehr schwer schematisch dargestellt werden können.}
 \label{fig:formen}
 \end{figure}
 
-Für diese Arbeit sind vor allem die hybriden Techniken interessant, da diese versuchen
+Für diese Arbeit sind vor allem die hybriden Techniken interessant, da diese versuchen,
 einzelne Vorteile anderer Darstellungsformen zu verbinden, um neue Sichtweisen zu erforschen.
 Damit solche Informationsvisualisierungstechniken gefunden werden können, müssen
 Softwarelösungen Einschränkungen bei der grafischen Darstellung vermeiden.
@@ -702,7 +702,7 @@ Softwarelösungen Einschränkungen bei der grafischen Darstellung vermeiden.
 \label{fig:benfryprocess_marked}
 \end{figure}
 Die Übertragung von symbolischen Informationen auf geometrische Informationen ist das grundlegende Prinzip der
-Informationsvisualisierung. In der Fassung von \citep{BenFry} wird diese Transkription in den
+Informationsvisualisierung. In der Fassung von \cite{BenFry} wird diese Transkription in den
 Stufen \textit{present} und \textit{refine} durchgeführt. Die Software muss also dem Benutzer die Möglichkeit geben,
 diese Arbeitsschritte durchführen zu können. In Abbildung \ref{fig:benfryprocess_marked} ist dieser weitere iterative Schritt
 abgebildet. Ist der Benutzer mit der grafischen Darstellung nicht zufrieden, so kann er Parameter anpassen. Dieser Ablauf
@@ -711,7 +711,7 @@ Die hohe Anzahl der Beobachtungspunkte eines Datensatzes macht eine vom Nutzer m
 sehr aufwändig und zeitintensiv. Eine Unterstützung des Benutzers durch eine Software ist daher sinnvoll.
 Dabei darf der Nutzer in seinem kreativen Gestaltungsprozess nicht eingeschränkt werden.
 
-Wie in Kapitel \ref{cha:Grundlagen} und \ref{cha:Informationsvisualisierung} gezeigt, gibt es eine Vielzahl an
+Wie in Kapitel \ref{cha:Grundlagen} und \ref{cha:Informationsvisualisierung} gezeigt wurde, gibt es eine Vielzahl an
 Datenklassen und grafischen Darstellungsformen. Weiterhin entstehen neue hybride Formen durch Mashups\footnote{"`Mashup (von
 englisch "`to mash"' für vermischen) bezeichnet die Erstellung neuer Medieninhalte durch die nahtlose
 (Re-)Kombination bereits bestehender Inhalte."'\citep{wiki_mashup}}.
@@ -773,12 +773,12 @@ ist die Software kostenlos verfügbar.
 \label{sec:visPro}
 Um dem breiten Spektrum an Anforderungen gerecht zu werden,
 wird die Software mit einer Form der visuellen Programmierung gesteuert.
-\citep[S.\,56]{Henning} definieren visuelle Programmierung wie folgt:
+\cite{Henning} definieren visuelle Programmierung wie folgt:
 \begin{quote}
 "`Es handelt sich hierbei um ein in integrierten Entwicklungsumgebungen mit
 grafischer Benutzeroberfläche verwendetes Hilfsmittel, bei welchem grafisch
 dargestellte Programmblöcke durch gerichtete und qualifizierte Linien miteinander
-verlinkt werden."'
+verlinkt werden."'\footnote{\citep[S.\,56]{Henning}}
 \end{quote}
 \begin{figure}
 \centering
@@ -793,7 +793,7 @@ verlinkt werden."'
 \label{fig:datasynth_basic}
 \end{figure}
 Im Gegensatz zur textuellen Programmierung, bei der Buchstaben, Zeichen und Wörter
-verwendet werden, um Quellcode zu schreiben, wird die Programmlogik bei ber
+verwendet werden, um einen Quellcode zu schreiben, wird die Programmlogik bei ber
 visuellen Programmierung durch grafische Elemente erstellt.
 Statt vorgefertigte Funktionsnamen und Aufrufe zu schreiben, werden einzelne grafische
 Elemente mit unterschiedlichen Aufgaben erzeugt und diese untereinander verbunden. Die visuelle Programmierung
@@ -834,8 +834,8 @@ Ein Spread ist eine Struktur, die in der Software als universeller Datentyp funk
 Begriff Spread wurde aus der Software vvvv übernommen. Vgl. Abschnitt \ref{sec:bestehendeSoftware}}
 Eingabe- und Ausgabewerte von Nodes können nur Spreads sein. Ein Spread ist eine 
 eindimensionale Liste von Werten. Diese Werte können unterschiedliche primtive Datentypen,
-wie beispielsweise Gleitkommazahlen oder Zeichenketten, haben. Im einfachsten Fall hat
-die Liste eines Spreads nur ein einziges Element, ist damit also eine einfache Variable. In komplexeren
+wie beispielsweise Gleitkommazahlen oder Zeichenketten, beinhalten. Im einfachsten Fall hat
+die Liste eines Spreads nur ein einziges Element und ist demzufolge eine einfache Variable. In komplexeren
 Anwendungen kann ein Spread eine große Anzahl an Elementen enthalten, die beispielsweise
 aus einer Datentabelle stammen. Somit kann der Benutzer eine Reihe von Zahlen mit
 einer Konstante multiplizieren, ohne die Anzahl der einzelnen Werte eines Spreads
@@ -851,15 +851,15 @@ es dadurch verständlicher welche Aufgabe die Software hat und wie mit ihr Probl
 werden können.
 Mit der gewählten Benutzeroberfläche sind keine Programmierkenntnisse erforderlich, um eine Informationsvisualisierung
 zu erstellen. Ein durchschnittliches mathematisches Verständnis des Benutzers reicht für einfache Aufgaben aus.
-Das macht ein iteratives Experimentieren möglich. Der Benutzer kann die Software nutzen, um unkompliziert eine
-Idee für die Informationsvisualisierung zu skizzieren.
-Die komplexen internen Abläufe werden dabei hinter einem intuitiven und einfachen Interface
-versteckt. Dadurch können "`context switches"'\footnote{Vgl. \citep[S.\,50]{Tufte}}
+Das macht ein iteratives Experimentieren möglich. Der Benutzer kann die Software nutzen, um eine
+Idee für die Informationsvisualisierung unkompliziert zu skizzieren.
+Die komplexen internen Abläufe liegen dabei hinter einem intuitiven und einfachen Interface
+verborgen. Dadurch können "`context switches"'\footnote{Vgl. \citep[S.\,50]{Tufte}}
 vermieden werden. Diese treten auf, wenn der Benutzer zwischen unterschiedlichen Programmansichten wechseln
 muss. Stattdessen wird der Bereich für die Benutzerinteraktion und die Ausgabe
-immer gleichzeitig angezeigt. Der Nutzer kann dadurch sofort erkennen, welchen Einfluss seine Benutzereingaben haben und
+immer gleichzeitig angezeigt. Der Nutzer erkennt dadurch sofort, welchen Einfluss seine Benutzereingaben bewirken. Er
 kann diese vergleichen und anpassen um schnell zum gewünschten Ergebnis zu kommen.
-Abbildung \ref{fig:datasynth} stellt dieses Prinzip an einem Beispiel dar.
+In Abbildung \ref{fig:datasynth} wird dieses Prinzip an einem Beispiel dargestellt.
 \begin{figure}
 \centering
 \includegraphics[width=\linewidth]{images/datasynth.pdf}
@@ -867,8 +867,8 @@ Abbildung \ref{fig:datasynth} stellt dieses Prinzip an einem Beispiel dar.
 und der unteren Reihe von Fenstern hat eine Benutzerinteraktion stattgefunden.
 Im oberen rechten Fenster wird ein Kreis gezeichnet. Dieser hat einen Radius von 20 Pixel, da
 die rechte obere Node im linken Fenster einen Wert von 20 Pixel an den Pin für den Radius des Kreises übergibt.
-In der unteren Reihe wurde der Wert auf 125 geändert. Dadurch verändert sich unmittelbar
-auch die Darstellung, da der Radius des Kreises mit dem Wert dieser Node verbunden ist. Die Position
+In der unteren Reihe wurde der Wert auf 125 geändert. Dadurch verändert sich
+auch die Darstellung unmittelbar, da der Radius des Kreises mit dem Wert dieser Node verbunden ist. Die Position
 des Kreises ist in beiden Darstellungen bei 150 Pixel in der Höhe und Breite, da der obere linke Node den Wert 150 hat und mit
 zwei Verbindungen die x- und y-Position des Kreises beschreibt.}
 \label{fig:datasynth}
@@ -986,8 +986,8 @@ Im Folgenden wird ihr Einsatz bei der Entwicklung beschrieben.
 ist eine objektorientierte Programmiersprache. Sie bietet
 eine maschinennahe Möglichkeit, effiziente Programme zu entwickeln.
 Datasynth nutzt durch openFrameworks und boost einige Vorteile
-von C++. Dazu gehören die höhere Geschwindigkeit beim Ausführen
-und die einfache Einbindung anderer Bibliotheken, wie 
+von C++. Dazu gehören eine höhere Geschwindigkeit beim Ausführen
+und eine einfache Einbindung anderer Bibliotheken, wie 
 beispielsweise OpenGL für Grafikoperationen. Außerdem
 findet das Programmierparadigma der Objektorientierung
 in den einzelnen Nodes von Datasynth Anwendung.
@@ -1001,9 +1001,9 @@ in den einzelnen Nodes von Datasynth Anwendung.
 ist ein in C++ geschriebenes Framework. Es soll durch seine
 Einfachheit und Intuitivität den kreativen Prozess und das
 Experimentieren beim Programmieren unterstützen. openFrameworks
-kapselt viele unterschiedliche Bibliotheken für die
-computergestützte audio-visuelle Verarbeitung in eine gemeinsame,
-konsistente und einfache Programmierschnittstelle. Beispielsweise
+verbindet viele unterschiedliche Bibliotheken für die
+computergestützte audio-visuelle Verarbeitung zu einer gemeinsamen,
+konsistenten und einfachen Programmierschnittstelle. Beispielsweise
 wird die Bibliothek openGL für Grafiken verwendet und die
 Bibliothek FreeImage für das Importieren, Bearbeiten und Exportieren von Bilddateien.
 openFrameworks erlaubt dem Programmierer eine schnelle und effiziente Arbeitsweise ohne
@@ -1022,15 +1022,15 @@ realisiert.
 \item[boost]
 ist eine Sammlung von unterschiedlichen C++ Programmierbibliotheken.
 Diese Bibliotheken sind portabel einsetzbar und steigern die
-Produktivität beim Entwickeln einer Software, da sie unterschiedliche
+Produktivität bei der Entwicklung einer Software, da sie unterschiedliche
 Anwendungsbereiche von C++ erweitern und vereinfachen.
 Einzelne Bibliotheken der Sammlung wurden in den neuen C++ Standard
 übernommen, um C++ selbst zu verbessern.
 Für Datasynth werden die Bibliotheken für Zeiger, Container
 und generische Programmierung verwendet, um die Entwicklung weiter zu vereinfachen.
 \item[GitHub]
-ist eine Internetplattform für das kollaborative Entwickeln von Software.
-Sie basiert auf dem Versionverwaltungstool git, welches entwickelt wurde
+ist eine Internetplattform für das kollaborative Entwickeln einer Software.
+Sie basiert auf dem Versionverwaltungstool git, welches entwickelt wurde,
 um Änderungen an Quellcode aufzuzeichnen und diesen zwischen mehreren
 Entwicklern teilen zu können. GitHub verbindet die Funktionalität von git mit
 einem sozialen Netzwerk, bei der verschiedene Nutzer gemeinsam
@@ -1047,9 +1047,9 @@ Nodes zur Laufzeit erstellt. In dieser Struktur ist eine Liste gespeichert, die 
 enthält. Ein Wertepaar besteht aus dem Namen eines Node als Zeichenkette und einer Funktion
 zum Anlegen dieses Node.
 Wenn der Benutzer einen Node erstellen will und im Menü auf einen entsprechenden Eintrag geklickt hat,
-wird eine Zeichenkette übergeben und wenn die Liste der Struktur eine solche Zeichenkette enthält, wird der
+wird eine Zeichenkette übergeben. Wenn die Liste der Struktur eine solche Zeichenkette enthält, wird der
 entsprechende Node erzeugt. So können vom Benutzer dynamisch zur Laufzeit
-neue Nodes erzeugt werden. Die Struktur dient also als eine Art Katalog, in dem alle
+neue Nodes erzeugt werden. Die Struktur dient schließlich als eine Art Katalog, in dem alle
 Nodes enthalten sind, die der Nutzer zur visuellen Programmierung verwenden kann.
 \begin{figure}
 \centering
@@ -1063,7 +1063,7 @@ Ein Node ist eine einfache C++ Klasse, die alle Eigenschaften der Klasse BaseNod
 Der Node für die Addition zweier Gleitkommazahlen überschreibt die process Methode der BaseNode, um die zwei
 Inputpins zu addieren. Andere Klassen die von dem BaseNode erben, können die process
 Methode mit ihrer eigenen Funktionalität überschreiben.
-Das macht es möglich alle Funktionen, die in einer C++ Methode implementiert werden können,
+Das macht es möglich, alle Funktionen, die in einer C++ Methode implementiert werden können,
 in einer Klasse als Node zu kapseln und für die visuelle Programmierung von Datasynth zu verwenden.
 \begin{figure}
 \centering
@@ -1140,18 +1140,18 @@ So kann beispielsweise bei der Verwendung des Circle-Node der Radius frei gewäh
 Helligkeitswert & Nodes haben die Möglichkeit eine Farbe anzunehmen. Durch die Farbe kann
 auch der Helligkeitswert festgelegt werden.\\
 \hline
-Textur & nicht implementiert\\
+Textur & Textur ist nicht implementiert.\\
 \hline
 Farbe & Es gibt Nodes, die aus drei Eingangswerten eine Farbe im RGB- oder HSV-Farbraum erzeugen. Mit diesen Nodes kann die Farbgebung
 anderer Nodes beeinflusst werden.\\
 \hline
-Richtung & Rotation ist nicht implementiert.\\
+Richtung & Objektrotation ist nicht implementiert.\\
 \hline
 Form & Es existieren unterschiedliche Nodes für unterschiedliche Formen, zum Beispiel Kreis, Rechteck, Punkt und Linie. Diese Nodes
 können kombiniert werden, um komplexe Formen zu realisieren.\\
 \hline
 \end{tabular}
-\caption{visuelle Variablen und ihre Umsetzung in Datasynth}
+\caption{Visuelle Variablen und ihre Umsetzung in Datasynth}
 \label{tab:vars}
 \end{table}
 Die Tabelle \ref{tab:vars} zeigt, wie die grafischen Variablen aus Abschnitt
@@ -1199,7 +1199,7 @@ Darstellung gezeigt. Die komplette Darstellung findet sich im Anhang in Abschnit
 
 \section{Probleme}
 \label{sec:Probleme}
-Während der Realisierung von Datasynth traten Probleme auf, die im Folgenden
+Während der Realisierung von Datasynth traten einige Probleme auf, die im Folgenden
 erläutert werden.
 
 Da C++ eine sehr maschinennahe Sprache ist und auf Performance optimiert ist,
@@ -1220,7 +1220,7 @@ Universelle Datentypcontainer sind in C++ nicht standardmäßig vorhanden.\footn
 möglich, erfordern aber eine unsichere und unflexbile Wiederherstellung des ursprünglichen Datentyps.} Um die Verbindungen
 zwischen den einzelnen Nodes datentypagnostisch zu halten, wurde ein
 eigener Datentyp Spread definiert.\footnote{Eine Definition des Spreads erfolgte im Abschnitt \ref{sec:visPro}}
-Durch die Abstraktion in einen boost::variant Container ergibt sich eine einheitliche Möglichkeit, primitive Datentypen
+Durch die Abstraktion in einen boost::variant Container ergibt sich eine einheitliche Möglichkeit, primitive Datentypen,
 wie beispielsweise Gleitkommazahlen und Zeichenketten abzuspeichern. Vor der Verwendung in einer Node werden diese
 Datentypen mit boost::get rekonstruiert. Der Vorteil gegenüber Nullzeigern ist, dass bei fehlgeschlagener
 Wiederherstellung eine Fehlerbehandlung möglich ist.
@@ -1282,9 +1282,9 @@ ist es möglich, Datasynth auf allen Plattformen auszuführen, die von openFrame
 unterstützt werden. Das sind Linux, Mac OS X, Microsoft Windows.
 Dadurch ist Datasynth \textit{plattformunabhängig} einsetzbar.
 
-Datasynth wird öffentlich, auf der Plattform GitHub entwickelt.\footnote{Vgl.
+Datasynth wird öffentlich auf der Plattform GitHub entwickelt.\footnote{Vgl.
 Abschnitt \ref{sec:Technologien}} Als Lizenz wurde die MIT-Lizenz gewählt.
-Diese ermöglicht jedem eine offene, aber auch kommerzielle Weiterentwicklung.
+Diese ermöglicht jedem Benutzer eine offene, aber auch kommerzielle Weiterentwicklung.
 
 Datasynth kann nahezu alle Anforderungen erfüllen. Im Anhang in Abschnitt
 \ref{sec:companyclash} befindet sich eine Informationsvisualisierung, die mit
@@ -1354,16 +1354,16 @@ Verstehen und Verständnis der heutigen technisierten Welt bei.
 
 \section{Ausblick}
 \label{sec:Ausblick}
-Da Datasynth lediglich einen Prototypen darstellt, ergeben sich vielfältige
+Da Datasynth einen Prototypen darstellt, ergeben sich vielfältige
 Ansätze für Weiterentwicklungen. Einige Möglichkeiten bedingen weiterer 
 Forschungsarbeit und können als Thesen betrachtet werden. Im Folgenden
-werden die vielversprechendsten Ansätze beschrieben.
+werden vielversprechende Ansätze beschrieben.
 \begin{description}
 \item[Skriptsprache]
 Es können universelle Nodes geschaffen werden, die vom Benutzer selbst mit einer höheren
 Skriptsprache programmiert werden können. Fehlende Funktionalitäten
 können damit vom Benutzer selbst implementiert werden.
-Auch die Anwendung einer Skriptsprache in der eigentlichen Software kann von Vorteil sein, um die in
+Auch die Anwendung einer Skriptsprache in der eigentlichen Software ist von Vorteil, um die in
 Abschnitt \ref{sec:Probleme} genannten Probleme zu umgehen. Dabei sollte nur
 die rechenintensive Programmlogik in C++ weiterentwickelt werden.
 \item[Gruppierung von Nodes]
@@ -1378,7 +1378,7 @@ in 3D-Austauschformate ermöglichen. Um die grafische Weiterverarbeitung der erz
 Darstellungen effizienter zu machen, bietet sich eine Exportfunktion für einzelne Teilbereiche
 an. Beispielsweise können aus einem erzeugten Bild einzelne Ebenen exportiert werden.
 \item[Interaktionsmöglichkeiten]
-Zusätzlich zur rein statischen Darstellung können mit Datasynth
+Zusätzlich zu einer rein statischen Darstellung können mit Datasynth
 Interaktionsmöglichkeiten erzeugt werden. Eine automatische
 Ausgabe als interaktive HTML5-Website ist denkbar, bei der einzelne Elemente
 anklickbar und durch Benutzerinteraktion veränderbar sind. Außerdem sind 
@@ -1387,7 +1387,7 @@ Erkundung der grafischen Darstellung zu geben.
 \item[Evaluation]
 Datasynth kann dem Nutzer behilflich sein, die richtige Form
 der grafischen Darstellung zu finden und ihn mit adäquaten Mitteln darauf
-hinweisen, wie gut oder schlecht sich gewisse Darstellungen eignen.
+hinweisen, welche Darstellungen sich für einen gegebenen Datensatz besonders gut eignen.
 \end{description}
     
 \chapter{Anhang}
