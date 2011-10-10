@@ -712,7 +712,7 @@ sehr aufwändig und zeitintensiv. Eine Unterstützung des Benutzers durch eine S
 Dabei darf der Nutzer in seinem kreativen Gestaltungsprozess nicht eingeschränkt werden.
 
 Wie in Kapitel \ref{cha:Grundlagen} und \ref{cha:Informationsvisualisierung} gezeigt, gibt es eine Vielzahl an
-Daten und grafischen Darstellungsformen. Weiterhin entstehen neue hybride Formen durch Mashups\footnote{"`Mashup (von
+Datenklassen und grafischen Darstellungsformen. Weiterhin entstehen neue hybride Formen durch Mashups\footnote{"`Mashup (von
 englisch "`to mash"' für vermischen) bezeichnet die Erstellung neuer Medieninhalte durch die nahtlose
 (Re-)Kombination bereits bestehender Inhalte."'\citep{wiki_mashup}}.
 Die Software muss möglichst daher universell sein, um flexibel viele unterschiedliche Anwendungsfälle
@@ -722,7 +722,7 @@ vernachlässigt werden.
 \section{Anforderungen}
 \label{sec:Anforderungen}
 Für die zu entwickelnde Software werden Anforderungen festgelegt, die
-im folgenden beschrieben werden. Neben speziellen Anforderungen, die aus
+im Folgenden beschrieben werden. Neben speziellen Anforderungen, die aus
 dem Bereich der Informationsvisualisierung stammen, werden noch weitere
 Anforderungen an Benutzerführung und Performance gestellt.
 \begin{description}
@@ -733,7 +733,7 @@ Programmierung, die in Abschnitt \ref{sec:visPro} genauer beschrieben wird,
 reicht ein grundlegendes mathematisches Verständnis des Nutzers aus.
 Weiterhin veranschaulicht sie den eigentlichen Anwendungsbreich der Software.
 \item[Flexible Visualisierungsmöglichkeiten]
-Um alle möglichen Darstellungsformen abbilden zu können, muss die 
+Um möglichst viele Darstellungsformen abbilden zu können, muss die 
 Möglichkeit bestehen, alle visuellen Variablen\footnote{Vgl. Abschnitt
 \ref{sec:grafischeSemiologie}} und damit alle Darstellungsformen\footnote{Vgl. Abschnitt
 \ref{sec:Darstellungsformen}} reproduzieren zu können. Der Nutzer darf dabei
@@ -748,8 +748,8 @@ verwendet werden.
 \item[Performanz]
 Der Benutzer kann alle Verbindungen und Parameter zwischen Datenobjekten und ihrer
 visuellen Repräsentation direkt beeinflussen. Für eine direkte visuelle Analyse
-durch den Nutzer, muss die Software die Möglichkeit bieten, sofort
-nach Interaktion des Nutzers, die Veränderungen darzustellen. Dafür wird eine
+durch den Nutzer muss die Software die Möglichkeit bieten, sofort
+nach Interaktion des Nutzers die Veränderungen darzustellen. Dafür wird eine
 ausreichende Performanz benötigt, um störende Ladezeiten zu vermeiden.
 \item[Erweiterbarkeit]
 Durch unterschiedliche Anforderungen in den verschiedenen Arbeitsbereichen ist
@@ -761,7 +761,7 @@ Benutzer eigene Module programmiert.
 Die Software soll auf den drei großen Plattformen Linux, Mac OS X und Microsoft Windows
 lauffähig sein. Durch die Entwicklung auf Basis von openframeworks\footnote{Vgl. Abschnitt \ref{sec:Technologien}}
 wird diese Plattformunabhängigkeit gewährleistet.
-\item[Frei und Offen]
+\item[Frei und offen]
 Die Software wird unter einer freien Lizenz entwickelt und veröffentlicht,
 um eigene Erweiterungen von Nutzern möglich zu machen. Durch die Wahl der Lizenz kann
 die Entwicklung durch alle Interessenten vorangetrieben werden. Außerdem lässt
@@ -940,7 +940,7 @@ sind Vektorgrafiken, 3D-Austauschformate oder interaktive HTML Seiten.
 Durch das weite Arbeitsfeld der Informationsvisualisierung, das meist
 fließend in andere Bereiche übergeht, existiert eine große Anzahl an
 Softwarelösungen und Programmierbibliotheken. Hier sollen exemplarisch
-einzelne Anwendungen beschrieben werden, die verschiedene gefordete
+einzelne Anwendungen beschrieben werden, die verschiedene geforderte
 Funktionen enthalten, diese aber nicht in einem Softwarepaket, das
 speziell auf die Informationsvisualisierung zugeschnitten ist, zusammenfassen.
 Eine Liste aller betrachteten Programme findet sich im Anhang in Abschnitt
@@ -965,8 +965,8 @@ Webanwendungen. Der Nutzer muss Javascript programmieren können, um diese
 Bibliothek nutzen zu können.
 \item[NodeBox 2 Beta]
 ist ein Programm, um generative Grafiken zu erstellen. Es entspricht nahezu
-allen beschriebenen Anforderungen. Durch die Programmierung ist es aber recht
-langsam einzusetzen. Auch die Anbindung von unterschiedlichen Datenquellen
+allen beschriebenen Anforderungen. Für komplexere Aufgaben muss aber
+die Programmiersprache Python erlernt werden. Auch die Anbindung von unterschiedlichen Datenquellen
 ist nicht gegeben.
 \end{description}
 
@@ -989,7 +989,7 @@ Datasynth nutzt durch openFrameworks und boost einige Vorteile
 von C++. Dazu gehören die höhere Geschwindigkeit beim Ausführen
 und die einfache Einbindung anderer Bibliotheken, wie 
 beispielsweise OpenGL für Grafikoperationen. Außerdem
-finden das Programmierparadigma der Objektorientierung
+findet das Programmierparadigma der Objektorientierung
 in den einzelnen Nodes von Datasynth Anwendung.
 \item[openFrameworks]
 \begin{figure}
@@ -1013,7 +1013,7 @@ wenige Klassen mit wenigen Funktionen, um überschaubar zu bleiben.\footnote{Vgl
 Für spezielle Anforderungen kann auf die Befehle der zugrundeliegenden Bibliotheken
 zurückgegriffen werden.
 openFrameworks ist kompatibel zu den Plattformen
-Linux, Mac OS X, Microsoft Windows.
+Linux, Mac OS X und Microsoft Windows.
 Die Funktionsweise von openFrameworks wird in Abbildung
 \ref{fig:of} verdeutlicht. 
 Die Programmlogik, das Benutzerinterface und alle Ein- und
@@ -1044,17 +1044,17 @@ In diesem Kapitel werden exemplarisch wichtige Abschnitte der Software anhand ih
 erläutert.
 In Abbildung \ref{fig:factory} wird eine Struktur dargestellt, die die einzelnen
 Nodes zur Laufzeit erstellt. In dieser Struktur ist eine Liste gespeichert, die Wertepaare
-enthält. Ein Wertepaar besteht aus einer Zeichenkette, die eine Node eindeutig identifiziert
-und einem Objekt, dass aus der gleichnamigen Klasse eines Node erzeugt wurde.
+enthält. Ein Wertepaar besteht aus dem Namen eines Node als Zeichenkette und einer Funktion
+zum Anlegen dieses Node.
 Wenn der Benutzer einen Node erstellen will und im Menü auf einen entsprechenden Eintrag geklickt hat,
-wird eine Zeichenkette übergeben und wenn die Liste der Struktur eine solche Zeichenkette enthält, der
+wird eine Zeichenkette übergeben und wenn die Liste der Struktur eine solche Zeichenkette enthält, wird der
 entsprechende Node erzeugt. So können vom Benutzer dynamisch zur Laufzeit
 neue Nodes erzeugt werden. Die Struktur dient also als eine Art Katalog, in dem alle
 Nodes enthalten sind, die der Nutzer zur visuellen Programmierung verwenden kann.
 \begin{figure}
 \centering
 \lstinputlisting[language=C++]{code/factory.cpp}
-\caption{Erzeugung einer Node-Instanz aus einer Liste aller vorhandener Node-Klassen}
+\caption{Erzeugung eines Node-Objektes aus einer Liste aller vorhandenen Nodes}
 \label{fig:factory}
 \end{figure}
 In Abbildung \ref{fig:node} wird in Auszügen die Klassendefinition des BaseNode und
@@ -1227,9 +1227,9 @@ Wiederherstellung eine Fehlerbehandlung möglich ist.
 
 openFrameworks unterstützt nicht das Erstellen und Verwenden mehrerer
 unabhängiger Fenster. Deshalb musste
-auf ein Addon zurückgegriffen werden, welches die Fensterverwaltung
-mit einem alternativen System austauscht.\footnote{openFrameworks verwendet standardmässig GLUT
-zur Fensterverwaltung. Das benutzte ofxFenster Addon benutzt dagegen die neuere und
+auf ein Add-on zurückgegriffen werden, welches die Fensterverwaltung
+mit einem alternativen System austauscht.\footnote{openFrameworks verwendet standardmäßig GLUT
+zur Fensterverwaltung. Das benutzte ofxFenster Add-on benutzt dagegen die neuere und
 flexiblere Bibliothek GHOST aus dem Blender-Projekt.} Damit können auch nach dem Start des Programms
 neue Fenster erzeugt werden, was beispielsweise für die Funktionalität des Render-Node wichtig ist.
 
@@ -1238,7 +1238,7 @@ neue Fenster erzeugt werden, was beispielsweise für die Funktionalität des Ren
 In diesem Kapitel wird Datasynth anhand der in Abschnitt \ref{sec:Anforderungen}
 aufgestellten Anforderungen bewertet.
 
-Durch die Bedienung von Datasynth mit visueller Programmierung, muss keine
+Durch die Bedienung von Datasynth mit visueller Programmierung muss keine
 textuelle Programmiersprache erlernt werden. Stattdessen kann der Nutzer intuitiv
 grafische Elemente auf der Oberfläche erzeugen und durch Verbindungen
 eine Programmlogik erstellen. Das Ergebnis einer Berechnung oder die Ausgabe von
@@ -1257,7 +1257,7 @@ durch den modularen Aufbau von Datasynth nachträglich hinzugefügt werden.
 
 Für die \textit{flexible Ein- und Ausgabe} wurde jeweils eine Möglichkeit implementiert, um die komplette
 Prozesskette von Datasynth zu implementieren. Es existiert ein Node, der eine
-CSV-Datei einliest und enttsprechend der Anzahl der vorhanden
+CSV-Datei einliest und entsprechend der Anzahl der vorhanden
 Spalten automatisch Output-Pins erzeugt, an denen die einzelnen Spalten als
 Spreads ausgegeben werden. Für die Ausgabe als Bild existiert ein Render-Node.
 Dieser erzeugt ein Ausgabefenster in variabler Größe und kann per Tastendruck
@@ -1356,7 +1356,7 @@ Verstehen und Verständnis der heutigen technisierten Welt bei.
 \label{sec:Ausblick}
 Da Datasynth lediglich einen Prototypen darstellt, ergeben sich vielfältige
 Ansätze für Weiterentwicklungen. Einige Möglichkeiten bedingen weiterer 
-Forschungsarbeit und können als Thesen betrachtet werden. Im folgenden
+Forschungsarbeit und können als Thesen betrachtet werden. Im Folgenden
 werden die vielversprechendsten Ansätze beschrieben.
 \begin{description}
 \item[Skriptsprache]
@@ -1380,7 +1380,7 @@ an. Beispielsweise können aus einem erzeugten Bild einzelne Ebenen exportiert w
 \item[Interaktionsmöglichkeiten]
 Zusätzlich zur rein statischen Darstellung können mit Datasynth
 Interaktionsmöglichkeiten erzeugt werden. Eine automatische
-Ausgabe als interaktive HTML5 Website ist denkbar, bei der einzelne Elemente
+Ausgabe als interaktive HTML5-Website ist denkbar, bei der einzelne Elemente
 anklickbar und durch Benutzerinteraktion veränderbar sind. Außerdem sind 
 Zoomfunktionen sinnvoll, um dem Betrachter weitere Möglichkeiten zur
 Erkundung der grafischen Darstellung zu geben.
