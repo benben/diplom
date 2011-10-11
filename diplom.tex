@@ -40,14 +40,17 @@ backgroundcolor=\color{light-gray}
 %add hyphenation later
 
 \begin{document}
+\extratitle{ }
 \title{Konzeption und prototypische Realisierung einer Software für die Informationsvisualisierung}
 \author{Benjamin Knofe}
-\subject{Diplomarbeit}
-\publishers{Hochschule für Technik, Wirtschaft und Kultur Leipzig}
-\dedication{Danke\\für Kritik, Kommentare, Diskussionen, Code und Hilfe\\
-(in alphabetischer Reihenfolge)\\
-Christina Sanko, Pyry Jahkola, Ted Mosby, Sarah Walter,
-Stephan Keller, Professor Dr.-Ing. Robert Müller, Philip Whitfield, Johannes Knofe, René Zschoch, Moritz Kreutzer, Theresia Becher}
+\subject{Diplomarbeit}  
+\publishers{\parbox[b][3.5cm]{\textwidth}{\centering \large Betreuer:\\Professor Dr.-Ing. Robert Müller
+\par\vspace{5mm} \Large Hochschule für Technik, Wirtschaft und Kultur Leipzig}}
+\dedication{Danke\\für Kritik, Kommentare, Diskussionen,\\Korrekturen, Code und Hilfe\\
+(in alphabetischer Reihenfolge)\\ \par\vspace{5mm}
+Theresia Becher\\Pyry Jahkola\\Stephan Keller\\Johannes Knofe\\Moritz Kreutzer\\Ted Mosby\\
+Professor Dr.-Ing. Robert Müller\\Christina Sanko\\
+Sarah Walter\\Philip Whitfield\\René Zschoch}
 \maketitle
 \tableofcontents
 
@@ -182,7 +185,7 @@ in verschiedenen Formen ausgelegt. Der philosophische Bereich der Erkenntnistheo
 einen allgemeingültigen Informationsbegriff zu definieren. Trotzdem kann noch nicht von einer
 einheitlichen Theorie der Information gesprochen werden. Es beschäftigen sich viele verschiedene
 Gebiete wie die Informatik, Informationstheorie, Nachrichtentechnik und andere mit diesem
-Begriff.\footnote{Vgl. \citep{wiki_info}} In \cite{Hoeher} wird die Information wie folgt beschrieben:
+Begriff.\footnote{Vgl. \citep{wiki_info}} \cite{Hoeher} beschreibt die Information wie folgt:
 \begin{quote}
 "`Die Informationstheorie definiert Information als eine quantitativ bestimmbare Wissenzunahme durch
 die Übermittlung von Zeichen in einem Kommunikationssystem."'\footnote{\citep[S.\,3]{Hoeher}}
@@ -351,7 +354,7 @@ Klassen kann eindeutig bestimmt werden, dass auf die Klasse "`kalt"' die Klasse 
 \item[Quantitative Datentypen] besitzen einen Wertebereich und gestatten die Durchführung von arithmetischen Operationen.
 Es existiert dabei eine Maßeinheit, mit der die Abstände zwischen einzelnen Ausprägungen angegeben werden können. Durch eine 
 künstliche Einteilung in Intervalle kann dieser Typ in ordinale Datentypen übersetzt werden.
-Ein Beispiel ist eine Temperaturmessung, bei der die Zahlenwerte in der Einheit Grad Celcius gespeichert werden.
+Ein Beispiel ist eine Temperaturmessung, bei der Werte in Grad Celcius gespeichert werden.
 \end{description}
 \section{Grafische Semiologie}
 \label{sec:grafischeSemiologie}
@@ -615,7 +618,7 @@ in der gegebenen Reihenfolge auftreten. Es gibt unterschiedliche Möglichkeiten,
 Visualisierungspipeline einzugreifen und zwischen den einzelnen Stufen zu wechseln.\footnote{In
 \citep{Schumann} Abschnitt 2.2 und 2.3 werden unterschiedliche Verfahren beschrieben.}
 Das Ergebnis dieser Verfahren ist jedoch immer die grafische Darstellung.
-
+\newpage
 \section{Grafische Darstellung}
 \label{sec:Darstellungen}
 \subsection{Begriff}
@@ -840,7 +843,7 @@ Anwendungen kann ein Spread eine große Anzahl an Elementen enthalten, die beisp
 aus einer Datentabelle stammen. Somit kann der Benutzer eine Reihe von Zahlen mit
 einer Konstante multiplizieren, ohne die Anzahl der einzelnen Werte eines Spreads
 beachten zu müssen. Die Software ist in der Lage, auch Spreads mit einer unterschiedlichen
-Anzahl von Elementen miteinander zu verrechnen.
+Anzahl von Elementen zu verbinden.
 \end{description}
 
 Der Einsatz von visueller Programmierung als Bedienkonzept hat
