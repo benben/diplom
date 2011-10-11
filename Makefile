@@ -1,7 +1,11 @@
-all: diplom bib diplom diplom
-
 diplom:
 	pdflatex diplom.tex
+	bibtex diplom
+	pdflatex diplom.tex
+	pdflatex diplom.tex
+
+all: diplom
+	gs -dNOPAUSE -sDEVICE=pdfwrite -sOUTPUTFILE=diplom_final.pdf -dBATCH diplom.pdf selbst.pdf
 
 bib:
 	bibtex diplom
