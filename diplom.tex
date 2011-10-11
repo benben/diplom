@@ -1297,67 +1297,54 @@ Datasynth realisiert wurde.
 Die Konzeption und prototypische Realisierung einer Software für die
 Informationsvisualisierung hat gezeigt, dass es sinnvoll ist,
 ein auf dieses Gebiet zugeschnittenes Softwarekonzept zu entwickeln.
+Die Anforderungen an eine Software für die Informationsvisualisierung sind stark
+anwendungdsabhängig. Es müssen viele unterschiedliche Datenformen
+mit den visuellen Variablen der grafischen Darstellung verbunden
+werden können.
+Die Automatisierung dieses Transkriptionsprozesses ist sinnvoll,
+wenn der Benutzer diesen Ablauf umfassend parametrisieren, steuern und gestalten kann.
+Datasynth bietet dafür bereits unterschiedliche Möglichkeiten und
+macht eine grafische Darstellung, die dem Umfang des Initialbeispiels
+entspricht, möglich. Für die Erzeugung von zusätzlichen Informationen
+wie beispielsweise Beschriftungen, Skalen oder
+Maßstäbe existieren nur rudimentäre Ansätze.
+Fehlende Funktionalität kann aber vom Benutzer hinzugefügt werden ohne
+den Kern der Software zu ändern, da Datasynth ein universelles
+Node-System besitzt, welches modulartig erweiterbar ist. Es besteht
+damit die Möglichkeit auf zukünftige Veränderungen der Anforderungen
+flexibel zu reagieren.
 
-Die Anforderungen an eine Informationsvisualisierung sind stark
-Anwendungdsabhängig und müssen die Struktur der zugrundeliegenden
-Daten mit den Visuellen Variablen als System der Darstellung
-in einklang bringen.
+Die Steuerung von Datasynth mit visueller Programmierung gibt dem Benutzer
+die intuitive Möglichkeit ästhetisch ansprechende Darstellungen
+anzufertigen, ohne selbst Quellcode zu schreiben. Um die visuelle
+Programmierung von Datasynth noch effizienter zu machen, müssen aber
+noch einige Verbesserungen an der Benutzeroberfläche stattfinden.
 
+Der generische Ansatz von Datasynth vermeidet es, Vorgaben bei der Gestaltung von
+grafischen Darstellungen zu machen. Dadurch behält der Benutzer ein breites Spektrum an Gestaltungsfreiheiten.
+Das erfordert aber auch die Kenntnis und Anwendung der Gestaltungsregeln.
+Der Benutzer muss selbst entscheiden, welche visuellen Variablen sich für eine
+bestimmte Aufgabe eignen. Ein geeignetes System, das dem
+Benutzer Hilfestellungen in diesem Bereich gibt, muss noch erforscht werden.
 
-Durch die Vielzahl an unterschiedlichen Datenformen und grafischen
-Darstellungen ist es sinnvoll ein universelles Node-System zu implementieren,
-welches auf neue Anforderungen reagieren kann, indem einfach neue Nodes
-implementiert und hinzugefügt werden, der kern der software kann dabei
-unangetastet bleiben. diese möglichkeit kann dabei von allen
-anwendern whrgenommen werden.
-
-Die Steuerung der Software durch visuelle Programmierung gibt dem benutzer
-die intuitive möglichkeitintuitiv ästhetisch ansprechende darstellungen
-anzufertigen
-
-die automatisierung des mapping prozesses ist möglich und sinnvoll.
-
-eine grafische darstellung die vom umfang her dem initialbeispiel
-aus abbildung \ref{fig:beispiel} entspricht ist möglich. die software
-übernimmt den arbeitnur bei den
-
-details für die beschriftung, skalen muss noch gearbeitet werden.
-
-trotzdessen ist datasynth noch nicht bereit für den produktiven einsatz.
-aufgrund der begrenzten bearbeitungszeit wurde nur eine einfache 
-benutzeroberflächje implementiert. die benutzerführung sollte daher als
-erstes verbessert werden
-Die Einarbeitungszeit kann damit stark reduziert werden.
-
-auch wenn datasynth noch kein fertiges produkt ist, kann es zum
-besseren verständnis der immer wichtiger werdenden digitalen welt 
-beitragen und bietet eine möglichkeit der wachsenden menge an
-daten handhabbar zu machen.
-
-datasynth vermeidet es grenzen oder vorgaben bei der gestaltung von
-grafischen darstellungen zu machen aber dadurch behält der Benutzer alle Freiheiten bei der Gestaltung.
-das fordert aber auch die Kenntnis und Anwendung der Grundregeln für die grafische Darstellungen und
-allgemeine Gestaltungsregeln, da es keine Möglichkeit gibt Nutzer auf sowas hinzuweisen.
-So muss der Benutzer selbst entscheiden, welche visuellen Variablen sich wie 
-gut für eine bestimmte Aufgabe eignen. Ein geeignetes System zu finden, das dem
-Benutzer Hilfestellungen zu dieser Thematik gibt, muss noch erforscht werden.
-
-Werden aber die anfänglichen Probleme von Datasynth beseitigt und damit alle gestellten Anforderungen erfüllt, kann
-diese zu einer erhöhten Produktiviät und einem vereinfachten Umgang mit
-Daten genutzt werden. Davon profitieren vor allem unerfahrene Gelegenheitsanwender,
+Datasynth stellt nur einen Prototyp dar, kann aber für den
+produktiven Einsatz weiterentwickelt werden, um einem vereinfachten Umgang mit
+der Informationsvisualisierung zu ermöglichen. Davon profitieren vor allem Gelegenheitsanwender,
 die die Informationsvisualisierung als Werkzeug für ihre jeweiligen Arbeitsfelder
-einsetzen. Aber auch Experten erhalten damit eine einfache und schnelle Möglichkeit
-erste Erkundungen der Datenmenge durchzuführen. Nicht zuletzt kann es Künstlern
+einsetzen. Zum Beispiel können Journalisten die Software nutzen um Texte
+mit grafischen Darstellungen anzureichern. Aber auch Wissenschaftler
+erhalten damit eine einfache und schnelle Möglichkeit
+erste Erkundungen einer Datenmenge durchzuführen. Nicht zuletzt kann es Künstlern
 die Möglichkeit geben, auf Basis von Daten ästhetisch ansprechende
-Informationsvisualisierungen zu erschaffen. All das kann zum besseren
-Verstehen und Verständnis der heutigen technisierten Welt beitragen.
+Informationsvisualisierungen zu erschaffen. Damit kann die Software in unterschiedlichen
+Bereichen unseres Lebens genutzt werden und zu einem besseren
+Verständnis der digitalen Welt beitragen.
 
 \section{Ausblick}
 \label{sec:Ausblick}
-Da Datasynth einen Prototypen darstellt, ergeben sich vielfältige
-Ansätze für Weiterentwicklungen. Einige Möglichkeiten bedingen weiterer 
-Forschungsarbeit und können als Thesen betrachtet werden. Im Folgenden
-werden vielversprechende Ansätze beschrieben.
+In diesem Abschnitt werden vielversprechende Ansätze beschrieben, die für die Weiterentwicklung
+der Konzeption und des Prototyps genutzt werden können. Einige Möglichkeiten bedingen weiterer 
+Forschungsarbeit und können als Thesen betrachtet werden.
 \begin{description}
 \item[Skriptsprache]
 Es können universelle Nodes geschaffen werden, die vom Benutzer selbst mit einer höheren
