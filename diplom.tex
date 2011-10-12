@@ -5,8 +5,8 @@
                pdftex,
                headsepline,
                footsepline,
-               bibtotocnumbered,
-               liststotocnumbered]{scrreprt}
+               bibliography=totocnumbered,
+               listof=numbered]{scrreprt}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -24,6 +24,14 @@
 \usepackage{color}
 \usepackage{tabularx}
 
+\tolerance 1414
+\hbadness 1414
+\emergencystretch 1.5em
+\hfuzz 0.3pt
+\widowpenalty=10000
+\vfuzz \hfuzz
+\raggedbottom
+
 \definecolor{light-gray}{gray}{0.95}
 
 \lstset{%
@@ -37,10 +45,13 @@ backgroundcolor=\color{light-gray}
 
 \typearea[current]{calc}
 
-%add hyphenation later
+\hyphenation{Soft-ware ver-wen-deten in-te-res-siert vo-raus
+Aus-prä-gungen Ver-bin-dungen Me-di-en-ob-jekte In-for-ma-ti-onen
+In-for-ma-ti-ons-vi-su-a-li-sie-rung de-skrip-tiven An-for-de-rung
+An-for-de-rungen all-ge-meinste Gra-fik-ope-ra-ti-onen Ob-jekt-ori-en-tie-rung
+Be-nut-zer-ober-flä-che}
 
 \begin{document}
-\extratitle{ }
 \title{Konzeption und prototypische Realisierung einer Software für die Informationsvisualisierung}
 \author{Benjamin Knofe}
 \subject{Diplomarbeit}  
@@ -120,17 +131,16 @@ Gestaltungsfreiheit einräumt, sind folgende Vorüberlegungen notwendig:
 \item{Welche Möglichkeiten der grafischen Darstellung gibt es und wie können diese eingesetzt werden?}
 \item{Wie können Daten sinnvoll in eine grafische Darstellung transkribiert werden?}
 \end{itemize}
-Diese Vorüberlegungen fordern ein Softwarekonzept, das den Anwender besonders bei der 
+Diese Vorüberlegungen machen ein Softwarekonzept nötig, das den Anwender besonders bei der 
 arbeitsintensiven Transkription
 von Daten in eine grafische Darstellung unterstützt.
-Um eine iterative und kreative Benutzung zu ermöglichen, muss der arbeitsintensive Vorgang
-der Transkription großer Datenmengen in eine grafische Darstellung
-automatisch und unmittelbar erfolgen.
+Um eine iterative und kreative Benutzung zu ermöglichen, muss dieser Vorgang
+automatisch durchgeführt werden und unmittelbar eine Ausgabe erzeugen.
 
 Die Konzeption einer auf diese Aspekte spezialisierte Software ist Gegenstand dieser Arbeit.
 
 \section{Aufbau der Arbeit}
-Um einen Lösungansatz für das Problem einer universellen Informationsvisualisierung
+Um eine Lösung für das Problem eines universellen Informationsvisualisierungsansatzes
 zu finden, werden in dieser Arbeit Schritte durchgeführt, welche die Konzeption einer Software zum Ziel haben.
 Diese Software wird prototypisch implementiert.
 
@@ -154,6 +164,7 @@ eingegangen.
 
 Kapitel \ref{cha:Umsetzung} dokumentiert die Umsetzung des Prototyps. Neben den verwendeten
 Technologien werden Teile der Software beschrieben und erläutert, welche Funktionen diese haben.
+Dann wird die Benutzung der Software anhand eines Beispiels gezeigt.
 Am Ende des Kapitels wird auf Probleme bei der Entwicklung eingegangen.
 
 In Kapitel \ref{cha:Auswertung} erfolgt die Auswertung des Prototyps. Dieser wird anhand der zuvor
@@ -182,8 +193,7 @@ Der Anwender ist an den Informationen und dem aus ihnen resultierenden Erkenntni
 Techniken aus diesen Daten gewinnen kann.
 
 Der Begriff der Information ist schwer einzugrenzen und wird in unterschiedlichen Wissenschaften
-in verschiedenen Formen ausgelegt. Der philosophische Bereich der Erkenntnistheorie versucht,
-einen allgemeingültigen Informationsbegriff zu definieren. Trotzdem kann noch nicht von einer
+in verschiedenen Formen ausgelegt. Daher kann noch nicht von einer
 einheitlichen Theorie der Information gesprochen werden. Es beschäftigen sich viele verschiedene
 Gebiete wie die Informatik, Informationstheorie, Nachrichtentechnik und andere mit diesem
 Begriff.\footnote{Vgl. \citep{wiki_info}} \cite{Hoeher} beschreibt die Information wie folgt:
@@ -194,8 +204,8 @@ die Übermittlung von Zeichen in einem Kommunikationssystem."'\footnote{\citep[S
 Information ist das Ergebnis der Kommunikation, das beim Empfänger einen Erkenntnisgewinn auslöst,
 sofern dieser den Informationsinhalt entschlüsseln kann. Dafür müssen sich Sender und Empfänger
 auf ein Zeichensystem einigen.
-In Bezug auf grafische Darstellungen wird in \cite{Bertin} die Information als der transkribierbare
-Inhalt eines Gedankens definiert. Das heißt, die Information ist der Teil der Daten, die in einer
+In Bezug auf grafische Darstellungen definiert \cite{Bertin} die Information als der transkribierbare
+Inhalt eines Gedankens.\footnote{Vgl. \citep[S.\,13]{Bertin}} Das heißt, die Information ist der Teil der Daten, die in einer
 Informationsvisualisierung dargestellt werden kann. Die Informationsvisualisierung hat die
 Aufgabe, diese Information für den Menschen aufzudecken und in verständlicher Form aufzubereiten.
 Die reinen Daten, die zwar diese Informationen enthalten,
@@ -210,9 +220,9 @@ in den Daten codiert sind.
 Digitale Daten bilden den Ausgangspunkt für die Konzeption einer Informationsvisualisierung. Die speziellen
 Eigenschaften von Daten sind maßgeblich für weitere Schritte der Informationsvisualisierung.\footnote{Vgl. 
 Abschnitt \ref{sec:Pipeline}}
-Die Kenntnis der Beschaffenheit der Daten ist somit Voraussetzung für alle nachfolgenden Schritte.
-\cite{Schumann} beschreiben ein Modell der Eigenschaften von Daten. Jeder Datensatz\footnote{Menge von Daten}
-hat folgende Eigenschaften, nach denen er klassifiziert werden kann:
+\cite{Schumann} haben ein Modell zur Beschreibung der Eigenschaften von Daten entwickelt. Jeder Datensatz\footnote{Ein
+Datensatz ist eine Menge von Daten.}
+hat folgende Merkmale, nach denen er klassifiziert werden kann:
 \begin{description}
 \item[Beobachtungsraum]
 Der Beobachtungsraum beschreibt den Raum, in dem Daten erhoben werden. Dieser Raum kann ein
@@ -240,7 +250,7 @@ Wertebereich und kann ein Skalar oder Vektor sein.\footnote{In einem dreidimensi
 kann einem Beobachtungspunkt als Vektor angesehen werden. Im Falle einer Ausprägung als Vektor, liegt damit
 an der Position des Beobachtungspunktes im Beobachtungsraum ein weiterer Vektor vor.}
 In Abbildung \ref{fig:beispiel} ist beispielsweise im amerikanischen Kulturkreis (A) für Liebe (53) die Farbe
-Rot ablesbar. Der dazugehörige Wertebereich der Farben wird im oberen linken Bereich dargestellt.
+Rot ablesbar. Der dazugehörige Wertebereich der Farben wird im oberen linken Bereich der Abbildung dargestellt.
 \end{description}
 Die Begriffe Beobachtungsraum, Beobachtungspunkt, Merkmal und Ausprägung dienen zur Klassifikation von Daten
 und werden als Metadaten bezeichnet.
@@ -250,7 +260,7 @@ und werden als Metadaten bezeichnet.
 
 Die Klassifikation von Daten wird sehr unterschiedlich durchgeführt.
 \cite{Schumann} weisen auf eine uneinheitliche Begriffswahl in unterschiedlichen
-Publikationen hin.
+Publikationen hin.\footnote{Vgl. \citep[S.\,171]{Schumann}}
 Hier wird eine vereinfachte Einteilung dargestellt. Diese wird nach der Anzahl der abhängigen und
 unabhängigen Variablen und nach dem Ursprung der Daten vorgenommen.
 
@@ -273,7 +283,7 @@ Dieser Bezug entspricht nicht immer den tatsächlichen zeitlichen Änderungen un
 eine adäquate Skalierung der zeitbezogenen Dimension notwendig.
 Beispielsweise besteht die Möglichkeit, bei einer Wetterstation die kontinuierliche Veränderung der Außentemperatur
 nur einmal pro Stunde zu messen. Dadurch liegen die Messwerte in diskreten Intervallen vor.
-Diese Problematik muss in der Visualisierung beachtet werden.
+Diese Problematik muss bei der Erzeugung der Darstellung beachtet werden.
 
 \subsection{Multiparameterdaten}
 Daten werden als \textit{Multiparameterdaten} bezeichnet, wenn die Anzahl der \textit{abhängigen} Variablen größer Eins ist
@@ -317,7 +327,7 @@ Eine spezielle Form der abstrakten Daten sind strukturelle Beziehungen zwischen 
 Diese Daten beschreiben nicht Beobachtungspunkte und deren Merkmale, sondern die Beziehungen
 zwischen diesen Punkten und ihren abhängigen und unabhängigen Variablen. Unterschieden wird dabei
 zwischen hierarchischen Formen und Netzwerken. Beispiele sind die Relationen zwischen Dokumenten,
-Medien und Personen in einem Netzwerk.\footnote{Vgl. \citep{Preim}}
+Medien und Personen in einem Netzwerk.\footnote{Vgl. \citep[S.\,448ff]{Preim}}
 
 Rein zeitbezogene Daten werden in dieser Arbeit den abstrakten Daten zugeordnet. Ein Börsenkurs ist bei näherer Betrachtung
 abstrakt, da kein räumlicher Bezug stattfindet.
@@ -335,15 +345,15 @@ Klassifikation beitragen. Das ist wichtig, um erkennen zu können, welche Verarb
 möglich sind. Meist erfolgt eine Einteilung in drei Klassen. Während \cite{Bertin} von qualitativen,
 geordneten und quantitativen Komponenten spricht, unterscheiden \cite{Preim} nominale, ordinale und
 quantitative Datentypen.
-Hier wird die neuere Einteilung von \cite{Preim} erläutert.
+Hier wird die neuere Einteilung von \cite{Preim} erläutert.\footnote{\citep[S.\,449]{Preim}}
 \begin{description}
 \item[Nominale Datentypen]
 Meist werden Namen und Bezeichnungen von Datenobjekten als nominale Datentypen klassifiziert.
 Ihr Abstand ist äquidistant, da sich vor einer eingehenden Analyse
 keine Ausprägungen besonders nah oder entfernt voneinander zeigen. Die einzige mögliche Operation ist der Test auf
 Gleichheit beziehungsweise Ungleichheit. Es gibt keine allgemeingültige, eindeutige Reihenfolge
-nach der die Ausprägungen sortiert werden könnten. Dadurch kann nur eine Reihenfolge nach bestimmten Gesichtpunkten erfolgen.
-Das heißt, eine künstlich erzeugte Ordnung wird eingebracht, zum Beispiel durch alphabetische Sortierung von Namen.
+nach der die Ausprägungen sortiert werden können. Diese kann nur nach bestimmten Gesichtpunkten erfolgen.
+Das heißt, eine künstlich erzeugte Ordnung wird eingebracht, zum Beispiel durch alphabetische Sortierung.
 In Abbildung \ref{fig:beispiel} haben die Farben, Kulturkreise und Begriffe einen nominalen Datentyp.
 \item[Ordinale Datentypen]
 haben die gleichen Eigenschaften wie nominale Typen.
@@ -360,11 +370,11 @@ Ein Beispiel ist eine Temperaturmessung, bei der Werte in Grad Celcius gespeiche
 \section{Grafische Semiologie}
 \label{sec:grafischeSemiologie}
 Die grafische Semiologie ist ein von \cite{Bertin} erstmals beschriebenes System zur Klassifikation von grafischen Zeichen.
-Es stammt ursprünglich aus der thematischen Kartographie.\footnote{"`Thematische Karten enthalten vorwiegend
-Erscheinungen oder Vorkommnisse nicht topographischer Art, welche jedoch mit der Erdoberfläche in Verbindung
+Es stammt ursprünglich aus der thematischen Kartografie.\footnote{"`Thematische Karten enthalten vorwiegend
+Erscheinungen oder Vorkommnisse nicht topographischer [sic] Art, welche jedoch mit der Erdoberfläche in Verbindung
 stehen. Es handelt sich hierbei um Dinge, die georäumliche Lage, Verbreitung oder Bewegung besitzen, sowohl
 um reale Dinge, als auch um Beziehungen, Funktionen, Hypothesen, geistige Vorstellungen, Möglichkeiten und
-Projekte."'\citep{Gitta} } Dies ist ein Teilgebiet der Geographie und eines der ersten Anwendungsgebiete der
+Projekte."'\citep{Gitta} } Dies ist ein Teilgebiet der Geografie und eines der ersten Anwendungsgebiete der
 Informationsvisualisierung.
 \begin{figure}
 \centering
@@ -406,15 +416,15 @@ für spezielle Aufgaben eignen. Um für eine Aufgabe die geeignetste Variable zu
 Grundlegend beschreiben diese eine Vereinfachung der grafischen Darstellung.
 Die Anzahl an visuellen Variablen, Merkmalen und Ausprägungen wird reduziert,
 sodass die grafische Darstellung als Ganzes mit einem Minimum an Wahrnehmungsaufwand erfasst werden kann.
-Dabei dürfen keine Informationen und Beziehungen zwischen diesen verloren gehen, um Fehlinterpretationen
+Dabei dürfen keine Informationen und Beziehungen verloren gehen, um Fehlinterpretationen
 zu vermeiden. Weitere Regeln sind stark abhängig von der Anzahl
 der vorhandenen Dimensionen des Beobachtungsraumes, der Anzahl der Merkmale eines
 Beobachtungspunktes\footnote{Vgl. Abschnitt \ref{sec:EigenschaftenDaten}} und der gewählten,
-grafischen Darstellung. Da für die komplexen, graphischen Darstellungen einer 
+grafischen Darstellung. Da sich für die komplexen, grafischen Darstellungen einer 
 Informationsvisualisierung meist mehrere visuelle Variablen eignen, kann eine Auswahl
 durch den Abgleich mit den Bearbeitungszielen\footnote{Vgl. Abschnitt \ref{sec:Ziele}} erfolgen.
 Beispielsweise eignen sich für wichtige, geordnete Variablen die Position in der Ebene,
-während Variablen wie Farbe, Muster und Textur als Möglichkeit genutzt werden können, um Zusatzinformationen zu kodieren.
+während Variablen wie Farbe, Muster und Textur als Möglichkeit genutzt werden können, um Zusatzinformationen zu codieren.
 Erst wenn weitere Variablen hinzugefügt werden, muss eine Nebeneinanderstellung oder
 Überlagerung in Betracht gezogen werden.
 Die Konstruktionsregeln und die visuellen Variablen werden genutzt, um
@@ -427,7 +437,7 @@ die grafische Darstellung als Ziel der Informationsvisualisierung zu erstellen.
 Die Visualisierung ist im Allgemeinen als eine "`rechnergestützte, visuelle Präsentation von Daten, Informationen und Wissen
 in einer für den Menschen adäquaten und für die jeweilige Anwendung in diesem Kontext sinnvollen Form
 zu verstehen."'\footnote{\citep[S.\,3]{Schumann}}
-Sie nutzt das Vermögen des menschlichen Gehirns durch visuelle Reize große Mengen an Information
+Sie nutzt das Vermögen des menschlichen Gehirns durch visuelle Reize große Mengen an Informationen
 intuitiv erfassen und verarbeiten zu können. Dabei werden die natürlichen Fähigkeiten des Menschen,
 wie beispielsweise die Muster- und Farberkennung, genutzt, um Entscheidungen über
 einen Sachverhalt ohne besondere Vorkenntnisse treffen zu können. Zum Beispiel kann jeder Mensch zwischen zwei Objekten entscheiden,
@@ -457,7 +467,7 @@ oder Softwaresystemen, die sich alle auch über die Zeit verändern können."'\f
 \end{quote}
 Das Einsatzgebiet der Informationsvisualisierung ist im Gegensatz zur Datenvisualisierung nicht
 auf wissenschaftliche Bereiche beschränkt,
-sondern kann beispielsweise als alternative Suchmethode in Multimedia-Datenbanken,\footnote{Vgl. Visual Data Mining in \citep{Keim}}
+sondern kann beispielsweise als alternative Suchmethode in Multimedia-Datenbanken,\footnote{Vgl. "`Visual Data Mining"' in \citep{Keim}}
 als Wissensvermittlung in kulturellen Bereichen\footnote{Vgl. Abbildung \ref{fig:beispiel}} und zur Visualisierung von
 sozialen Netzwerken und Fahrplänen öffentlicher Verkehrsmittel verwendet werden.
 Insbesondere steht die Suche nach Beziehungen zwischen Datenobjekten im Vordergrund,
@@ -477,11 +487,11 @@ fehlt. So muss die Informationsvisualisierung vom Benutzer
 schnell und einfach erfasst und ohne besondere Vorkenntnisse verstanden werden können.
 Außerdem muss sie eine "`angemessene und grafische Qualität haben, um über den
 reinen Nutzwert hinaus auch Qualitäten in Bezug auf Nutzungsfreude und Unterhaltungswert [zu] besitzen."'\footnote{\citep[S.\,438]{Preim}}
-Es wird zunehmend schwieriger solche Darstellungsformen mit aktueller Standardsoftware zu erstellen.
+Es ist schwierig solche Darstellungsformen mit aktueller Standardsoftware zu erstellen.
 
 Die Grenzen zwischen den einzelnen Disziplinen der Visualisierung sind fließend. Die Informationsvisualisierung kann
 auch wissenschaftlich betrieben werden, da sich Methoden und Verfahren stark ähneln.
-Das Arbeitsfeld der Informationsvisualisierung, die Thema dieser Arbeit ist,
+Das Arbeitsfeld der Informationsvisualisierung, das Thema dieser Arbeit ist,
 geht von einem Spezialfall der Datenvisualisierung aus. Dieser erweitert die Anforderungen an Datenvisualisierung mit
 Betrachtungen über die Zielgruppe, die Repräsentation und das Medium. Dabei kommen digitale
 Techniken zur Erhebung, Speicherung, Weiterverarbeitung und Ausgabe zum Einsatz.
@@ -500,7 +510,7 @@ Objekten als Raster oder Vektorgrafik. Die Informationsvisualisierung benutzt Te
 Bestandteil dieses Gebietes.
 \item[Statistik]
 Die Statistik ist ein Verfahren für die "`hypothesengeleitete Auswertung von numerischen (quantitativen)
-Daten"'\citep[S.\,23]{Statistik}. Durch die Verwendung quantitativer Daten wird eine Verbindung zwischen
+Daten."'\footnote{\citep[S.\,23]{Statistik}} Durch die Verwendung quantitativer Daten wird eine Verbindung zwischen
 Empirie und Theorie geschaffen.  Neben der Mathematik ist die Visualisierung das wichtigste
 Werkzeug der Statistik. So wird der Visualisierungsprozess aus Abschnitt \ref{sec:Pipeline} besonders
 im Bereich der deskriptiven Statistik benutzt, um Erkenntnisse zu gewinnen und darzustellen.
@@ -510,14 +520,14 @@ Häufig werden Präsentations- und Prozessvisualisierungen als Informationsvisua
 aber eigenständige Gebiete. In ihnen geht es um das Sichtbarmachen von Informationen. Diese Informationen basieren aber nicht auf
 großen Datenmengen und können ohne Softwareunterstützung dargestellt werden. Bei der Visualisierung
 von Prozessen muss die Zeit als besonderer Faktor berücksichtigt werden.
-\item[Data Mining] ist der computergestützte automatisierte Versuch, Datenmengen zu ordnen und mithilfe
+\item[Data-Mining] ist der computergestützte automatisierte Versuch, Datenmengen zu ordnen und mithilfe
 von Algorithmen Erkenntnisse zu erhalten. Im Gegensatz dazu versucht die Informationsvisualisierung eine geeignete
 grafische Repräsentation
 bereitzustellen, die dem Nutzer die Möglichkeit gibt, diese Erkenntnisse selbst zu finden. Für die Datengewinnung
-ist die Informationsvisualisierung auf Techniken des Data Mining angewiesen. Es gibt Bestrebungen beide Gebiete 
+ist die Informationsvisualisierung auf Techniken des Data-Mining angewiesen. Es gibt Bestrebungen beide Gebiete 
 im "`Visual Data Mining"'\footnote{Vgl. \citep{Keim}} zu verbinden, um Synergien zu bilden.
 \item[Interface- und Interactiondesign]
-Diese Felder beschreiben die Gestaltung von Benutzeroberflächen. Damit arbeiten sie, wie die Visualisierung, an
+Diese Arbeitsfelder beschreiben die Gestaltung von Benutzeroberflächen. Damit arbeiten sie, wie die Visualisierung, an
 der Schnittstelle zwischen Mensch und Maschine. Interfacedesign benutzt häufig Techniken der Visualisierung,
 um grafische Konzepte zu realisieren, da die Informationen primär visuell übertragen werden.
 \item[Computational Design]
@@ -540,14 +550,14 @@ Die explorative Analyse beschreibt die Eigenschaften von Daten als Ausgangspunkt
 Durch eine interaktive und ungerichtete Suche in den Daten
 kann die Hypothesengenerierung mithilfe der Informationsvisualisierung unterstützt werden. Dazu muss eine
 geeignete weit gefasste und nicht beschränkte Darstellung gefunden werden. Diese Informationsvisualisierungen
-können Ausgangspunkt für folgende Analysen sein. Das Initialbeispiel in Abbildung \ref{fig:beispiel} kann
+können Ausgangspunkt für weitere Analysen sein. Das Initialbeispiel in Abbildung \ref{fig:beispiel} kann
 genutzt werden, um eine weiterführende Forschungsfrage zu entwickeln: Warum wird die Farbe Rot überdurchschnittlich
 oft mit positiven Begriffen assoziiert?
 \item[Konfirmative Analyse]
-Hier existieren bereits eine oder mehrere Hypothesen, die mithilfe der Informationsvisualisierung überprüft werden sollen.
+Es existieren bereits eine oder mehrere Hypothesen, die mithilfe der Informationsvisualisierung überprüft werden sollen.
 Dabei wird eine Datenmenge hinsichtlich eines speziellen Aspekts untersucht und ausgewertet.
 \item[Präsentation]
-Ergebnisse aus der Analyse der Daten werden mithilfe der Informationsvisualisierung dargestellt, um sie für Dritte verständlich
+Die Ergebnisse aus der Analyse der Daten werden mithilfe der Informationsvisualisierung dargestellt, um sie für Dritte verständlich
 zu machen und mit ihnen über den Sachverhalt kommunizieren zu können.
 Dabei ist eine ansprechende und ästhetische Darstellung wichtig, denn
 ein ansprechendes Erscheinungsbild verstärkt den Willen, sich mit einer Darstellung auseinanderzusetzen.
@@ -557,14 +567,14 @@ Um eine adäquate Informationsvisualisierung klassifizieren zu können, nennen \
 Effektivität, Expressivität und Angemessenheit. Diese Eigenschaften müssen bei der Konzeption einer
 Informationsvisualisierungssoftware beachtet werden.
 \begin{description}
-\item[Expressivität]
-Die Informationsvisualisierung soll nur die in den Daten enthaltenen Informationen zeigen.
-Diese sollen dabei möglichst unverfälscht wiedergeben werden, um falsche Schlussfolgerungen bei dem Betrachter zu vermeiden.
 \item[Effektivität]
 Die Darstellung muss zu den visuellen Fähigkeiten des Betrachters und den Eigenschaften des Ausgabegerätes
 passen.
+\item[Expressivität]
+Die Informationsvisualisierung soll nur die in den Daten enthaltenen Informationen zeigen.
+Diese sollen dabei möglichst unverfälscht wiedergeben werden, um falsche Schlussfolgerungen bei dem Betrachter zu vermeiden.
 \item[Angemessenheit]
-Ressourcen und Rechenaufwand und damit die Kosten einer Visualisierung sollen den Anforderungen entsprechen.
+Ressourcen und Rechenaufwand und damit die Kosten einer Informationsvisualisierung sollen den Anforderungen entsprechen.
 \end{description}
 \cite{Bertin} beschreibt dagegen nur den Begriff der Prägnanz als Qualitätsmaß.
 Prägnanz wird definiert:
@@ -577,7 +587,7 @@ Darüber hinaus fällt es schwer, allgemeingültige Aussagen zu treffen, wie ein
 Informationen am effizientesten zu visualisieren sind. Die Informationsvisualisierung ist stark anwendungsabhängig und soll
 immer den Anforderungen der Daten, der Zielgruppe, des Bearbeitungsziels, der Repräsentation und des Mediums entsprechen.
 Eine rein automatisierte Informationsvisualisierung kann nur sehr schwer alle diese Anforderungen berücksichtigen. Daher
-sollten die Benutzer in allen Stufen des Visualisierungsprozesses eingreifen und gegebenenfalls Anpassungen vornehmen können. Eine Software
+sollte der Benutzer in allen Stufen des Visualisierungsprozesses eingreifen und gegebenenfalls Anpassungen vornehmen können. Eine Software
 muss dazu geeignete Mittel zur Verfügung stellen.
 
 \section{Visualisierungsprozess}
@@ -589,7 +599,9 @@ Beschreibung der Visualisierungspipeline, jedoch ähneln sich die Darstellungen 
 Im Folgenden soll der Ablauf der Informationsvisualisierung
 beschrieben werden. Von \cite{BenFry} wird der Prozess in einen
 größeren Kontext eingeordnet. Dadurch eignet sich diese
-Visualisierungspipeline besonders gut, um einen Überblick über alle Arbeitsschritte zu erhalten.\footnote{Vgl. \ref{fig:benfryprocess}}
+Visualisierungspipeline besonders gut, um einen Überblick über alle Arbeitsschritte zu erhalten. In
+Abbildung \ref{fig:benfryprocess} wird der Prozess schematisch dargestellt.
+
 \begin{figure}
 \centering
 \includegraphics[width=\linewidth]{images/benfryprocess.pdf}
@@ -602,7 +614,7 @@ Wichtige Informationen können beispielsweise Extremwerte oder Wertebereiche und
 Interesses sein.
 Diese Bereiche werden herausgetrennt (filter), um auf ihnen Methoden der Datenanalyse anwenden zu können,
 die für die weitere Verarbeitung notwendig sind (mine). Im nächsten Schritt werden dann geeignete
-grafische Repräsentationen\footnote{Vgl. Abschnitt \ref{sec:grafischeSemiologie}} gefunden, um die Daten
+visuelle Variablen\footnote{Vgl. Abschnitt \ref{sec:grafischeSemiologie}} gefunden, um die Daten
 darzustellen (represent).\footnote{\cite{Schumann} erweitern diesen Punkt durch das Rendering, welches die eigentliche Rasterung
 und Darstellung auf dem Ausgabemedium durchführt.}
 Dieser Schritt wird als \textit{Mapping} bezeichnet und ist eine
@@ -618,7 +630,7 @@ in der gegebenen Reihenfolge auftreten. Es gibt unterschiedliche Möglichkeiten,
 Visualisierungspipeline einzugreifen und zwischen den einzelnen Stufen zu wechseln.\footnote{In
 \citep{Schumann} Abschnitt 2.2 und 2.3 werden unterschiedliche Verfahren beschrieben.}
 Das Ergebnis dieser Verfahren ist jedoch immer die grafische Darstellung.
-\newpage
+
 \section{Grafische Darstellung}
 \label{sec:Darstellungen}
 \subsection{Begriff}
@@ -654,7 +666,7 @@ multiaxial & Kiviatgraph (5), parallele Koordinaten (6)\\
 ikonenbasiert & Stick-Figure-Ikonen (7), Chernoff Ikonen (8), Data Jacks (9)\\
 \hline
 pixelbasiert (10) &
-einfach, raumfüllende Kurven, Zwei-Schritte-Technik, Recursive-Pattern-Technik\\
+Zwei-Schritte-Technik, Recursive-Pattern-Technik\\
 \hline
 hierarchisch & dimensional Stacking (11), World-within-Worlds (12), Cone-Trees (13), Baumdiagramm (15)\\
 \hline
@@ -690,9 +702,9 @@ Techniken nur sehr schwer schematisch dargestellt werden können.}
 \end{figure}
 
 Für diese Arbeit sind vor allem die hybriden Techniken interessant, da diese versuchen,
-einzelne Vorteile anderer Darstellungsformen zu verbinden, um neue Sichtweisen zu erforschen.
-Damit solche Informationsvisualisierungstechniken gefunden werden können, müssen
-Softwarelösungen Einschränkungen bei der grafischen Darstellung vermeiden.
+einzelne Vorteile verschiedener Darstellungsformen zu verbinden, um neue Sichtweisen zu erforschen.
+Damit solche Informationsvisualisierungstechniken gefunden werden können, muss eine Konzeption für eine
+Softwarelösung Einschränkungen bei der grafischen Darstellung vermeiden.
 
 \chapter{Konzeption}
 \label{cha:Software}
@@ -701,13 +713,13 @@ Softwarelösungen Einschränkungen bei der grafischen Darstellung vermeiden.
 \begin{figure}
 \centering
 \includegraphics[width=\linewidth]{images/benfryprocess_marked.pdf}
-\caption{Einordnung in den Prozess des Computational Designs nach \citep{BenFry}, eigene Darstellung}
+\caption{Einordnung in den Prozess des Computational Designs nach \citep{BenFry}}
 \label{fig:benfryprocess_marked}
 \end{figure}
 Die Übertragung von abstrakten Daten auf visuelle Variablen ist das grundlegende Prinzip der
 Informationsvisualisierung. In der Fassung von \cite{BenFry} wird diese Transkription in den
 Stufen \textit{represent} und \textit{refine} durchgeführt. Die Software muss also dem Benutzer die Möglichkeit geben,
-diese Arbeitsschritte durchführen zu können. In Abbildung \ref{fig:benfryprocess_marked} ist dieser weitere iterative Schritt
+diese Arbeitsschritte abwechselnd durchführen zu können. In Abbildung \ref{fig:benfryprocess_marked} ist dieser weitere iterative Schritt
 abgebildet. Ist der Benutzer mit der grafischen Darstellung nicht zufrieden, so kann er Parameter anpassen. Dieser Ablauf
 kann beliebig oft wiederholt werden bis ein zufriedenstellendes Ergebnis vorliegt.
 Die hohe Anzahl der Beobachtungspunkte eines Datensatzes macht eine vom Nutzer manuell durchgeführte Transkription
@@ -743,7 +755,7 @@ Möglichkeit bestehen, alle visuellen Variablen\footnote{Vgl. Abschnitt
 in seiner Arbeit nicht durch vorgefertigte Darstellungsformen
 eingeschränkt werden.
 \item[Flexible Ein- und Ausgabe]
-Zur automatischen Dateneinspeisung in die Software sollen mehrere Möglichkeiten
+Zur automatisierten Dateneinspeisung in die Software sollen mehrere Möglichkeiten
 bestehen, um in unterschiedliche Workflows eingebunden werden zu können.
 Neben Dateiformaten wie XML, JSON und CSV ist eine Netzwerk- und
 Datenbankanbindung sinnvoll. Als Ausgabeformate können gängige Bildformate
@@ -753,10 +765,10 @@ Der Benutzer kann alle Verbindungen und Parameter zwischen Datenobjekten und ihr
 visuellen Repräsentation direkt beeinflussen. Für eine direkte visuelle Analyse
 durch den Nutzer muss die Software die Möglichkeit bieten, sofort
 nach Interaktion des Nutzers die Veränderungen darzustellen. Dafür wird eine
-ausreichende Performanz benötigt, um störende Ladezeiten zu vermeiden.
+ausreichende Performanz benötigt, um störende Lade- und Berechnungszeiten zu vermeiden.
 \item[Erweiterbarkeit]
 Durch unterschiedliche Anforderungen in den verschiedenen Arbeitsbereichen ist
-es nötig, die Software selbst erweitern zu können. Dafür soll eine Skriptsprache
+es nötig, die Software durch den Benutzer erweitern zu können. Dafür soll eine Skriptsprache
 implementiert werden, die es erlaubt, zur Laufzeit neue Funktionen hinzuzufügen.
 Außerdem besteht, durch die Kapselung aller Funktionen, die Möglichkeit, dass der
 Benutzer eigene Module programmiert.
@@ -766,9 +778,9 @@ lauffähig sein. Durch die Entwicklung auf Basis von openframeworks\footnote{Vgl
 wird diese Plattformunabhängigkeit gewährleistet.
 \item[Frei und offen]
 Die Software wird unter einer freien Lizenz entwickelt und veröffentlicht,
-um eigene Erweiterungen von Nutzern möglich zu machen. Durch die Wahl der Lizenz kann
+um Erweiterungen von Benutzern möglich zu machen. Durch die Wahl der Lizenz kann
 die Entwicklung durch alle Interessenten vorangetrieben werden. Außerdem lässt
-die Lizenz eine kommerzielle Erweiterung und Nutzung zu. Für private Anwender
+die Lizenz eine kommerzielle Erweiterung und Nutzung zu. Für Anwender
 ist die Software kostenlos verfügbar.
 \end{description}
 
@@ -829,7 +841,7 @@ Vergleichbar sind die Input-Pins mit den Parametern einer Funktion in der textue
 Die Output-Pins können als Rückgabewerte einer Funktion verstanden werden.
 \item[Connection]
 Eine Connection ist die Verbindung zwischen zwei Pins. Dabei wird vom Benutzer ein Output-Pin einer
-Node mit dem Inputpin einer anderen Node verbunden. Nur durch diese Verbindung können
+Node mit dem Input-Pin einer anderen Node verbunden. Nur durch diese Verbindung können
 Nodes miteinander kommunizieren und Werte austauschen. Eine Connection
 ist mit einer Zuweisung oder gegenseitigen Funktionsaufrufen in der textuellen Programmierung vergleichbar.
 \item[Spread]
@@ -854,8 +866,8 @@ es dadurch verständlicher welche Aufgabe die Software hat und wie mit ihr Probl
 werden können.
 Mit der gewählten Benutzeroberfläche sind keine Programmierkenntnisse erforderlich, um eine Informationsvisualisierung
 zu erstellen. Ein durchschnittliches mathematisches Verständnis des Benutzers reicht für einfache Aufgaben aus.
-Das macht ein iteratives Experimentieren möglich. Der Benutzer kann die Software nutzen, um eine
-Idee für die Informationsvisualisierung unkompliziert zu skizzieren.
+Das macht ein iteratives Experimentieren möglich. Der Benutzer kann die Software einsetzen, um eine
+Idee für eine Informationsvisualisierung unkompliziert zu skizzieren.
 Die komplexen internen Abläufe liegen dabei hinter einem intuitiven und einfachen Interface
 verborgen. Dadurch können "`context switches"' \footnote{Vgl. \citep[S.\,50]{Tufte}}
 vermieden werden. Diese treten auf, wenn der Benutzer zwischen unterschiedlichen Programmansichten wechseln
@@ -908,10 +920,10 @@ weiterverarbeitet werden.
 Die Erzeugung mehrerer unterschiedlicher Nodes für die Einbindung von Daten macht ein
 \textit{Mashup} unterschiedlicher Datenquellen möglich.
 \subsection{Festlegung der visuellen Variablen}
-Der Benutzer hat die Möglichkeit weitere Nodes anzulegen, die die visuellen
+Der Benutzer hat die Möglichkeit weitere Nodes anzulegen, welche die visuellen
 Variablen darstellen. Diese können unabhängig voneinander erzeugt und mit einem datengebenden
 Node verbunden werden. Sie erzeugen beispielsweise grafische Formen wie Kreise oder Rechtecke,
-die zum Beispiel in ihrer Position, Farbe und Richtung beeinflusst werden können.
+die in ihrer Position, Farbe und Richtung beeinflusst werden können.
 Der Benutzer hat die Möglichkeit, zwischen datengebenden Nodes und
 Nodes, die eine grafische Ausgabe erzeugen, weitere Nodes einzufügen, um diese Verbindungen
 parametrisieren zu können. Das erlaubt unterschiedlichste Darstellunsgformen.
@@ -919,7 +931,7 @@ Um das Beispiel aus Abbildung \ref{fig:beispiel} zu realisieren, muss der Benutz
 Node erzeugen, der Rechtecke zeichnet. Dieser Node hat Input-Pins um die Position
 in der Ebene, die Größe, die Rotation und die Farbe festlegen zu können. Der Benutzer
 verbindet dann die Output-Pins des datengebenden Nodes mit den Input-Pins dieser Node
-und erzeugt damit eine grafische Darstellung der Daten.
+und erzeugt damit eine grafische Darstellung.
 \subsection{Evaluation der grafischen Darstellung}
 Um die aktuelle grafische Darstellung überprüfen zu können, kann der Benutzer Nodes
 erzeugen, die eine Vorschau ermöglichen. Ein Render-Node erzeugt ein weiteres
@@ -931,17 +943,17 @@ oder welche zusätzlichen Parameter einzelne Verbindungen noch brauchen, um eine
 Darstellung zu erzeugen. Ist das Beispiel aus Abbildung \ref{fig:beispiel} mit den vorangegangen Schritten noch nicht
 zufriedenstellend visualisiert, kann der Benutzer weitere Nodes und Connections
 hinzufügen. So kann beispielsweise eine zusätzlicher Multiplikator-Node und ein
-Variable-Node genutzt werden, um die Position aller Rechtecke anpassen zu können.
+Variable-Node genutzt werden, um die Position aller Rechtecke anzupassen.
 \subsection{Export der grafischen Darstellung}
 Ist der Benutzer zufrieden mit der grafischen Darstellung, kann er weitere Nodes
 erzeugen, die diese exportieren. Zur Speicherung von grafischen Darstellungen
-eignen sich bekannte Bildformate wie JPEG, PNG, BMP oder TIFF. Eine Node, die andere Formate
-für die Weiterverarbeitung unterstützt ist denkbar. Weitere Exportmöglichkeiten
+eignen sich bekannte Bildformate wie JPEG, PNG, BMP oder TIFF. Nodes, die andere Formate
+für die Weiterverarbeitung unterstützen, sind denkbar. Weitere Exportmöglichkeiten
 sind Vektorgrafiken, 3D-Austauschformate oder interaktive HTML Seiten.
 
 \section{Bestehende Softwarelösungen}
 \label{sec:bestehendeSoftware}
-Durch das weite Arbeitsfeld der Informationsvisualisierung, das meist
+Durch das breite Arbeitsfeld der Informationsvisualisierung, das meist
 fließend in andere Bereiche übergeht, existiert eine große Anzahl an
 Softwarelösungen und Programmierbibliotheken. Hier sollen exemplarisch
 einzelne Anwendungen beschrieben werden, die verschiedene, geforderte
@@ -963,9 +975,9 @@ integrierte Entwicklungsumgebung mit verschiedenen
 Erweiterungsmöglichkeiten, ist aber spezialisiert auf die medizinische
 Bildverarbeitung.
 \item[d3.js]
-ist eine Bibliothek, die Teile einer HTML-Seite mit Daten verbinden kann.
+ist eine Bibliothek, die Elemente einer HTML-Seite mit Daten verbinden kann.
 Sie ist in Javascript geschrieben und beschränkt sich auf
-Webanwendungen. Der Nutzer muss Javascript programmieren können, um diese
+Webanwendungen. Der Nutzer muss Javascript programmieren, um diese
 Bibliothek nutzen zu können.
 \item[NodeBox 2 Beta]
 ist ein Programm, um generative Grafiken zu erstellen. Es entspricht nahezu
@@ -989,7 +1001,7 @@ Im Folgenden wird ihr Einsatz bei der Entwicklung beschrieben.
 \item[C++]
 ist eine objektorientierte Programmiersprache. Sie bietet
 eine maschinennahe Möglichkeit, effiziente Programme zu entwickeln.
-Datasynth nutzt durch openFrameworks und boost einige Vorteile
+Datasynth nutzt durch openFrameworks und boost die Vorteile
 von C++. Dazu gehören eine höhere Geschwindigkeit beim Ausführen
 und eine einfache Einbindung anderer Bibliotheken, wie 
 beispielsweise OpenGL für Grafikoperationen. Außerdem
@@ -1031,7 +1043,7 @@ Anwendungsbereiche von C++ erweitern und vereinfachen.
 Einzelne Bibliotheken der Sammlung wurden in den neuen C++ Standard
 übernommen, um C++ selbst zu verbessern.
 Für Datasynth werden die Bibliotheken für Zeiger, Container
-und generische Programmierung verwendet, um die Entwicklung weiter zu vereinfachen.
+und generische Programmierung verwendet, um die Entwicklung zu vereinfachen.
 \item[GitHub]
 ist eine Internetplattform für das kollaborative Entwickeln einer Software.
 Sie basiert auf dem Versionverwaltungstool git, welches entwickelt wurde,
@@ -1053,7 +1065,7 @@ zum Anlegen dieses Node.
 Wenn der Benutzer einen Node erstellen will und im Menü auf einen entsprechenden Eintrag geklickt hat,
 wird eine Zeichenkette übergeben. Wenn die Liste der Struktur eine solche Zeichenkette enthält, wird der
 entsprechende Node erzeugt. So können vom Benutzer dynamisch zur Laufzeit
-neue Nodes erzeugt werden. Die Struktur dient schließlich als eine Art Katalog, in dem alle
+neue Nodes erzeugt werden. Die Struktur dient als eine Art Katalog, in dem alle
 Nodes enthalten sind, die der Nutzer zur visuellen Programmierung verwenden kann.
 \begin{figure}
 \centering
@@ -1061,30 +1073,31 @@ Nodes enthalten sind, die der Nutzer zur visuellen Programmierung verwenden kann
 \caption{Erzeugung eines Node-Objektes aus einer Liste aller vorhandenen Nodes}
 \label{fig:factory}
 \end{figure}
-In Abbildung \ref{fig:node} wird in Auszügen die Klassendefinition des BaseNode und
-des Node für die Addition zweier Gleitkommazahlen als Beispiel dargestellt.
-Ein Node ist eine einfache C++ Klasse, die alle Eigenschaften der Klasse BaseNode erbt.
-Der Node für die Addition zweier Gleitkommazahlen überschreibt die process Methode der BaseNode, um die zwei
-Inputpins zu addieren. Andere Klassen, die von dem BaseNode erben, können die process
-Methode mit ihrer eigenen Funktionalität überschreiben.
-Das macht es möglich, alle Funktionen, die in einer C++ Methode implementiert werden können,
-in einer Klasse als Node zu kapseln und für die visuelle Programmierung von Datasynth zu verwenden.
 \begin{figure}
 \centering
 \lstinputlisting[language=C++]{code/node.cpp}
 \caption{Klassendefinition der BaseNode und der Node für die Addition als Beispiel}
 \label{fig:node}
 \end{figure}
-In Abbildung \ref{fig:core} werden einzelne Ausschnitte aus dem Hauptprogramm gezeigt.
-In diesem Teil von Datasynth läuft die Hauptschleife ab, die alle Benutzereingaben behandelt,
-das Aktualisieren und Berechnen aller Nodes durchführt und Nodes und Connections
-hinzufügt oder löscht.
 \begin{figure}
 \centering
 \lstinputlisting[language=C++]{code/core.cpp}
 \caption{Erzeugung von Objekten einer Klasse bestimmt durch eine Zeichenkette.}
 \label{fig:core}
 \end{figure}
+In Abbildung \ref{fig:node} wird in Auszügen die Klassendefinition des BaseNode und
+des Node für die Addition zweier Gleitkommazahlen als Beispiel dargestellt.
+Ein Node ist eine einfache C++ Klasse, die alle Eigenschaften der Klasse BaseNode erbt.
+Der Node für die Addition zweier Gleitkommazahlen überschreibt die process Methode der BaseNode, um zwei
+Input-Pins zu addieren. Andere Klassen, die von dem BaseNode erben, können die process
+Methode mit ihrer eigenen Funktionalität überschreiben.
+Das macht es möglich, alle Funktionen, die in einer C++ Methode implementiert werden können,
+in einer Klasse als Node zu kapseln und für die visuelle Programmierung von Datasynth zu verwenden.
+
+In Abbildung \ref{fig:core} werden einzelne Ausschnitte aus dem Hauptprogramm gezeigt.
+In diesem Teil von Datasynth läuft die Hauptschleife ab, die alle Benutzereingaben behandelt,
+die Aktualisierung und Berechnung aller Nodes durchführt und Nodes und Connections
+hinzufügt oder löscht.
 
 \section{Implementierte Nodes}
 \label{sec:ImplementierteNodes}
@@ -1188,8 +1201,8 @@ Unten rechts: Render-Node erzeugt eine Ausgabe.}
 \label{fig:companyausschnitt}
 \end{figure}
 In diesem Kapitel wird mit Datasynth eine Informationsvisualisierung durchgeführt.
-Die Ausgangsdaten aus Abbildung \ref{fig:apitabelle} wurden aus dem API.Leipzig Projekt\footnote{Vgl.
-http://www.apileipzig.de/} gewonnen und in Tabellenform aufbereitet. Diese Tabelle wurde
+Die Ausgangsdaten aus Abbildung \ref{fig:apitabelle} wurden aus dem API.Leipzig Projekt 
+gewonnen und in Tabellenform aufbereitet. Diese Tabelle wurde
 als CSV-Datei exportiert.
 In Abbildung \ref{fig:guiausschnitt} werden Ausschnitte aus der Benutzeroberfläche von
 Datasynth gezeigt. Diese zeigen exemplarisch Nodes, die für die Informationsvisualisierung
@@ -1211,7 +1224,7 @@ ist es schwierig Reflections und Introspections durchzuführen.
 Es können während der Laufzeit keine Informationen
 über die Beschaffenheit einer Klasse abgefragt werden.
 Das können zum Beispiel die Ausgabe aller vorhandenen Methoden und Instanzvariablen eines Objektes sein.
-Die Eigenschaften einer Klasse können nicht dynamisch verändert werden. Beispielsweise
+Diese Eigenschaften können außerdem nicht dynamisch verändert werden. Beispielsweise
 ist es nicht möglich, die process Methode einer Node zur Laufzeit zu überschreiben.
 Um trotzdem flexibel Nodes zur Laufzeit erzeugen zu können, erben alle Nodes
 von einer universellen Elternklasse. In einem Container werden dann ausschließlich Zeiger
@@ -1223,7 +1236,7 @@ Nodes aufrufen.
 Universelle Datentypcontainer sind in C++ nicht standardmäßig vorhanden.\footnote{Nullzeiger sind
 möglich, erfordern aber eine unsichere und unflexbile Wiederherstellung des ursprünglichen Datentyps.} Um die Verbindungen
 zwischen den einzelnen Nodes datentypagnostisch zu halten, wurde ein
-eigener Datentyp Spread definiert.\footnote{Eine Definition des Spreads erfolgte im Abschnitt \ref{sec:visPro}}
+eigener Datentyp Spread definiert.\footnote{Eine Definition des Begriffs "`Spread"' erfolgte im Abschnitt \ref{sec:visPro}}
 Durch die Abstraktion in einen boost::variant Container ergibt sich eine einheitliche Möglichkeit, primitive Datentypen,
 wie beispielsweise Gleitkommazahlen und Zeichenketten abzuspeichern. Vor der Verwendung in einer Node werden diese
 Datentypen mit boost::get rekonstruiert. Der Vorteil gegenüber Nullzeigern ist, dass bei fehlgeschlagener
@@ -1232,7 +1245,7 @@ Wiederherstellung eine Fehlerbehandlung möglich ist.
 openFrameworks unterstützt nicht das Erstellen und Verwenden mehrerer
 unabhängiger Fenster. Deshalb musste
 auf ein Add-on zurückgegriffen werden, welches die Fensterverwaltung
-mit einem alternativen System austauscht.\footnote{openFrameworks verwendet standardmäßig GLUT
+mit einem alternativen System austauscht.\footnote{openFrameworks verwendet standardmäßig "`GLUT"'
 zur Fensterverwaltung. Das für Datasynth verwendete "`ofxFenster"' Add-on benutzt dagegen die neuere und
 flexiblere Bibliothek "`GHOST"' aus dem Blender-Projekt.} Damit können nach dem Start des Programms
 neue Fenster erzeugt werden, was beispielsweise für die Funktionalität des Render-Node wichtig ist.
@@ -1280,7 +1293,8 @@ Alle Nodes sind einfache C++ Klassen, die von einer Elternklasse
 alle Variablen und Methoden erben, die für die Verwendung in Datasynth
 nötig sind. Somit ist eine hohe \textit{Erweiterbarkeit} gegeben, da es möglich ist,
 nahezu jede Funktionalität, die in einer C++ Klasse implementiert werden kann,
-als Node in Datasynth nutzbar zu machen.
+als Node in Datasynth nutzbar zu machen. Auf eine eingebettete
+Skriptsprache wurde aus zeitlichen Gründen verzichtet.
 
 Durch die Verwendung von openFrameworks und boost als Basis der Entwicklung
 ist es möglich, Datasynth auf allen Plattformen auszuführen, die von openFrameworks
@@ -1304,8 +1318,8 @@ Datasynth realisiert wurde.
 Die Konzeption und prototypische Realisierung einer Software für die
 Informationsvisualisierung hat gezeigt, dass es sinnvoll ist,
 ein auf dieses Gebiet zugeschnittenes Softwarekonzept zu entwickeln.
-Die Anforderungen an eine Software für die Informationsvisualisierung sind stark
-anwendungdsabhängig. Es müssen viele unterschiedliche Datenformen
+Die Anforderungen sind dabei stark
+anwendungsabhängig. Es müssen viele unterschiedliche Datenformen
 mit den visuellen Variablen der grafischen Darstellung verbunden werden können.
 Die Automatisierung dieses Transkriptionsprozesses ist sinnvoll,
 wenn der Benutzer diesen Ablauf umfassend parametrisieren, steuern und gestalten kann.
@@ -1315,7 +1329,7 @@ entspricht, möglich. Für die Erzeugung von zusätzlichen Informationen
 wie beispielsweise Beschriftungen, Skalen oder
 Maßstäbe existieren nur rudimentäre Ansätze.
 Fehlende Funktionalität kann aber vom Benutzer hinzugefügt werden, ohne
-den Kern der Software zu ändern. Datasynth besitzt hierfür ein universelles
+den Kern der Software ändern zu müssen. Datasynth besitzt hierfür ein universelles
 Node-System, welches modulartig erweiterbar ist. Es besteht
 damit die Möglichkeit auf zukünftige veränderte Anforderungen an
 Informationsvisualisierungen flexibel zu reagieren.
@@ -1330,7 +1344,7 @@ Der generische Ansatz der Software vermeidet es, Vorgaben bei der Gestaltung von
 grafischen Darstellungen zu machen. Dadurch behält der Benutzer ein breites Spektrum an Gestaltungsfreiheiten.
 Das erfordert aber auch die Kenntnis und Anwendung der Gestaltungsregeln.
 Der Benutzer muss selbst entscheiden, welche visuellen Variablen sich für eine
-bestimmte Aufgabe eignen. Ein geeignetes System, das dem
+bestimmte Aufgabe eignen. Ein System, welches dem
 Benutzer Hilfestellungen in diesem Bereich gibt, muss noch erforscht werden.
 
 Datasynth stellt nur einen Prototyp dar, kann aber für den
@@ -1454,7 +1468,7 @@ Variable & Diesem Node kann der Benutzer einen skalaren Wert zuweisen. Damit wir
 Variable erzeugt. Diese kann genutzt werden, um Berechnungen mit anderen Spreads durchzuführen.\\
 \hline
 CSVParser & Mit diesem Node hat der Benutzer die Möglichkeit, eine CSV-Datei zu importieren.
-Die "`Spalten"' der Daten werden dabei als Spreads über die Output-Pins ausgegeben.\\
+Die "`Spalten"' der Daten werden dabei als Spreads ausgegeben.\\
 \hline
 RGBColor & Erzeugt aus drei Input-Pins für die Farbkanäle Rot, Grün und Blau einen Spread mit Farbwerten. Dieser
 kann von anderen Nodes benutzt werden, um ausgegebene grafische Elemente einzufärben.\\

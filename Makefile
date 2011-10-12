@@ -4,6 +4,9 @@ diplom:
 	pdflatex diplom.tex
 	pdflatex diplom.tex
 
+once:
+	pdflatex diplom.tex
+
 all: diplom
 	gs -dNOPAUSE -sDEVICE=pdfwrite -sOUTPUTFILE=diplom_final.pdf -dBATCH diplom.pdf selbst.pdf
 
