@@ -1,4 +1,4 @@
-\documentclass[a4paper, 
+\documentclass[a4paper,
                12pt,
                DIV=calc,
                version=first,
@@ -19,10 +19,14 @@
 \usepackage{url} %correct url display in cites
 
 \usepackage[locale=DE]{siunitx}
-\usepackage{graphicx}
+%\usepackage[final]{graphicx}
+\usepackage{pdfpages}
+\graphicspath{{images/}}
 \usepackage{listings}
 \usepackage{color}
 \usepackage{tabularx}
+
+
 
 \tolerance 1414
 \hbadness 1414
@@ -54,7 +58,8 @@ Be-nut-zer-ober-flä-che}
 \begin{document}
 \title{Konzeption und prototypische Realisierung einer Software für die Informationsvisualisierung}
 \author{Benjamin Knofe}
-\subject{Diplomarbeit}  
+\subject{Diplomarbeit}
+\date{13.10.2011}
 \publishers{\parbox[b][3.5cm]{\textwidth}{\centering \large Betreuer:\\Professor Dr.-Ing. Robert Müller
 \par\vspace{5mm} \Large Hochschule für Technik, Wirtschaft und Kultur Leipzig}}
 \dedication{Danke\\für Kritik, Kommentare, Diskussionen,\\Korrekturen, Code und Hilfe\\
@@ -63,6 +68,7 @@ Theresia Becher\\Pyry Jahkola\\Stephan Keller\\Johannes Knofe\\Moritz Kreutzer\\
 Professor Dr.-Ing. Robert Müller\\Christina Sanko\\
 Sarah Walter\\Philip Whitfield\\René Zschoch}
 \maketitle
+\includepdf[pages=1]{license.pdf}
 \tableofcontents
 
 \chapter{Einleitung}
@@ -81,7 +87,7 @@ Computergrafik und Informatik spezielle Lösungsansätze entwickelt.
 Die Informationsvisualisierung verbindet Bereiche dieser Disziplinen in einem eigenständigen
 Forschungsgebiet.
 In diesem wird die Frage geklärt, wie immer abstrakter und komplexer werdende Daten
-in einer für den Menschen adäquaten Weise aufbereitet und dargestellt werden können. 
+in einer für den Menschen adäquaten Weise aufbereitet und dargestellt werden können.
 Informationen in Form von Mustern, Wiederholungen und Anomalien sind dadurch leichter auffindbar und erlauben
 Rückschlüsse auf den eigentlichen Forschungsgegenstand. Ursprünglich wurden Visualisierungstechniken nur im
 naturwissenschaftlichen Kontext angewendet.
@@ -112,13 +118,13 @@ Sie wurde von David McCandless mit einem Vektorgrafikprogramm erstellt, um
 eine tiefgreifende Auseinandersetzung zwischen ihm (als menschlichen Betrachter) und den Informationen
 zu ermöglichen und Entscheidungen über das Design direkt treffen zu können.\footnote{Vgl. \citep{infoblog}} Der Nachteil dieser
 Arbeitsweise ist eine zeitaufwändige manuelle Transkription aller Datenwerte in eine grafische
-Darstellung. Bei der Visualisierung von komplexeren Zusammenhängen und größeren Datenmengen würde dieser 
+Darstellung. Bei der Visualisierung von komplexeren Zusammenhängen und größeren Datenmengen würde dieser
 Nachteil noch verstärkt werden und es teilweise unmöglich machen, eine Visualisierung durchzuführen.
 
 In dieser Arbeit wird untersucht, ob es möglich und sinnvoll ist, diesen Prozess  zu automatisieren,
 ohne Einschränkungen für den Anwender festlegen zu müssen.
 Eine Software muss dafür einen universellen Ansatz verfolgen, um ein breites Spektrum an
-unterschiedlichsten Bearbeitungsfällen abdecken zu können. 
+unterschiedlichsten Bearbeitungsfällen abdecken zu können.
 Aktuelle Standardsoftware, wie beispielsweise Tabellenkalkulationsprogramme oder Programmierbibliotheken,
 können das nur teilweise leisten oder beschränken sich auf spezielle Anwendungsgebiete.
 Meist kann dabei, für die Transkription von Daten zu einer grafischen Darstellung nur
@@ -131,7 +137,7 @@ Gestaltungsfreiheit einräumt, sind folgende Vorüberlegungen notwendig:
 \item{Welche Möglichkeiten der grafischen Darstellung gibt es und wie können diese eingesetzt werden?}
 \item{Wie können Daten sinnvoll in eine grafische Darstellung transkribiert werden?}
 \end{itemize}
-Diese Vorüberlegungen machen ein Softwarekonzept nötig, das den Anwender besonders bei der 
+Diese Vorüberlegungen machen ein Softwarekonzept nötig, das den Anwender besonders bei der
 arbeitsintensiven Transkription
 von Daten in eine grafische Darstellung unterstützt.
 Um eine iterative und kreative Benutzung zu ermöglichen, muss dieser Vorgang
@@ -148,7 +154,7 @@ In Kapitel \ref{cha:Grundlagen} werden die grundlegenden Begriffe beschrieben, d
 das Arbeitsfeld der Informationsvisualisierung wichtig sind. Es werden die Begriffe
 \textit{Daten} und \textit{Informationen} definiert und eine Klassifikation von Daten vorgenommen.
 Nachfolgend wird ein System zur Beschreibung der Grundelemente einer grafischen Darstellung
-eingeführt. 
+eingeführt.
 
 In Kapitel \ref{cha:Informationsvisualisierung} wird der Begriff der Informationsvisualisierung
 definiert und von verwandten Arbeitsfeldern abgegrenzt. Danach werden die Bearbeitungsziele
@@ -218,7 +224,7 @@ damit effektivere Analyse.
 In diesem Abschnitt werden die Eigenschaften von Daten beschrieben. Sie bestimmen, wie die eigentlichen Informationen
 in den Daten codiert sind.
 Digitale Daten bilden den Ausgangspunkt für die Konzeption einer Informationsvisualisierung. Die speziellen
-Eigenschaften von Daten sind maßgeblich für weitere Schritte der Informationsvisualisierung.\footnote{Vgl. 
+Eigenschaften von Daten sind maßgeblich für weitere Schritte der Informationsvisualisierung.\footnote{Vgl.
 Abschnitt \ref{sec:Pipeline}}
 \cite{Schumann} haben ein Modell zur Beschreibung der Eigenschaften von Daten entwickelt. Jeder Datensatz\footnote{Ein
 Datensatz ist eine Menge von Daten.}
@@ -361,9 +367,9 @@ Zusätzlich dazu ist die Reihenfolge allgemeingültig festgelegt. Dadurch kann a
 Ausprägung genutzt werden. Diese ist durch eine Ordnungsrelation bestimmt. Ein Beispiel für ordinale Daten sind Temperaturwerte,
 die in drei Klassen "`kalt"', "`warm"' und "`heiß"' unterteilt werden. Neben der Unterscheidung zwischen den drei
 Klassen kann eindeutig bestimmt werden, dass auf die Klasse "`kalt"' die Klasse "`warm"' und dann die Klasse
-"`heiß"' folgt. 
+"`heiß"' folgt.
 \item[Quantitative Datentypen] besitzen einen Wertebereich und gestatten die Durchführung von arithmetischen Operationen.
-Es existiert dabei eine Maßeinheit, mit der die Abstände zwischen einzelnen Ausprägungen angegeben werden können. Durch eine 
+Es existiert dabei eine Maßeinheit, mit der die Abstände zwischen einzelnen Ausprägungen angegeben werden können. Durch eine
 künstliche Einteilung in Intervalle kann dieser Typ in ordinale Datentypen übersetzt werden.
 Ein Beispiel ist eine Temperaturmessung, bei der Werte in Grad Celcius gespeichert werden.
 \end{description}
@@ -420,7 +426,7 @@ Dabei dürfen keine Informationen und Beziehungen verloren gehen, um Fehlinterpr
 zu vermeiden. Weitere Regeln sind stark abhängig von der Anzahl
 der vorhandenen Dimensionen des Beobachtungsraumes, der Anzahl der Merkmale eines
 Beobachtungspunktes\footnote{Vgl. Abschnitt \ref{sec:EigenschaftenDaten}} und der gewählten,
-grafischen Darstellung. Da sich für die komplexen, grafischen Darstellungen einer 
+grafischen Darstellung. Da sich für die komplexen, grafischen Darstellungen einer
 Informationsvisualisierung meist mehrere visuelle Variablen eignen, kann eine Auswahl
 durch den Abgleich mit den Bearbeitungszielen\footnote{Vgl. Abschnitt \ref{sec:Ziele}} erfolgen.
 Beispielsweise eignen sich für wichtige, geordnete Variablen die Position in der Ebene,
@@ -448,7 +454,7 @@ nutzbar zu machen, gelten besondere Anforderungen, die nicht Teil dieser Arbeit 
 Die wissenschaftlich-technische Visualisierung ist eine Sonderform der Visualisierung. Sie arbeitet ausschließlich mit Ausgangsdaten,
 die einen natur- oder ingeneurswissenschaftlichen Bezugsrahmen und somit einen konkreten Ortsbezug haben. Diese Form der
 Visualiserung wird Datenvisualisierung genannt. Dabei wird von einem, durch die Informationstheorie
-geprägten, quantitativen Informationsbegriff ausgegangen.\footnote{Vgl. 
+geprägten, quantitativen Informationsbegriff ausgegangen.\footnote{Vgl.
 Abschnitt \ref{sec:DatenInfo}}
 
 Für die Visualisierung von Informationen sind weiterführende, qualitative Fragen von Bedeutung:
@@ -524,7 +530,7 @@ von Prozessen muss die Zeit als besonderer Faktor berücksichtigt werden.
 von Algorithmen Erkenntnisse zu erhalten. Im Gegensatz dazu versucht die Informationsvisualisierung eine geeignete
 grafische Repräsentation
 bereitzustellen, die dem Nutzer die Möglichkeit gibt, diese Erkenntnisse selbst zu finden. Für die Datengewinnung
-ist die Informationsvisualisierung auf Techniken des Data-Mining angewiesen. Es gibt Bestrebungen beide Gebiete 
+ist die Informationsvisualisierung auf Techniken des Data-Mining angewiesen. Es gibt Bestrebungen beide Gebiete
 im "`Visual Data Mining"'\footnote{Vgl. \citep{Keim}} zu verbinden, um Synergien zu bilden.
 \item[Interface- und Interactiondesign]
 Diese Arbeitsfelder beschreiben die Gestaltung von Benutzeroberflächen. Damit arbeiten sie, wie die Visualisierung, an
@@ -689,7 +695,7 @@ Die folgende Auflistung von Darstellungsformen orientiert sich an den Darstellun
 Multiparameterdaten von \cite{Schumann} und
 wird ergänzt durch \cite{Preim} und eigene Beobachtungen. Aufgrund der Vielzahl an unterschiedlichen
 Darstellungsformen kann die Tabelle \ref{tab:darstellungsformen} nur einen beispielhaften Überblick geben. Die
-Nummern hinter den einzelnen Darstellungsformen verweisen auf die Darstellungen in 
+Nummern hinter den einzelnen Darstellungsformen verweisen auf die Darstellungen in
 Abbildung \ref{fig:formen}.\footnote{Ein Beispiel für die Recursive-Pattern-Technik
 findet sich im Anhang in Abschnitt \ref{sec:temperatures}, da pixelbasierte
 Techniken nur sehr schwer schematisch dargestellt werden können.}
@@ -748,7 +754,7 @@ Programmierung, die in Abschnitt \ref{sec:visPro} genauer beschrieben wird,
 reicht ein grundlegendes mathematisches Verständnis des Nutzers aus.
 Weiterhin veranschaulicht sie den eigentlichen Anwendungsbereich der Software.
 \item[Flexible Visualisierungsmöglichkeiten]
-Um möglichst viele Darstellungsformen abbilden zu können, muss die 
+Um möglichst viele Darstellungsformen abbilden zu können, muss die
 Möglichkeit bestehen, alle visuellen Variablen\footnote{Vgl. Abschnitt
 \ref{sec:grafischeSemiologie}} und damit alle Darstellungsformen\footnote{Vgl. Abschnitt
 \ref{sec:Darstellungsformen}} reproduzieren zu können. Der Nutzer darf dabei
@@ -847,7 +853,7 @@ ist mit einer Zuweisung oder gegenseitigen Funktionsaufrufen in der textuellen P
 \item[Spread]
 Ein Spread ist eine Struktur, die in der Software als universeller Datentyp funktioniert.\footnote{Der
 Begriff Spread wurde aus der Software "`vvvv"' übernommen. Vgl. Abschnitt \ref{sec:bestehendeSoftware}}
-Eingabe- und Ausgabewerte von Nodes können nur Spreads sein. Ein Spread ist eine 
+Eingabe- und Ausgabewerte von Nodes können nur Spreads sein. Ein Spread ist eine
 eindimensionale Liste von Werten. Diese Werte können unterschiedliche, primtive Datentypen,
 wie beispielsweise Gleitkommazahlen oder Zeichenketten, beinhalten. Im einfachsten Fall hat
 die Liste eines Spreads nur ein einziges Element und ist demzufolge eine einfache Variable. In komplexeren
@@ -908,7 +914,7 @@ Folgenden beschrieben.
 Der Benutzer erzeugt einen Node, der es möglich macht, externe Datenquellen
 in die Software zu laden. Unterschiedliche Nodes haben die Aufgabe, Datenquellen auf
 dem Computer oder im Netzwerk zu importieren. Dabei werden etablierte
-Dateiformate wie XML, CSV, JSON und netCDF unterstützt. Wenn der Benutzer eine 
+Dateiformate wie XML, CSV, JSON und netCDF unterstützt. Wenn der Benutzer eine
 Datenquelle ausgewählt hat, erhält der Node automatisch Output-Pins.
 Diese repäsentieren die ursprüngliche Datenstruktur der Datenquelle.
 Die Datenquelle für das Beispiel aus Abbildung \ref{fig:beispiel} kann eine Tabelle sein,
@@ -939,7 +945,7 @@ Fenster und zeigt die Ausgabe, die von den vorhandenen Nodes erzeugt wird, an.
 Bei jeder Interaktion des Benutzers, die Parameter einzelner Nodes ändert,
 wird automatisch und unmittelbar die aktuelle Ausgabe verändert.
 Der Benutzer kann visuell analysieren, welche Verbindungen noch nötig sind
-oder welche zusätzlichen Parameter einzelne Verbindungen noch brauchen, um eine sinnvolle grafische 
+oder welche zusätzlichen Parameter einzelne Verbindungen noch brauchen, um eine sinnvolle grafische
 Darstellung zu erzeugen. Ist das Beispiel aus Abbildung \ref{fig:beispiel} mit den vorangegangen Schritten noch nicht
 zufriedenstellend visualisiert, kann der Benutzer weitere Nodes und Connections
 hinzufügen. So kann beispielsweise eine zusätzlicher Multiplikator-Node und ein
@@ -1003,7 +1009,7 @@ ist eine objektorientierte Programmiersprache. Sie bietet
 eine maschinennahe Möglichkeit, effiziente Programme zu entwickeln.
 Datasynth nutzt durch openFrameworks und boost die Vorteile
 von C++. Dazu gehören eine höhere Geschwindigkeit beim Ausführen
-und eine einfache Einbindung anderer Bibliotheken, wie 
+und eine einfache Einbindung anderer Bibliotheken, wie
 beispielsweise OpenGL für Grafikoperationen. Außerdem
 findet das Programmierparadigma der Objektorientierung
 in den einzelnen Nodes von Datasynth Anwendung.
@@ -1031,7 +1037,7 @@ zurückgegriffen werden.
 openFrameworks ist kompatibel zu den Plattformen
 Linux, Mac OS X und Microsoft Windows.
 Die Funktionsweise von openFrameworks wird in Abbildung
-\ref{fig:of} verdeutlicht. 
+\ref{fig:of} verdeutlicht.
 Die Programmlogik, das Benutzerinterface und alle Ein- und
 Ausgaben für den Benutzer wurden für Datasynth mit openFrameworks
 realisiert.
@@ -1050,7 +1056,7 @@ Sie basiert auf dem Versionverwaltungstool git, welches entwickelt wurde,
 um Änderungen an Quellcode aufzuzeichnen und diesen zwischen mehreren
 Entwicklern teilen zu können. GitHub verbindet die Funktionalität von git mit
 einem sozialen Netzwerk, bei der verschiedene Nutzer gemeinsam
-an einer Software arbeiten können. Die Entwicklung von Datasynth kann online 
+an einer Software arbeiten können. Die Entwicklung von Datasynth kann online
 verfolgt werden.\footnote{Vgl. http://www.github.com/benben/datasynth}
 \end{description}
 
@@ -1201,7 +1207,7 @@ Unten rechts: Render-Node erzeugt eine Ausgabe.}
 \label{fig:companyausschnitt}
 \end{figure}
 In diesem Kapitel wird mit Datasynth eine Informationsvisualisierung durchgeführt.
-Die Ausgangsdaten aus Abbildung \ref{fig:apitabelle} wurden aus dem API.Leipzig Projekt 
+Die Ausgangsdaten aus Abbildung \ref{fig:apitabelle} wurden aus dem API.Leipzig Projekt
 gewonnen und in Tabellenform aufbereitet. Diese Tabelle wurde
 als CSV-Datei exportiert.
 In Abbildung \ref{fig:guiausschnitt} werden Ausschnitte aus der Benutzeroberfläche von
@@ -1363,7 +1369,7 @@ Verständnis der digitalen Welt beitragen.
 \section{Ausblick}
 \label{sec:Ausblick}
 In diesem Abschnitt werden vielversprechende Ansätze beschrieben, die für die Weiterentwicklung
-der Konzeption und des Prototyps genutzt werden können. Einige Möglichkeiten bedingen weiterer 
+der Konzeption und des Prototyps genutzt werden können. Einige Möglichkeiten bedingen weiterer
 Forschungsarbeit und können als Thesen betrachtet werden.
 \begin{description}
 \item[Skriptsprache]
@@ -1388,7 +1394,7 @@ an. Beispielsweise können aus einem erzeugten Bild einzelne Ebenen exportiert w
 Zusätzlich zu einer rein statischen Darstellung können mit Datasynth
 Interaktionsmöglichkeiten erzeugt werden. Eine automatische
 Ausgabe als interaktive HTML5-Website ist denkbar, bei der einzelne Elemente
-anklickbar und durch Benutzerinteraktion veränderbar sind. Außerdem sind 
+anklickbar und durch Benutzerinteraktion veränderbar sind. Außerdem sind
 Zoomfunktionen sinnvoll, um dem Betrachter weitere Möglichkeiten zur
 Erkundung der grafischen Darstellung zu geben.
 \item[Evaluation]
@@ -1396,7 +1402,7 @@ Datasynth kann dem Nutzer behilflich sein, die richtige Form
 der grafischen Darstellung zu finden und ihn mit adäquaten Mitteln darauf
 hinweisen, welche Darstellungen sich für einen gegebenen Datensatz besonders gut eignen.
 \end{description}
-    
+
 \chapter{Anhang}
 \section{Liste von bestehenden Softwarelösungen}
 \label{sec:Softwareliste}
@@ -1515,4 +1521,3 @@ hochauflösende Bilddatei zu erstellen.\\
 \listoffigures
 %\printnomenclature
 \end{document}
-
